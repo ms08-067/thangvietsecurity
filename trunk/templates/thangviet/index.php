@@ -1,7 +1,7 @@
 ﻿<?php
 $app = JFactory::getApplication(); 
 $temp_path = JURI::base() . 'templates/' . $app->getTemplate();
-
+JHtml::_('bootstrap.framework');
 ?>
 <!doctype html>
 <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
@@ -10,40 +10,16 @@ $temp_path = JURI::base() . 'templates/' . $app->getTemplate();
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
-    <title>Examples - 1140px.com</title>
+    <jdoc:include type="head" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="robots" content="index, follow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<link href='http://fonts.googleapis.com/css?family=Ubuntu&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="<?php echo $temp_path; ?>/css/1140.css">
 	<link rel="stylesheet" href="<?php echo $temp_path; ?>/css/my-style.css">
-     
-	<style type="text/css">
-		body {
-			background: #5bc1af;
-			color: #fff;
-			font-family: Ubuntu, Verdana, Tahoma, serif;
-		}
-		h1 {
-			margin: 20px 0 30px;
-			text-align:center;
-		}
-		a, h2 {
-			color: #fff;
-			margin: 14px 0;
-		}
-        .examples .row p {
-			background: #fff;
-			-webkit-border-radius: 4px;
-			-moz-border-radius: 4px;
-			border-radius: 4px;
-            color:#777;
-            padding:4px 0;
-            text-align:center;
-        }
-    </style>
+   <!--<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>-->
+	
 </head>
 <body>
     <div class="container12 examples">
@@ -62,41 +38,18 @@ $temp_path = JURI::base() . 'templates/' . $app->getTemplate();
         </div>
        
         <div class="row">
-            <div class="column3"><p>col3</p></div>
-            <div class="column6"><p>col0</p></div>
-            <div class="column3"><p>col3</p></div>
+			<?php if ($this->countModules('left')) : ?>
+				<div class="column3"><jdoc:include type="modules" name="left" /></div>
+			<?php endif; ?>
             
+            <div class="column6">
+				<jdoc:include type="message" />
+				<jdoc:include type="component" />
+			</div>
+            <?php if ($this->countModules('right')) : ?>
+				<div class="column3"><jdoc:include type="modules" name="right" /></div>
+			<?php endif; ?>
+			
         </div>
-		<div class="row">
-            <div class="column1"><p>col1</p></div>
-            <div class="column2"><p>col2</p></div>
-            <div class="column3"><p>col3</p></div>
-            <div class="column4"><p>col4</p></div>
-            <div class="column2"><p>col2</p></div>
-        </div>
-        <div class="row">
-            <div class="column6"><p>col6</p></div>
-            <div class="column6"><p>col6</p></div>
-        </div>
-        <div class="row">
-            <div class="column5"><p>col7</p></div>
-            <div class="column7"><p>col5</p></div>
-        </div>
-        <div class="row">
-            <div class="column8"><p>col8</p></div>
-            <div class="column4"><p>col4</p></div>
-        </div>
-        <div class="row">
-            <div class="column1"><p>col1</p></div>
-            <div class="column1"><p>col1</p></div>
-            <div class="column8"><p>col8</p></div>
-            <div class="column1"><p>col1</p></div>
-            <div class="column1"><p>col1</p></div>
-        </div>
-        <div class="row">
-            <div class="column12"><p>col12</p></div>
-        </div>
-    </div>
-
 </body>
 </html>
