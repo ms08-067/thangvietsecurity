@@ -1,0 +1,375 @@
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+.main {
+    background: none repeat scroll 0 0 #fff;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    width: 1000px;
+}
+.head {
+    height: auto;
+    margin-top: 0;
+}
+.slide_bg {
+    background: url("../images/o1.jpg") repeat scroll 0 0 rgba(0, 0, 0, 0);
+    margin-top: -10px;
+    width: 1000px;
+}
+.banner-slider {
+    height: auto;
+    margin-left: 145px;
+}
+.logo_left {
+    float: left;
+    margin-left: 0;
+}
+.hotline {
+    float: right;
+    margin-right: 2px;
+    margin-top: -235px;
+    width: 143px;
+}
+.left {
+    float: left;
+    margin-left: 5px;
+    margin-top: -14px;
+    min-height: 400px;
+    padding: 3px;
+    width: 200px;
+}
+.menu_right {
+    float: right;
+    margin-top: -10px;
+    min-height: 400px;
+    width: 200px;
+}
+.content {
+    float: left;
+    height: auto;
+    margin-bottom: 5px;
+    margin-left: 0;
+    min-height: 400px;
+    padding: 3px;
+    width: 580px;
+}
+.right {
+    border: 1px solid #cdcdcd;
+    float: right;
+    margin-bottom: 5px;
+    min-height: 400px;
+    width: 234px;
+}
+.footer {
+    background: none repeat scroll 0 0 #033e8d;
+    clear: both;
+    font-size: 14px;
+    height: auto;
+    min-height: 100px;
+    padding: 5px;
+}
+.menu {
+    background: none repeat scroll 0 0 #033e8d;
+    height: 40px;
+    margin-top: 0;
+    text-align: right;
+}
+.menu ul {
+}
+.menu ul li {
+    display: block;
+    float: left;
+    margin-left: 15px;
+    margin-top: -5px;
+    min-height: 15px;
+    min-width: 70px;
+    padding: 10px;
+    position: relative;
+    width: auto;
+}
+.menu ul li:hover {
+}
+.menu ul li:first-child {
+}
+.menu ul li a {
+    color: #fff;
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 0;
+    text-align: center;
+    text-decoration: none;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+.menu input {
+    border-radius: 4px;
+    float: left;
+    margin-left: -210px;
+    margin-top: -32px;
+    padding: 4px;
+    position: absolute;
+    width: 185px;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+.menu input.search_btn {
+    float: left;
+    height: 22px;
+    margin-left: -40px;
+    margin-top: -33px;
+    position: absolute;
+    width: 22px;
+}
+.ooo {
+    background: url("../hinhanh/o1.jpg") repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border-top: 1px dotted #ccc;
+    height: auto;
+    margin-left: -1px;
+    min-height: 30px;
+    padding-top: 5px;
+    text-decoration: none;
+    width: 193px;
+}
+.ooo a {
+    color: #fff;
+    font-weight: bold;
+}
+.ooo p {
+    float: left;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+.ooo:hover {
+    background: url("../hinhanh/icon-24.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+.oo {
+    background: url("../hinhanh/52359814.png") repeat scroll 0 0 transparent;
+    border-top: 1px dotted #fff;
+    height: auto;
+    margin-left: 30px;
+    min-height: 35px;
+    text-decoration: none;
+    width: 190px;
+}
+.oo p {
+    float: left;
+    margin-left: 10px;
+    margin-top: 5px;
+    text-decoration: none;
+}
+.top_left {
+    background: url("../images/top_conten.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+    color: #fff;
+    font-weight: bold;
+    margin-top: 10px;
+    min-height: 15px;
+    padding: 10px;
+    text-align: center;
+}
+.border_left {
+    background: none repeat scroll 0 0 #fff;
+    border: 1px solid;
+    height: auto;
+    padding: 8px;
+}
+.border_lien_ket {
+    background: none repeat scroll 0 0 #fff;
+    border: 1px solid;
+    font-size: 14px;
+    font-weight: bold;
+    height: 85px;
+    padding: 8px;
+}
+.border_gioi_thieu_left {
+    background: none repeat scroll 0 0 #fff;
+    border-radius: 5px;
+    height: auto;
+    margin-top: 10px;
+    padding: 8px;
+}
+.canh_giua {
+    text-align: center;
+}
+.ten_ho_tro_truc_tuyen {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+.top_content {
+    background: url("../images/top_conten.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+    color: #fff;
+    font-weight: bold;
+    margin-top: -3px;
+    min-height: 15px;
+    padding: 10px;
+    text-transform: uppercase;
+}
+.border_content {
+    background: none repeat scroll 0 0 #fff;
+    border: 1px solid #006;
+    border-radius: 0 0 5px 5px;
+    height: auto;
+    padding: 8px;
+}
+.top_ban_do {
+    background: url("../images/top_conten.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+    color: #fff;
+    font-weight: bold;
+    margin-top: 10px;
+    min-height: 15px;
+    padding: 10px;
+}
+.border_ban_do {
+    border: 1px solid #fff;
+    padding: 5px;
+    text-align: center;
+}
+.hang_noi_dung {
+    border-top: 1px dotted #000;
+    height: auto;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+.image_noi_dung {
+    background: url("../images/back_ground_zoom.gif") repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border-radius: 4px;
+    float: left;
+    margin-right: 10px;
+    padding: 2px;
+}
+.image_noi_dung:hover {
+    background: none repeat scroll 0 0 #039;
+}
+.menu_left a {
+    color: #000;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+.menu_left a:hover {
+    color: #f90;
+}
+.tieu_de_noi_dung a {
+    color: #009;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+.tieu_de_noi_dung a:hover {
+    color: #f90;
+}
+.trich_dan_noi_dung {
+    height: auto;
+    margin-top: 10px;
+    min-height: 120px;
+    text-align: justify;
+}
+.xem_chi_tiet {
+    color: #006;
+    float: right;
+    font-weight: 600;
+    margin-right: 5px;
+    margin-top: -10px;
+}
+.xem_chi_tiet a:hover {
+    color: #f60;
+}
+.khung_san_pham {
+    border-radius: 4px;
+    box-shadow: 0 2px 3px #cccccc;
+    margin-bottom: 20px;
+    margin-right: 40px;
+    padding: 5px;
+}
+.image_san_pham img {
+    border-radius: 5px;
+    height: 150px;
+    width: 150px;
+}
+.tieu_de_san_pham {
+    font-weight: 600;
+    margin-top: 5px;
+    min-height: 30px;
+}
+.tieu_de_san_pham a:hover {
+    color: #f60;
+}
+.tieu_de_san_pham a {
+    color: #006;
+    text-transform: capitalize;
+}
+.xem_chi_tiet_san_pham {
+    background: none repeat scroll 0 0 #9d9b53;
+    border-radius: 5px;
+    padding: 5px;
+    width: 65px;
+}
+.xem_chi_tiet_san_pham:hover {
+    background: none repeat scroll 0 0 #f60;
+}
+.xem_chi_tiet_san_pham a {
+    color: #fff;
+    font-weight: 500;
+}
+.image_chi_tiet {
+    background: none repeat scroll 0 0 #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+    padding: 5px;
+    width: 250px;
+}
+.trich_dan_chi_tiet {
+    margin-left: 270px;
+    margin-top: -230px;
+}
+.top_noi_dung_chi_tiet {
+    background: url("../images/top_conten.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+    color: #f00;
+    font-weight: 600;
+    margin-top: 240px;
+    padding: 10px;
+}
+.noi_dung_chi_tiet {
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 2px 2px #ccc;
+    min-height: 100px;
+    padding: 5px;
+}
+.top_form_lien_he {
+    background: none repeat scroll 0 0 #80c03c;
+    border-radius: 5px 5px 0 0;
+    color: #fff;
+    font-weight: bold;
+    margin-top: 10px;
+    padding: 10px;
+}
+div.pagination {
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 10px;
+    padding: 10px 0;
+    text-align: left;
+}
+div.pagination a {
+    color: orange;
+    font-weight: 700;
+    margin: 0 5px 0 0;
+    padding: 3px 6px;
+    text-decoration: none;
+}
+div.pagination a:hover {
+    color: orange;
+    text-decoration: underline;
+}
+div.pagination a.current {
+    background: url("../images/bg-button-green.gif") repeat-x scroll left top #469400 !important;
+    border-color: #459300 !important;
+    color: #fff !important;
+}
