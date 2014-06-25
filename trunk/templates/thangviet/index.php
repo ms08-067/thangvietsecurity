@@ -23,7 +23,7 @@ JHtml::_('bootstrap.framework');
 </head>
 <body>
     <div class="container12">
-        <div class="row">
+        <div class="row header">
             <div class="column12">
                 <img style="width: 100%;" src="<?php echo $temp_path; ?>/images/banner.png" />
 				<div class="menu">
@@ -39,15 +39,15 @@ JHtml::_('bootstrap.framework');
      
         <div class="row wrap_content">
 			<?php if ($this->countModules('left')) : ?>
-				<div class="column3"><jdoc:include type="modules" name="left" style="xhtml" /></div>
+				<div class="column3 left"><jdoc:include type="modules" name="left" style="xhtml" /></div>
 			<?php endif; ?>
             
-            <div class="column6">
+            <div class="column6 center">
 				<jdoc:include type="message" />
 				<jdoc:include type="component" />
 			</div>
             <?php if ($this->countModules('right')) : ?>
-				<div class="column3"><jdoc:include type="modules" name="right" style="xhtml" /></div>
+				<div class="column3 right"><jdoc:include type="modules" name="right" style="xhtml" /></div>
 			<?php endif; ?>
 			<div class="info_footer">
 				<jdoc:include type="modules" name="footer" />
