@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 $app = JFactory::getApplication(); 
 $temp_path = JURI::base() . 'templates/' . $app->getTemplate();
 
@@ -18,7 +18,9 @@ $temp_path = JURI::base() . 'templates/' . $app->getTemplate();
 
 	<link href='http://fonts.googleapis.com/css?family=Ubuntu&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="<?php echo $temp_path; ?>/css/1140.css">
-    <style type="text/css">
+	<link rel="stylesheet" href="<?php echo $temp_path; ?>/css/my-style.css">
+     
+	<style type="text/css">
 		body {
 			background: #5bc1af;
 			color: #fff;
@@ -47,15 +49,25 @@ $temp_path = JURI::base() . 'templates/' . $app->getTemplate();
     <div class="container12 examples">
         <div class="row">
             <div class="column12">
-                <h1>Examples of <a href="http://www.1140px.com">1140px CSS Grid</a></h1>
+                <img style="width: 100%;" src="<?php echo $temp_path; ?>/images/banner.png" />
+				<div class="menu">
+					<jdoc:include type="modules" name="menutop" style="none" />
+				 </div>
             </div>
+			<div class="column12">
+			<?php if ($this->countModules('slideshow')) : ?>
+				<jdoc:include type="modules" name="slideshow" style="none" />
+			<?php endif; ?>
+			</div>
         </div>
+       
         <div class="row">
-            <div class="column12">
-                <h2>Examples - 12 columns</h2>
-            </div>
+            <div class="column3"><p>col3</p></div>
+            <div class="column6"><p>col0</p></div>
+            <div class="column3"><p>col3</p></div>
+            
         </div>
-        <div class="row">
+		<div class="row">
             <div class="column1"><p>col1</p></div>
             <div class="column2"><p>col2</p></div>
             <div class="column3"><p>col3</p></div>
@@ -86,45 +98,5 @@ $temp_path = JURI::base() . 'templates/' . $app->getTemplate();
         </div>
     </div>
 
-    <div class="container16 examples">
-        <div class="row">
-            <div class="column12">
-                <h2>Examples - 16 columns</h2>
-            </div>
-        </div>
-        <div class="row">
-            <div class="column1"><p>col1</p></div>
-            <div class="column2"><p>col2</p></div>
-            <div class="column3"><p>col3</p></div>
-            <div class="column4"><p>col4</p></div>
-            <div class="column5"><p>col5</p></div>
-            <div class="column1"><p>col1</p></div>
-        </div>
-        <div class="row">
-            <div class="column6"><p>col6</p></div>
-            <div class="column1"><p>col1</p></div>
-            <div class="column2"><p>col2</p></div>
-            <div class="column7"><p>col7</p></div>
-        </div>
-        <div class="row">
-            <div class="column2"><p>col2</p></div>
-            <div class="column2"><p>col2</p></div>
-            <div class="column8"><p>col8</p></div>
-            <div class="column2"><p>col2</p></div>
-            <div class="column2"><p>col2</p></div>
-        </div>
-        <div class="row">
-            <div class="column10"><p>col10</p></div>
-            <div class="column3"><p>col3</p></div>
-            <div class="column3"><p>col3</p></div>
-        </div>
-        <div class="row">
-            <div class="column7"><p>col7</p></div>
-            <div class="column9"><p>col9</p></div>
-        </div>
-        <div class="row">
-            <div class="column16"><p>col16</p></div>
-        </div>
-    </div>
 </body>
 </html>
