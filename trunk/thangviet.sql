@@ -1,13 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 3.5.2.2
+-- version 4.0.9
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 25, 2014 at 02:21 AM
--- Server version: 5.5.27
--- PHP Version: 5.4.7
+-- Generation Time: Jun 25, 2014 at 12:26 PM
+-- Server version: 5.5.34
+-- PHP Version: 5.4.22
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
@@ -26,6 +26,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `d9jhp_assets`
 --
 
+DROP TABLE IF EXISTS `d9jhp_assets`;
 CREATE TABLE IF NOT EXISTS `d9jhp_assets` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',
   `parent_id` int(11) NOT NULL DEFAULT '0' COMMENT 'Nested set parent.',
@@ -39,67 +40,71 @@ CREATE TABLE IF NOT EXISTS `d9jhp_assets` (
   UNIQUE KEY `idx_asset_name` (`name`),
   KEY `idx_lft_rgt` (`lft`,`rgt`),
   KEY `idx_parent_id` (`parent_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=55 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=59 ;
 
 --
 -- Dumping data for table `d9jhp_assets`
 --
 
 INSERT INTO `d9jhp_assets` (`id`, `parent_id`, `lft`, `rgt`, `level`, `name`, `title`, `rules`) VALUES
-(1, 0, 0, 107, 0, 'root.1', 'Root Asset', '{"core.login.site":{"6":1,"2":1},"core.login.admin":{"6":1},"core.login.offline":{"6":1},"core.admin":{"8":1},"core.manage":{"7":1},"core.create":{"6":1,"3":1},"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1},"core.edit.own":{"6":1,"3":1}}'),
+(1, 0, 0, 115, 0, 'root.1', 'Root Asset', '{"core.login.site":{"6":1,"2":1},"core.login.admin":{"6":1},"core.login.offline":{"6":1},"core.admin":{"8":1},"core.manage":{"7":1},"core.create":{"6":1,"3":1},"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1},"core.edit.own":{"6":1,"3":1}}'),
 (2, 1, 1, 2, 1, 'com_admin', 'com_admin', '{}'),
 (3, 1, 3, 6, 1, 'com_banners', 'com_banners', '{"core.admin":{"7":1},"core.manage":{"6":1},"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
 (4, 1, 7, 8, 1, 'com_cache', 'com_cache', '{"core.admin":{"7":1},"core.manage":{"7":1}}'),
 (5, 1, 9, 10, 1, 'com_checkin', 'com_checkin', '{"core.admin":{"7":1},"core.manage":{"7":1}}'),
 (6, 1, 11, 12, 1, 'com_config', 'com_config', '{}'),
 (7, 1, 13, 16, 1, 'com_contact', 'com_contact', '{"core.admin":{"7":1},"core.manage":{"6":1},"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
-(8, 1, 17, 20, 1, 'com_content', 'com_content', '{"core.admin":{"7":1},"core.manage":{"6":1},"core.create":{"3":1},"core.delete":[],"core.edit":{"4":1},"core.edit.state":{"5":1},"core.edit.own":[]}'),
-(9, 1, 21, 22, 1, 'com_cpanel', 'com_cpanel', '{}'),
-(10, 1, 23, 24, 1, 'com_installer', 'com_installer', '{"core.admin":[],"core.manage":{"7":0},"core.delete":{"7":0},"core.edit.state":{"7":0}}'),
-(11, 1, 25, 26, 1, 'com_languages', 'com_languages', '{"core.admin":{"7":1},"core.manage":[],"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
-(12, 1, 27, 28, 1, 'com_login', 'com_login', '{}'),
-(13, 1, 29, 30, 1, 'com_mailto', 'com_mailto', '{}'),
-(14, 1, 31, 32, 1, 'com_massmail', 'com_massmail', '{}'),
-(15, 1, 33, 34, 1, 'com_media', 'com_media', '{"core.admin":{"7":1},"core.manage":{"6":1},"core.create":{"3":1},"core.delete":{"5":1}}'),
-(16, 1, 35, 36, 1, 'com_menus', 'com_menus', '{"core.admin":{"7":1},"core.manage":[],"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
-(17, 1, 37, 38, 1, 'com_messages', 'com_messages', '{"core.admin":{"7":1},"core.manage":{"7":1}}'),
-(18, 1, 39, 72, 1, 'com_modules', 'com_modules', '{"core.admin":{"7":1},"core.manage":[],"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
-(19, 1, 73, 76, 1, 'com_newsfeeds', 'com_newsfeeds', '{"core.admin":{"7":1},"core.manage":{"6":1},"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
-(20, 1, 77, 78, 1, 'com_plugins', 'com_plugins', '{"core.admin":{"7":1},"core.manage":[],"core.edit":[],"core.edit.state":[]}'),
-(21, 1, 79, 80, 1, 'com_redirect', 'com_redirect', '{"core.admin":{"7":1},"core.manage":[]}'),
-(22, 1, 81, 82, 1, 'com_search', 'com_search', '{"core.admin":{"7":1},"core.manage":{"6":1}}'),
-(23, 1, 83, 84, 1, 'com_templates', 'com_templates', '{"core.admin":{"7":1},"core.manage":[],"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
-(24, 1, 85, 88, 1, 'com_users', 'com_users', '{"core.admin":{"7":1},"core.manage":[],"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
-(25, 1, 89, 92, 1, 'com_weblinks', 'com_weblinks', '{"core.admin":{"7":1},"core.manage":{"6":1},"core.create":{"3":1},"core.delete":[],"core.edit":{"4":1},"core.edit.state":{"5":1},"core.edit.own":[]}'),
-(26, 1, 93, 94, 1, 'com_wrapper', 'com_wrapper', '{}'),
-(27, 8, 18, 19, 2, 'com_content.category.2', 'Uncategorised', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
+(8, 1, 17, 22, 1, 'com_content', 'com_content', '{"core.admin":{"7":1},"core.manage":{"6":1},"core.create":{"3":1},"core.delete":[],"core.edit":{"4":1},"core.edit.state":{"5":1},"core.edit.own":[]}'),
+(9, 1, 23, 24, 1, 'com_cpanel', 'com_cpanel', '{}'),
+(10, 1, 25, 26, 1, 'com_installer', 'com_installer', '{"core.admin":[],"core.manage":{"7":0},"core.delete":{"7":0},"core.edit.state":{"7":0}}'),
+(11, 1, 27, 28, 1, 'com_languages', 'com_languages', '{"core.admin":{"7":1},"core.manage":[],"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
+(12, 1, 29, 30, 1, 'com_login', 'com_login', '{}'),
+(13, 1, 31, 32, 1, 'com_mailto', 'com_mailto', '{}'),
+(14, 1, 33, 34, 1, 'com_massmail', 'com_massmail', '{}'),
+(15, 1, 35, 36, 1, 'com_media', 'com_media', '{"core.admin":{"7":1},"core.manage":{"6":1},"core.create":{"3":1},"core.delete":{"5":1}}'),
+(16, 1, 37, 38, 1, 'com_menus', 'com_menus', '{"core.admin":{"7":1},"core.manage":[],"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
+(17, 1, 39, 40, 1, 'com_messages', 'com_messages', '{"core.admin":{"7":1},"core.manage":{"7":1}}'),
+(18, 1, 41, 80, 1, 'com_modules', 'com_modules', '{"core.admin":{"7":1},"core.manage":[],"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
+(19, 1, 81, 84, 1, 'com_newsfeeds', 'com_newsfeeds', '{"core.admin":{"7":1},"core.manage":{"6":1},"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
+(20, 1, 85, 86, 1, 'com_plugins', 'com_plugins', '{"core.admin":{"7":1},"core.manage":[],"core.edit":[],"core.edit.state":[]}'),
+(21, 1, 87, 88, 1, 'com_redirect', 'com_redirect', '{"core.admin":{"7":1},"core.manage":[]}'),
+(22, 1, 89, 90, 1, 'com_search', 'com_search', '{"core.admin":{"7":1},"core.manage":{"6":1}}'),
+(23, 1, 91, 92, 1, 'com_templates', 'com_templates', '{"core.admin":{"7":1},"core.manage":[],"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
+(24, 1, 93, 96, 1, 'com_users', 'com_users', '{"core.admin":{"7":1},"core.manage":[],"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
+(25, 1, 97, 100, 1, 'com_weblinks', 'com_weblinks', '{"core.admin":{"7":1},"core.manage":{"6":1},"core.create":{"3":1},"core.delete":[],"core.edit":{"4":1},"core.edit.state":{"5":1},"core.edit.own":[]}'),
+(26, 1, 101, 102, 1, 'com_wrapper', 'com_wrapper', '{}'),
+(27, 8, 18, 21, 2, 'com_content.category.2', 'Uncategorised', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
 (28, 3, 4, 5, 2, 'com_banners.category.3', 'Uncategorised', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
 (29, 7, 14, 15, 2, 'com_contact.category.4', 'Uncategorised', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
-(30, 19, 74, 75, 2, 'com_newsfeeds.category.5', 'Uncategorised', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
-(31, 25, 90, 91, 2, 'com_weblinks.category.6', 'Uncategorised', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
-(32, 24, 86, 87, 1, 'com_users.category.7', 'Uncategorised', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
-(33, 1, 95, 96, 1, 'com_finder', 'com_finder', '{"core.admin":{"7":1},"core.manage":{"6":1}}'),
-(34, 1, 97, 98, 1, 'com_joomlaupdate', 'com_joomlaupdate', '{"core.admin":[],"core.manage":[],"core.delete":[],"core.edit.state":[]}'),
-(35, 1, 99, 100, 1, 'com_tags', 'com_tags', '{"core.admin":[],"core.manage":[],"core.manage":[],"core.delete":[],"core.edit.state":[]}'),
-(36, 1, 101, 102, 1, 'com_contenthistory', 'com_contenthistory', '{}'),
-(37, 1, 103, 104, 1, 'com_ajax', 'com_ajax', '{}'),
-(38, 1, 105, 106, 1, 'com_postinstall', 'com_postinstall', '{}'),
-(39, 18, 40, 41, 2, 'com_modules.module.1', 'Menu top', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(40, 18, 42, 43, 2, 'com_modules.module.2', 'Login', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
-(41, 18, 44, 45, 2, 'com_modules.module.3', 'Popular Articles', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
-(42, 18, 46, 47, 2, 'com_modules.module.4', 'Recently Added Articles', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
-(43, 18, 48, 49, 2, 'com_modules.module.8', 'Toolbar', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
-(44, 18, 50, 51, 2, 'com_modules.module.9', 'Quick Icons', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
-(45, 18, 52, 53, 2, 'com_modules.module.10', 'Logged-in Users', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
-(46, 18, 54, 55, 2, 'com_modules.module.12', 'Admin Menu', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
-(47, 18, 56, 57, 2, 'com_modules.module.13', 'Admin Submenu', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
-(48, 18, 58, 59, 2, 'com_modules.module.14', 'User Status', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
-(49, 18, 60, 61, 2, 'com_modules.module.15', 'Title', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
-(50, 18, 62, 63, 2, 'com_modules.module.16', 'Login Form', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
-(51, 18, 64, 65, 2, 'com_modules.module.17', 'Breadcrumbs', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
-(52, 18, 66, 67, 2, 'com_modules.module.79', 'Multilanguage status', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
-(53, 18, 68, 69, 2, 'com_modules.module.86', 'Joomla Version', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
-(54, 18, 70, 71, 2, 'com_modules.module.87', 'Slide show', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}');
+(30, 19, 82, 83, 2, 'com_newsfeeds.category.5', 'Uncategorised', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
+(31, 25, 98, 99, 2, 'com_weblinks.category.6', 'Uncategorised', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
+(32, 24, 94, 95, 1, 'com_users.category.7', 'Uncategorised', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
+(33, 1, 103, 104, 1, 'com_finder', 'com_finder', '{"core.admin":{"7":1},"core.manage":{"6":1}}'),
+(34, 1, 105, 106, 1, 'com_joomlaupdate', 'com_joomlaupdate', '{"core.admin":[],"core.manage":[],"core.delete":[],"core.edit.state":[]}'),
+(35, 1, 107, 108, 1, 'com_tags', 'com_tags', '{"core.admin":[],"core.manage":[],"core.manage":[],"core.delete":[],"core.edit.state":[]}'),
+(36, 1, 109, 110, 1, 'com_contenthistory', 'com_contenthistory', '{}'),
+(37, 1, 111, 112, 1, 'com_ajax', 'com_ajax', '{}'),
+(38, 1, 113, 114, 1, 'com_postinstall', 'com_postinstall', '{}'),
+(39, 18, 42, 43, 2, 'com_modules.module.1', 'Menu top', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
+(40, 18, 44, 45, 2, 'com_modules.module.2', 'Login', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
+(41, 18, 46, 47, 2, 'com_modules.module.3', 'Popular Articles', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
+(42, 18, 48, 49, 2, 'com_modules.module.4', 'Recently Added Articles', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
+(43, 18, 50, 51, 2, 'com_modules.module.8', 'Toolbar', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
+(44, 18, 52, 53, 2, 'com_modules.module.9', 'Quick Icons', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
+(45, 18, 54, 55, 2, 'com_modules.module.10', 'Logged-in Users', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
+(46, 18, 56, 57, 2, 'com_modules.module.12', 'Admin Menu', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
+(47, 18, 58, 59, 2, 'com_modules.module.13', 'Admin Submenu', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
+(48, 18, 60, 61, 2, 'com_modules.module.14', 'User Status', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
+(49, 18, 62, 63, 2, 'com_modules.module.15', 'Title', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
+(50, 18, 64, 65, 2, 'com_modules.module.16', 'Login Form', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
+(51, 18, 66, 67, 2, 'com_modules.module.17', 'Breadcrumbs', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
+(52, 18, 68, 69, 2, 'com_modules.module.79', 'Multilanguage status', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
+(53, 18, 70, 71, 2, 'com_modules.module.86', 'Joomla Version', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
+(54, 18, 72, 73, 2, 'com_modules.module.87', 'Slide show', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
+(55, 18, 74, 75, 2, 'com_modules.module.88', 'Dịch Vụ Bảo Vệ', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
+(56, 18, 76, 77, 2, 'com_modules.module.89', 'Menu Right', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
+(57, 27, 19, 20, 3, 'com_content.article.1', 'Trang Chủ', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
+(58, 18, 78, 79, 2, 'com_modules.module.90', 'Footer', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}');
 
 -- --------------------------------------------------------
 
@@ -107,6 +112,7 @@ INSERT INTO `d9jhp_assets` (`id`, `parent_id`, `lft`, `rgt`, `level`, `name`, `t
 -- Table structure for table `d9jhp_associations`
 --
 
+DROP TABLE IF EXISTS `d9jhp_associations`;
 CREATE TABLE IF NOT EXISTS `d9jhp_associations` (
   `id` int(11) NOT NULL COMMENT 'A reference to the associated item.',
   `context` varchar(50) NOT NULL COMMENT 'The context of the associated item.',
@@ -121,6 +127,7 @@ CREATE TABLE IF NOT EXISTS `d9jhp_associations` (
 -- Table structure for table `d9jhp_banners`
 --
 
+DROP TABLE IF EXISTS `d9jhp_banners`;
 CREATE TABLE IF NOT EXISTS `d9jhp_banners` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `cid` int(11) NOT NULL DEFAULT '0',
@@ -170,6 +177,7 @@ CREATE TABLE IF NOT EXISTS `d9jhp_banners` (
 -- Table structure for table `d9jhp_banner_clients`
 --
 
+DROP TABLE IF EXISTS `d9jhp_banner_clients`;
 CREATE TABLE IF NOT EXISTS `d9jhp_banner_clients` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL DEFAULT '',
@@ -196,6 +204,7 @@ CREATE TABLE IF NOT EXISTS `d9jhp_banner_clients` (
 -- Table structure for table `d9jhp_banner_tracks`
 --
 
+DROP TABLE IF EXISTS `d9jhp_banner_tracks`;
 CREATE TABLE IF NOT EXISTS `d9jhp_banner_tracks` (
   `track_date` datetime NOT NULL,
   `track_type` int(10) unsigned NOT NULL,
@@ -213,6 +222,7 @@ CREATE TABLE IF NOT EXISTS `d9jhp_banner_tracks` (
 -- Table structure for table `d9jhp_categories`
 --
 
+DROP TABLE IF EXISTS `d9jhp_categories`;
 CREATE TABLE IF NOT EXISTS `d9jhp_categories` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `asset_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'FK to the #__assets table.',
@@ -270,6 +280,7 @@ INSERT INTO `d9jhp_categories` (`id`, `asset_id`, `parent_id`, `lft`, `rgt`, `le
 -- Table structure for table `d9jhp_contact_details`
 --
 
+DROP TABLE IF EXISTS `d9jhp_contact_details`;
 CREATE TABLE IF NOT EXISTS `d9jhp_contact_details` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL DEFAULT '',
@@ -331,6 +342,7 @@ CREATE TABLE IF NOT EXISTS `d9jhp_contact_details` (
 -- Table structure for table `d9jhp_content`
 --
 
+DROP TABLE IF EXISTS `d9jhp_content`;
 CREATE TABLE IF NOT EXISTS `d9jhp_content` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `asset_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'FK to the #__assets table.',
@@ -371,7 +383,14 @@ CREATE TABLE IF NOT EXISTS `d9jhp_content` (
   KEY `idx_featured_catid` (`featured`,`catid`),
   KEY `idx_language` (`language`),
   KEY `idx_xreference` (`xreference`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `d9jhp_content`
+--
+
+INSERT INTO `d9jhp_content` (`id`, `asset_id`, `title`, `alias`, `introtext`, `fulltext`, `state`, `catid`, `created`, `created_by`, `created_by_alias`, `modified`, `modified_by`, `checked_out`, `checked_out_time`, `publish_up`, `publish_down`, `images`, `urls`, `attribs`, `version`, `ordering`, `metakey`, `metadesc`, `access`, `hits`, `metadata`, `featured`, `language`, `xreference`) VALUES
+(1, 57, 'Trang Chủ', 'trang-ch', '<p> <br /> <strong>THƯ NGỎ</strong></p>\r\n<p align="center"><strong>CÔNG TY TNHH DỊCH VỤ BẢO VỆ THĂNG VIỆT</strong><br /> <strong>“ TRUNG THÀNH – KỶ LUẬT – TRÁCH NHIỆM ”</strong></p>\r\n<p><strong><span style="text-decoration: underline;">Kính Gửi</span></strong> : Quý khách hàng</p>\r\n<p>            Hội nhập xu thế phát triển thời đại bằng con đường “ CÔNG NGHIỆP HÓA – HIỆN ĐẠI HÓA” là chủ trương đúng đắn của nhà nước Cộng Hòa Xã Hội Chủ Nghĩa Việt Nam trong thời kỳ đổi mới hiện nay, nhất là sau khi Việt Nam chính thức gia nhập tổ chức thương mại thế giới (WTO), nhu cầu dịch vụ bảo vệ cũng trở nên hết sức cần thiết, đòi hỏi phải được xây dựng phát triển ngang tầm với quy mô ngày càng lớn mạnh, với tính chuyên nghiệp ngày càng cao, nhằm mục đích thực hiện tốt công tác bảo vệ an toàn cho các đơn vị, cơ quan, doanh nghiệp, xí nghiệp , nhà máy, đáp ứng sự mong muốn chung của các thành phần kinh tế trong và ngoài nước.<br /> <br /> Xuất phát từ nhận thức trên, vì sự nghiệp phát triển chung của ngành dịch vụ bảo vệ, góp phần tích cực vào việc bảo vệ an ninh trật tự chung xã hội, nguồn động lực chính thúc đẩy cho sự phát triển của nền kinh tế đất nước nói chung và các thành phần kinh tế nói riêng .<strong>CÔNG TY TNHH DỊCH VỤ BẢO VỆ THĂNG VIỆT </strong> đuợc thành lập, biểu tượng cho đất nước VIỆT NAM có truyền thống lịch sử con rồng cháu tiên, đang trên đà phát triển thăng hoa, khát vọng thật sự trở thành con rồng kinh tế trong khu vực, với kỳ vọng đem đến Quý khách hàng một dịch vụ chất lượng cao hoàn hảo.</p>\r\n<p>Thưa Quý khách !</p>\r\n<p><strong>          CÔNG TY TNHH DỊCH VỤ BẢO VỆ THĂNG VIỆT</strong> được thành lập và hoạt động trên phạm vi toàn lãnh thổ Việt Nam , được Phòng QLHC về TTXH Công An TP. HCM cấp giấy chứng nhận đủ điều kiện về an ninh trật tự dịch vụ bảo vệ chuyên nghiệp , giấy chứng nhận đăng ký kinh doanh do Phòng ĐKKD – Sở Kế hoạch đầu tư TP.HCM cấp .</p>\r\n<p>          Với đội ngũ cán bộ lãnh đạo tài năng trí tuệ có bề dày kinh nghiệm lâu năm trong lĩnh vực bảo vệ chuyên nghiệp, kết hợp cùng đội ngũ nhân viên trẻ năng động được huấn luyện về chính trị, pháp luật, nghiệp vụ, PCCC, võ thuật, và một số chuyên môn có liên quan đến nghề nghiệp, chắc chắn sẽ mang đến cho Quý khách cảm giác hài lòng và yên tâm đối với chất lượng dịch vụ của chúng tôi cung cấp.</p>\r\n<p>           Đối với Quý khách hàng chúng tôi luôn ôm ấp hoài bão sẽ thực hiện , tư vấn , cũng như hỗ trợ các biện pháp nghiệp vụ an ninh tối ưu nhằm bảo vệ an toàn về tài sản và con người cho Quý khách hàng. Chắc chắn Quý khách sẽ hài lòng và yên tâm với chất lượng công việc mà chúng tôi đã và sẽ phục vụ cho Quý khách, vì đồng hành với chúng tôi có một đội ngũ cán bộ nhân viên đầy nhiệt huyết – trung thực – kiên quyết – khôn khéo – dũng cảm , luôn trong tư thế sẵn sàng giải quyết mọi tình huống trên tinh thần trách nhiệm cao nhất, đảm bảo đáp ứng nhu cầu thực hiện phương châm “ <strong>VÌ BÌNH YÊN CUỘC SỐNG</strong> ” <br /> <br /> Dịch vụ an ninh của <strong>CÔNG TY TNHH DỊCH VỤ BẢO VỆ THĂNG VIỆT</strong> đa dạng hóa và linh hoạt, đồng thời dựa trên cơ sở sẵn có mối quan hệ ngoại giao tốt với Chính quyền địa phương các cấp, để có cơ chế phối hợp kịp thời, chặt chẽ với các đơn vị, lực lượng chức năng chuyên môn, sẵn sàng đáp ứng kịp thời mọi nhu cầu thực tế của khách hàng, với mức giá dịch vụ phù hợp, hợp lý ( được bao trọn gói gồm : Đồng phục, Trang thiết bị bảo vệ, các khoản phúc lợi xã hội, bảo hiểm v.v…..)<br /> <br /> Chúng tôi cam kết với Quý khách hàng là sẽ luôn đảm bảo quyền lợi cơ bản và ngày càng được cải thiện về vật chất và tinh thần cho đội ngũ cán bộ nhân viên của Công ty chúng tôi, để họ luôn là những thành viên trung thành, có trách nhiệm cao, gắn bó lâu dài với Công ty và chính họ cũng sẽ là những hạt nhân tích cực trong phong trào giữ gìn, bảo vệ an ninh trật tự, an toàn xã hội. Đó là những lý do vì sao chúng tôi tin tưởng sẽ mang đến Quý khách một dịch vụ an ninh có chất lượng cao như mong muốn của Quý khách.</p>\r\n<p align="center"><strong><span style="text-decoration: underline;">NẾU QUÝ KHÁCH CẦN CÓ MỘT GIẢI PHÁP AN NINH TIN CẬY – UY TÍN</span></strong><br /> <strong>Xin vui lòng liên hệ với chúng tôi !!!  ( Qua các thông tin sau )</strong></p>\r\n<p>        - Tên Công ty  : CÔNG TY TNHH DỊCH VỤ BẢO VỆ THĂNG VIỆT <br /> - Địa chỉ  : 137B, Đường Nguyễn Chí Thanh , P. 09 ,  Q. 05 , TP.HCM , VN<br /> - Điện thoại : 086 2646719 – 0650 3777518 <br /> - Fax  : 0862646719 – 0650 3777519<br /> - Website  : <a href="http://thangvietsecurity.com/">http://thangvietsecurity.com</a> <br /> - Mr. TRẦN HUY PHONG   -  ĐTDĐ :  0938.304.333<br /> - Mr. Ngô Cơ –ĐTDĐ: 0906.097.864</p>\r\n<p>             <strong><img src="index_clip_image001.gif" alt="HÂN HẠNH ĐƯỢC PHỤC VỤ QUÝ KHÁCH !" width="639" height="40" border="0" /></strong></p>\r\n<p> </p>', '', 1, 2, '2014-06-25 09:45:13', 880, '', '2014-06-25 10:05:17', 880, 0, '0000-00-00 00:00:00', '2014-06-25 09:45:13', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_tags":"","show_intro":"","info_block_position":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 3, 0, '', '', 1, 37, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', '');
 
 -- --------------------------------------------------------
 
@@ -379,6 +398,7 @@ CREATE TABLE IF NOT EXISTS `d9jhp_content` (
 -- Table structure for table `d9jhp_contentitem_tag_map`
 --
 
+DROP TABLE IF EXISTS `d9jhp_contentitem_tag_map`;
 CREATE TABLE IF NOT EXISTS `d9jhp_contentitem_tag_map` (
   `type_alias` varchar(255) NOT NULL DEFAULT '',
   `core_content_id` int(10) unsigned NOT NULL COMMENT 'PK from the core content table',
@@ -400,6 +420,7 @@ CREATE TABLE IF NOT EXISTS `d9jhp_contentitem_tag_map` (
 -- Table structure for table `d9jhp_content_frontpage`
 --
 
+DROP TABLE IF EXISTS `d9jhp_content_frontpage`;
 CREATE TABLE IF NOT EXISTS `d9jhp_content_frontpage` (
   `content_id` int(11) NOT NULL DEFAULT '0',
   `ordering` int(11) NOT NULL DEFAULT '0',
@@ -412,6 +433,7 @@ CREATE TABLE IF NOT EXISTS `d9jhp_content_frontpage` (
 -- Table structure for table `d9jhp_content_rating`
 --
 
+DROP TABLE IF EXISTS `d9jhp_content_rating`;
 CREATE TABLE IF NOT EXISTS `d9jhp_content_rating` (
   `content_id` int(11) NOT NULL DEFAULT '0',
   `rating_sum` int(10) unsigned NOT NULL DEFAULT '0',
@@ -426,6 +448,7 @@ CREATE TABLE IF NOT EXISTS `d9jhp_content_rating` (
 -- Table structure for table `d9jhp_content_types`
 --
 
+DROP TABLE IF EXISTS `d9jhp_content_types`;
 CREATE TABLE IF NOT EXISTS `d9jhp_content_types` (
   `type_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `type_title` varchar(255) NOT NULL DEFAULT '',
@@ -466,6 +489,7 @@ INSERT INTO `d9jhp_content_types` (`type_id`, `type_title`, `type_alias`, `table
 -- Table structure for table `d9jhp_core_log_searches`
 --
 
+DROP TABLE IF EXISTS `d9jhp_core_log_searches`;
 CREATE TABLE IF NOT EXISTS `d9jhp_core_log_searches` (
   `search_term` varchar(128) NOT NULL DEFAULT '',
   `hits` int(10) unsigned NOT NULL DEFAULT '0'
@@ -477,6 +501,7 @@ CREATE TABLE IF NOT EXISTS `d9jhp_core_log_searches` (
 -- Table structure for table `d9jhp_extensions`
 --
 
+DROP TABLE IF EXISTS `d9jhp_extensions`;
 CREATE TABLE IF NOT EXISTS `d9jhp_extensions` (
   `extension_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
@@ -653,6 +678,7 @@ INSERT INTO `d9jhp_extensions` (`extension_id`, `name`, `type`, `element`, `fold
 -- Table structure for table `d9jhp_finder_filters`
 --
 
+DROP TABLE IF EXISTS `d9jhp_finder_filters`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_filters` (
   `filter_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
@@ -677,6 +703,7 @@ CREATE TABLE IF NOT EXISTS `d9jhp_finder_filters` (
 -- Table structure for table `d9jhp_finder_links`
 --
 
+DROP TABLE IF EXISTS `d9jhp_finder_links`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_links` (
   `link_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `url` varchar(255) NOT NULL,
@@ -712,6 +739,7 @@ CREATE TABLE IF NOT EXISTS `d9jhp_finder_links` (
 -- Table structure for table `d9jhp_finder_links_terms0`
 --
 
+DROP TABLE IF EXISTS `d9jhp_finder_links_terms0`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_terms0` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
@@ -727,6 +755,7 @@ CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_terms0` (
 -- Table structure for table `d9jhp_finder_links_terms1`
 --
 
+DROP TABLE IF EXISTS `d9jhp_finder_links_terms1`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_terms1` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
@@ -742,6 +771,7 @@ CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_terms1` (
 -- Table structure for table `d9jhp_finder_links_terms2`
 --
 
+DROP TABLE IF EXISTS `d9jhp_finder_links_terms2`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_terms2` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
@@ -757,6 +787,7 @@ CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_terms2` (
 -- Table structure for table `d9jhp_finder_links_terms3`
 --
 
+DROP TABLE IF EXISTS `d9jhp_finder_links_terms3`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_terms3` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
@@ -772,6 +803,7 @@ CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_terms3` (
 -- Table structure for table `d9jhp_finder_links_terms4`
 --
 
+DROP TABLE IF EXISTS `d9jhp_finder_links_terms4`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_terms4` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
@@ -787,6 +819,7 @@ CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_terms4` (
 -- Table structure for table `d9jhp_finder_links_terms5`
 --
 
+DROP TABLE IF EXISTS `d9jhp_finder_links_terms5`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_terms5` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
@@ -802,6 +835,7 @@ CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_terms5` (
 -- Table structure for table `d9jhp_finder_links_terms6`
 --
 
+DROP TABLE IF EXISTS `d9jhp_finder_links_terms6`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_terms6` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
@@ -817,6 +851,7 @@ CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_terms6` (
 -- Table structure for table `d9jhp_finder_links_terms7`
 --
 
+DROP TABLE IF EXISTS `d9jhp_finder_links_terms7`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_terms7` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
@@ -832,6 +867,7 @@ CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_terms7` (
 -- Table structure for table `d9jhp_finder_links_terms8`
 --
 
+DROP TABLE IF EXISTS `d9jhp_finder_links_terms8`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_terms8` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
@@ -847,6 +883,7 @@ CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_terms8` (
 -- Table structure for table `d9jhp_finder_links_terms9`
 --
 
+DROP TABLE IF EXISTS `d9jhp_finder_links_terms9`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_terms9` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
@@ -862,6 +899,7 @@ CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_terms9` (
 -- Table structure for table `d9jhp_finder_links_termsa`
 --
 
+DROP TABLE IF EXISTS `d9jhp_finder_links_termsa`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_termsa` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
@@ -877,6 +915,7 @@ CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_termsa` (
 -- Table structure for table `d9jhp_finder_links_termsb`
 --
 
+DROP TABLE IF EXISTS `d9jhp_finder_links_termsb`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_termsb` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
@@ -892,6 +931,7 @@ CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_termsb` (
 -- Table structure for table `d9jhp_finder_links_termsc`
 --
 
+DROP TABLE IF EXISTS `d9jhp_finder_links_termsc`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_termsc` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
@@ -907,6 +947,7 @@ CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_termsc` (
 -- Table structure for table `d9jhp_finder_links_termsd`
 --
 
+DROP TABLE IF EXISTS `d9jhp_finder_links_termsd`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_termsd` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
@@ -922,6 +963,7 @@ CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_termsd` (
 -- Table structure for table `d9jhp_finder_links_termse`
 --
 
+DROP TABLE IF EXISTS `d9jhp_finder_links_termse`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_termse` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
@@ -937,6 +979,7 @@ CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_termse` (
 -- Table structure for table `d9jhp_finder_links_termsf`
 --
 
+DROP TABLE IF EXISTS `d9jhp_finder_links_termsf`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_termsf` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
@@ -952,6 +995,7 @@ CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_termsf` (
 -- Table structure for table `d9jhp_finder_taxonomy`
 --
 
+DROP TABLE IF EXISTS `d9jhp_finder_taxonomy`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_taxonomy` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `parent_id` int(10) unsigned NOT NULL DEFAULT '0',
@@ -980,6 +1024,7 @@ INSERT INTO `d9jhp_finder_taxonomy` (`id`, `parent_id`, `title`, `state`, `acces
 -- Table structure for table `d9jhp_finder_taxonomy_map`
 --
 
+DROP TABLE IF EXISTS `d9jhp_finder_taxonomy_map`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_taxonomy_map` (
   `link_id` int(10) unsigned NOT NULL,
   `node_id` int(10) unsigned NOT NULL,
@@ -994,6 +1039,7 @@ CREATE TABLE IF NOT EXISTS `d9jhp_finder_taxonomy_map` (
 -- Table structure for table `d9jhp_finder_terms`
 --
 
+DROP TABLE IF EXISTS `d9jhp_finder_terms`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_terms` (
   `term_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `term` varchar(75) NOT NULL,
@@ -1017,6 +1063,7 @@ CREATE TABLE IF NOT EXISTS `d9jhp_finder_terms` (
 -- Table structure for table `d9jhp_finder_terms_common`
 --
 
+DROP TABLE IF EXISTS `d9jhp_finder_terms_common`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_terms_common` (
   `term` varchar(75) NOT NULL,
   `language` varchar(3) NOT NULL,
@@ -1151,6 +1198,7 @@ INSERT INTO `d9jhp_finder_terms_common` (`term`, `language`) VALUES
 -- Table structure for table `d9jhp_finder_tokens`
 --
 
+DROP TABLE IF EXISTS `d9jhp_finder_tokens`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_tokens` (
   `term` varchar(75) NOT NULL,
   `stem` varchar(75) NOT NULL,
@@ -1169,6 +1217,7 @@ CREATE TABLE IF NOT EXISTS `d9jhp_finder_tokens` (
 -- Table structure for table `d9jhp_finder_tokens_aggregate`
 --
 
+DROP TABLE IF EXISTS `d9jhp_finder_tokens_aggregate`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_tokens_aggregate` (
   `term_id` int(10) unsigned NOT NULL,
   `map_suffix` char(1) NOT NULL,
@@ -1191,6 +1240,7 @@ CREATE TABLE IF NOT EXISTS `d9jhp_finder_tokens_aggregate` (
 -- Table structure for table `d9jhp_finder_types`
 --
 
+DROP TABLE IF EXISTS `d9jhp_finder_types`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_types` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(100) NOT NULL,
@@ -1205,6 +1255,7 @@ CREATE TABLE IF NOT EXISTS `d9jhp_finder_types` (
 -- Table structure for table `d9jhp_languages`
 --
 
+DROP TABLE IF EXISTS `d9jhp_languages`;
 CREATE TABLE IF NOT EXISTS `d9jhp_languages` (
   `lang_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `lang_code` char(7) NOT NULL,
@@ -1240,6 +1291,7 @@ INSERT INTO `d9jhp_languages` (`lang_id`, `lang_code`, `title`, `title_native`, 
 -- Table structure for table `d9jhp_menu`
 --
 
+DROP TABLE IF EXISTS `d9jhp_menu`;
 CREATE TABLE IF NOT EXISTS `d9jhp_menu` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `menutype` varchar(24) NOT NULL COMMENT 'The type of menu this item belongs to. FK to #__menu_types.menutype',
@@ -1273,14 +1325,14 @@ CREATE TABLE IF NOT EXISTS `d9jhp_menu` (
   KEY `idx_alias` (`alias`),
   KEY `idx_path` (`path`(255)),
   KEY `idx_language` (`language`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=108 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=145 ;
 
 --
 -- Dumping data for table `d9jhp_menu`
 --
 
 INSERT INTO `d9jhp_menu` (`id`, `menutype`, `title`, `alias`, `note`, `path`, `link`, `type`, `published`, `parent_id`, `level`, `component_id`, `checked_out`, `checked_out_time`, `browserNav`, `access`, `img`, `template_style_id`, `params`, `lft`, `rgt`, `home`, `language`, `client_id`) VALUES
-(1, '', 'Menu_Item_Root', 'root', '', '', '', '', 1, 0, 0, 0, 0, '0000-00-00 00:00:00', 0, 0, '', 0, '', 0, 61, 0, '*', 0),
+(1, '', 'Menu_Item_Root', 'root', '', '', '', '', 1, 0, 0, 0, 0, '0000-00-00 00:00:00', 0, 0, '', 0, '', 0, 135, 0, '*', 0),
 (2, 'menu', 'com_banners', 'Banners', '', 'Banners', 'index.php?option=com_banners', 'component', 0, 1, 1, 4, 0, '0000-00-00 00:00:00', 0, 0, 'class:banners', 0, '', 1, 10, 0, '*', 1),
 (3, 'menu', 'com_banners', 'Banners', '', 'Banners/Banners', 'index.php?option=com_banners', 'component', 0, 2, 2, 4, 0, '0000-00-00 00:00:00', 0, 0, 'class:banners', 0, '', 2, 3, 0, '*', 1),
 (4, 'menu', 'com_banners_categories', 'Categories', '', 'Banners/Categories', 'index.php?option=com_categories&extension=com_banners', 'component', 0, 2, 2, 6, 0, '0000-00-00 00:00:00', 0, 0, 'class:banners-cat', 0, '', 4, 5, 0, '*', 1),
@@ -1304,13 +1356,50 @@ INSERT INTO `d9jhp_menu` (`id`, `menutype`, `title`, `alias`, `note`, `path`, `l
 (22, 'menu', 'com_joomlaupdate', 'Joomla! Update', '', 'Joomla! Update', 'index.php?option=com_joomlaupdate', 'component', 1, 1, 1, 28, 0, '0000-00-00 00:00:00', 0, 0, 'class:joomlaupdate', 0, '', 41, 42, 0, '*', 1),
 (23, 'main', 'com_tags', 'Tags', '', 'Tags', 'index.php?option=com_tags', 'component', 0, 1, 1, 29, 0, '0000-00-00 00:00:00', 0, 1, 'class:tags', 0, '', 43, 44, 0, '', 1),
 (24, 'main', 'com_postinstall', 'Post-installation messages', '', 'Post-installation messages', 'index.php?option=com_postinstall', 'component', 0, 1, 1, 32, 0, '0000-00-00 00:00:00', 0, 1, 'class:postinstall', 0, '', 45, 46, 0, '*', 1),
-(101, 'mainmenu', 'TRANG CHỦ', 'trang-chu', '', 'trang-chu', 'index.php?option=com_content&view=featured', 'component', 1, 1, 1, 22, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"featured_categories":[""],"layout_type":"blog","num_leading_articles":"1","num_intro_articles":"3","num_columns":"3","num_links":"0","multi_column_order":"1","orderby_pri":"","orderby_sec":"front","order_date":"","show_pagination":"2","show_pagination_results":"1","show_title":"","link_titles":"","show_intro":"","info_block_position":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_vote":"","show_readmore":"","show_readmore_title":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_hits":"","show_tags":"","show_noauth":"","show_feed_link":"1","feed_summary":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":1,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 47, 48, 1, '*', 0),
+(101, 'mainmenu', 'TRANG CHỦ', 'trang-chu', '', 'trang-chu', 'index.php?option=com_content&view=article&id=1', 'component', 1, 1, 1, 22, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"show_title":"0","link_titles":"0","show_intro":"0","info_block_position":"","show_category":"0","link_category":"0","show_parent_category":"0","link_parent_category":"0","show_author":"0","link_author":"0","show_create_date":"0","show_modify_date":"0","show_publish_date":"0","show_item_navigation":"0","show_vote":"0","show_icons":"0","show_print_icon":"0","show_email_icon":"0","show_hits":"0","show_tags":"0","show_noauth":"0","urls_position":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"page_title":"","show_page_heading":0,"page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 47, 48, 1, '*', 0),
 (102, 'mainmenu', 'GIỚI THIỆU', 'gioi-thieu', '', 'gioi-thieu', '', 'url', 1, 1, 1, 22, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1}', 49, 50, 0, '*', 0),
 (103, 'mainmenu', 'DỊCH VỤ BẢO VỆ', 'gioi-thieu-2', '', 'gioi-thieu-2', '', 'url', 1, 1, 1, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1}', 51, 52, 0, '*', 0),
 (104, 'mainmenu', 'KHÁCH HÀNG', 'gioi-thieu-3', '', 'gioi-thieu-3', '', 'url', 1, 1, 1, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1}', 53, 54, 0, '*', 0),
 (105, 'mainmenu', 'TUYỂN DỤNG', 'gioi-thieu-4', '', 'gioi-thieu-4', '', 'url', 1, 1, 1, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1}', 55, 56, 0, '*', 0),
 (106, 'mainmenu', 'THIẾT BỊ BẢO VỆ', 'gioi-thieu-5', '', 'gioi-thieu-5', '', 'url', 1, 1, 1, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1}', 57, 58, 0, '*', 0),
-(107, 'mainmenu', 'LIÊN HỆ', 'gioi-thieu-6', '', 'gioi-thieu-6', '', 'url', 1, 1, 1, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1}', 59, 60, 0, '*', 0);
+(107, 'mainmenu', 'LIÊN HỆ', 'gioi-thieu-6', '', 'gioi-thieu-6', '', 'url', 1, 1, 1, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1}', 59, 60, 0, '*', 0),
+(108, 'menu-left', 'Bảo Vệ Toà Nhà', '2014-06-25-09-22-56', '', '2014-06-25-09-22-56', '', 'url', 1, 1, 1, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1}', 61, 62, 0, '*', 0),
+(109, 'menu-left', 'Bảo Vệ Nhà Máy', '2014-06-25-09-22-57', '', '2014-06-25-09-22-57', '', 'url', 1, 1, 1, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1}', 63, 64, 0, '*', 0),
+(110, 'menu-left', 'Bảo Vệ Ngân Hàng', '2014-06-25-09-22-58', '', '2014-06-25-09-22-58', '', 'url', 1, 1, 1, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1}', 65, 66, 0, '*', 0),
+(111, 'menu-left', 'Bảo Vệ Siêu Thị', '2014-06-25-09-22-59', '', '2014-06-25-09-22-59', '', 'url', 1, 1, 1, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1}', 67, 68, 0, '*', 0),
+(112, 'menu-left', 'Bảo Vệ Trường Học', '2014-06-25-09-22-60', '', '2014-06-25-09-22-60', '', 'url', 1, 1, 1, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1}', 69, 70, 0, '*', 0),
+(113, 'menu-left', 'Bảo Vệ Bệnh Viện', '2014-06-25-09-22-61', '', '2014-06-25-09-22-61', '', 'url', 1, 1, 1, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1}', 71, 72, 0, '*', 0),
+(114, 'menu-left', 'Bảo Vệ Khách Sạn', '2014-06-25-09-22-62', '', '2014-06-25-09-22-62', '', 'url', 1, 1, 1, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1}', 73, 74, 0, '*', 0),
+(115, 'menu-left', 'Bảo Vệ Cửa Hàng', '2014-06-25-09-22-63', '', '2014-06-25-09-22-63', '', 'url', 1, 1, 1, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1}', 75, 76, 0, '*', 0),
+(116, 'menu-left', 'Bảo Vệ Công Trường', '2014-06-25-09-22-64', '', '2014-06-25-09-22-64', '', 'url', 1, 1, 1, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1}', 77, 78, 0, '*', 0),
+(117, 'menu-left', 'Bảo Vệ Khu Công Nghiệp', '2014-06-25-09-22-65', '', '2014-06-25-09-22-65', '', 'url', 1, 1, 1, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1}', 79, 80, 0, '*', 0),
+(118, 'menu-left', 'Bảo Vệ Sân Bay, Bến Cảng', '2014-06-25-09-22-66', '', '2014-06-25-09-22-66', '', 'url', 1, 1, 1, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1}', 81, 82, 0, '*', 0),
+(119, 'menu-left', 'Bảo Vệ Sự Kiện', '2014-06-25-09-22-67', '', '2014-06-25-09-22-67', '', 'url', 1, 1, 1, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1}', 83, 84, 0, '*', 0),
+(120, 'menu-left', 'Bảo Vệ Yếu Nhân(Vệ Sĩ)', '2014-06-25-09-22-68', '', '2014-06-25-09-22-68', '', 'url', 1, 1, 1, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1}', 85, 86, 0, '*', 0),
+(121, 'menu-left', 'Hình Thức Bảo Vệ Khác', '2014-06-25-09-22-69', '', '2014-06-25-09-22-69', '', 'url', 1, 1, 1, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1}', 87, 88, 0, '*', 0),
+(122, 'menu-right', 'Bảo Vệ Quận 1', '2014-06-25-09-30-44', '', '2014-06-25-09-30-44', '', 'url', 1, 1, 1, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1}', 89, 90, 0, '*', 0),
+(123, 'menu-right', 'Bảo Vệ Quận 2', '2014-06-25-09-30-45', '', '2014-06-25-09-30-45', '', 'url', 1, 1, 1, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1}', 91, 92, 0, '*', 0),
+(124, 'menu-right', 'Bảo Vệ Quận 3', '2014-06-25-09-30-46', '', '2014-06-25-09-30-46', '', 'url', 1, 1, 1, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1}', 93, 94, 0, '*', 0),
+(125, 'menu-right', 'Bảo Vệ Quận 4', '2014-06-25-09-30-47', '', '2014-06-25-09-30-47', '', 'url', 1, 1, 1, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1}', 95, 96, 0, '*', 0),
+(126, 'menu-right', 'Bảo Vệ Quận 5', '2014-06-25-09-30-48', '', '2014-06-25-09-30-48', '', 'url', 1, 1, 1, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1}', 97, 98, 0, '*', 0),
+(127, 'menu-right', 'Bảo Vệ Quận 6', '2014-06-25-09-30-49', '', '2014-06-25-09-30-49', '', 'url', 1, 1, 1, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1}', 99, 100, 0, '*', 0),
+(128, 'menu-right', 'Bảo Vệ Quận 7', '2014-06-25-09-30-50', '', '2014-06-25-09-30-50', '', 'url', 1, 1, 1, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1}', 101, 102, 0, '*', 0),
+(129, 'menu-right', 'Bảo Vệ Quận 8', '2014-06-25-09-30-51', '', '2014-06-25-09-30-51', '', 'url', 1, 1, 1, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1}', 103, 104, 0, '*', 0),
+(130, 'menu-right', 'Bảo Vệ Quận 9', '2014-06-25-09-30-52', '', '2014-06-25-09-30-52', '', 'url', 1, 1, 1, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1}', 105, 106, 0, '*', 0),
+(131, 'menu-right', 'Bảo Vệ Quận 10', '2014-06-25-09-30-53', '', '2014-06-25-09-30-53', '', 'url', 1, 1, 1, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1}', 107, 108, 0, '*', 0),
+(132, 'menu-right', 'Bảo Vệ Quận 11', '2014-06-25-09-30-54', '', '2014-06-25-09-30-54', '', 'url', 1, 1, 1, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1}', 109, 110, 0, '*', 0),
+(133, 'menu-right', 'Bảo Vệ Quận 12', '2014-06-25-09-30-55', '', '2014-06-25-09-30-55', '', 'url', 1, 1, 1, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1}', 111, 112, 0, '*', 0),
+(134, 'menu-right', 'Bảo Vệ Tại Quận Tân Bình', '2014-06-25-09-30-56', '', '2014-06-25-09-30-56', '', 'url', 1, 1, 1, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1}', 113, 114, 0, '*', 0),
+(135, 'menu-right', 'Bảo Vệ Tại Quận Bình Tân', '2014-06-25-09-30-57', '', '2014-06-25-09-30-57', '', 'url', 1, 1, 1, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1}', 115, 116, 0, '*', 0),
+(136, 'menu-right', 'Bảo Vệ Tại Quận Bình Thạnh', '2014-06-25-09-30-58', '', '2014-06-25-09-30-58', '', 'url', 1, 1, 1, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1}', 117, 118, 0, '*', 0),
+(137, 'menu-right', 'Bảo Vệ Tại Quận Gò Vấp', '2014-06-25-09-30-59', '', '2014-06-25-09-30-59', '', 'url', 1, 1, 1, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1}', 119, 120, 0, '*', 0),
+(138, 'menu-right', 'Bảo Vệ Tại Quận Phú Nhuận', '2014-06-25-09-30-60', '', '2014-06-25-09-30-60', '', 'url', 1, 1, 1, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1}', 121, 122, 0, '*', 0),
+(139, 'menu-right', 'Bảo Vệ Tại Quận Tân Phú', '2014-06-25-09-30-61', '', '2014-06-25-09-30-61', '', 'url', 1, 1, 1, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1}', 123, 124, 0, '*', 0),
+(140, 'menu-right', 'Bảo Vệ Tại Quận Bình Chánh', '2014-06-25-09-30-62', '', '2014-06-25-09-30-62', '', 'url', 1, 1, 1, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1}', 125, 126, 0, '*', 0),
+(141, 'menu-right', 'Bảo Vệ Tại Quận Cần Giờ', '2014-06-25-09-30-63', '', '2014-06-25-09-30-63', '', 'url', 1, 1, 1, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1}', 127, 128, 0, '*', 0),
+(142, 'menu-right', 'Bảo Vệ Tại Củ Chi', '2014-06-25-09-30-64', '', '2014-06-25-09-30-64', '', 'url', 1, 1, 1, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1}', 129, 130, 0, '*', 0),
+(143, 'menu-right', 'Bảo Vệ Tại Hóc Môn', '2014-06-25-09-30-65', '', '2014-06-25-09-30-65', '', 'url', 1, 1, 1, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1}', 131, 132, 0, '*', 0),
+(144, 'menu-right', 'Bảo Vệ Tại Nhà Bè', '2014-06-25-09-30-66', '', '2014-06-25-09-30-66', '', 'url', 1, 1, 1, 0, 0, '0000-00-00 00:00:00', 0, 1, '', 0, '{"menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1}', 133, 134, 0, '*', 0);
 
 -- --------------------------------------------------------
 
@@ -1318,6 +1407,7 @@ INSERT INTO `d9jhp_menu` (`id`, `menutype`, `title`, `alias`, `note`, `path`, `l
 -- Table structure for table `d9jhp_menu_types`
 --
 
+DROP TABLE IF EXISTS `d9jhp_menu_types`;
 CREATE TABLE IF NOT EXISTS `d9jhp_menu_types` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `menutype` varchar(24) NOT NULL,
@@ -1325,14 +1415,16 @@ CREATE TABLE IF NOT EXISTS `d9jhp_menu_types` (
   `description` varchar(255) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `idx_menutype` (`menutype`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `d9jhp_menu_types`
 --
 
 INSERT INTO `d9jhp_menu_types` (`id`, `menutype`, `title`, `description`) VALUES
-(1, 'mainmenu', 'Main Menu', 'The main menu for the site');
+(1, 'mainmenu', 'Main Menu', 'The main menu for the site'),
+(2, 'menu-left', 'Menu Left', 'menu-left'),
+(3, 'menu-right', 'Menu Right', 'menu-right');
 
 -- --------------------------------------------------------
 
@@ -1340,6 +1432,7 @@ INSERT INTO `d9jhp_menu_types` (`id`, `menutype`, `title`, `description`) VALUES
 -- Table structure for table `d9jhp_messages`
 --
 
+DROP TABLE IF EXISTS `d9jhp_messages`;
 CREATE TABLE IF NOT EXISTS `d9jhp_messages` (
   `message_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `user_id_from` int(10) unsigned NOT NULL DEFAULT '0',
@@ -1360,6 +1453,7 @@ CREATE TABLE IF NOT EXISTS `d9jhp_messages` (
 -- Table structure for table `d9jhp_messages_cfg`
 --
 
+DROP TABLE IF EXISTS `d9jhp_messages_cfg`;
 CREATE TABLE IF NOT EXISTS `d9jhp_messages_cfg` (
   `user_id` int(10) unsigned NOT NULL DEFAULT '0',
   `cfg_name` varchar(100) NOT NULL DEFAULT '',
@@ -1373,6 +1467,7 @@ CREATE TABLE IF NOT EXISTS `d9jhp_messages_cfg` (
 -- Table structure for table `d9jhp_modules`
 --
 
+DROP TABLE IF EXISTS `d9jhp_modules`;
 CREATE TABLE IF NOT EXISTS `d9jhp_modules` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `asset_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'FK to the #__assets table.',
@@ -1396,14 +1491,14 @@ CREATE TABLE IF NOT EXISTS `d9jhp_modules` (
   KEY `published` (`published`,`access`),
   KEY `newsfeeds` (`module`,`published`),
   KEY `idx_language` (`language`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=88 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=91 ;
 
 --
 -- Dumping data for table `d9jhp_modules`
 --
 
 INSERT INTO `d9jhp_modules` (`id`, `asset_id`, `title`, `note`, `content`, `ordering`, `position`, `checked_out`, `checked_out_time`, `publish_up`, `publish_down`, `published`, `module`, `access`, `showtitle`, `params`, `client_id`, `language`) VALUES
-(1, 39, 'Menu top', '', '', 1, 'menutop', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_menu', 1, 0, '{"menutype":"mainmenu","base":"","startLevel":"1","endLevel":"0","showAllChildren":"0","tag_id":"","class_sfx":" nav","window_open":"","layout":"_:default","moduleclass_sfx":"_menu","cache":"1","cache_time":"900","cachemode":"itemid","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*'),
+(1, 39, 'Menu top', '', '', 1, 'menutop', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_menu', 1, 0, '{"menutype":"mainmenu","base":"","startLevel":"1","endLevel":"0","showAllChildren":"0","tag_id":"","class_sfx":" menutop","window_open":"","layout":"_:default","moduleclass_sfx":"_menu","cache":"1","cache_time":"900","cachemode":"itemid","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*'),
 (2, 56, 'Login', '', '', 1, 'login', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_login', 1, 1, '', 1, '*'),
 (3, 57, 'Popular Articles', '', '', 3, 'cpanel', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_popular', 3, 1, '{"count":"5","catid":"","user_id":"0","layout":"_:default","moduleclass_sfx":"","cache":"0","automatic_title":"1"}', 1, '*'),
 (4, 58, 'Recently Added Articles', '', '', 4, 'cpanel', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_latest', 3, 1, '{"count":"5","ordering":"c_dsc","catid":"","user_id":"0","layout":"_:default","moduleclass_sfx":"","cache":"0","automatic_title":"1"}', 1, '*'),
@@ -1418,7 +1513,10 @@ INSERT INTO `d9jhp_modules` (`id`, `asset_id`, `title`, `note`, `content`, `orde
 (17, 67, 'Breadcrumbs', '', '', 1, 'position-2', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 'mod_breadcrumbs', 1, 1, '{"moduleclass_sfx":"","showHome":"1","homeText":"","showComponent":"1","separator":"","cache":"1","cache_time":"900","cachemode":"itemid"}', 0, '*'),
 (79, 68, 'Multilanguage status', '', '', 1, 'status', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 'mod_multilangstatus', 3, 1, '{"layout":"_:default","moduleclass_sfx":"","cache":"0"}', 1, '*'),
 (86, 69, 'Joomla Version', '', '', 1, 'footer', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_version', 3, 1, '{"format":"short","product":"1","layout":"_:default","moduleclass_sfx":"","cache":"0"}', 1, '*'),
-(87, 54, 'Slide show', '', '', 1, 'slideshow', 880, '2014-06-24 21:57:53', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_vt_nivo_slider', 1, 0, '{"demo":"-1","theme":"default","slide_width":"auto","slide_height":"auto","item_dir":".\\/images\\/thangviet\\/slideshow\\/","item_path":"","item_title":"","item_description":"","item_url":"","item_target":"_blank","effect":"fold","slices":"15","boxCols":"8","boxRows":"4","animSpeed":"500","pauseTime":"3000","startSlide":"0","directionNav":"1","controlNav":"1","pauseOnHover":"1","manualAdvance":"1","prevText":"Prev","nextText":"Next","ribbon":"1","controlPosition":"bottomright","controlStyle":"01.png","arrowStyle":"01.png","titleColor":"#333333","titleFontSize":"18","titleFontStyle":"","descColor":"#333333","descFontSize":"12","descFontStyle":"","captionWidth":"auto","captionHeight":"auto","captionBackground":"#ffffcc","captionPosition":"topleft","captionMarginVertical":"","captionMarginHorizontal":"","captionRounded":"all","slide_bgcolor":"","slide_bdcolor":"","slide_bdwidth":"0","slide_bdrounded":"0","slide_bdshadow":"0","moduleclass_sfx":"","cache":"1","cache_time":"900","cachemode":"static","controlNavThumbs":"false","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*');
+(87, 54, 'Slide show', '', '', 1, 'slideshow', 880, '2014-06-25 02:29:48', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_vt_nivo_slider', 1, 0, '{"demo":"-1","theme":"default","slide_width":"auto","slide_height":"auto","item_dir":".\\/images\\/thangviet\\/slideshow\\/","item_path":"","item_title":"","item_description":"","item_url":"","item_target":"_blank","effect":"fold","slices":"15","boxCols":"8","boxRows":"4","animSpeed":"500","pauseTime":"3000","startSlide":"0","directionNav":"1","controlNav":"0","pauseOnHover":"1","manualAdvance":"1","prevText":"Prev","nextText":"Next","ribbon":"1","controlPosition":"bottomright","controlStyle":"01.png","arrowStyle":"01.png","titleColor":"#333333","titleFontSize":"18","titleFontStyle":"","descColor":"#333333","descFontSize":"12","descFontStyle":"","captionWidth":"auto","captionHeight":"auto","captionBackground":"#ffffcc","captionPosition":"topleft","captionMarginVertical":"","captionMarginHorizontal":"","captionRounded":"all","slide_bgcolor":"","slide_bdcolor":"","slide_bdwidth":"0","slide_bdrounded":"0","slide_bdshadow":"0","moduleclass_sfx":"","cache":"1","cache_time":"900","cachemode":"static","controlNavThumbs":"false","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*'),
+(88, 55, 'Dịch Vụ Bảo Vệ', '', '', 1, 'left', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_menu', 1, 1, '{"menutype":"menu-left","base":"","startLevel":"1","endLevel":"0","showAllChildren":"0","tag_id":"","class_sfx":" menuleft","window_open":"","layout":"_:default","moduleclass_sfx":"","cache":"1","cache_time":"900","cachemode":"itemid","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*'),
+(89, 56, 'Menu Right', '', '', 1, 'right', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_menu', 1, 0, '{"menutype":"menu-right","base":"","startLevel":"1","endLevel":"0","showAllChildren":"0","tag_id":"","class_sfx":" menuright","window_open":"","layout":"_:default","moduleclass_sfx":"","cache":"1","cache_time":"900","cachemode":"itemid","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*'),
+(90, 58, 'Footer', '', '<p><!-- [if gte mso 9]><xml>\r\n <w:WordDocument>\r\n  <w:View>Normal</w:View>\r\n  <w:Zoom>0</w:Zoom>\r\n  <w:TrackMoves/>\r\n  <w:TrackFormatting/>\r\n  <w:PunctuationKerning/>\r\n  <w:ValidateAgainstSchemas/>\r\n  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>\r\n  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>\r\n  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>\r\n  <w:DoNotPromoteQF/>\r\n  <w:LidThemeOther>EN-US</w:LidThemeOther>\r\n  <w:LidThemeAsian>X-NONE</w:LidThemeAsian>\r\n  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>\r\n  <w:Compatibility>\r\n   <w:BreakWrappedTables/>\r\n   <w:SnapToGridInCell/>\r\n   <w:WrapTextWithPunct/>\r\n   <w:UseAsianBreakRules/>\r\n   <w:DontGrowAutofit/>\r\n   <w:SplitPgBreakAndParaMark/>\r\n   <w:DontVertAlignCellWithSp/>\r\n   <w:DontBreakConstrainedForcedTables/>\r\n   <w:DontVertAlignInTxbx/>\r\n   <w:Word11KerningPairs/>\r\n   <w:CachedColBalance/>\r\n   <w:UseFELayout/>\r\n  </w:Compatibility>\r\n  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>\r\n  <m:mathPr>\r\n   <m:mathFont m:val="Cambria Math"/>\r\n   <m:brkBin m:val="before"/>\r\n   <m:brkBinSub m:val="--"/>\r\n   <m:smallFrac m:val="off"/>\r\n   <m:dispDef/>\r\n   <m:lMargin m:val="0"/>\r\n   <m:rMargin m:val="0"/>\r\n   <m:defJc m:val="centerGroup"/>\r\n   <m:wrapIndent m:val="1440"/>\r\n   <m:intLim m:val="subSup"/>\r\n   <m:naryLim m:val="undOvr"/>\r\n  </m:mathPr></w:WordDocument>\r\n</xml><![endif]--></p>\r\n<p><!-- [if gte mso 9]><xml>\r\n <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="true"\r\n  DefSemiHidden="true" DefQFormat="false" DefPriority="99"\r\n  LatentStyleCount="267">\r\n  <w:LsdException Locked="false" Priority="0" SemiHidden="false"\r\n   UnhideWhenUsed="false" QFormat="true" Name="Normal"/>\r\n  <w:LsdException Locked="false" Priority="9" SemiHidden="false"\r\n   UnhideWhenUsed="false" QFormat="true" Name="heading 1"/>\r\n  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 2"/>\r\n  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 3"/>\r\n  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 4"/>\r\n  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 5"/>\r\n  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 6"/>\r\n  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 7"/>\r\n  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 8"/>\r\n  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 9"/>\r\n  <w:LsdException Locked="false" Priority="39" Name="toc 1"/>\r\n  <w:LsdException Locked="false" Priority="39" Name="toc 2"/>\r\n  <w:LsdException Locked="false" Priority="39" Name="toc 3"/>\r\n  <w:LsdException Locked="false" Priority="39" Name="toc 4"/>\r\n  <w:LsdException Locked="false" Priority="39" Name="toc 5"/>\r\n  <w:LsdException Locked="false" Priority="39" Name="toc 6"/>\r\n  <w:LsdException Locked="false" Priority="39" Name="toc 7"/>\r\n  <w:LsdException Locked="false" Priority="39" Name="toc 8"/>\r\n  <w:LsdException Locked="false" Priority="39" Name="toc 9"/>\r\n  <w:LsdException Locked="false" Priority="35" QFormat="true" Name="caption"/>\r\n  <w:LsdException Locked="false" Priority="10" SemiHidden="false"\r\n   UnhideWhenUsed="false" QFormat="true" Name="Title"/>\r\n  <w:LsdException Locked="false" Priority="1" Name="Default Paragraph Font"/>\r\n  <w:LsdException Locked="false" Priority="11" SemiHidden="false"\r\n   UnhideWhenUsed="false" QFormat="true" Name="Subtitle"/>\r\n  <w:LsdException Locked="false" Priority="0" Name="Hyperlink"/>\r\n  <w:LsdException Locked="false" Priority="22" SemiHidden="false"\r\n   UnhideWhenUsed="false" QFormat="true" Name="Strong"/>\r\n  <w:LsdException Locked="false" Priority="20" SemiHidden="false"\r\n   UnhideWhenUsed="false" QFormat="true" Name="Emphasis"/>\r\n  <w:LsdException Locked="false" Priority="59" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Table Grid"/>\r\n  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Placeholder Text"/>\r\n  <w:LsdException Locked="false" Priority="1" SemiHidden="false"\r\n   UnhideWhenUsed="false" QFormat="true" Name="No Spacing"/>\r\n  <w:LsdException Locked="false" Priority="60" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Light Shading"/>\r\n  <w:LsdException Locked="false" Priority="61" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Light List"/>\r\n  <w:LsdException Locked="false" Priority="62" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Light Grid"/>\r\n  <w:LsdException Locked="false" Priority="63" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Medium Shading 1"/>\r\n  <w:LsdException Locked="false" Priority="64" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Medium Shading 2"/>\r\n  <w:LsdException Locked="false" Priority="65" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Medium List 1"/>\r\n  <w:LsdException Locked="false" Priority="66" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Medium List 2"/>\r\n  <w:LsdException Locked="false" Priority="67" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Medium Grid 1"/>\r\n  <w:LsdException Locked="false" Priority="68" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Medium Grid 2"/>\r\n  <w:LsdException Locked="false" Priority="69" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Medium Grid 3"/>\r\n  <w:LsdException Locked="false" Priority="70" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Dark List"/>\r\n  <w:LsdException Locked="false" Priority="71" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Colorful Shading"/>\r\n  <w:LsdException Locked="false" Priority="72" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Colorful List"/>\r\n  <w:LsdException Locked="false" Priority="73" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Colorful Grid"/>\r\n  <w:LsdException Locked="false" Priority="60" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Light Shading Accent 1"/>\r\n  <w:LsdException Locked="false" Priority="61" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Light List Accent 1"/>\r\n  <w:LsdException Locked="false" Priority="62" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Light Grid Accent 1"/>\r\n  <w:LsdException Locked="false" Priority="63" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 1"/>\r\n  <w:LsdException Locked="false" Priority="64" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 1"/>\r\n  <w:LsdException Locked="false" Priority="65" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Medium List 1 Accent 1"/>\r\n  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Revision"/>\r\n  <w:LsdException Locked="false" Priority="34" SemiHidden="false"\r\n   UnhideWhenUsed="false" QFormat="true" Name="List Paragraph"/>\r\n  <w:LsdException Locked="false" Priority="29" SemiHidden="false"\r\n   UnhideWhenUsed="false" QFormat="true" Name="Quote"/>\r\n  <w:LsdException Locked="false" Priority="30" SemiHidden="false"\r\n   UnhideWhenUsed="false" QFormat="true" Name="Intense Quote"/>\r\n  <w:LsdException Locked="false" Priority="66" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Medium List 2 Accent 1"/>\r\n  <w:LsdException Locked="false" Priority="67" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 1"/>\r\n  <w:LsdException Locked="false" Priority="68" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 1"/>\r\n  <w:LsdException Locked="false" Priority="69" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 1"/>\r\n  <w:LsdException Locked="false" Priority="70" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Dark List Accent 1"/>\r\n  <w:LsdException Locked="false" Priority="71" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Colorful Shading Accent 1"/>\r\n  <w:LsdException Locked="false" Priority="72" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Colorful List Accent 1"/>\r\n  <w:LsdException Locked="false" Priority="73" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Colorful Grid Accent 1"/>\r\n  <w:LsdException Locked="false" Priority="60" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Light Shading Accent 2"/>\r\n  <w:LsdException Locked="false" Priority="61" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Light List Accent 2"/>\r\n  <w:LsdException Locked="false" Priority="62" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Light Grid Accent 2"/>\r\n  <w:LsdException Locked="false" Priority="63" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 2"/>\r\n  <w:LsdException Locked="false" Priority="64" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 2"/>\r\n  <w:LsdException Locked="false" Priority="65" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Medium List 1 Accent 2"/>\r\n  <w:LsdException Locked="false" Priority="66" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Medium List 2 Accent 2"/>\r\n  <w:LsdException Locked="false" Priority="67" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 2"/>\r\n  <w:LsdException Locked="false" Priority="68" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 2"/>\r\n  <w:LsdException Locked="false" Priority="69" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 2"/>\r\n  <w:LsdException Locked="false" Priority="70" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Dark List Accent 2"/>\r\n  <w:LsdException Locked="false" Priority="71" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Colorful Shading Accent 2"/>\r\n  <w:LsdException Locked="false" Priority="72" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Colorful List Accent 2"/>\r\n  <w:LsdException Locked="false" Priority="73" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Colorful Grid Accent 2"/>\r\n  <w:LsdException Locked="false" Priority="60" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Light Shading Accent 3"/>\r\n  <w:LsdException Locked="false" Priority="61" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Light List Accent 3"/>\r\n  <w:LsdException Locked="false" Priority="62" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Light Grid Accent 3"/>\r\n  <w:LsdException Locked="false" Priority="63" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 3"/>\r\n  <w:LsdException Locked="false" Priority="64" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 3"/>\r\n  <w:LsdException Locked="false" Priority="65" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Medium List 1 Accent 3"/>\r\n  <w:LsdException Locked="false" Priority="66" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Medium List 2 Accent 3"/>\r\n  <w:LsdException Locked="false" Priority="67" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 3"/>\r\n  <w:LsdException Locked="false" Priority="68" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 3"/>\r\n  <w:LsdException Locked="false" Priority="69" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 3"/>\r\n  <w:LsdException Locked="false" Priority="70" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Dark List Accent 3"/>\r\n  <w:LsdException Locked="false" Priority="71" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Colorful Shading Accent 3"/>\r\n  <w:LsdException Locked="false" Priority="72" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Colorful List Accent 3"/>\r\n  <w:LsdException Locked="false" Priority="73" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Colorful Grid Accent 3"/>\r\n  <w:LsdException Locked="false" Priority="60" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Light Shading Accent 4"/>\r\n  <w:LsdException Locked="false" Priority="61" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Light List Accent 4"/>\r\n  <w:LsdException Locked="false" Priority="62" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Light Grid Accent 4"/>\r\n  <w:LsdException Locked="false" Priority="63" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 4"/>\r\n  <w:LsdException Locked="false" Priority="64" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 4"/>\r\n  <w:LsdException Locked="false" Priority="65" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Medium List 1 Accent 4"/>\r\n  <w:LsdException Locked="false" Priority="66" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Medium List 2 Accent 4"/>\r\n  <w:LsdException Locked="false" Priority="67" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 4"/>\r\n  <w:LsdException Locked="false" Priority="68" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 4"/>\r\n  <w:LsdException Locked="false" Priority="69" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 4"/>\r\n  <w:LsdException Locked="false" Priority="70" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Dark List Accent 4"/>\r\n  <w:LsdException Locked="false" Priority="71" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Colorful Shading Accent 4"/>\r\n  <w:LsdException Locked="false" Priority="72" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Colorful List Accent 4"/>\r\n  <w:LsdException Locked="false" Priority="73" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Colorful Grid Accent 4"/>\r\n  <w:LsdException Locked="false" Priority="60" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Light Shading Accent 5"/>\r\n  <w:LsdException Locked="false" Priority="61" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Light List Accent 5"/>\r\n  <w:LsdException Locked="false" Priority="62" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Light Grid Accent 5"/>\r\n  <w:LsdException Locked="false" Priority="63" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 5"/>\r\n  <w:LsdException Locked="false" Priority="64" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 5"/>\r\n  <w:LsdException Locked="false" Priority="65" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Medium List 1 Accent 5"/>\r\n  <w:LsdException Locked="false" Priority="66" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Medium List 2 Accent 5"/>\r\n  <w:LsdException Locked="false" Priority="67" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 5"/>\r\n  <w:LsdException Locked="false" Priority="68" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 5"/>\r\n  <w:LsdException Locked="false" Priority="69" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 5"/>\r\n  <w:LsdException Locked="false" Priority="70" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Dark List Accent 5"/>\r\n  <w:LsdException Locked="false" Priority="71" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Colorful Shading Accent 5"/>\r\n  <w:LsdException Locked="false" Priority="72" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Colorful List Accent 5"/>\r\n  <w:LsdException Locked="false" Priority="73" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Colorful Grid Accent 5"/>\r\n  <w:LsdException Locked="false" Priority="60" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Light Shading Accent 6"/>\r\n  <w:LsdException Locked="false" Priority="61" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Light List Accent 6"/>\r\n  <w:LsdException Locked="false" Priority="62" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Light Grid Accent 6"/>\r\n  <w:LsdException Locked="false" Priority="63" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 6"/>\r\n  <w:LsdException Locked="false" Priority="64" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 6"/>\r\n  <w:LsdException Locked="false" Priority="65" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Medium List 1 Accent 6"/>\r\n  <w:LsdException Locked="false" Priority="66" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Medium List 2 Accent 6"/>\r\n  <w:LsdException Locked="false" Priority="67" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 6"/>\r\n  <w:LsdException Locked="false" Priority="68" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 6"/>\r\n  <w:LsdException Locked="false" Priority="69" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 6"/>\r\n  <w:LsdException Locked="false" Priority="70" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Dark List Accent 6"/>\r\n  <w:LsdException Locked="false" Priority="71" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Colorful Shading Accent 6"/>\r\n  <w:LsdException Locked="false" Priority="72" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Colorful List Accent 6"/>\r\n  <w:LsdException Locked="false" Priority="73" SemiHidden="false"\r\n   UnhideWhenUsed="false" Name="Colorful Grid Accent 6"/>\r\n  <w:LsdException Locked="false" Priority="19" SemiHidden="false"\r\n   UnhideWhenUsed="false" QFormat="true" Name="Subtle Emphasis"/>\r\n  <w:LsdException Locked="false" Priority="21" SemiHidden="false"\r\n   UnhideWhenUsed="false" QFormat="true" Name="Intense Emphasis"/>\r\n  <w:LsdException Locked="false" Priority="31" SemiHidden="false"\r\n   UnhideWhenUsed="false" QFormat="true" Name="Subtle Reference"/>\r\n  <w:LsdException Locked="false" Priority="32" SemiHidden="false"\r\n   UnhideWhenUsed="false" QFormat="true" Name="Intense Reference"/>\r\n  <w:LsdException Locked="false" Priority="33" SemiHidden="false"\r\n   UnhideWhenUsed="false" QFormat="true" Name="Book Title"/>\r\n  <w:LsdException Locked="false" Priority="37" Name="Bibliography"/>\r\n  <w:LsdException Locked="false" Priority="39" QFormat="true" Name="TOC Heading"/>\r\n </w:LatentStyles>\r\n</xml><![endif]--><!-- [if gte mso 10]>\r\n<style>\r\n /* Style Definitions */\r\n table.MsoNormalTable\r\n	{mso-style-name:"Table Normal";\r\n	mso-tstyle-rowband-size:0;\r\n	mso-tstyle-colband-size:0;\r\n	mso-style-noshow:yes;\r\n	mso-style-priority:99;\r\n	mso-style-qformat:yes;\r\n	mso-style-parent:"";\r\n	mso-padding-alt:0in 5.4pt 0in 5.4pt;\r\n	mso-para-margin:0in;\r\n	mso-para-margin-bottom:.0001pt;\r\n	mso-pagination:widow-orphan;\r\n	font-size:11.0pt;\r\n	font-family:"Calibri","sans-serif";\r\n	mso-ascii-font-family:Calibri;\r\n	mso-ascii-theme-font:minor-latin;\r\n	mso-fareast-font-family:"Times New Roman";\r\n	mso-fareast-theme-font:minor-fareast;\r\n	mso-hansi-font-family:Calibri;\r\n	mso-hansi-theme-font:minor-latin;\r\n	mso-bidi-font-family:"Times New Roman";\r\n	mso-bidi-theme-font:minor-bidi;}\r\n</style>\r\n<![endif]--></p>\r\n<p class="MsoNormal" style="tab-stops: 361.5pt;"><span style="font-family: ''Times New Roman'',''serif'';"><span style="mso-spacerun: yes;">        </span>CÔNG TY TNHH DỊCH VỤ BẢO VỆ THĂNG</span> <span style="font-family: ''Times New Roman'',''serif'';">VIỆT</span></p>\r\n<p class="MsoNormal" style="margin-left: .25in; text-align: justify; text-justify: inter-ideograph;"><span style="font-family: ''Times New Roman'',''serif'';"><span style="mso-spacerun: yes;">   </span>- Địa chỉ <span style="mso-spacerun: yes;"> </span>: </span>137B, <span style="font-family: ''Times New Roman'',''serif'';">Đường </span>Nguy<span style="font-family: ''Times New Roman'',''serif'';">ễ</span>n Chí Thanh , P. 09 ,<span style="mso-spacerun: yes;">  </span>Q. 05 , TP.HCM , VN</p>\r\n<p class="MsoNormal" style="text-align: justify; text-justify: inter-ideograph;"><span style="font-family: ''Times New Roman'',''serif'';"><span style="mso-spacerun: yes;">        </span>- Điện thoại : 086 2646719 – 0650 3777518</span></p>\r\n<p class="MsoNormal" style="text-align: justify; text-justify: inter-ideograph;"><span style="font-family: ''Times New Roman'',''serif'';"><span style="mso-spacerun: yes;">        </span>- Fax <span style="mso-spacerun: yes;"> </span>: 0862646719 – 0650 3777519</span></p>\r\n<p class="MsoNormal" style="text-align: justify; text-justify: inter-ideograph;"><span style="font-family: ''Times New Roman'',''serif'';"><span style="mso-spacerun: yes;">        </span>- Website <span style="mso-spacerun: yes;"> </span>: </span><a href="http://thangvietsecurity.com/">http://thangvietsecurity.com</a></p>\r\n<p class="MsoNormal" style="text-align: justify; text-justify: inter-ideograph;"><span style="font-family: ''Times New Roman'',''serif'';"><span style="mso-spacerun: yes;">        </span>- Mr. TRẦN HUY PHONG<span style="mso-spacerun: yes;">  </span><span style="mso-spacerun: yes;"> </span>-<span style="mso-spacerun: yes;">  </span>ĐTDĐ :<span style="mso-spacerun: yes;">  </span>0938.304.333</span></p>\r\n<p class="MsoNormal" style="text-align: justify; text-justify: inter-ideograph;"><span style="font-family: ''Times New Roman'',''serif'';"><span style="mso-spacerun: yes;">        </span>- Mr. Ngô Cơ –ĐTDĐ: 0906.097.864</span></p>', 1, 'footer', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_custom', 1, 1, '{"prepare_content":"0","backgroundimage":"","layout":"_:default","moduleclass_sfx":" footer","cache":"1","cache_time":"900","cachemode":"static","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*');
 
 -- --------------------------------------------------------
 
@@ -1426,6 +1524,7 @@ INSERT INTO `d9jhp_modules` (`id`, `asset_id`, `title`, `note`, `content`, `orde
 -- Table structure for table `d9jhp_modules_menu`
 --
 
+DROP TABLE IF EXISTS `d9jhp_modules_menu`;
 CREATE TABLE IF NOT EXISTS `d9jhp_modules_menu` (
   `moduleid` int(11) NOT NULL DEFAULT '0',
   `menuid` int(11) NOT NULL DEFAULT '0',
@@ -1454,7 +1553,10 @@ INSERT INTO `d9jhp_modules_menu` (`moduleid`, `menuid`) VALUES
 (17, 0),
 (79, 0),
 (86, 0),
-(87, 0);
+(87, 0),
+(88, 0),
+(89, 0),
+(90, 0);
 
 -- --------------------------------------------------------
 
@@ -1462,6 +1564,7 @@ INSERT INTO `d9jhp_modules_menu` (`moduleid`, `menuid`) VALUES
 -- Table structure for table `d9jhp_newsfeeds`
 --
 
+DROP TABLE IF EXISTS `d9jhp_newsfeeds`;
 CREATE TABLE IF NOT EXISTS `d9jhp_newsfeeds` (
   `catid` int(11) NOT NULL DEFAULT '0',
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -1509,6 +1612,7 @@ CREATE TABLE IF NOT EXISTS `d9jhp_newsfeeds` (
 -- Table structure for table `d9jhp_overrider`
 --
 
+DROP TABLE IF EXISTS `d9jhp_overrider`;
 CREATE TABLE IF NOT EXISTS `d9jhp_overrider` (
   `id` int(10) NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',
   `constant` varchar(255) NOT NULL,
@@ -1523,6 +1627,7 @@ CREATE TABLE IF NOT EXISTS `d9jhp_overrider` (
 -- Table structure for table `d9jhp_postinstall_messages`
 --
 
+DROP TABLE IF EXISTS `d9jhp_postinstall_messages`;
 CREATE TABLE IF NOT EXISTS `d9jhp_postinstall_messages` (
   `postinstall_message_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `extension_id` bigint(20) NOT NULL DEFAULT '700' COMMENT 'FK to #__extensions',
@@ -1557,6 +1662,7 @@ INSERT INTO `d9jhp_postinstall_messages` (`postinstall_message_id`, `extension_i
 -- Table structure for table `d9jhp_redirect_links`
 --
 
+DROP TABLE IF EXISTS `d9jhp_redirect_links`;
 CREATE TABLE IF NOT EXISTS `d9jhp_redirect_links` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `old_url` varchar(255) NOT NULL,
@@ -1578,6 +1684,7 @@ CREATE TABLE IF NOT EXISTS `d9jhp_redirect_links` (
 -- Table structure for table `d9jhp_schemas`
 --
 
+DROP TABLE IF EXISTS `d9jhp_schemas`;
 CREATE TABLE IF NOT EXISTS `d9jhp_schemas` (
   `extension_id` int(11) NOT NULL,
   `version_id` varchar(20) NOT NULL,
@@ -1597,6 +1704,7 @@ INSERT INTO `d9jhp_schemas` (`extension_id`, `version_id`) VALUES
 -- Table structure for table `d9jhp_session`
 --
 
+DROP TABLE IF EXISTS `d9jhp_session`;
 CREATE TABLE IF NOT EXISTS `d9jhp_session` (
   `session_id` varchar(200) NOT NULL DEFAULT '',
   `client_id` tinyint(3) unsigned NOT NULL DEFAULT '0',
@@ -1615,9 +1723,8 @@ CREATE TABLE IF NOT EXISTS `d9jhp_session` (
 --
 
 INSERT INTO `d9jhp_session` (`session_id`, `client_id`, `guest`, `time`, `data`, `userid`, `username`) VALUES
-('f0pivuirvng3smsgd1hbdhl2g6', 0, 1, '1403647242', '__default|a:7:{s:15:"session.counter";i:37;s:19:"session.timer.start";i:1403644336;s:18:"session.timer.last";i:1403647239;s:17:"session.timer.now";i:1403647242;s:22:"session.client.browser";s:65:"Mozilla/5.0 (Windows NT 6.0; rv:30.0) Gecko/20100101 Firefox/30.0";s:8:"registry";O:24:"Joomla\\Registry\\Registry":1:{s:7:"\\0\\0\\0data";O:8:"stdClass":0:{}}s:4:"user";O:5:"JUser":25:{s:9:"\\0\\0\\0isRoot";b:0;s:2:"id";i:0;s:4:"name";N;s:8:"username";N;s:5:"email";N;s:8:"password";N;s:14:"password_clear";s:0:"";s:5:"block";N;s:9:"sendEmail";i:0;s:12:"registerDate";N;s:13:"lastvisitDate";N;s:10:"activation";N;s:6:"params";N;s:6:"groups";a:1:{i:0;s:1:"9";}s:5:"guest";i:1;s:13:"lastResetTime";N;s:10:"resetCount";N;s:12:"requireReset";N;s:10:"\\0\\0\\0_params";O:24:"Joomla\\Registry\\Registry":1:{s:7:"\\0\\0\\0data";O:8:"stdClass":0:{}}s:14:"\\0\\0\\0_authGroups";a:2:{i:0;i:1;i:1;i:9;}s:14:"\\0\\0\\0_authLevels";a:3:{i:0;i:1;i:1;i:1;i:2;i:5;}s:15:"\\0\\0\\0_authActions";N;s:12:"\\0\\0\\0_errorMsg";N;s:10:"\\0\\0\\0_errors";a:0:{}s:3:"aid";i:0;}}', 0, ''),
-('og2j4c9u5222gkd3eivkleneo0', 0, 1, '1403647045', '__default|a:7:{s:15:"session.counter";i:1;s:19:"session.timer.start";i:1403647045;s:18:"session.timer.last";i:1403647045;s:17:"session.timer.now";i:1403647045;s:22:"session.client.browser";s:102:"Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36";s:8:"registry";O:24:"Joomla\\Registry\\Registry":1:{s:7:"\\0\\0\\0data";O:8:"stdClass":0:{}}s:4:"user";O:5:"JUser":25:{s:9:"\\0\\0\\0isRoot";b:0;s:2:"id";i:0;s:4:"name";N;s:8:"username";N;s:5:"email";N;s:8:"password";N;s:14:"password_clear";s:0:"";s:5:"block";N;s:9:"sendEmail";i:0;s:12:"registerDate";N;s:13:"lastvisitDate";N;s:10:"activation";N;s:6:"params";N;s:6:"groups";a:1:{i:0;s:1:"9";}s:5:"guest";i:1;s:13:"lastResetTime";N;s:10:"resetCount";N;s:12:"requireReset";N;s:10:"\\0\\0\\0_params";O:24:"Joomla\\Registry\\Registry":1:{s:7:"\\0\\0\\0data";O:8:"stdClass":0:{}}s:14:"\\0\\0\\0_authGroups";a:2:{i:0;i:1;i:1;i:9;}s:14:"\\0\\0\\0_authLevels";a:3:{i:0;i:1;i:1;i:1;i:2;i:5;}s:15:"\\0\\0\\0_authActions";N;s:12:"\\0\\0\\0_errorMsg";N;s:10:"\\0\\0\\0_errors";a:0:{}s:3:"aid";i:0;}}', 0, ''),
-('ouc2ccinl2horeksvjcskbcut1', 1, 0, '1403647076', '__default|a:8:{s:15:"session.counter";i:88;s:19:"session.timer.start";i:1403644112;s:18:"session.timer.last";i:1403647073;s:17:"session.timer.now";i:1403647074;s:22:"session.client.browser";s:65:"Mozilla/5.0 (Windows NT 6.0; rv:30.0) Gecko/20100101 Firefox/30.0";s:8:"registry";O:24:"Joomla\\Registry\\Registry":1:{s:7:"\\0\\0\\0data";O:8:"stdClass":4:{s:11:"application";O:8:"stdClass":1:{s:4:"lang";s:5:"en-GB";}s:13:"com_installer";O:8:"stdClass":3:{s:7:"message";s:0:"";s:17:"extension_message";s:0:"";s:12:"redirect_url";N;}s:11:"com_modules";O:8:"stdClass":3:{s:7:"modules";O:8:"stdClass":1:{s:6:"filter";O:8:"stdClass":1:{s:18:"client_id_previous";i:0;}}s:4:"edit";O:8:"stdClass":1:{s:6:"module";O:8:"stdClass":2:{s:2:"id";a:1:{i:0;i:87;}s:4:"data";N;}}s:3:"add";O:8:"stdClass":1:{s:6:"module";O:8:"stdClass":2:{s:12:"extension_id";N;s:6:"params";N;}}}s:9:"com_menus";O:8:"stdClass":2:{s:5:"items";O:8:"stdClass":3:{s:8:"menutype";s:8:"mainmenu";s:10:"limitstart";i:0;s:4:"list";a:4:{s:9:"direction";s:3:"asc";s:5:"limit";s:2:"20";s:8:"ordering";s:5:"a.lft";s:5:"start";d:0;}}s:4:"edit";O:8:"stdClass":1:{s:4:"item";O:8:"stdClass":4:{s:2:"id";a:6:{i:0;i:101;i:1;i:102;i:2;i:103;i:3;i:104;i:4;i:105;i:5;i:106;}s:4:"data";N;s:4:"type";N;s:4:"link";N;}}}}}s:4:"user";O:5:"JUser":27:{s:9:"\\0\\0\\0isRoot";b:1;s:2:"id";s:3:"880";s:4:"name";s:10:"Super User";s:8:"username";s:5:"admin";s:5:"email";s:17:"hunguit@yahoo.com";s:8:"password";s:60:"$2y$10$N4T3siSb0oH3.eiESbGPeuynNF3dv1IElCw6vmI3XPbiUUU.qgIB2";s:14:"password_clear";s:0:"";s:5:"block";s:1:"0";s:9:"sendEmail";s:1:"1";s:12:"registerDate";s:19:"2014-06-24 15:06:59";s:13:"lastvisitDate";s:19:"2014-06-24 15:45:46";s:10:"activation";s:1:"0";s:6:"params";s:2:"{}";s:6:"groups";a:1:{i:8;s:1:"8";}s:5:"guest";i:0;s:13:"lastResetTime";s:19:"0000-00-00 00:00:00";s:10:"resetCount";s:1:"0";s:12:"requireReset";s:1:"0";s:10:"\\0\\0\\0_params";O:24:"Joomla\\Registry\\Registry":1:{s:7:"\\0\\0\\0data";O:8:"stdClass":0:{}}s:14:"\\0\\0\\0_authGroups";a:2:{i:0;i:1;i:1;i:8;}s:14:"\\0\\0\\0_authLevels";a:5:{i:0;i:1;i:1;i:1;i:2;i:2;i:3;i:3;i:4;i:6;}s:15:"\\0\\0\\0_authActions";N;s:12:"\\0\\0\\0_errorMsg";N;s:10:"\\0\\0\\0_errors";a:0:{}s:3:"aid";i:0;s:6:"otpKey";s:0:"";s:4:"otep";s:0:"";}s:13:"session.token";s:32:"f9b5a20cb7a85ed823cd2c0ea871b226";}', 880, 'admin');
+('5dtub59s63coe3o53g0uc9t5o2', 1, 0, '1403691914', '__default|a:8:{s:15:"session.counter";i:269;s:19:"session.timer.start";i:1403687965;s:18:"session.timer.last";i:1403691912;s:17:"session.timer.now";i:1403691913;s:22:"session.client.browser";s:72:"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:29.0) Gecko/20100101 Firefox/29.0";s:8:"registry";O:24:"Joomla\\Registry\\Registry":1:{s:7:"\\0\\0\\0data";O:8:"stdClass":7:{s:11:"application";O:8:"stdClass":1:{s:4:"lang";s:5:"en-GB";}s:13:"com_installer";O:8:"stdClass":2:{s:7:"message";s:0:"";s:17:"extension_message";s:0:"";}s:9:"com_menus";O:8:"stdClass":2:{s:4:"edit";O:8:"stdClass":2:{s:4:"menu";O:8:"stdClass":2:{s:4:"data";N;s:2:"id";a:0:{}}s:4:"item";O:8:"stdClass":4:{s:4:"data";N;s:4:"type";N;s:4:"link";N;s:2:"id";a:36:{i:0;i:108;i:1;i:109;i:2;i:110;i:3;i:111;i:4;i:112;i:5;i:113;i:6;i:114;i:7;i:115;i:8;i:116;i:9;i:117;i:10;i:118;i:11;i:119;i:12;i:120;i:13;i:122;i:14;i:123;i:15;i:124;i:16;i:125;i:17;i:126;i:18;i:127;i:19;i:128;i:20;i:129;i:21;i:130;i:22;i:131;i:23;i:132;i:24;i:133;i:25;i:134;i:26;i:135;i:27;i:136;i:28;i:137;i:29;i:138;i:30;i:139;i:31;i:140;i:32;i:141;i:33;i:142;i:34;i:143;i:35;i:101;}}}s:5:"items";O:8:"stdClass":4:{s:8:"menutype";s:8:"mainmenu";s:10:"limitstart";i:0;s:4:"list";a:2:{s:12:"fullordering";s:9:"a.lft ASC";s:5:"limit";s:2:"20";}s:6:"filter";a:5:{s:6:"search";s:0:"";s:9:"published";s:0:"";s:5:"level";s:0:"";s:6:"access";s:0:"";s:8:"language";s:0:"";}}}s:4:"item";O:8:"stdClass":1:{s:6:"filter";O:8:"stdClass":1:{s:8:"menutype";s:10:"menu-right";}}s:11:"com_modules";O:8:"stdClass":3:{s:7:"modules";O:8:"stdClass":1:{s:6:"filter";O:8:"stdClass":1:{s:18:"client_id_previous";i:0;}}s:4:"edit";O:8:"stdClass":1:{s:6:"module";O:8:"stdClass":2:{s:2:"id";a:0:{}s:4:"data";N;}}s:3:"add";O:8:"stdClass":1:{s:6:"module";O:8:"stdClass":2:{s:12:"extension_id";N;s:6:"params";N;}}}s:14:"com_categories";O:8:"stdClass":1:{s:10:"categories";O:8:"stdClass":1:{s:6:"filter";O:8:"stdClass":1:{s:9:"extension";s:11:"com_content";}}}s:11:"com_content";O:8:"stdClass":1:{s:4:"edit";O:8:"stdClass":1:{s:7:"article";O:8:"stdClass":2:{s:4:"data";N;s:2:"id";a:0:{}}}}}}s:4:"user";O:5:"JUser":27:{s:9:"\\0\\0\\0isRoot";b:1;s:2:"id";s:3:"880";s:4:"name";s:10:"Super User";s:8:"username";s:5:"admin";s:5:"email";s:17:"hunguit@yahoo.com";s:8:"password";s:60:"$2y$10$N4T3siSb0oH3.eiESbGPeuynNF3dv1IElCw6vmI3XPbiUUU.qgIB2";s:14:"password_clear";s:0:"";s:5:"block";s:1:"0";s:9:"sendEmail";s:1:"1";s:12:"registerDate";s:19:"2014-06-24 15:06:59";s:13:"lastvisitDate";s:19:"2014-06-25 01:59:52";s:10:"activation";s:1:"0";s:6:"params";s:2:"{}";s:6:"groups";a:1:{i:8;s:1:"8";}s:5:"guest";i:0;s:13:"lastResetTime";s:19:"0000-00-00 00:00:00";s:10:"resetCount";s:1:"0";s:12:"requireReset";s:1:"0";s:10:"\\0\\0\\0_params";O:24:"Joomla\\Registry\\Registry":1:{s:7:"\\0\\0\\0data";O:8:"stdClass":0:{}}s:14:"\\0\\0\\0_authGroups";a:2:{i:0;i:1;i:1;i:8;}s:14:"\\0\\0\\0_authLevels";a:5:{i:0;i:1;i:1;i:1;i:2;i:2;i:3;i:3;i:4;i:6;}s:15:"\\0\\0\\0_authActions";N;s:12:"\\0\\0\\0_errorMsg";N;s:10:"\\0\\0\\0_errors";a:0:{}s:3:"aid";i:0;s:6:"otpKey";s:0:"";s:4:"otep";s:0:"";}s:13:"session.token";s:32:"e13b85d22b9196c42fb01bd202c78349";}', 880, 'admin'),
+('9tmj70k8ntt8972a5aekfhu2i5', 0, 1, '1403691973', '__default|a:7:{s:15:"session.counter";i:38;s:19:"session.timer.start";i:1403689298;s:18:"session.timer.last";i:1403691922;s:17:"session.timer.now";i:1403691973;s:22:"session.client.browser";s:72:"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:29.0) Gecko/20100101 Firefox/29.0";s:8:"registry";O:24:"Joomla\\Registry\\Registry":1:{s:7:"\\0\\0\\0data";O:8:"stdClass":0:{}}s:4:"user";O:5:"JUser":25:{s:9:"\\0\\0\\0isRoot";b:0;s:2:"id";i:0;s:4:"name";N;s:8:"username";N;s:5:"email";N;s:8:"password";N;s:14:"password_clear";s:0:"";s:5:"block";N;s:9:"sendEmail";i:0;s:12:"registerDate";N;s:13:"lastvisitDate";N;s:10:"activation";N;s:6:"params";N;s:6:"groups";a:1:{i:0;s:1:"9";}s:5:"guest";i:1;s:13:"lastResetTime";N;s:10:"resetCount";N;s:12:"requireReset";N;s:10:"\\0\\0\\0_params";O:24:"Joomla\\Registry\\Registry":1:{s:7:"\\0\\0\\0data";O:8:"stdClass":0:{}}s:14:"\\0\\0\\0_authGroups";a:2:{i:0;i:1;i:1;i:9;}s:14:"\\0\\0\\0_authLevels";a:3:{i:0;i:1;i:1;i:1;i:2;i:5;}s:15:"\\0\\0\\0_authActions";N;s:12:"\\0\\0\\0_errorMsg";N;s:10:"\\0\\0\\0_errors";a:0:{}s:3:"aid";i:0;}}', 0, '');
 
 -- --------------------------------------------------------
 
@@ -1625,6 +1732,7 @@ INSERT INTO `d9jhp_session` (`session_id`, `client_id`, `guest`, `time`, `data`,
 -- Table structure for table `d9jhp_tags`
 --
 
+DROP TABLE IF EXISTS `d9jhp_tags`;
 CREATE TABLE IF NOT EXISTS `d9jhp_tags` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `parent_id` int(10) unsigned NOT NULL DEFAULT '0',
@@ -1679,6 +1787,7 @@ INSERT INTO `d9jhp_tags` (`id`, `parent_id`, `lft`, `rgt`, `level`, `path`, `tit
 -- Table structure for table `d9jhp_template_styles`
 --
 
+DROP TABLE IF EXISTS `d9jhp_template_styles`;
 CREATE TABLE IF NOT EXISTS `d9jhp_template_styles` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `template` varchar(50) NOT NULL DEFAULT '',
@@ -1708,6 +1817,7 @@ INSERT INTO `d9jhp_template_styles` (`id`, `template`, `client_id`, `home`, `tit
 -- Table structure for table `d9jhp_ucm_base`
 --
 
+DROP TABLE IF EXISTS `d9jhp_ucm_base`;
 CREATE TABLE IF NOT EXISTS `d9jhp_ucm_base` (
   `ucm_id` int(10) unsigned NOT NULL,
   `ucm_item_id` int(10) NOT NULL,
@@ -1725,6 +1835,7 @@ CREATE TABLE IF NOT EXISTS `d9jhp_ucm_base` (
 -- Table structure for table `d9jhp_ucm_content`
 --
 
+DROP TABLE IF EXISTS `d9jhp_ucm_content`;
 CREATE TABLE IF NOT EXISTS `d9jhp_ucm_content` (
   `core_content_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `core_type_alias` varchar(255) NOT NULL DEFAULT '' COMMENT 'FK to the content types table',
@@ -1779,6 +1890,7 @@ CREATE TABLE IF NOT EXISTS `d9jhp_ucm_content` (
 -- Table structure for table `d9jhp_ucm_history`
 --
 
+DROP TABLE IF EXISTS `d9jhp_ucm_history`;
 CREATE TABLE IF NOT EXISTS `d9jhp_ucm_history` (
   `version_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `ucm_item_id` int(10) unsigned NOT NULL,
@@ -1793,7 +1905,16 @@ CREATE TABLE IF NOT EXISTS `d9jhp_ucm_history` (
   PRIMARY KEY (`version_id`),
   KEY `idx_ucm_item_id` (`ucm_type_id`,`ucm_item_id`),
   KEY `idx_save_date` (`save_date`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `d9jhp_ucm_history`
+--
+
+INSERT INTO `d9jhp_ucm_history` (`version_id`, `ucm_item_id`, `ucm_type_id`, `version_note`, `save_date`, `editor_user_id`, `character_count`, `sha1_hash`, `version_data`, `keep_forever`) VALUES
+(1, 1, 1, '', '2014-06-25 09:45:13', 880, 8624, '58a64dc68f0fc99f4090ae08f8b6a1c3b95ce237', '{"id":1,"asset_id":57,"title":"Trang Ch\\u1ee7","alias":"trang-ch","introtext":"<h2><strong>C\\u00d4NG TY TNHH D\\u1ecaCH V\\u1ee4 B\\u1ea2O V\\u1ec6 TU\\u1ed4I TR\\u1eba<\\/strong><\\/h2>\\r\\n<p><img src=\\"http:\\/\\/baovetuoitre.net\\/upload\\/sanpham\\/cong%20ty%20bao%20ve%20tuoi%20tre.gif\\" alt=\\"cong-ty-bao-ve\\" width=\\"140\\" height=\\"140\\" \\/><\\/p>\\r\\n<p><em><span style=\\"text-decoration: underline;\\">K\\u00ednh Th\\u01b0a<\\/span>:\\u00a0<strong>Qu\\u00fd kh\\u00e1ch h\\u00e0ng<\\/strong>!<\\/em><\\/p>\\r\\n<p><em>L\\u1eddi \\u0111\\u1ea7u, C\\u00f4ng ty TNHH D\\u1ecbch v\\u1ee5 <strong>b\\u1ea3o v\\u1ec7<\\/strong> Tu\\u1ed5i Tr\\u1ebb xin tr\\u00e2n tr\\u1ecdng g\\u1eedi t\\u1edbi Qu\\u00fd kh\\u00e1ch h\\u00e0ng l\\u1eddi ch\\u00fac t\\u1ed1t \\u0111\\u1eb9p nh\\u1ea5t. Ch\\u00fac Qu\\u00fd kh\\u00e1ch h\\u00e0ng An khang v\\u00e0 Th\\u1ecbnh v\\u01b0\\u1ee3ng.<\\/em><\\/p>\\r\\n<p><strong><em>Th\\u01b0a qu\\u00fd kh\\u00e1ch<\\/em><\\/strong>: Trong n\\u1ec1n kinh t\\u1ebf n\\u0103ng \\u0111\\u1ed9ng, c\\u1ea1nh tranh, \\u0111a d\\u1ea1ng h\\u00f3a d\\u1eabn \\u0111\\u1ebfn t\\u00ecnh h\\u00ecnh an ninh x\\u00e3 h\\u1ed9i ph\\u1ee9c t\\u1ea1p nh\\u01b0 giai \\u0111o\\u1ea1n hi\\u1ec7n nay. V\\u1ea5n \\u0111\\u1ec1 \\u0111\\u01b0\\u1ee3c c\\u00e1c nh\\u00e0 l\\u00e3nh \\u0111\\u1ea1o, c\\u00e1c doanh nghi\\u1ec7p quan t\\u00e2m l\\u00e0 l\\u00e0m sao \\u0111\\u1ea3m b\\u1ea3o \\u0111\\u01b0\\u1ee3c an to\\u00e0n \\u2013 an ninh tr\\u1eadt t\\u1ef1 trong ho\\u1ea1t \\u0111\\u1ed9ng s\\u1ea3n xu\\u1ea5t kinh doanh. Do v\\u1eady vi\\u1ec7c trang b\\u1ecb m\\u1ed9t l\\u1ef1c l\\u01b0\\u1ee3ng <strong>b\\u1ea3o v\\u1ec7<\\/strong> - v\\u1ec7 s\\u1ef9 chuy\\u00ean nghi\\u1ec7p l\\u00e0 \\u0111i\\u1ec1u t\\u1ea5t y\\u1ebfu v\\u00e0 kh\\u00f4ng th\\u1ec3 thi\\u1ebfu \\u0111\\u01b0\\u1ee3c c\\u1ee7a b\\u1ea5t k\\u1ef3 doanh nghi\\u1ec7p n\\u00e0o.<\\/p>\\r\\n<p>\\u00a0<\\/p>\\r\\n<h2>\\u0110\\u1ee9ng tr\\u01b0\\u1edbc \\u0111\\u00f2i h\\u1ecfi \\u0111\\u00f3, C\\u00f4ng ty TNHH\\u00a0<strong>D\\u1ecbch v\\u1ee5 B\\u1ea3o v\\u1ec7<\\/strong>\\u00a0Tu\\u1ed5i Tr\\u1ebb ra \\u0111\\u1eddi nh\\u1eb1m \\u0111\\u00e1p \\u1ee9ng nhu c\\u1ea7u n\\u00eau tr\\u00ean. C\\u00f4ng ty ch\\u00fang t\\u00f4i \\u0111\\u01b0\\u1ee3c c\\u00e1c c\\u01a1 quan ch\\u1ee9c n\\u0103ng c\\u1ea5p ph\\u00e9p ho\\u1ea1t \\u0111\\u1ed9ng kinh doanh cung c\\u1ea5p<\\/h2>\\r\\n<h2><strong>D\\u1ecbch v\\u1ee5\\u00a0<a href=\\"http:\\/\\/baovetuoitre.vn\\">b\\u1ea3o v\\u1ec7 chuy\\u00ean nghi\\u1ec7p<\\/a>:<\\/strong><\\/h2>\\r\\n<p>\\u00a0<\\/p>\\r\\n<p>- \\u00a0<strong>C\\u00f4ng ty TNHH\\u00a0D\\u1ecbch v\\u1ee5 B\\u1ea3o v\\u1ec7\\u00a0Tu\\u1ed5i Tr\\u1ebb<\\/strong>, \\u0111\\u01b0\\u1ee3c Ph\\u00f2ng \\u0110\\u0103ng k\\u00fd Kinh doanh, s\\u1edf k\\u1ebf Ho\\u1ea1ch v\\u00e0 \\u0110\\u1ea7u t\\u01b0 th\\u00e0nh ph\\u1ed1 H\\u1ed3 Ch\\u00ed Minh c\\u1ea5p Gi\\u1ea5y ph\\u00e9p \\u0110\\u0103ng k\\u00fd Kinh doanh <em>D\\u1ecbch v\\u1ee5 b\\u1ea3o v\\u1ec7<\\/em> chuy\\u00ean nghi\\u1ec7p s\\u1ed1: 0311592006<\\/p>\\r\\n<p>\\u00a0<\\/p>\\r\\n<p>- \\u00a0Ph\\u00f2ng C\\u1ea3nh s\\u00e1t Qu\\u1ea3n l\\u00fd H\\u00e0nh ch\\u00ednh v\\u1ec1 Tr\\u1eadt t\\u1ef1 x\\u00e3 h\\u1ed9i \\u2013 C\\u00f4ng an th\\u00e0nh ph\\u1ed1 H\\u1ed3 Ch\\u00ed Minh, c\\u1ea5p Gi\\u1ea5y x\\u00e1c nh\\u1eadn \\u0110\\u1ee7 \\u0111i\\u1ec1u ki\\u1ec7n \\u0111\\u1ec3 kinh doanh <em>D\\u1ecbch v\\u1ee5 b\\u1ea3o v\\u1ec7<\\/em> s\\u1ed1: 315\\/ GXN<\\/p>\\r\\n<p>\\u00a0<\\/p>\\r\\n<p>Ngo\\u00e0i ra <strong>c\\u00f4ng ty TNHH D\\u1ecbch v\\u1ee5 b\\u1ea3o v\\u1ec7<\\/strong> c\\u00f3 Mua b\\u1ea3o hi\\u1ec3m tr\\u00e1ch nhi\\u1ec7m ph\\u00e1p l\\u00fd \\u0111\\u1ed5i v\\u1edbi ngh\\u1ec1 nghi\\u1ec7p v\\u00e0 d\\u00e2n s\\u1ef1, v\\u1edbi t\\u1ed5ng m\\u1ee9c gi\\u1edbi h\\u1ea1n B\\u1ea3o hi\\u1ec3m l\\u00ean t\\u1edbi 3.000.000.000\\u0111 cho m\\u1ed7i v\\u1ee5 b\\u1ea3o hi\\u1ec3m v\\u00e0 kh\\u00f4ng gi\\u1edbi h\\u1ea1n s\\u1ed1 v\\u1ee5 trong n\\u0103m.<\\/p>\\r\\n<p>\\u00a0<\\/p>\\r\\n<p>C\\u00f4ng ty TNHH<strong>\\u00a0D\\u1ecbch v\\u1ee5 B\\u1ea3o v\\u1ec7<\\/strong>\\u00a0Tu\\u1ed5i Tr\\u1ebb ch\\u00fang t\\u00f4i r\\u1ea5t vinh d\\u1ef1, v\\u00e0 t\\u1ef1 h\\u00e0o l\\u00e0 m\\u1ed9t <strong>c\\u00f4ng ty b\\u1ea3o v\\u1ec7 <\\/strong>\\u0111ang s\\u1edf h\\u1eefu \\u0111\\u1ed9i ng\\u0169 c\\u00e1n b\\u1ed9 qu\\u1ea3n l\\u00fd, c\\u00e1c chuy\\u00ean gia h\\u00e0ng \\u0111\\u1ea7u trong l\\u0129nh v\\u1ef1c\\u00a0<strong><a href=\\"http:\\/\\/baovetuoitre.vn\\">D\\u1ecbch v\\u1ee5 <strong>b\\u1ea3o v\\u1ec7<\\/strong><\\/a>\\u00a0<\\/strong>Chuy\\u00ean nghi\\u1ec7p, L\\u00e3nh \\u0111\\u1ea1o <strong>c\\u00f4ng ty <\\/strong>l\\u00e0 nh\\u1eefng chuy\\u00ean vi\\u00ean cao c\\u1ea5p v\\u1ec1 an ninh d\\u00e2n s\\u1ef1 t\\u1ea1i Vi\\u1ec7t Nam.<\\/p>\\r\\n<p>\\u00a0<\\/p>\\r\\n<p>H\\u01a1n n\\u1eefa, \\u0110\\u1ed9i ng\\u0169 nh\\u00e2n vi\\u00ean <strong>b\\u1ea3o v\\u1ec7<\\/strong> c\\u1ee7a <em>c\\u00f4ng ty <\\/em>ch\\u00fang t\\u00f4i \\u0111\\u01b0\\u1ee3c tuy\\u1ec3n ch\\u1ecdn ch\\u1eb7t ch\\u1ebd v\\u00e0 \\u0111\\u01b0\\u1ee3c h\\u01b0\\u1edbng nghi\\u1ec7p \\u0111\\u00e0o t\\u1ea1o c\\u00e1c k\\u1ef9 n\\u0103ng nh\\u01b0: v\\u00f5 thu\\u1eadt, k\\u1ef9 n\\u0103ng <strong>b\\u1ea3o v\\u1ec7 chuy\\u00ean nghi\\u1ec7p<\\/strong>, c\\u00f4ng t\\u00e1c ph\\u00f2ng ch\\u00e1y ch\\u1eefa ch\\u00e1y, y t\\u1ebf c\\u1ea5p c\\u1ee9u, x\\u1eed l\\u00fd c\\u00e1c h\\u00e0nh vi b\\u1ea5t h\\u1ee3p ph\\u00e1p nh\\u01b0 \\u0111\\u00ecnh c\\u00f4ng, b\\u1ea1o lo\\u1ea1n\\u2026. \\u0111\\u01b0\\u1ee3c s\\u00e1t h\\u1ea1ch v\\u00e0 c\\u1ea5p ch\\u1ee9ng ch\\u1ec9 nghi\\u1ec7p v\\u1ee5\\u00a0<a href=\\"http:\\/\\/baovetuoitre.vn\\"><strong>b\\u1ea3o v\\u1ec7<\\/strong><\\/a>\\u00a0t\\u1ea1i T\\u1ed5ng c\\u1ee5c c\\u1ea3nh s\\u00e1t QLHC v\\u1ec1 TTXH B\\u1ed9 C\\u00f4ng an.<\\/p>\\r\\n<p>\\u00a0<\\/p>\\r\\n<p>V\\u1edbi ph\\u01b0\\u01a1ng ch\\u00e2m c\\u1ee7a <em>C\\u00f4ng ty <\\/em>TNHH <em>D\\u1ecbch v\\u1ee5 b\\u1ea3o v\\u1ec7 <\\/em>Tu\\u1ed5i Tr\\u1ebb l\\u00e0 \\u201c<strong>L\\u1ecbch s\\u1ef1 - \\u0110\\u1ea1o \\u0111\\u1ee9c \\u2013 Uy t\\u00edn \\u2013 Ch\\u1ea5t l\\u01b0\\u1ee3ng\\u201d<\\/strong>,\\u00a0<strong><a href=\\"http:\\/\\/baovetuoitre.vn\\">c\\u00f4ng ty <strong>b\\u1ea3o v\\u1ec7<\\/strong><\\/a>\\u00a0<\\/strong>ch\\u00fang t\\u00f4i lu\\u00f4n mong mu\\u1ed1n \\u0111\\u1ea3m b\\u1ea3o quy\\u1ec1n l\\u1ee3i c\\u1ee7a kh\\u00e1ch h\\u00e0ng \\u0111\\u1ebfn m\\u1ee9c t\\u1ed1i \\u0111a khi s\\u1eed d\\u1ee5ng <strong>D\\u1ecbch v\\u1ee5 b\\u1ea3o v\\u1ec7 <\\/strong>chuy\\u00ean nghi\\u1ec7p c\\u1ee7a c\\u00f4ng ty ch\\u00fang t\\u00f4i.<\\/p>\\r\\n<p>\\u00a0<\\/p>\\r\\n<p><em>\\u00a0 \\u00a0Khi Qu\\u00fd kh\\u00e1ch c\\u00f3 nhu c\\u1ea7u v\\u1ec1 D\\u1ecbch v\\u1ee5 <strong>b\\u1ea3o v\\u1ec7<\\/strong>, h\\u00e3y vui l\\u00f2ng g\\u1ecdi \\u0111i\\u1ec7n cho c\\u00f4ng ty ch\\u00fang t\\u00f4i theo s\\u1ed1 \\u0111i\\u1ec7n tho\\u1ea1i:\\u00a0<strong>08.668 06 998 - 08.6289 1090<\\/strong>, ho\\u1eb7c\\u00a0<strong>hotline: 0919 996 526<\\/strong>\\u00a0\\u0111\\u1ec3 \\u0111\\u01b0\\u1ee3c t\\u01b0 v\\u1ea5n v\\u1ec1 D\\u1ecbch v\\u1ee5 <strong>b\\u1ea3o v\\u1ec7<\\/strong>: th\\u00f4ng tin v\\u1ec1 gi\\u00e1 c\\u1ea3 d\\u1ecbch v\\u1ee5 <strong>b\\u1ea3o v\\u1ec7<\\/strong>, chu\\u1ea9n b\\u1ecb cu\\u1ed9c h\\u1eb9n, kh\\u1ea3o s\\u00e1t m\\u1ee5c ti\\u00eau <strong>b\\u1ea3o v\\u1ec7<\\/strong>, th\\u1ea3o lu\\u1eadn ph\\u01b0\\u01a1ng \\u00e1n <strong>b\\u1ea3o v\\u1ec7<\\/strong>, v\\u00e0 c\\u00e1c \\u0111i\\u1ec1u kho\\u1ea3n c\\u1ee7a h\\u1ee3p \\u0111\\u1ed3ng <strong>b\\u1ea3o v\\u1ec7<\\/strong>...<\\/em><\\/p>\\r\\n<p>\\u00a0<\\/p>\\r\\n<p><strong><em>H\\u00e2n h\\u1ea1nh \\u0111\\u01b0\\u1ee3c ph\\u1ee5c v\\u1ee5 qu\\u00fd kh\\u00e1ch!<\\/em><\\/strong><\\/p>","fulltext":"","state":1,"catid":"2","created":"2014-06-25 09:45:13","created_by":"880","created_by_alias":"","modified":"","modified_by":null,"checked_out":null,"checked_out_time":null,"publish_up":"2014-06-25 09:45:13","publish_down":"0000-00-00 00:00:00","images":"{\\"image_intro\\":\\"\\",\\"float_intro\\":\\"\\",\\"image_intro_alt\\":\\"\\",\\"image_intro_caption\\":\\"\\",\\"image_fulltext\\":\\"\\",\\"float_fulltext\\":\\"\\",\\"image_fulltext_alt\\":\\"\\",\\"image_fulltext_caption\\":\\"\\"}","urls":"{\\"urla\\":false,\\"urlatext\\":\\"\\",\\"targeta\\":\\"\\",\\"urlb\\":false,\\"urlbtext\\":\\"\\",\\"targetb\\":\\"\\",\\"urlc\\":false,\\"urlctext\\":\\"\\",\\"targetc\\":\\"\\"}","attribs":"{\\"show_title\\":\\"\\",\\"link_titles\\":\\"\\",\\"show_tags\\":\\"\\",\\"show_intro\\":\\"\\",\\"info_block_position\\":\\"\\",\\"show_category\\":\\"\\",\\"link_category\\":\\"\\",\\"show_parent_category\\":\\"\\",\\"link_parent_category\\":\\"\\",\\"show_author\\":\\"\\",\\"link_author\\":\\"\\",\\"show_create_date\\":\\"\\",\\"show_modify_date\\":\\"\\",\\"show_publish_date\\":\\"\\",\\"show_item_navigation\\":\\"\\",\\"show_icons\\":\\"\\",\\"show_print_icon\\":\\"\\",\\"show_email_icon\\":\\"\\",\\"show_vote\\":\\"\\",\\"show_hits\\":\\"\\",\\"show_noauth\\":\\"\\",\\"urls_position\\":\\"\\",\\"alternative_readmore\\":\\"\\",\\"article_layout\\":\\"\\",\\"show_publishing_options\\":\\"\\",\\"show_article_options\\":\\"\\",\\"show_urls_images_backend\\":\\"\\",\\"show_urls_images_frontend\\":\\"\\"}","version":1,"ordering":null,"metakey":"","metadesc":"","access":"1","hits":null,"metadata":"{\\"robots\\":\\"\\",\\"author\\":\\"\\",\\"rights\\":\\"\\",\\"xreference\\":\\"\\"}","featured":"0","language":"*","xreference":""}', 0),
+(2, 1, 1, '', '2014-06-25 10:03:19', 880, 8501, '5d12a0d4f1e1cc1f8235ddaf6f1c54a18138ffa3', '{"id":1,"asset_id":"57","title":"Trang Ch\\u1ee7","alias":"trang-ch","introtext":"<h2><strong>C\\u00d4NG TY TNHH D\\u1ecaCH V\\u1ee4 B\\u1ea2O V\\u1ec6 TU\\u1ed4I TR\\u1eba<\\/strong><\\/h2>\\r\\n<p><img src=\\"http:\\/\\/baovetuoitre.net\\/upload\\/sanpham\\/cong%20ty%20bao%20ve%20tuoi%20tre.gif\\" alt=\\"cong-ty-bao-ve\\" width=\\"140\\" height=\\"140\\" \\/><\\/p>\\r\\n<p><em><span style=\\"text-decoration: underline;\\">K\\u00ednh Th\\u01b0a<\\/span>:\\u00a0<strong>Qu\\u00fd kh\\u00e1ch h\\u00e0ng<\\/strong>!<\\/em><\\/p>\\r\\n<p><em>L\\u1eddi \\u0111\\u1ea7u, C\\u00f4ng ty TNHH D\\u1ecbch v\\u1ee5 <strong>b\\u1ea3o v\\u1ec7<\\/strong> Tu\\u1ed5i Tr\\u1ebb xin tr\\u00e2n tr\\u1ecdng g\\u1eedi t\\u1edbi Qu\\u00fd kh\\u00e1ch h\\u00e0ng l\\u1eddi ch\\u00fac t\\u1ed1t \\u0111\\u1eb9p nh\\u1ea5t. Ch\\u00fac Qu\\u00fd kh\\u00e1ch h\\u00e0ng An khang v\\u00e0 Th\\u1ecbnh v\\u01b0\\u1ee3ng.<\\/em><\\/p>\\r\\n<p><strong><em>Th\\u01b0a qu\\u00fd kh\\u00e1ch<\\/em><\\/strong>: Trong n\\u1ec1n kinh t\\u1ebf n\\u0103ng \\u0111\\u1ed9ng, c\\u1ea1nh tranh, \\u0111a d\\u1ea1ng h\\u00f3a d\\u1eabn \\u0111\\u1ebfn t\\u00ecnh h\\u00ecnh an ninh x\\u00e3 h\\u1ed9i ph\\u1ee9c t\\u1ea1p nh\\u01b0 giai \\u0111o\\u1ea1n hi\\u1ec7n nay. V\\u1ea5n \\u0111\\u1ec1 \\u0111\\u01b0\\u1ee3c c\\u00e1c nh\\u00e0 l\\u00e3nh \\u0111\\u1ea1o, c\\u00e1c doanh nghi\\u1ec7p quan t\\u00e2m l\\u00e0 l\\u00e0m sao \\u0111\\u1ea3m b\\u1ea3o \\u0111\\u01b0\\u1ee3c an to\\u00e0n \\u2013 an ninh tr\\u1eadt t\\u1ef1 trong ho\\u1ea1t \\u0111\\u1ed9ng s\\u1ea3n xu\\u1ea5t kinh doanh. Do v\\u1eady vi\\u1ec7c trang b\\u1ecb m\\u1ed9t l\\u1ef1c l\\u01b0\\u1ee3ng <strong>b\\u1ea3o v\\u1ec7<\\/strong> - v\\u1ec7 s\\u1ef9 chuy\\u00ean nghi\\u1ec7p l\\u00e0 \\u0111i\\u1ec1u t\\u1ea5t y\\u1ebfu v\\u00e0 kh\\u00f4ng th\\u1ec3 thi\\u1ebfu \\u0111\\u01b0\\u1ee3c c\\u1ee7a b\\u1ea5t k\\u1ef3 doanh nghi\\u1ec7p n\\u00e0o.<\\/p>\\r\\n<h2>\\u0110\\u1ee9ng tr\\u01b0\\u1edbc \\u0111\\u00f2i h\\u1ecfi \\u0111\\u00f3, C\\u00f4ng ty TNHH\\u00a0<strong>D\\u1ecbch v\\u1ee5 B\\u1ea3o v\\u1ec7<\\/strong>\\u00a0Tu\\u1ed5i Tr\\u1ebb ra \\u0111\\u1eddi nh\\u1eb1m \\u0111\\u00e1p \\u1ee9ng nhu c\\u1ea7u n\\u00eau tr\\u00ean. C\\u00f4ng ty ch\\u00fang t\\u00f4i \\u0111\\u01b0\\u1ee3c c\\u00e1c c\\u01a1 quan ch\\u1ee9c n\\u0103ng c\\u1ea5p ph\\u00e9p ho\\u1ea1t \\u0111\\u1ed9ng kinh doanh cung c\\u1ea5p<\\/h2>\\r\\n<h2><strong>D\\u1ecbch v\\u1ee5\\u00a0<a href=\\"http:\\/\\/baovetuoitre.vn\\">b\\u1ea3o v\\u1ec7 chuy\\u00ean nghi\\u1ec7p<\\/a>:<\\/strong><\\/h2>\\r\\n<p>- \\u00a0<strong>C\\u00f4ng ty TNHH\\u00a0D\\u1ecbch v\\u1ee5 B\\u1ea3o v\\u1ec7\\u00a0Tu\\u1ed5i Tr\\u1ebb<\\/strong>, \\u0111\\u01b0\\u1ee3c Ph\\u00f2ng \\u0110\\u0103ng k\\u00fd Kinh doanh, s\\u1edf k\\u1ebf Ho\\u1ea1ch v\\u00e0 \\u0110\\u1ea7u t\\u01b0 th\\u00e0nh ph\\u1ed1 H\\u1ed3 Ch\\u00ed Minh c\\u1ea5p Gi\\u1ea5y ph\\u00e9p \\u0110\\u0103ng k\\u00fd Kinh doanh <em>D\\u1ecbch v\\u1ee5 b\\u1ea3o v\\u1ec7<\\/em> chuy\\u00ean nghi\\u1ec7p s\\u1ed1: 0311592006<\\/p>\\r\\n<p>- \\u00a0Ph\\u00f2ng C\\u1ea3nh s\\u00e1t Qu\\u1ea3n l\\u00fd H\\u00e0nh ch\\u00ednh v\\u1ec1 Tr\\u1eadt t\\u1ef1 x\\u00e3 h\\u1ed9i \\u2013 C\\u00f4ng an th\\u00e0nh ph\\u1ed1 H\\u1ed3 Ch\\u00ed Minh, c\\u1ea5p Gi\\u1ea5y x\\u00e1c nh\\u1eadn \\u0110\\u1ee7 \\u0111i\\u1ec1u ki\\u1ec7n \\u0111\\u1ec3 kinh doanh <em>D\\u1ecbch v\\u1ee5 b\\u1ea3o v\\u1ec7<\\/em> s\\u1ed1: 315\\/ GXN<\\/p>\\r\\n<p>Ngo\\u00e0i ra <strong>c\\u00f4ng ty TNHH D\\u1ecbch v\\u1ee5 b\\u1ea3o v\\u1ec7<\\/strong> c\\u00f3 Mua b\\u1ea3o hi\\u1ec3m tr\\u00e1ch nhi\\u1ec7m ph\\u00e1p l\\u00fd \\u0111\\u1ed5i v\\u1edbi ngh\\u1ec1 nghi\\u1ec7p v\\u00e0 d\\u00e2n s\\u1ef1, v\\u1edbi t\\u1ed5ng m\\u1ee9c gi\\u1edbi h\\u1ea1n B\\u1ea3o hi\\u1ec3m l\\u00ean t\\u1edbi 3.000.000.000\\u0111 cho m\\u1ed7i v\\u1ee5 b\\u1ea3o hi\\u1ec3m v\\u00e0 kh\\u00f4ng gi\\u1edbi h\\u1ea1n s\\u1ed1 v\\u1ee5 trong n\\u0103m.<\\/p>\\r\\n<p>C\\u00f4ng ty TNHH<strong>\\u00a0D\\u1ecbch v\\u1ee5 B\\u1ea3o v\\u1ec7<\\/strong>\\u00a0Tu\\u1ed5i Tr\\u1ebb ch\\u00fang t\\u00f4i r\\u1ea5t vinh d\\u1ef1, v\\u00e0 t\\u1ef1 h\\u00e0o l\\u00e0 m\\u1ed9t <strong>c\\u00f4ng ty b\\u1ea3o v\\u1ec7 <\\/strong>\\u0111ang s\\u1edf h\\u1eefu \\u0111\\u1ed9i ng\\u0169 c\\u00e1n b\\u1ed9 qu\\u1ea3n l\\u00fd, c\\u00e1c chuy\\u00ean gia h\\u00e0ng \\u0111\\u1ea7u trong l\\u0129nh v\\u1ef1c\\u00a0<strong><a href=\\"http:\\/\\/baovetuoitre.vn\\">D\\u1ecbch v\\u1ee5 <strong>b\\u1ea3o v\\u1ec7<\\/strong><\\/a>\\u00a0<\\/strong>Chuy\\u00ean nghi\\u1ec7p, L\\u00e3nh \\u0111\\u1ea1o <strong>c\\u00f4ng ty <\\/strong>l\\u00e0 nh\\u1eefng chuy\\u00ean vi\\u00ean cao c\\u1ea5p v\\u1ec1 an ninh d\\u00e2n s\\u1ef1 t\\u1ea1i Vi\\u1ec7t Nam.<\\/p>\\r\\n<p>H\\u01a1n n\\u1eefa, \\u0110\\u1ed9i ng\\u0169 nh\\u00e2n vi\\u00ean <strong>b\\u1ea3o v\\u1ec7<\\/strong> c\\u1ee7a <em>c\\u00f4ng ty <\\/em>ch\\u00fang t\\u00f4i \\u0111\\u01b0\\u1ee3c tuy\\u1ec3n ch\\u1ecdn ch\\u1eb7t ch\\u1ebd v\\u00e0 \\u0111\\u01b0\\u1ee3c h\\u01b0\\u1edbng nghi\\u1ec7p \\u0111\\u00e0o t\\u1ea1o c\\u00e1c k\\u1ef9 n\\u0103ng nh\\u01b0: v\\u00f5 thu\\u1eadt, k\\u1ef9 n\\u0103ng <strong>b\\u1ea3o v\\u1ec7 chuy\\u00ean nghi\\u1ec7p<\\/strong>, c\\u00f4ng t\\u00e1c ph\\u00f2ng ch\\u00e1y ch\\u1eefa ch\\u00e1y, y t\\u1ebf c\\u1ea5p c\\u1ee9u, x\\u1eed l\\u00fd c\\u00e1c h\\u00e0nh vi b\\u1ea5t h\\u1ee3p ph\\u00e1p nh\\u01b0 \\u0111\\u00ecnh c\\u00f4ng, b\\u1ea1o lo\\u1ea1n\\u2026. \\u0111\\u01b0\\u1ee3c s\\u00e1t h\\u1ea1ch v\\u00e0 c\\u1ea5p ch\\u1ee9ng ch\\u1ec9 nghi\\u1ec7p v\\u1ee5\\u00a0<a href=\\"http:\\/\\/baovetuoitre.vn\\"><strong>b\\u1ea3o v\\u1ec7<\\/strong><\\/a>\\u00a0t\\u1ea1i T\\u1ed5ng c\\u1ee5c c\\u1ea3nh s\\u00e1t QLHC v\\u1ec1 TTXH B\\u1ed9 C\\u00f4ng an.<\\/p>\\r\\n<p>V\\u1edbi ph\\u01b0\\u01a1ng ch\\u00e2m c\\u1ee7a <em>C\\u00f4ng ty <\\/em>TNHH <em>D\\u1ecbch v\\u1ee5 b\\u1ea3o v\\u1ec7 <\\/em>Tu\\u1ed5i Tr\\u1ebb l\\u00e0 \\u201c<strong>L\\u1ecbch s\\u1ef1 - \\u0110\\u1ea1o \\u0111\\u1ee9c \\u2013 Uy t\\u00edn \\u2013 Ch\\u1ea5t l\\u01b0\\u1ee3ng\\u201d<\\/strong>,\\u00a0<strong><a href=\\"http:\\/\\/baovetuoitre.vn\\">c\\u00f4ng ty <strong>b\\u1ea3o v\\u1ec7<\\/strong><\\/a>\\u00a0<\\/strong>ch\\u00fang t\\u00f4i lu\\u00f4n mong mu\\u1ed1n \\u0111\\u1ea3m b\\u1ea3o quy\\u1ec1n l\\u1ee3i c\\u1ee7a kh\\u00e1ch h\\u00e0ng \\u0111\\u1ebfn m\\u1ee9c t\\u1ed1i \\u0111a khi s\\u1eed d\\u1ee5ng <strong>D\\u1ecbch v\\u1ee5 b\\u1ea3o v\\u1ec7 <\\/strong>chuy\\u00ean nghi\\u1ec7p c\\u1ee7a c\\u00f4ng ty ch\\u00fang t\\u00f4i.<\\/p>\\r\\n<p><em>\\u00a0 \\u00a0Khi Qu\\u00fd kh\\u00e1ch c\\u00f3 nhu c\\u1ea7u v\\u1ec1 D\\u1ecbch v\\u1ee5 <strong>b\\u1ea3o v\\u1ec7<\\/strong>, h\\u00e3y vui l\\u00f2ng g\\u1ecdi \\u0111i\\u1ec7n cho c\\u00f4ng ty ch\\u00fang t\\u00f4i theo s\\u1ed1 \\u0111i\\u1ec7n tho\\u1ea1i:\\u00a0<strong>08.668 06 998 - 08.6289 1090<\\/strong>, ho\\u1eb7c\\u00a0<strong>hotline: 0919 996 526<\\/strong>\\u00a0\\u0111\\u1ec3 \\u0111\\u01b0\\u1ee3c t\\u01b0 v\\u1ea5n v\\u1ec1 D\\u1ecbch v\\u1ee5 <strong>b\\u1ea3o v\\u1ec7<\\/strong>: th\\u00f4ng tin v\\u1ec1 gi\\u00e1 c\\u1ea3 d\\u1ecbch v\\u1ee5 <strong>b\\u1ea3o v\\u1ec7<\\/strong>, chu\\u1ea9n b\\u1ecb cu\\u1ed9c h\\u1eb9n, kh\\u1ea3o s\\u00e1t m\\u1ee5c ti\\u00eau <strong>b\\u1ea3o v\\u1ec7<\\/strong>, th\\u1ea3o lu\\u1eadn ph\\u01b0\\u01a1ng \\u00e1n <strong>b\\u1ea3o v\\u1ec7<\\/strong>, v\\u00e0 c\\u00e1c \\u0111i\\u1ec1u kho\\u1ea3n c\\u1ee7a h\\u1ee3p \\u0111\\u1ed3ng <strong>b\\u1ea3o v\\u1ec7<\\/strong>...<\\/em><\\/p>\\r\\n<p><strong><em>H\\u00e2n h\\u1ea1nh \\u0111\\u01b0\\u1ee3c ph\\u1ee5c v\\u1ee5 qu\\u00fd kh\\u00e1ch!<\\/em><\\/strong><\\/p>","fulltext":"","state":1,"catid":"2","created":"2014-06-25 09:45:13","created_by":"880","created_by_alias":"","modified":"2014-06-25 10:03:19","modified_by":"880","checked_out":"880","checked_out_time":"2014-06-25 10:02:36","publish_up":"2014-06-25 09:45:13","publish_down":"0000-00-00 00:00:00","images":"{\\"image_intro\\":\\"\\",\\"float_intro\\":\\"\\",\\"image_intro_alt\\":\\"\\",\\"image_intro_caption\\":\\"\\",\\"image_fulltext\\":\\"\\",\\"float_fulltext\\":\\"\\",\\"image_fulltext_alt\\":\\"\\",\\"image_fulltext_caption\\":\\"\\"}","urls":"{\\"urla\\":false,\\"urlatext\\":\\"\\",\\"targeta\\":\\"\\",\\"urlb\\":false,\\"urlbtext\\":\\"\\",\\"targetb\\":\\"\\",\\"urlc\\":false,\\"urlctext\\":\\"\\",\\"targetc\\":\\"\\"}","attribs":"{\\"show_title\\":\\"\\",\\"link_titles\\":\\"\\",\\"show_tags\\":\\"\\",\\"show_intro\\":\\"\\",\\"info_block_position\\":\\"\\",\\"show_category\\":\\"\\",\\"link_category\\":\\"\\",\\"show_parent_category\\":\\"\\",\\"link_parent_category\\":\\"\\",\\"show_author\\":\\"\\",\\"link_author\\":\\"\\",\\"show_create_date\\":\\"\\",\\"show_modify_date\\":\\"\\",\\"show_publish_date\\":\\"\\",\\"show_item_navigation\\":\\"\\",\\"show_icons\\":\\"\\",\\"show_print_icon\\":\\"\\",\\"show_email_icon\\":\\"\\",\\"show_vote\\":\\"\\",\\"show_hits\\":\\"\\",\\"show_noauth\\":\\"\\",\\"urls_position\\":\\"\\",\\"alternative_readmore\\":\\"\\",\\"article_layout\\":\\"\\",\\"show_publishing_options\\":\\"\\",\\"show_article_options\\":\\"\\",\\"show_urls_images_backend\\":\\"\\",\\"show_urls_images_frontend\\":\\"\\"}","version":2,"ordering":"0","metakey":"","metadesc":"","access":"1","hits":"17","metadata":"{\\"robots\\":\\"\\",\\"author\\":\\"\\",\\"rights\\":\\"\\",\\"xreference\\":\\"\\"}","featured":"0","language":"*","xreference":""}', 0),
+(3, 1, 1, '', '2014-06-25 10:05:17', 880, 11059, '2db80de427f9a749775fecad195dda7b7e5304b8', '{"id":1,"asset_id":"57","title":"Trang Ch\\u1ee7","alias":"trang-ch","introtext":"<p>\\u00a0<br \\/> <strong>TH\\u01af NG\\u1ece<\\/strong><\\/p>\\r\\n<p align=\\"center\\"><strong>C\\u00d4NG TY TNHH D\\u1ecaCH V\\u1ee4 B\\u1ea2O V\\u1ec6 TH\\u0102NG VI\\u1ec6T<\\/strong><br \\/> <strong>\\u201c TRUNG TH\\u00c0NH \\u2013 K\\u1ef6 LU\\u1eacT \\u2013 TR\\u00c1CH NHI\\u1ec6M \\u201d<\\/strong><\\/p>\\r\\n<p><strong><span style=\\"text-decoration: underline;\\">K\\u00ednh G\\u1eedi<\\/span><\\/strong> : Qu\\u00fd kh\\u00e1ch h\\u00e0ng<\\/p>\\r\\n<p>\\u00a0\\u00a0\\u00a0\\u00a0\\u00a0\\u00a0\\u00a0\\u00a0\\u00a0\\u00a0\\u00a0 H\\u1ed9i nh\\u1eadp xu th\\u1ebf ph\\u00e1t tri\\u1ec3n th\\u1eddi \\u0111\\u1ea1i b\\u1eb1ng con \\u0111\\u01b0\\u1eddng \\u201c C\\u00d4NG NGHI\\u1ec6P H\\u00d3A \\u2013 HI\\u1ec6N \\u0110\\u1ea0I H\\u00d3A\\u201d l\\u00e0 ch\\u1ee7 tr\\u01b0\\u01a1ng \\u0111\\u00fang \\u0111\\u1eafn c\\u1ee7a nh\\u00e0 n\\u01b0\\u1edbc C\\u1ed9ng H\\u00f2a X\\u00e3 H\\u1ed9i Ch\\u1ee7 Ngh\\u0129a Vi\\u1ec7t Nam trong th\\u1eddi k\\u1ef3 \\u0111\\u1ed5i m\\u1edbi hi\\u1ec7n nay, nh\\u1ea5t l\\u00e0 sau khi Vi\\u1ec7t Nam ch\\u00ednh th\\u1ee9c gia nh\\u1eadp t\\u1ed5 ch\\u1ee9c th\\u01b0\\u01a1ng m\\u1ea1i th\\u1ebf gi\\u1edbi (WTO), nhu c\\u1ea7u d\\u1ecbch v\\u1ee5 b\\u1ea3o v\\u1ec7 c\\u0169ng tr\\u1edf n\\u00ean h\\u1ebft s\\u1ee9c c\\u1ea7n thi\\u1ebft, \\u0111\\u00f2i h\\u1ecfi ph\\u1ea3i \\u0111\\u01b0\\u1ee3c x\\u00e2y d\\u1ef1ng ph\\u00e1t tri\\u1ec3n ngang t\\u1ea7m v\\u1edbi quy m\\u00f4 ng\\u00e0y c\\u00e0ng l\\u1edbn m\\u1ea1nh, v\\u1edbi t\\u00ednh chuy\\u00ean nghi\\u1ec7p ng\\u00e0y c\\u00e0ng cao, nh\\u1eb1m m\\u1ee5c \\u0111\\u00edch th\\u1ef1c hi\\u1ec7n t\\u1ed1t c\\u00f4ng t\\u00e1c b\\u1ea3o v\\u1ec7 an to\\u00e0n cho c\\u00e1c \\u0111\\u01a1n v\\u1ecb, c\\u01a1 quan, doanh nghi\\u1ec7p, x\\u00ed nghi\\u1ec7p , nh\\u00e0 m\\u00e1y, \\u0111\\u00e1p \\u1ee9ng s\\u1ef1 mong mu\\u1ed1n chung c\\u1ee7a c\\u00e1c th\\u00e0nh ph\\u1ea7n kinh t\\u1ebf trong v\\u00e0 ngo\\u00e0i n\\u01b0\\u1edbc.<br \\/> <br \\/> Xu\\u1ea5t ph\\u00e1t t\\u1eeb nh\\u1eadn th\\u1ee9c tr\\u00ean, v\\u00ec s\\u1ef1 nghi\\u1ec7p ph\\u00e1t tri\\u1ec3n chung c\\u1ee7a ng\\u00e0nh d\\u1ecbch v\\u1ee5 b\\u1ea3o v\\u1ec7, g\\u00f3p ph\\u1ea7n t\\u00edch c\\u1ef1c v\\u00e0o vi\\u1ec7c b\\u1ea3o v\\u1ec7 an ninh tr\\u1eadt t\\u1ef1 chung x\\u00e3 h\\u1ed9i, ngu\\u1ed3n \\u0111\\u1ed9ng l\\u1ef1c ch\\u00ednh th\\u00fac \\u0111\\u1ea9y cho s\\u1ef1 ph\\u00e1t tri\\u1ec3n c\\u1ee7a n\\u1ec1n kinh t\\u1ebf \\u0111\\u1ea5t n\\u01b0\\u1edbc n\\u00f3i chung v\\u00e0 c\\u00e1c th\\u00e0nh ph\\u1ea7n kinh t\\u1ebf n\\u00f3i ri\\u00eang .<strong>C\\u00d4NG TY TNHH D\\u1ecaCH V\\u1ee4 B\\u1ea2O V\\u1ec6 TH\\u0102NG VI\\u1ec6T <\\/strong>\\u00a0\\u0111u\\u1ee3c th\\u00e0nh l\\u1eadp, bi\\u1ec3u t\\u01b0\\u1ee3ng cho \\u0111\\u1ea5t n\\u01b0\\u1edbc VI\\u1ec6T NAM c\\u00f3 truy\\u1ec1n th\\u1ed1ng l\\u1ecbch s\\u1eed con r\\u1ed3ng ch\\u00e1u ti\\u00ean, \\u0111ang tr\\u00ean \\u0111\\u00e0 ph\\u00e1t tri\\u1ec3n th\\u0103ng hoa, kh\\u00e1t v\\u1ecdng th\\u1eadt s\\u1ef1 tr\\u1edf th\\u00e0nh con r\\u1ed3ng kinh t\\u1ebf trong khu v\\u1ef1c, v\\u1edbi k\\u1ef3 v\\u1ecdng \\u0111em \\u0111\\u1ebfn Qu\\u00fd kh\\u00e1ch h\\u00e0ng m\\u1ed9t d\\u1ecbch v\\u1ee5 ch\\u1ea5t l\\u01b0\\u1ee3ng cao ho\\u00e0n h\\u1ea3o.<\\/p>\\r\\n<p>Th\\u01b0a Qu\\u00fd kh\\u00e1ch !<\\/p>\\r\\n<p><strong>\\u00a0\\u00a0\\u00a0\\u00a0\\u00a0\\u00a0\\u00a0 \\u00a0\\u00a0C\\u00d4NG TY TNHH D\\u1ecaCH V\\u1ee4 B\\u1ea2O V\\u1ec6 TH\\u0102NG VI\\u1ec6T<\\/strong> \\u0111\\u01b0\\u1ee3c th\\u00e0nh l\\u1eadp v\\u00e0 ho\\u1ea1t \\u0111\\u1ed9ng tr\\u00ean ph\\u1ea1m vi to\\u00e0n l\\u00e3nh th\\u1ed5 Vi\\u1ec7t Nam , \\u0111\\u01b0\\u1ee3c Ph\\u00f2ng QLHC v\\u1ec1 TTXH C\\u00f4ng An TP. HCM c\\u1ea5p gi\\u1ea5y ch\\u1ee9ng nh\\u1eadn \\u0111\\u1ee7 \\u0111i\\u1ec1u ki\\u1ec7n v\\u1ec1 an ninh tr\\u1eadt t\\u1ef1 d\\u1ecbch v\\u1ee5 b\\u1ea3o v\\u1ec7 chuy\\u00ean nghi\\u1ec7p , gi\\u1ea5y ch\\u1ee9ng nh\\u1eadn \\u0111\\u0103ng k\\u00fd kinh doanh do Ph\\u00f2ng \\u0110KKD \\u2013 S\\u1edf K\\u1ebf ho\\u1ea1ch \\u0111\\u1ea7u t\\u01b0 TP.HCM c\\u1ea5p .<\\/p>\\r\\n<p>\\u00a0\\u00a0\\u00a0\\u00a0 \\u00a0\\u00a0\\u00a0\\u00a0\\u00a0V\\u1edbi \\u0111\\u1ed9i ng\\u0169 c\\u00e1n b\\u1ed9 l\\u00e3nh \\u0111\\u1ea1o t\\u00e0i n\\u0103ng tr\\u00ed tu\\u1ec7 c\\u00f3 b\\u1ec1 d\\u00e0y kinh nghi\\u1ec7m l\\u00e2u n\\u0103m trong l\\u0129nh v\\u1ef1c b\\u1ea3o v\\u1ec7 chuy\\u00ean nghi\\u1ec7p, k\\u1ebft h\\u1ee3p c\\u00f9ng \\u0111\\u1ed9i ng\\u0169 nh\\u00e2n vi\\u00ean tr\\u1ebb n\\u0103ng \\u0111\\u1ed9ng \\u0111\\u01b0\\u1ee3c hu\\u1ea5n luy\\u1ec7n v\\u1ec1 ch\\u00ednh tr\\u1ecb, ph\\u00e1p lu\\u1eadt, nghi\\u1ec7p v\\u1ee5, PCCC, v\\u00f5 thu\\u1eadt, v\\u00e0 m\\u1ed9t s\\u1ed1 chuy\\u00ean m\\u00f4n c\\u00f3 li\\u00ean quan \\u0111\\u1ebfn ngh\\u1ec1 nghi\\u1ec7p, ch\\u1eafc ch\\u1eafn s\\u1ebd mang \\u0111\\u1ebfn cho Qu\\u00fd kh\\u00e1ch c\\u1ea3m gi\\u00e1c h\\u00e0i l\\u00f2ng v\\u00e0 y\\u00ean t\\u00e2m \\u0111\\u1ed1i v\\u1edbi ch\\u1ea5t l\\u01b0\\u1ee3ng d\\u1ecbch v\\u1ee5 c\\u1ee7a ch\\u00fang t\\u00f4i cung c\\u1ea5p.<\\/p>\\r\\n<p>\\u00a0\\u00a0\\u00a0\\u00a0\\u00a0\\u00a0\\u00a0\\u00a0\\u00a0\\u00a0 \\u0110\\u1ed1i v\\u1edbi Qu\\u00fd kh\\u00e1ch h\\u00e0ng ch\\u00fang t\\u00f4i lu\\u00f4n \\u00f4m \\u1ea5p ho\\u00e0i b\\u00e3o s\\u1ebd th\\u1ef1c hi\\u1ec7n , t\\u01b0 v\\u1ea5n , c\\u0169ng nh\\u01b0 h\\u1ed7 tr\\u1ee3 c\\u00e1c bi\\u1ec7n ph\\u00e1p nghi\\u1ec7p v\\u1ee5 an ninh t\\u1ed1i \\u01b0u nh\\u1eb1m b\\u1ea3o v\\u1ec7 an to\\u00e0n v\\u1ec1 t\\u00e0i s\\u1ea3n v\\u00e0 con ng\\u01b0\\u1eddi cho Qu\\u00fd kh\\u00e1ch h\\u00e0ng. Ch\\u1eafc ch\\u1eafn Qu\\u00fd kh\\u00e1ch s\\u1ebd h\\u00e0i l\\u00f2ng v\\u00e0 y\\u00ean t\\u00e2m v\\u1edbi ch\\u1ea5t l\\u01b0\\u1ee3ng c\\u00f4ng vi\\u1ec7c m\\u00e0 ch\\u00fang t\\u00f4i \\u0111\\u00e3 v\\u00e0 s\\u1ebd ph\\u1ee5c v\\u1ee5 cho Qu\\u00fd kh\\u00e1ch, v\\u00ec \\u0111\\u1ed3ng h\\u00e0nh v\\u1edbi ch\\u00fang t\\u00f4i c\\u00f3 m\\u1ed9t \\u0111\\u1ed9i ng\\u0169 c\\u00e1n b\\u1ed9 nh\\u00e2n vi\\u00ean \\u0111\\u1ea7y nhi\\u1ec7t huy\\u1ebft \\u2013 trung th\\u1ef1c \\u2013 ki\\u00ean quy\\u1ebft \\u2013 kh\\u00f4n kh\\u00e9o \\u2013 d\\u0169ng c\\u1ea3m , lu\\u00f4n trong t\\u01b0 th\\u1ebf s\\u1eb5n s\\u00e0ng gi\\u1ea3i quy\\u1ebft m\\u1ecdi t\\u00ecnh hu\\u1ed1ng tr\\u00ean tinh th\\u1ea7n tr\\u00e1ch nhi\\u1ec7m cao nh\\u1ea5t, \\u0111\\u1ea3m b\\u1ea3o \\u0111\\u00e1p \\u1ee9ng nhu c\\u1ea7u th\\u1ef1c hi\\u1ec7n ph\\u01b0\\u01a1ng ch\\u00e2m \\u201c <strong>V\\u00cc B\\u00ccNH Y\\u00caN CU\\u1ed8C S\\u1ed0NG<\\/strong> \\u201d <br \\/> <br \\/> D\\u1ecbch v\\u1ee5 an ninh c\\u1ee7a <strong>C\\u00d4NG TY TNHH D\\u1ecaCH V\\u1ee4 B\\u1ea2O V\\u1ec6 TH\\u0102NG VI\\u1ec6T<\\/strong> \\u0111a d\\u1ea1ng h\\u00f3a v\\u00e0 linh ho\\u1ea1t, \\u0111\\u1ed3ng th\\u1eddi d\\u1ef1a tr\\u00ean c\\u01a1 s\\u1edf s\\u1eb5n c\\u00f3 m\\u1ed1i quan h\\u1ec7 ngo\\u1ea1i giao t\\u1ed1t v\\u1edbi Ch\\u00ednh quy\\u1ec1n \\u0111\\u1ecba ph\\u01b0\\u01a1ng c\\u00e1c c\\u1ea5p, \\u0111\\u1ec3 c\\u00f3 c\\u01a1 ch\\u1ebf ph\\u1ed1i h\\u1ee3p k\\u1ecbp th\\u1eddi, ch\\u1eb7t ch\\u1ebd v\\u1edbi c\\u00e1c \\u0111\\u01a1n v\\u1ecb, l\\u1ef1c l\\u01b0\\u1ee3ng ch\\u1ee9c n\\u0103ng chuy\\u00ean m\\u00f4n, s\\u1eb5n s\\u00e0ng \\u0111\\u00e1p \\u1ee9ng k\\u1ecbp th\\u1eddi m\\u1ecdi nhu c\\u1ea7u th\\u1ef1c t\\u1ebf c\\u1ee7a kh\\u00e1ch h\\u00e0ng, v\\u1edbi m\\u1ee9c gi\\u00e1 d\\u1ecbch v\\u1ee5 ph\\u00f9 h\\u1ee3p, h\\u1ee3p l\\u00fd ( \\u0111\\u01b0\\u1ee3c bao tr\\u1ecdn g\\u00f3i g\\u1ed3m : \\u0110\\u1ed3ng ph\\u1ee5c, Trang thi\\u1ebft b\\u1ecb b\\u1ea3o v\\u1ec7, c\\u00e1c kho\\u1ea3n ph\\u00fac l\\u1ee3i x\\u00e3 h\\u1ed9i, b\\u1ea3o hi\\u1ec3m v.v\\u2026..)<br \\/> <br \\/> Ch\\u00fang t\\u00f4i cam k\\u1ebft v\\u1edbi Qu\\u00fd kh\\u00e1ch h\\u00e0ng l\\u00e0 s\\u1ebd lu\\u00f4n \\u0111\\u1ea3m b\\u1ea3o quy\\u1ec1n l\\u1ee3i c\\u01a1 b\\u1ea3n v\\u00e0 ng\\u00e0y c\\u00e0ng \\u0111\\u01b0\\u1ee3c c\\u1ea3i thi\\u1ec7n v\\u1ec1 v\\u1eadt ch\\u1ea5t v\\u00e0 tinh th\\u1ea7n cho \\u0111\\u1ed9i ng\\u0169 c\\u00e1n b\\u1ed9 nh\\u00e2n vi\\u00ean c\\u1ee7a C\\u00f4ng ty ch\\u00fang t\\u00f4i, \\u0111\\u1ec3 h\\u1ecd lu\\u00f4n l\\u00e0 nh\\u1eefng th\\u00e0nh vi\\u00ean trung th\\u00e0nh, c\\u00f3 tr\\u00e1ch nhi\\u1ec7m cao, g\\u1eafn b\\u00f3 l\\u00e2u d\\u00e0i v\\u1edbi C\\u00f4ng ty v\\u00e0 ch\\u00ednh h\\u1ecd c\\u0169ng s\\u1ebd l\\u00e0 nh\\u1eefng h\\u1ea1t nh\\u00e2n t\\u00edch c\\u1ef1c trong phong tr\\u00e0o gi\\u1eef g\\u00ecn, b\\u1ea3o v\\u1ec7 an ninh tr\\u1eadt t\\u1ef1, an to\\u00e0n x\\u00e3 h\\u1ed9i. \\u0110\\u00f3 l\\u00e0 nh\\u1eefng l\\u00fd do v\\u00ec sao ch\\u00fang t\\u00f4i tin t\\u01b0\\u1edfng s\\u1ebd mang \\u0111\\u1ebfn Qu\\u00fd kh\\u00e1ch m\\u1ed9t d\\u1ecbch v\\u1ee5 an ninh c\\u00f3 ch\\u1ea5t l\\u01b0\\u1ee3ng cao nh\\u01b0 mong mu\\u1ed1n c\\u1ee7a Qu\\u00fd kh\\u00e1ch.<\\/p>\\r\\n<p align=\\"center\\"><strong><span style=\\"text-decoration: underline;\\">N\\u1ebeU QU\\u00dd KH\\u00c1CH C\\u1ea6N C\\u00d3 M\\u1ed8T GI\\u1ea2I PH\\u00c1P AN NINH TIN C\\u1eacY \\u2013 UY T\\u00cdN<\\/span><\\/strong><br \\/> <strong>Xin vui l\\u00f2ng li\\u00ean h\\u1ec7 v\\u1edbi ch\\u00fang t\\u00f4i !!!\\u00a0 ( Qua c\\u00e1c th\\u00f4ng tin sau )<\\/strong><\\/p>\\r\\n<p>\\u00a0\\u00a0\\u00a0\\u00a0\\u00a0\\u00a0\\u00a0 - T\\u00ean C\\u00f4ng ty \\u00a0: C\\u00d4NG TY TNHH D\\u1ecaCH V\\u1ee4 B\\u1ea2O V\\u1ec6 TH\\u0102NG VI\\u1ec6T <br \\/> - \\u0110\\u1ecba ch\\u1ec9 \\u00a0: 137B, \\u0110\\u01b0\\u1eddng Nguy\\u1ec5n Ch\\u00ed Thanh , P. 09 ,\\u00a0 Q. 05 , TP.HCM , VN<br \\/> - \\u0110i\\u1ec7n tho\\u1ea1i : 086 2646719 \\u2013 0650 3777518 <br \\/> - Fax \\u00a0: 0862646719 \\u2013 0650 3777519<br \\/> - Website \\u00a0: <a href=\\"http:\\/\\/thangvietsecurity.com\\/\\">http:\\/\\/thangvietsecurity.com<\\/a> <br \\/> - Mr. TR\\u1ea6N HUY PHONG\\u00a0 \\u00a0-\\u00a0 \\u0110TD\\u0110 :\\u00a0 0938.304.333<br \\/> - Mr. Ng\\u00f4 C\\u01a1 \\u2013\\u0110TD\\u0110: 0906.097.864<\\/p>\\r\\n<p>\\u00a0\\u00a0\\u00a0\\u00a0\\u00a0\\u00a0\\u00a0\\u00a0\\u00a0\\u00a0\\u00a0\\u00a0 <strong><img src=\\"index_clip_image001.gif\\" alt=\\"H\\u00c2N H\\u1ea0NH \\u0110\\u01af\\u1ee2C PH\\u1ee4C V\\u1ee4 QU\\u00dd KH\\u00c1CH !\\" width=\\"639\\" height=\\"40\\" border=\\"0\\" \\/><\\/strong><\\/p>\\r\\n<p>\\u00a0<\\/p>","fulltext":"","state":1,"catid":"2","created":"2014-06-25 09:45:13","created_by":"880","created_by_alias":"","modified":"2014-06-25 10:05:17","modified_by":"880","checked_out":"880","checked_out_time":"2014-06-25 10:03:19","publish_up":"2014-06-25 09:45:13","publish_down":"0000-00-00 00:00:00","images":"{\\"image_intro\\":\\"\\",\\"float_intro\\":\\"\\",\\"image_intro_alt\\":\\"\\",\\"image_intro_caption\\":\\"\\",\\"image_fulltext\\":\\"\\",\\"float_fulltext\\":\\"\\",\\"image_fulltext_alt\\":\\"\\",\\"image_fulltext_caption\\":\\"\\"}","urls":"{\\"urla\\":false,\\"urlatext\\":\\"\\",\\"targeta\\":\\"\\",\\"urlb\\":false,\\"urlbtext\\":\\"\\",\\"targetb\\":\\"\\",\\"urlc\\":false,\\"urlctext\\":\\"\\",\\"targetc\\":\\"\\"}","attribs":"{\\"show_title\\":\\"\\",\\"link_titles\\":\\"\\",\\"show_tags\\":\\"\\",\\"show_intro\\":\\"\\",\\"info_block_position\\":\\"\\",\\"show_category\\":\\"\\",\\"link_category\\":\\"\\",\\"show_parent_category\\":\\"\\",\\"link_parent_category\\":\\"\\",\\"show_author\\":\\"\\",\\"link_author\\":\\"\\",\\"show_create_date\\":\\"\\",\\"show_modify_date\\":\\"\\",\\"show_publish_date\\":\\"\\",\\"show_item_navigation\\":\\"\\",\\"show_icons\\":\\"\\",\\"show_print_icon\\":\\"\\",\\"show_email_icon\\":\\"\\",\\"show_vote\\":\\"\\",\\"show_hits\\":\\"\\",\\"show_noauth\\":\\"\\",\\"urls_position\\":\\"\\",\\"alternative_readmore\\":\\"\\",\\"article_layout\\":\\"\\",\\"show_publishing_options\\":\\"\\",\\"show_article_options\\":\\"\\",\\"show_urls_images_backend\\":\\"\\",\\"show_urls_images_frontend\\":\\"\\"}","version":3,"ordering":"0","metakey":"","metadesc":"","access":"1","hits":"18","metadata":"{\\"robots\\":\\"\\",\\"author\\":\\"\\",\\"rights\\":\\"\\",\\"xreference\\":\\"\\"}","featured":"0","language":"*","xreference":""}', 0);
 
 -- --------------------------------------------------------
 
@@ -1801,6 +1922,7 @@ CREATE TABLE IF NOT EXISTS `d9jhp_ucm_history` (
 -- Table structure for table `d9jhp_updates`
 --
 
+DROP TABLE IF EXISTS `d9jhp_updates`;
 CREATE TABLE IF NOT EXISTS `d9jhp_updates` (
   `update_id` int(11) NOT NULL AUTO_INCREMENT,
   `update_site_id` int(11) DEFAULT '0',
@@ -1824,59 +1946,59 @@ CREATE TABLE IF NOT EXISTS `d9jhp_updates` (
 --
 
 INSERT INTO `d9jhp_updates` (`update_id`, `update_site_id`, `extension_id`, `name`, `description`, `element`, `type`, `folder`, `client_id`, `version`, `data`, `detailsurl`, `infourl`, `extra_query`) VALUES
-(1, 3, 0, 'Latvian', '', 'pkg_lv-LV', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/lv-LV_details.xml', '', ''),
-(2, 3, 0, 'Macedonian', '', 'pkg_mk-MK', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/mk-MK_details.xml', '', ''),
-(3, 3, 0, 'Norwegian Bokmal', '', 'pkg_nb-NO', 'package', '', 0, '3.2.2.1', '', 'http://update.joomla.org/language/details3/nb-NO_details.xml', '', ''),
-(4, 3, 0, 'Persian', '', 'pkg_fa-IR', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/fa-IR_details.xml', '', ''),
-(5, 3, 0, 'Polish', '', 'pkg_pl-PL', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/pl-PL_details.xml', '', ''),
-(6, 3, 0, 'Russian', '', 'pkg_ru-RU', 'package', '', 0, '3.3.0.1', '', 'http://update.joomla.org/language/details3/ru-RU_details.xml', '', ''),
-(7, 3, 0, 'Slovak', '', 'pkg_sk-SK', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/sk-SK_details.xml', '', ''),
-(8, 3, 0, 'Swedish', '', 'pkg_sv-SE', 'package', '', 0, '3.3.0.1', '', 'http://update.joomla.org/language/details3/sv-SE_details.xml', '', ''),
-(9, 3, 0, 'Syriac', '', 'pkg_sy-IQ', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/sy-IQ_details.xml', '', ''),
-(10, 3, 0, 'Malay', '', 'pkg_ms-MY', 'package', '', 0, '3.2.2.1', '', 'http://update.joomla.org/language/details3/ms-MY_details.xml', '', ''),
-(11, 3, 0, 'Tamil', '', 'pkg_ta-IN', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/ta-IN_details.xml', '', ''),
-(12, 3, 0, 'Romanian', '', 'pkg_ro-RO', 'package', '', 0, '3.3.0.1', '', 'http://update.joomla.org/language/details3/ro-RO_details.xml', '', ''),
-(13, 3, 0, 'Flemish', '', 'pkg_nl-BE', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/nl-BE_details.xml', '', ''),
-(14, 3, 0, 'Thai', '', 'pkg_th-TH', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/th-TH_details.xml', '', ''),
-(15, 3, 0, 'Chinese Traditional', '', 'pkg_zh-TW', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/zh-TW_details.xml', '', ''),
-(16, 3, 0, 'French', '', 'pkg_fr-FR', 'package', '', 0, '3.3.1.2', '', 'http://update.joomla.org/language/details3/fr-FR_details.xml', '', ''),
-(17, 3, 0, 'Turkish', '', 'pkg_tr-TR', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/tr-TR_details.xml', '', ''),
+(1, 3, 0, 'Serbian Latin', '', 'pkg_sr-YU', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/sr-YU_details.xml', '', ''),
+(2, 3, 0, 'Spanish', '', 'pkg_es-ES', 'package', '', 0, '3.3.1.3', '', 'http://update.joomla.org/language/details3/es-ES_details.xml', '', ''),
+(3, 3, 0, 'Bosnian', '', 'pkg_bs-BA', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/bs-BA_details.xml', '', ''),
+(4, 3, 0, 'Serbian Cyrillic', '', 'pkg_sr-RS', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/sr-RS_details.xml', '', ''),
+(5, 3, 0, 'Vietnamese', '', 'pkg_vi-VN', 'package', '', 0, '3.2.1.1', '', 'http://update.joomla.org/language/details3/vi-VN_details.xml', '', ''),
+(6, 3, 0, 'Bahasa Indonesia', '', 'pkg_id-ID', 'package', '', 0, '3.3.0.2', '', 'http://update.joomla.org/language/details3/id-ID_details.xml', '', ''),
+(7, 3, 0, 'Finnish', '', 'pkg_fi-FI', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/fi-FI_details.xml', '', ''),
+(8, 3, 0, 'Swahili', '', 'pkg_sw-KE', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/sw-KE_details.xml', '', ''),
+(9, 3, 0, 'Montenegrin', '', 'pkg_srp-ME', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/srp-ME_details.xml', '', ''),
+(10, 3, 0, 'EnglishCA', '', 'pkg_en-CA', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/en-CA_details.xml', '', ''),
+(11, 3, 0, 'FrenchCA', '', 'pkg_fr-CA', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/fr-CA_details.xml', '', ''),
+(12, 3, 0, 'Welsh', '', 'pkg_cy-GB', 'package', '', 0, '3.3.0.1', '', 'http://update.joomla.org/language/details3/cy-GB_details.xml', '', ''),
+(13, 3, 0, 'Malay', '', 'pkg_ms-MY', 'package', '', 0, '3.2.2.1', '', 'http://update.joomla.org/language/details3/ms-MY_details.xml', '', ''),
+(14, 3, 0, 'Romanian', '', 'pkg_ro-RO', 'package', '', 0, '3.3.0.1', '', 'http://update.joomla.org/language/details3/ro-RO_details.xml', '', ''),
+(15, 3, 0, 'Flemish', '', 'pkg_nl-BE', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/nl-BE_details.xml', '', ''),
+(16, 3, 0, 'Chinese Traditional', '', 'pkg_zh-TW', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/zh-TW_details.xml', '', ''),
+(17, 3, 0, 'French', '', 'pkg_fr-FR', 'package', '', 0, '3.3.1.2', '', 'http://update.joomla.org/language/details3/fr-FR_details.xml', '', ''),
 (18, 3, 0, 'German', '', 'pkg_de-DE', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/de-DE_details.xml', '', ''),
-(19, 3, 0, 'Ukrainian', '', 'pkg_uk-UA', 'package', '', 0, '3.2.0.6', '', 'http://update.joomla.org/language/details3/uk-UA_details.xml', '', ''),
-(20, 3, 0, 'Greek', '', 'pkg_el-GR', 'package', '', 0, '3.2.0.1', '', 'http://update.joomla.org/language/details3/el-GR_details.xml', '', ''),
-(21, 3, 0, 'Uyghur', '', 'pkg_ug-CN', 'package', '', 0, '3.3.0.1', '', 'http://update.joomla.org/language/details3/ug-CN_details.xml', '', ''),
-(22, 3, 0, 'Japanese', '', 'pkg_ja-JP', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/ja-JP_details.xml', '', ''),
-(23, 3, 0, 'Albanian', '', 'pkg_sq-AL', 'package', '', 0, '3.1.1.1', '', 'http://update.joomla.org/language/details3/sq-AL_details.xml', '', ''),
-(24, 3, 0, 'Hebrew', '', 'pkg_he-IL', 'package', '', 0, '3.1.1.1', '', 'http://update.joomla.org/language/details3/he-IL_details.xml', '', ''),
-(25, 3, 0, 'Portuguese Brazil', '', 'pkg_pt-BR', 'package', '', 0, '3.0.2.1', '', 'http://update.joomla.org/language/details3/pt-BR_details.xml', '', ''),
-(26, 3, 0, 'EnglishAU', '', 'pkg_en-AU', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/en-AU_details.xml', '', ''),
-(27, 3, 0, 'Serbian Latin', '', 'pkg_sr-YU', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/sr-YU_details.xml', '', ''),
-(28, 3, 0, 'EnglishUS', '', 'pkg_en-US', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/en-US_details.xml', '', ''),
-(29, 3, 0, 'Spanish', '', 'pkg_es-ES', 'package', '', 0, '3.3.1.3', '', 'http://update.joomla.org/language/details3/es-ES_details.xml', '', ''),
-(30, 3, 0, 'Hungarian', '', 'pkg_hu-HU', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/hu-HU_details.xml', '', ''),
-(31, 3, 0, 'Bosnian', '', 'pkg_bs-BA', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/bs-BA_details.xml', '', ''),
-(32, 3, 0, 'Afrikaans', '', 'pkg_af-ZA', 'package', '', 0, '3.2.0.1', '', 'http://update.joomla.org/language/details3/af-ZA_details.xml', '', ''),
-(33, 3, 0, 'Serbian Cyrillic', '', 'pkg_sr-RS', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/sr-RS_details.xml', '', ''),
-(34, 3, 0, 'Arabic Unitag', '', 'pkg_ar-AA', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/ar-AA_details.xml', '', ''),
-(35, 3, 0, 'Vietnamese', '', 'pkg_vi-VN', 'package', '', 0, '3.2.1.1', '', 'http://update.joomla.org/language/details3/vi-VN_details.xml', '', ''),
-(36, 3, 0, 'Belarusian', '', 'pkg_be-BY', 'package', '', 0, '3.2.1.1', '', 'http://update.joomla.org/language/details3/be-BY_details.xml', '', ''),
-(37, 3, 0, 'Bahasa Indonesia', '', 'pkg_id-ID', 'package', '', 0, '3.3.0.2', '', 'http://update.joomla.org/language/details3/id-ID_details.xml', '', ''),
-(38, 3, 0, 'Bulgarian', '', 'pkg_bg-BG', 'package', '', 0, '3.3.0.1', '', 'http://update.joomla.org/language/details3/bg-BG_details.xml', '', ''),
-(39, 3, 0, 'Finnish', '', 'pkg_fi-FI', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/fi-FI_details.xml', '', ''),
-(40, 3, 0, 'Catalan', '', 'pkg_ca-ES', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/ca-ES_details.xml', '', ''),
-(41, 3, 0, 'Swahili', '', 'pkg_sw-KE', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/sw-KE_details.xml', '', ''),
-(42, 3, 0, 'Chinese Simplified', '', 'pkg_zh-CN', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/zh-CN_details.xml', '', ''),
-(43, 3, 0, 'Montenegrin', '', 'pkg_srp-ME', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/srp-ME_details.xml', '', ''),
-(44, 3, 0, 'Croatian', '', 'pkg_hr-HR', 'package', '', 0, '3.1.5.1', '', 'http://update.joomla.org/language/details3/hr-HR_details.xml', '', ''),
-(45, 3, 0, 'EnglishCA', '', 'pkg_en-CA', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/en-CA_details.xml', '', ''),
-(46, 3, 0, 'Czech', '', 'pkg_cs-CZ', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/cs-CZ_details.xml', '', ''),
-(47, 3, 0, 'FrenchCA', '', 'pkg_fr-CA', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/fr-CA_details.xml', '', ''),
-(48, 3, 0, 'Danish', '', 'pkg_da-DK', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/da-DK_details.xml', '', ''),
-(49, 3, 0, 'Welsh', '', 'pkg_cy-GB', 'package', '', 0, '3.3.0.1', '', 'http://update.joomla.org/language/details3/cy-GB_details.xml', '', ''),
-(50, 3, 0, 'Dutch', '', 'pkg_nl-NL', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/nl-NL_details.xml', '', ''),
-(51, 3, 0, 'Estonian', '', 'pkg_et-EE', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/et-EE_details.xml', '', ''),
-(52, 3, 0, 'Italian', '', 'pkg_it-IT', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/it-IT_details.xml', '', ''),
-(53, 3, 0, 'Korean', '', 'pkg_ko-KR', 'package', '', 0, '3.2.3.1', '', 'http://update.joomla.org/language/details3/ko-KR_details.xml', '', '');
+(19, 3, 0, 'Greek', '', 'pkg_el-GR', 'package', '', 0, '3.2.0.1', '', 'http://update.joomla.org/language/details3/el-GR_details.xml', '', ''),
+(20, 3, 0, 'Japanese', '', 'pkg_ja-JP', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/ja-JP_details.xml', '', ''),
+(21, 3, 0, 'Hebrew', '', 'pkg_he-IL', 'package', '', 0, '3.1.1.1', '', 'http://update.joomla.org/language/details3/he-IL_details.xml', '', ''),
+(22, 3, 0, 'EnglishAU', '', 'pkg_en-AU', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/en-AU_details.xml', '', ''),
+(23, 3, 0, 'EnglishUS', '', 'pkg_en-US', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/en-US_details.xml', '', ''),
+(24, 3, 0, 'Hungarian', '', 'pkg_hu-HU', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/hu-HU_details.xml', '', ''),
+(25, 3, 0, 'Afrikaans', '', 'pkg_af-ZA', 'package', '', 0, '3.2.0.1', '', 'http://update.joomla.org/language/details3/af-ZA_details.xml', '', ''),
+(26, 3, 0, 'Arabic Unitag', '', 'pkg_ar-AA', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/ar-AA_details.xml', '', ''),
+(27, 3, 0, 'Belarusian', '', 'pkg_be-BY', 'package', '', 0, '3.2.1.1', '', 'http://update.joomla.org/language/details3/be-BY_details.xml', '', ''),
+(28, 3, 0, 'Bulgarian', '', 'pkg_bg-BG', 'package', '', 0, '3.3.0.1', '', 'http://update.joomla.org/language/details3/bg-BG_details.xml', '', ''),
+(29, 3, 0, 'Catalan', '', 'pkg_ca-ES', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/ca-ES_details.xml', '', ''),
+(30, 3, 0, 'Chinese Simplified', '', 'pkg_zh-CN', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/zh-CN_details.xml', '', ''),
+(31, 3, 0, 'Croatian', '', 'pkg_hr-HR', 'package', '', 0, '3.1.5.1', '', 'http://update.joomla.org/language/details3/hr-HR_details.xml', '', ''),
+(32, 3, 0, 'Czech', '', 'pkg_cs-CZ', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/cs-CZ_details.xml', '', ''),
+(33, 3, 0, 'Danish', '', 'pkg_da-DK', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/da-DK_details.xml', '', ''),
+(34, 3, 0, 'Dutch', '', 'pkg_nl-NL', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/nl-NL_details.xml', '', ''),
+(35, 3, 0, 'Estonian', '', 'pkg_et-EE', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/et-EE_details.xml', '', ''),
+(36, 3, 0, 'Italian', '', 'pkg_it-IT', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/it-IT_details.xml', '', ''),
+(37, 3, 0, 'Korean', '', 'pkg_ko-KR', 'package', '', 0, '3.2.3.1', '', 'http://update.joomla.org/language/details3/ko-KR_details.xml', '', ''),
+(38, 3, 0, 'Latvian', '', 'pkg_lv-LV', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/lv-LV_details.xml', '', ''),
+(39, 3, 0, 'Macedonian', '', 'pkg_mk-MK', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/mk-MK_details.xml', '', ''),
+(40, 3, 0, 'Norwegian Bokmal', '', 'pkg_nb-NO', 'package', '', 0, '3.2.2.1', '', 'http://update.joomla.org/language/details3/nb-NO_details.xml', '', ''),
+(41, 3, 0, 'Persian', '', 'pkg_fa-IR', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/fa-IR_details.xml', '', ''),
+(42, 3, 0, 'Polish', '', 'pkg_pl-PL', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/pl-PL_details.xml', '', ''),
+(43, 3, 0, 'Russian', '', 'pkg_ru-RU', 'package', '', 0, '3.3.0.1', '', 'http://update.joomla.org/language/details3/ru-RU_details.xml', '', ''),
+(44, 3, 0, 'Slovak', '', 'pkg_sk-SK', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/sk-SK_details.xml', '', ''),
+(45, 3, 0, 'Swedish', '', 'pkg_sv-SE', 'package', '', 0, '3.3.0.1', '', 'http://update.joomla.org/language/details3/sv-SE_details.xml', '', ''),
+(46, 3, 0, 'Syriac', '', 'pkg_sy-IQ', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/sy-IQ_details.xml', '', ''),
+(47, 3, 0, 'Tamil', '', 'pkg_ta-IN', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/ta-IN_details.xml', '', ''),
+(48, 3, 0, 'Thai', '', 'pkg_th-TH', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/th-TH_details.xml', '', ''),
+(49, 3, 0, 'Turkish', '', 'pkg_tr-TR', 'package', '', 0, '3.3.1.1', '', 'http://update.joomla.org/language/details3/tr-TR_details.xml', '', ''),
+(50, 3, 0, 'Ukrainian', '', 'pkg_uk-UA', 'package', '', 0, '3.2.0.6', '', 'http://update.joomla.org/language/details3/uk-UA_details.xml', '', ''),
+(51, 3, 0, 'Uyghur', '', 'pkg_ug-CN', 'package', '', 0, '3.3.0.1', '', 'http://update.joomla.org/language/details3/ug-CN_details.xml', '', ''),
+(52, 3, 0, 'Albanian', '', 'pkg_sq-AL', 'package', '', 0, '3.1.1.1', '', 'http://update.joomla.org/language/details3/sq-AL_details.xml', '', ''),
+(53, 3, 0, 'Portuguese Brazil', '', 'pkg_pt-BR', 'package', '', 0, '3.0.2.1', '', 'http://update.joomla.org/language/details3/pt-BR_details.xml', '', '');
 
 -- --------------------------------------------------------
 
@@ -1884,6 +2006,7 @@ INSERT INTO `d9jhp_updates` (`update_id`, `update_site_id`, `extension_id`, `nam
 -- Table structure for table `d9jhp_update_sites`
 --
 
+DROP TABLE IF EXISTS `d9jhp_update_sites`;
 CREATE TABLE IF NOT EXISTS `d9jhp_update_sites` (
   `update_site_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) DEFAULT '',
@@ -1900,10 +2023,10 @@ CREATE TABLE IF NOT EXISTS `d9jhp_update_sites` (
 --
 
 INSERT INTO `d9jhp_update_sites` (`update_site_id`, `name`, `type`, `location`, `enabled`, `last_check_timestamp`, `extra_query`) VALUES
-(1, 'Joomla Core', 'collection', 'http://update.joomla.org/core/list.xml', 1, 1403644132, ''),
-(2, 'Joomla Extension Directory', 'collection', 'http://update.joomla.org/jed/list.xml', 1, 1403644132, ''),
-(3, 'Accredited Joomla! Translations', 'collection', 'http://update.joomla.org/language/translationlist_3.xml', 1, 1403644132, ''),
-(4, 'Vinaora Update Server', 'extension', 'http://update.vinaora.com/joomla3x/mod_vt_nivo_slider.xml', 1, 0, '');
+(1, 'Joomla Core', 'collection', 'http://update.joomla.org/core/list.xml', 1, 1403687990, ''),
+(2, 'Joomla Extension Directory', 'collection', 'http://update.joomla.org/jed/list.xml', 1, 1403687990, ''),
+(3, 'Accredited Joomla! Translations', 'collection', 'http://update.joomla.org/language/translationlist_3.xml', 1, 1403687990, ''),
+(4, 'Vinaora Update Server', 'extension', 'http://update.vinaora.com/joomla3x/mod_vt_nivo_slider.xml', 1, 1403687990, '');
 
 -- --------------------------------------------------------
 
@@ -1911,6 +2034,7 @@ INSERT INTO `d9jhp_update_sites` (`update_site_id`, `name`, `type`, `location`, 
 -- Table structure for table `d9jhp_update_sites_extensions`
 --
 
+DROP TABLE IF EXISTS `d9jhp_update_sites_extensions`;
 CREATE TABLE IF NOT EXISTS `d9jhp_update_sites_extensions` (
   `update_site_id` int(11) NOT NULL DEFAULT '0',
   `extension_id` int(11) NOT NULL DEFAULT '0',
@@ -1933,6 +2057,7 @@ INSERT INTO `d9jhp_update_sites_extensions` (`update_site_id`, `extension_id`) V
 -- Table structure for table `d9jhp_usergroups`
 --
 
+DROP TABLE IF EXISTS `d9jhp_usergroups`;
 CREATE TABLE IF NOT EXISTS `d9jhp_usergroups` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',
   `parent_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Adjacency List Reference Id',
@@ -1967,6 +2092,7 @@ INSERT INTO `d9jhp_usergroups` (`id`, `parent_id`, `lft`, `rgt`, `title`) VALUES
 -- Table structure for table `d9jhp_users`
 --
 
+DROP TABLE IF EXISTS `d9jhp_users`;
 CREATE TABLE IF NOT EXISTS `d9jhp_users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL DEFAULT '',
@@ -1996,7 +2122,7 @@ CREATE TABLE IF NOT EXISTS `d9jhp_users` (
 --
 
 INSERT INTO `d9jhp_users` (`id`, `name`, `username`, `email`, `password`, `block`, `sendEmail`, `registerDate`, `lastvisitDate`, `activation`, `params`, `lastResetTime`, `resetCount`, `otpKey`, `otep`, `requireReset`) VALUES
-(880, 'Super User', 'admin', 'hunguit@yahoo.com', '$2y$10$N4T3siSb0oH3.eiESbGPeuynNF3dv1IElCw6vmI3XPbiUUU.qgIB2', 0, 1, '2014-06-24 15:06:59', '2014-06-24 21:08:45', '0', '{}', '0000-00-00 00:00:00', 0, '', '', 0);
+(880, 'Super User', 'admin', 'hunguit@yahoo.com', '$2y$10$N4T3siSb0oH3.eiESbGPeuynNF3dv1IElCw6vmI3XPbiUUU.qgIB2', 0, 1, '2014-06-24 15:06:59', '2014-06-25 09:19:44', '0', '{}', '0000-00-00 00:00:00', 0, '', '', 0);
 
 -- --------------------------------------------------------
 
@@ -2004,6 +2130,7 @@ INSERT INTO `d9jhp_users` (`id`, `name`, `username`, `email`, `password`, `block
 -- Table structure for table `d9jhp_user_keys`
 --
 
+DROP TABLE IF EXISTS `d9jhp_user_keys`;
 CREATE TABLE IF NOT EXISTS `d9jhp_user_keys` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `user_id` varchar(255) NOT NULL,
@@ -2025,6 +2152,7 @@ CREATE TABLE IF NOT EXISTS `d9jhp_user_keys` (
 -- Table structure for table `d9jhp_user_notes`
 --
 
+DROP TABLE IF EXISTS `d9jhp_user_notes`;
 CREATE TABLE IF NOT EXISTS `d9jhp_user_notes` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `user_id` int(10) unsigned NOT NULL DEFAULT '0',
@@ -2052,6 +2180,7 @@ CREATE TABLE IF NOT EXISTS `d9jhp_user_notes` (
 -- Table structure for table `d9jhp_user_profiles`
 --
 
+DROP TABLE IF EXISTS `d9jhp_user_profiles`;
 CREATE TABLE IF NOT EXISTS `d9jhp_user_profiles` (
   `user_id` int(11) NOT NULL,
   `profile_key` varchar(100) NOT NULL,
@@ -2066,6 +2195,7 @@ CREATE TABLE IF NOT EXISTS `d9jhp_user_profiles` (
 -- Table structure for table `d9jhp_user_usergroup_map`
 --
 
+DROP TABLE IF EXISTS `d9jhp_user_usergroup_map`;
 CREATE TABLE IF NOT EXISTS `d9jhp_user_usergroup_map` (
   `user_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Foreign Key to #__users.id',
   `group_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Foreign Key to #__usergroups.id',
@@ -2085,6 +2215,7 @@ INSERT INTO `d9jhp_user_usergroup_map` (`user_id`, `group_id`) VALUES
 -- Table structure for table `d9jhp_viewlevels`
 --
 
+DROP TABLE IF EXISTS `d9jhp_viewlevels`;
 CREATE TABLE IF NOT EXISTS `d9jhp_viewlevels` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',
   `title` varchar(100) NOT NULL DEFAULT '',
@@ -2111,6 +2242,7 @@ INSERT INTO `d9jhp_viewlevels` (`id`, `title`, `ordering`, `rules`) VALUES
 -- Table structure for table `d9jhp_weblinks`
 --
 
+DROP TABLE IF EXISTS `d9jhp_weblinks`;
 CREATE TABLE IF NOT EXISTS `d9jhp_weblinks` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `catid` int(11) NOT NULL DEFAULT '0',
