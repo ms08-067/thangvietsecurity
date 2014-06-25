@@ -19,12 +19,52 @@ table {
 }
 .wrap_content {
 	background: #fff;
-	color: #000;
+	color: #333;
 	margin-bottom: 0px !important;
 }
 ul.menuleft li a,ul.menuright li a {
-	color: #000;
+	color: #333;
 	text-decoration: none;
+}
+.moduletable {
+	border: solid 1px #ccc;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	
+	border-radius: 6px;
+}
+.moduletable .custom,.moduletable .nav {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.header {
+	margin-bottom: 0px !important;
+}
+.moduletable h3 {
+	padding-top: 6px;
+	font-size: 16px;
+	padding-bottom: 6px;
+	margin-bottom: 8px;
+	text-align: center;
+	background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  font-family: Arial;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.left {
+	margin-left: 2px !important;
+}
+.right {
+	margin-right: 2px !important;
+}
+.center {
+	width: 558px !important;
 }
 .main {
     background: none repeat scroll 0 0 #fff;
@@ -32,6 +72,13 @@ ul.menuleft li a,ul.menuright li a {
     margin-right: auto;
     padding: 0;
     width: 1000px;
+}
+.menuleft li, .menuright li {
+	border-bottom: 1px dashed #cccccc;
+    margin: 0;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    
 }
 .head {
     height: auto;
@@ -56,19 +103,14 @@ ul.menuleft li a,ul.menuright li a {
     margin-top: -235px;
     width: 143px;
 }
-.left {
-    float: left;
-    margin-left: 5px;
-    margin-top: -14px;
-    min-height: 400px;
-    padding: 3px;
-    width: 200px;
-}
 .menu_right {
     float: right;
     margin-top: -10px;
     min-height: 400px;
     width: 200px;
+}
+li.item-121, li.item-144 {
+	border-bottom: none;
 }
 .content {
     float: left;
@@ -79,13 +121,7 @@ ul.menuleft li a,ul.menuright li a {
     padding: 3px;
     width: 580px;
 }
-.right {
-    border: 1px solid #cdcdcd;
-    float: right;
-    margin-bottom: 5px;
-    min-height: 400px;
-    width: 234px;
-}
+
 .footer {
     background: none repeat scroll 0 0 #033e8d;
     clear: both;
