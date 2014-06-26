@@ -26,7 +26,7 @@ JHtml::_('bootstrap.framework');
         <div class="row header">
             <div class="column12">
                 <img style="width: 100%;" src="<?php echo $temp_path; ?>/images/banner.png" />
-				<div class="menu">
+				<div class="mainmenu">
 					<jdoc:include type="modules" name="menutop" style="none" />
 				 </div>
             </div>

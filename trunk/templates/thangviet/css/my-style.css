@@ -18,9 +18,11 @@ table {
     border-spacing: 0;
 }
 .wrap_content {
-	background: #fff;
-	color: #333;
-	margin-bottom: 0px !important;
+	background: none repeat scroll 0 0 #FFFFFF;
+    color: #333333;
+    margin-bottom: 0 !important;
+    border-top-right-radius: 6px;
+    border-top-left-radius: 6px;
 }
 ul.menuleft li a,ul.menuright li a {
 	color: #333;
@@ -64,7 +66,15 @@ ul.menuleft li a,ul.menuright li a {
 	margin-right: 2px !important;
 }
 .center {
-	width: 558px !important;
+	margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: 564px !important;
+    border: solid 1px #CCC;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 10px;
+    border-radius: 4px;
+	margin-bottom: 20px;
 }
 .main {
     background: none repeat scroll 0 0 #fff;
@@ -155,12 +165,25 @@ ul li {
     display: block;
     float: left;
     margin-left: 15px;
-    margin-top: -5px;
-    min-height: 15px;
     min-width: 70px;
-    padding: 10px;
-    position: relative;
-    width: auto;
+    
+}
+.mainmenu {
+	text-align: center;
+	margin-top: -4px;
+}
+ul.menutop li a{
+	text-decoration: none;
+	font-weight: bold;
+} 
+ul.menutop li {
+	display: inline-block;
+    font-size: 14px;
+    margin-left: 18px;
+    margin-right: 18px;
+    padding-top: 9px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 .menu ul li:hover {
 }
