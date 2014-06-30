@@ -19,7 +19,8 @@
 .collapse {
 	overflow: visible!important;}
   
-/* begin mainmenu */ 
+@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700);
+  /* begin mainmenu */ 
 .icemegamenu > ul {
 	position: relative;
 	margin:0;
@@ -28,21 +29,26 @@
 	clear: both;
 	width: 100%;
 	height:50px;
+	background: #2b2f3a;
+	
+	/*
 	background: #1A1A1A;
 	background: -webkit-linear-gradient(top, #3C3C3C, #1A1A1A);
 	background: -moz-linear-gradient(top, #3C3C3C, #1A1A1A);
 	background: -o-linear-gradient(top, #3C3C3C, #1A1A1A);
 	background: -ms-linear-gradient(top, #3C3C3C, #1A1A1A);
 	background: linear-gradient(top, #3C3C3C, #1A1A1A);
+	*/
 	border-radius: 5px;}
 	
 	.icemegamenu > ul > li {
 		position: relative;
-		display: block;
-		float: left;}
+		display: inline-block;
+		float: none;
+	}
 
 .icesubMenu li  a{
-
+font-weight: normal !important;
 line-height: 34px !important;
 text-align: left !important;
 
@@ -51,11 +57,14 @@ text-align: left !important;
 			position: relative;
 			z-index: 9999;
 			display: block;
-			padding: 1px 15px 0 15px;
+			padding: 1px 35px 0 15px;
 			height:21px;
 			line-height: 5px;
-			font-size: 18px;
-			color: #ccc;
+			font-size: 14px;
+			font-weight: bold;
+			font-family: 'PT Sans', sans-serif;
+			color: #fff;
+			
 			text-decoration:none;
 			text-shadow: 1px 1px 1px #000;
 			-webkit-transition: all .25s ease-out;
@@ -93,7 +102,9 @@ text-align: left !important;
 					
 				/* when is current */	
 				.icemegamenu > ul > li.active {
-					background:#444}
+					
+					
+					}
 					
 					.icemegamenu > ul > li.active:first-child {
 						border-radius:5px 0 0 5px}
