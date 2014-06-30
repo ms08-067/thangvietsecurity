@@ -13,7 +13,7 @@ JHtml::_('bootstrap.framework');
     <jdoc:include type="head" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="robots" content="index, follow">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
 
 	<link href='http://fonts.googleapis.com/css?family=Ubuntu&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="<?php echo $temp_path; ?>/css/1140.css">
@@ -26,7 +26,7 @@ JHtml::_('bootstrap.framework');
     <div class="container12">
         <div class="row header">
             <div class="column12">
-                <img style="width: 100%;" src="<?php echo $temp_path; ?>/images/banner.png" />
+                <img style="width: 100%;" src="<?php echo $temp_path; ?>/images/banner.jpg" />
 				<div class="mainmenu">
 					<jdoc:include type="modules" name="menutop" style="none" />
 				 </div>
