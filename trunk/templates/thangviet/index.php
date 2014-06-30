@@ -18,6 +18,7 @@ JHtml::_('bootstrap.framework');
 	<link href='http://fonts.googleapis.com/css?family=Ubuntu&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="<?php echo $temp_path; ?>/css/1140.css">
 	<link rel="stylesheet" href="<?php echo $temp_path; ?>/css/my-style.css">
+	<link rel="stylesheet" href="<?php echo $temp_path; ?>/css/template.css">
    <!--<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>-->
 	
 </head>
@@ -36,7 +37,7 @@ JHtml::_('bootstrap.framework');
 			<?php endif; ?>
 			</div>
         </div>
-		<!--
+		
         <div class="row wrap_content">
 			<?php if ($this->countModules('left')) : ?>
 				<div class="column3 left"><jdoc:include type="modules" name="left" style="xhtml" /></div>
@@ -53,7 +54,7 @@ JHtml::_('bootstrap.framework');
 				<jdoc:include type="modules" name="footer" />
 				<p class="joomlavi">Design & Developer at <a target="_blank" href="http://www.joomlavi.net">www.joomlavi.net</a></p>
 			</div>
-        </div>-->
+        </div>
 	</div>	
 <script>
 jQuery(function(){
