@@ -76,7 +76,7 @@ ul.menuleft li a,ul.menuright li a {
   background-image: -o-linear-gradient(top, #3498db, #2980b9);
   background-image: linear-gradient(to bottom, #3498db, #2980b9);
   
-  
+	line-height: 30px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     color: #FFFFFF;
@@ -190,6 +190,10 @@ li.item-121, li.item-144 {
     background: none repeat scroll 0 0 #033e8d;
     height: 40px;
     margin-top: 0;
+}
+.header .column12 {
+	margin-left: 0px !important;
+	margin-right: 0px !important;
 }
 .menu ul {
 }
