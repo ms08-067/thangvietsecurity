@@ -193,7 +193,7 @@ body {
 	font-size: 13px;
 	line-height: 18px;
 	color: #333;
-	background-color: #fff;
+	
 }
 a {
 	color: #08c;
@@ -224,7 +224,7 @@ a:focus {
 	border-radius: 500px;
 }
 .row {
-	margin-left: -20px;
+	
 	*zoom: 1;
 }
 .row:before,
@@ -5199,7 +5199,7 @@ a.badge:focus {
 }
 @media (min-width: 1200px) {
 	.row {
-		margin-left: -20px;
+		
 		*zoom: 1;
 	}
 	.row:before,
