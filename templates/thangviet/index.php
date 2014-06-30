@@ -36,7 +36,7 @@ JHtml::_('bootstrap.framework');
 			<?php endif; ?>
 			</div>
         </div>
-     
+		<!--
         <div class="row wrap_content">
 			<?php if ($this->countModules('left')) : ?>
 				<div class="column3 left"><jdoc:include type="modules" name="left" style="xhtml" /></div>
@@ -51,8 +51,18 @@ JHtml::_('bootstrap.framework');
 			<?php endif; ?>
 			<div class="info_footer">
 				<jdoc:include type="modules" name="footer" />
+				<p class="joomlavi">Design & Developer at <a target="_blank" href="http://www.joomlavi.net">www.joomlavi.net</a></p>
 			</div>
-        </div>
+        </div>-->
 	</div>	
+<script>
+jQuery(function(){
+
+	jQuery(".menutop li").hover(function(){
+			
+			jQuery(this).children(".nav-child").toggle("normal");
+	});
+});
+</script>	
 </body>
 </html>
