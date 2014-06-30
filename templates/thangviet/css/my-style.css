@@ -16,7 +16,14 @@ a, h2 {
 	margin: 14px 0;
 	font-weight: normal;
 }
-
+p.joomlavi  a{
+	color: #FFF;
+}
+p.joomlavi {
+	color: #FFF;
+	background: #033E8D;
+	text-align: center;
+}
 table {
     border-collapse: collapse;
     border-spacing: 0;
@@ -165,7 +172,7 @@ li.item-121, li.item-144 {
     clear: both;
     font-size: 14px;
     height: auto;
-    min-height: 100px;
+    min-height: 70px;
     padding: 5px;
 }
 .footer {
