@@ -24,11 +24,10 @@ JHtml::_('bootstrap.framework');
 	
 </head>
 <body>
-    <div class="container12">
-        <div class="row header">
-            <div class="column12">
+	<div class="top">
+			<div class="container12">
+			<div class="column12">
                 <div class="banner">
-				
 					<a href="./"><img class="logo" src="./images/thangviet/logo.png" alt="CÔNG TY TNHH DỊCH VỤ THĂNG VIỆT" /></a>
 				</div>
 				<!--<img style="width: 100%;" src="<?php echo $temp_path; ?>/images/banner.png" />-->
@@ -36,6 +35,10 @@ JHtml::_('bootstrap.framework');
 					<jdoc:include type="modules" name="menutop" style="none" />
 				 </div>
             </div>
+			</div>
+	</div>
+    <div class="container12">
+        <div class="row header">
 			<div class="column12">
 			<?php if ($this->countModules('slideshow')) : ?>
 				<jdoc:include type="modules" name="slideshow" style="none" />

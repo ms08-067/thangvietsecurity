@@ -1,15 +1,6 @@
 body {
 	
-	background: #878787; /* Old browsers */
-/* IE9 SVG, needs conditional override of 'filter' to 'none' */
-background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzg3ODc4NyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlY2VjZWMiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-background: -moz-linear-gradient(top, #878787 0%, #ececec 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#878787), color-stop(100%,#ececec)); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top, #878787 0%,#ececec 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top, #878787 0%,#ececec 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top, #878787 0%,#ececec 100%); /* IE10+ */
-background: linear-gradient(to bottom, #878787 0%,#ececec 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#878787', endColorstr='#ececec',GradientType=0 ); /* IE6-8 */
+	
 	color: #fff;
 	font-family: arial;
 	font-weight: normal;
@@ -52,6 +43,7 @@ h1 {
     width: 150px;
 	height: 150px;
 }
+
 .left a, .right a {
 	margin: 2px 0;
 }
@@ -64,8 +56,8 @@ p.joomlavi  a{
 	color: #FFF;
 }
 .logo {
-	margin-left: 12px;
-    margin-top: 6px;
+	margin-left: 0;
+    margin-top: 35px;
     width: 120px;
 }
 .banner {
@@ -73,6 +65,10 @@ p.joomlavi  a{
     height: auto;
     width: 100%;
     height: 165px;
+}
+.top .column12 {
+	margin-left: 0px !important;
+	margin-right: 0px !important;
 }
 p.joomlavi {
 	color: #FFF;
@@ -125,6 +121,21 @@ ul.menuleft li a,ul.menuright li a {
 	font-size: 14px;
     line-height: 22px;
     margin-bottom: 18px;
+}
+.top {
+width: 100%;
+}
+ul.icesubMenu {
+
+}
+.top,.icemegamenu > ul {
+	
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
 }
 .moduletable h3 {
 	
