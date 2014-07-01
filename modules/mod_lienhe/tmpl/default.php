@@ -1,88 +1,60 @@
 <?php
-
-
 /**
  * $Id: default.php 11917 2009-05-29 19:37:05Z ian $
  */
 defined( '_JEXEC' ) or die( 'Restricted access' );
+$lang =& JFactory::getLanguage();
+$tag = $lang->getTag();
 ?>
-
+<?php 
+  if($tag == 'vi-VN'){
+	
+	$add = "<div  style='width: 380px; height: 110px;font-family: arial;'><strong>Phòng Khánh tiết, lầu 7, Khách sạn Windsor </strong><br />18 An Dương Vương - Quận 5 - TP.HCM, Việt Nam  <br />Tel: (84.8) 3833 6688<br />Fax: (84.8) 3833 6888<br />E-mail: <a href='mailto:info@oktoberfestvietnam.com'>info@oktoberfestvietnam.com</a><br />Website: <a href='http://www.oktoberfestvietnam.com/'>www.oktoberfestvietnam.com</a></div>";
+  }
+  else{
+	
+	$add = "<div  style='width: 380px; height: 110px;font-family: arial;'><strong>Jade Ballroom, 7th floor - Windsor Plaza Hotel </strong><br />18 An Duong Vuong, Dist.5, HCMC, Vietnam <br />Tel: (84.8) 3833 6688<br />Fax: (84.8) 3833 6888<br />E-mail: <a href='mailto:info@oktoberfestvietnam.com'>info@oktoberfestvietnam.com</a><br />Website: <a href='http://www.oktoberfestvietnam.com/'>www.oktoberfestvietnam.com</a></div>";
+	
+  }	
+ // if($mobile == "phone"){$add="";}
+?>
 <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBafo8dipw1uoD4NvCaupjCeJ2nJzmRdF4&sensor=true"></script>
 		
 	    <script type="text/javascript">
-		  var add = "";	
-		  //add .= "<div style='width: 380px; height: 110px;font-family: arial;'><strong>Phòng Khánh tiết, lầu 7, Khách sạn Windsor </strong><br />18 An Dương Vương - Quận 5 - TP.HCM, Việt Nam  <br />Tel: (84.8) 3833 6688<br />Fax: (84.8) 3833 6888<br />E-mail: <a href='mailto:info@oktoberfestvietnam.com'>info@oktoberfestvietnam.com</a><br />Website: <a href='http://www.oktoberfestvietnam.com/'>www.oktoberfestvietnam.com</a></div>";	
+	    
 		  var map;
-		  var infowindow0;
+		  var image = "<?php echo JURI::root(); ?>"+'images/thangviet/lg_map.png';
 		  function initialize() {
-	        var myLatlng = new google.maps.LatLng(10.757731,106.673286);
+	        var myLatlng = new google.maps.LatLng(10.7606955,106.67193);
 			var myOptions = {
+	          	
+				center: new google.maps.LatLng(10.7606955,106.67193),
 	         
-			center: new google.maps.LatLng(10.758996,106.673897),
-	         
-			  zoom: 17,
+			  zoom: 15,
 	          mapTypeId: google.maps.MapTypeId.ROADMAP
 	        };
-	        map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 			
-			//var imgString = " <div class='iglr'><img src='http://oktoberfestvietnam.com/images/oktoberfestvietnam2013/wph_logo.jpg' width='68' height='55' border='0' align='left' /></div>";
-			var contentString = "";
-		    //var contentString = imgString + add ;
-			infowindow0 = new google.maps.InfoWindow({
-			    content: contentString
-			});
-			var image = 'http://oktoberfestvietnam.com/images/oktoberfestvietnam2013/logo_map.png';
-			var marker = new google.maps.Marker({
+	        map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+	      
+		  
+		  var imgString = "<div class='iglr'>CÔNG TY TNHH DỊCH VỤ BẢO VỆ THĂNG VIỆT<br/>ĐC: 37B, Nguyễn Chí Thanh, P.9, Q.5, TP.HCM<br/>ĐT : 086 2646719 – 0650 3777518 <br/>Fax : 0862646719 – 0650 377751<br/>Website: <a href='http://thangvietsecurity.com' target='_blank'>www.thangvietsecurity.com</a></div>";
+		
+		var marker = new google.maps.Marker({
 			    position: myLatlng,
 			    map: map,
 				animation: google.maps.Animation.DROP,
-			    title:"WMC Group",
+			    title:"CÔNG TY TNHH DỊCH VỤ BẢO VỆ THĂNG VIỆT ",
 				icon: image
 			});
-			
-				infowindow0.open(n,marker);
-			
-			google.maps.event.addListener(marker, 'click', function() {
-				infowindow.close();
-				infowindow0.open(map,marker);
-			});
-			
-			//setMarkers(map, beaches);
-			
-	      }
-		  /*
-		  function setMarkers(map, locations){
+		var contentString = imgString ;
+		infowindow0 = new google.maps.InfoWindow({
+			content: contentString
+		});
+		  infowindow0.open(map,marker);
 		  
-		  	for (var i = 0; i < locations.length; i++) {
-			    var beach = locations[i];
-			    var myLatLng = new google.maps.LatLng(beach[1], beach[2]);
-			    var marker = new google.maps.Marker({
-			        position: myLatLng,
-			        map: map,
-			        title: beach[0],
-			        zIndex: beach[3]
-			    });
-				
-				attachSecretMessage(marker, i);
-				
-			  }
+		  
 		  }
-		  */
-		  /*
-		  var infowindow = new google.maps.InfoWindow({size: new google.maps.Size(70,50)});
 		  
-		  function attachSecretMessage(marker, number) {
-			 
-			  google.maps.event.addListener(marker, 'click', function() {
-			  	infowindow0.close();
-				
-			    var contentString = '<div class="iglr"></div><strong>'+beach[0]+'</strong><br />'+beach[4]+'<br />Tel: '+beach[5];
-			    infowindow.setContent(contentString);
-				infowindow.open(map,marker);
-			  });
-			  
-			}
-			*/
 		  
 	    </script>
 	<script>
@@ -92,18 +64,19 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 			});
 		});
 	</script>
+<hr />	
 <div class="fleft" id="map_canvas"></div> 
-
 <style>
-	div#map_canvas .iglr img {
-		margin-right: 5px;
+	div#map_canvas .iglr {
+		
 	}
 	div#map_canvas {
-		width: 98%; height:366px; 
-		margin: 10px 13px 13px;
+		width: 100%; 
+		height:366px; 
 		float: left;
 		border: 2px solid #AAD4DD;
 		border-radius: 5px;
+		margin-bottom: 40px;
 	}
 	div#map_canvas {
 		color: #000000;
