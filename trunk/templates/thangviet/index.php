@@ -2,6 +2,7 @@
 $app = JFactory::getApplication(); 
 $temp_path = JURI::base() . 'templates/' . $app->getTemplate();
 JHtml::_('bootstrap.framework');
+
 ?>
 <!doctype html>
 <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
@@ -26,7 +27,11 @@ JHtml::_('bootstrap.framework');
     <div class="container12">
         <div class="row header">
             <div class="column12">
-                <img style="width: 100%;" src="<?php echo $temp_path; ?>/images/banner.jpg" />
+                <div class="banner">
+				
+					<a href="./"><img class="logo" src="./images/thangviet/logo.png" alt="CÔNG TY TNHH DỊCH VỤ THĂNG VIỆT" /></a>
+				</div>
+				<!--<img style="width: 100%;" src="<?php echo $temp_path; ?>/images/banner.png" />-->
 				<div class="mainmenu">
 					<jdoc:include type="modules" name="menutop" style="none" />
 				 </div>
