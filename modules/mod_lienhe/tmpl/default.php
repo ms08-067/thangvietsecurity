@@ -25,9 +25,9 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 	        };
 	        map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 			
-			var imgString = " <div class='iglr'><img src='http://oktoberfestvietnam.com/images/oktoberfestvietnam2013/wph_logo.jpg' width='68' height='55' border='0' align='left' /></div>";
-			
-		    var contentString = imgString + add ;
+			//var imgString = " <div class='iglr'><img src='http://oktoberfestvietnam.com/images/oktoberfestvietnam2013/wph_logo.jpg' width='68' height='55' border='0' align='left' /></div>";
+			var contentString = "";
+		    //var contentString = imgString + add ;
 			infowindow0 = new google.maps.InfoWindow({
 			    content: contentString
 			});
@@ -40,16 +40,17 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 				icon: image
 			});
 			
-				infowindow0.open(map,marker);
+				infowindow0.open(n,marker);
 			
 			google.maps.event.addListener(marker, 'click', function() {
 				infowindow.close();
 				infowindow0.open(map,marker);
 			});
 			
-			setMarkers(map, beaches);
+			//setMarkers(map, beaches);
 			
 	      }
+		  /*
 		  function setMarkers(map, locations){
 		  
 		  	for (var i = 0; i < locations.length; i++) {
@@ -66,6 +67,8 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 				
 			  }
 		  }
+		  */
+		  /*
 		  var infowindow = new google.maps.InfoWindow({size: new google.maps.Size(70,50)});
 		  
 		  function attachSecretMessage(marker, number) {
@@ -79,6 +82,7 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 			  });
 			  
 			}
+			*/
 		  
 	    </script>
 	<script>
