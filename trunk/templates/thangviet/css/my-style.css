@@ -56,9 +56,9 @@ p.joomlavi  a{
 	color: #FFF;
 }
 .logo {
-	margin-left: 0;
+	margin-left: 12px;
     margin-top: 35px;
-    width: 120px;
+    width: 99px;
 }
 .banner {
 	background: url("../images/banner.png") no-repeat scroll 0 0 / 100% auto rgba(0, 0, 0, 0);
@@ -133,14 +133,28 @@ width: 100%;
 ul.icesubMenu {
 
 }
-.top,.icemegamenu > ul {
-	
-  background: #3498db;
+/*
+ffec81 c8a568
+*/
+.icemegamenu > ul {
+background: #3498db;
   background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
   background-image: -moz-linear-gradient(top, #3498db, #2980b9);
   background-image: -ms-linear-gradient(top, #3498db, #2980b9);
   background-image: -o-linear-gradient(top, #3498db, #2980b9);
   background-image: linear-gradient(to bottom, #3498db, #2980b9);
+}
+body {
+background: #e8e8e9;
+}
+.top{
+	
+  background: #fae57e;
+  background-image: -webkit-linear-gradient(top, #fae57e, #e8e8e9);
+  background-image: -moz-linear-gradient(top, #fae57e, #e8e8e9);
+  background-image: -ms-linear-gradient(top, #fae57e, #e8e8e9);
+  background-image: -o-linear-gradient(top, #fae57e, #e8e8e9);
+  background-image: linear-gradient(to bottom, #fae57e, #e8e8e9);
 }
 .moduletable h3 {
 	

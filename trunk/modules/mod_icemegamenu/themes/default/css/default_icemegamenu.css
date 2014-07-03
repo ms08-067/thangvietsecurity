@@ -54,6 +54,18 @@ text-align: left !important;
 text-transform: normal !important;
 font-size: 12px !important;
 }
+
+@media (max-width: 1140px){
+
+.icemegamenu > ul > li  a.iceMenuTitle {
+padding: 1px 10px 0 15px !important;
+}
+#slideshowHolder {
+	width: 100% !important;
+	overflow: hidden;
+}
+}
+
 .icemegamenu > ul > li  a.iceMenuTitle {
 	
 			position: relative;

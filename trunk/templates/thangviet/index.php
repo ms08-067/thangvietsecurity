@@ -65,12 +65,11 @@ JHtml::_('bootstrap.framework');
         </div>
 	</div>	
 <script>
-jQuery(function(){
 
-	jQuery(".menutop li").hover(function(){
-			
-			jQuery(this).children(".nav-child").toggle("normal");
-	});
+jQuery(function(){
+	var w = jQuery(window).width();
+	alert(w);
+	
 });
 </script>	
 </body>
