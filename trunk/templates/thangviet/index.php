@@ -67,8 +67,8 @@ JHtml::_('bootstrap.framework');
 <script>
 
 jQuery(function(){
-	var w = jQuery(window).width();
-	alert(w);
+	//var w = jQuery(window).width();
+	//alert(w);
 	
 });
 </script>	
