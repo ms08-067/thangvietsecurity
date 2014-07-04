@@ -67,7 +67,7 @@ padding: 1px 10px 0 15px !important;
 }
 
 .icemegamenu > ul > li  a.iceMenuTitle {
-	
+			margin: 12px 0;
 			position: relative;
 			z-index: 9999;
 			display: block;
@@ -170,7 +170,7 @@ ul.icesubMenu {
 			opacity: 1;
 			max-height:1000px;
 			overflow:visible;
-			top: 50px;}
+			top: 46px;}
 			
 			ul.icesubMenu ul > li {
 				position:relative;}
