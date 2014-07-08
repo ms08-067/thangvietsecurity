@@ -151,12 +151,12 @@ ul.icesubMenu {
 	max-height:0;
 	overflow:hidden;
     opacity: 0;
-    background: #222;
-	background: -moz-linear-gradient(#444, #111);
-	background: -webkit-linear-gradient(#444, #111);
-	background: -o-linear-gradient(#444, #111);
-	background: -ms-linear-gradient(#444, #111);
-	background: linear-gradient(#444, #111);
+    background: #3498db;
+	background: -moz-linear-gradient(#3498db, #2980b9);
+	background: -webkit-linear-gradient(#3498db, #2980b9);
+	background: -o-linear-gradient(#3498db, #2980b9);
+	background: -ms-linear-gradient(#3498db, #2980b9);
+	background: linear-gradient(#3498db, #2980b9);
     border: 1px solid rgba(255,255,255,.3);
     border-radius: 3px;
 	-webkit-transition: all .25s ease-out;
@@ -173,8 +173,13 @@ ul.icesubMenu {
 			top: 46px;}
 			
 			ul.icesubMenu ul > li {
-				position:relative;}
+				position:relative;
+			}
 				
+			.iceCols li:last-child  a.iceMenuTitle {
+			
+				border-bottom: none !important;
+			}
 				ul.icesubMenu > li a.iceMenuTitle {
 					height:auto;
 					display:block;
