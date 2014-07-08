@@ -145,16 +145,17 @@ background: #3498db;
   background-image: linear-gradient(to bottom, #3498db, #2980b9);
 }
 body {
-background: #e8e8e9;
+background: #f3de96;
 }
 .top{
-	
+  /*
   background: #fae57e;
   background-image: -webkit-linear-gradient(top, #fae57e, #e8e8e9);
   background-image: -moz-linear-gradient(top, #fae57e, #e8e8e9);
   background-image: -ms-linear-gradient(top, #fae57e, #e8e8e9);
   background-image: -o-linear-gradient(top, #fae57e, #e8e8e9);
   background-image: linear-gradient(to bottom, #fae57e, #e8e8e9);
+  */
 }
 .moduletable h3 {
 	
