@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 08, 2014 at 06:13 PM
+-- Generation Time: Jul 10, 2014 at 02:32 AM
 -- Server version: 5.5.27
 -- PHP Version: 5.4.7
 
@@ -26,7 +26,6 @@ SET time_zone = "+00:00";
 -- Table structure for table `d9jhp_assets`
 --
 
-DROP TABLE IF EXISTS `d9jhp_assets`;
 CREATE TABLE IF NOT EXISTS `d9jhp_assets` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',
   `parent_id` int(11) NOT NULL DEFAULT '0' COMMENT 'Nested set parent.',
@@ -40,14 +39,14 @@ CREATE TABLE IF NOT EXISTS `d9jhp_assets` (
   UNIQUE KEY `idx_asset_name` (`name`),
   KEY `idx_lft_rgt` (`lft`,`rgt`),
   KEY `idx_parent_id` (`parent_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=92 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=94 ;
 
 --
 -- Dumping data for table `d9jhp_assets`
 --
 
 INSERT INTO `d9jhp_assets` (`id`, `parent_id`, `lft`, `rgt`, `level`, `name`, `title`, `rules`) VALUES
-(1, 0, 0, 181, 0, 'root.1', 'Root Asset', '{"core.login.site":{"6":1,"2":1},"core.login.admin":{"6":1},"core.login.offline":{"6":1},"core.admin":{"8":1},"core.manage":{"7":1},"core.create":{"6":1,"3":1},"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1},"core.edit.own":{"6":1,"3":1}}'),
+(1, 0, 0, 185, 0, 'root.1', 'Root Asset', '{"core.login.site":{"6":1,"2":1},"core.login.admin":{"6":1},"core.login.offline":{"6":1},"core.admin":{"8":1},"core.manage":{"7":1},"core.create":{"6":1,"3":1},"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1},"core.edit.own":{"6":1,"3":1}}'),
 (2, 1, 1, 2, 1, 'com_admin', 'com_admin', '{}'),
 (3, 1, 3, 6, 1, 'com_banners', 'com_banners', '{"core.admin":{"7":1},"core.manage":{"6":1},"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
 (4, 1, 7, 8, 1, 'com_cache', 'com_cache', '{"core.admin":{"7":1},"core.manage":{"7":1}}'),
@@ -64,27 +63,27 @@ INSERT INTO `d9jhp_assets` (`id`, `parent_id`, `lft`, `rgt`, `level`, `name`, `t
 (15, 1, 87, 88, 1, 'com_media', 'com_media', '{"core.admin":{"7":1},"core.manage":{"6":1},"core.create":{"3":1},"core.delete":{"5":1}}'),
 (16, 1, 89, 90, 1, 'com_menus', 'com_menus', '{"core.admin":{"7":1},"core.manage":[],"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
 (17, 1, 91, 92, 1, 'com_messages', 'com_messages', '{"core.admin":{"7":1},"core.manage":{"7":1}}'),
-(18, 1, 93, 144, 1, 'com_modules', 'com_modules', '{"core.admin":{"7":1},"core.manage":[],"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
-(19, 1, 145, 148, 1, 'com_newsfeeds', 'com_newsfeeds', '{"core.admin":{"7":1},"core.manage":{"6":1},"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
-(20, 1, 149, 150, 1, 'com_plugins', 'com_plugins', '{"core.admin":{"7":1},"core.manage":[],"core.edit":[],"core.edit.state":[]}'),
-(21, 1, 151, 152, 1, 'com_redirect', 'com_redirect', '{"core.admin":{"7":1},"core.manage":[]}'),
-(22, 1, 153, 154, 1, 'com_search', 'com_search', '{"core.admin":{"7":1},"core.manage":{"6":1}}'),
-(23, 1, 155, 156, 1, 'com_templates', 'com_templates', '{"core.admin":{"7":1},"core.manage":[],"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
-(24, 1, 157, 160, 1, 'com_users', 'com_users', '{"core.admin":{"7":1},"core.manage":[],"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
-(25, 1, 161, 164, 1, 'com_weblinks', 'com_weblinks', '{"core.admin":{"7":1},"core.manage":{"6":1},"core.create":{"3":1},"core.delete":[],"core.edit":{"4":1},"core.edit.state":{"5":1},"core.edit.own":[]}'),
-(26, 1, 165, 166, 1, 'com_wrapper', 'com_wrapper', '{}'),
+(18, 1, 93, 148, 1, 'com_modules', 'com_modules', '{"core.admin":{"7":1},"core.manage":[],"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
+(19, 1, 149, 152, 1, 'com_newsfeeds', 'com_newsfeeds', '{"core.admin":{"7":1},"core.manage":{"6":1},"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
+(20, 1, 153, 154, 1, 'com_plugins', 'com_plugins', '{"core.admin":{"7":1},"core.manage":[],"core.edit":[],"core.edit.state":[]}'),
+(21, 1, 155, 156, 1, 'com_redirect', 'com_redirect', '{"core.admin":{"7":1},"core.manage":[]}'),
+(22, 1, 157, 158, 1, 'com_search', 'com_search', '{"core.admin":{"7":1},"core.manage":{"6":1}}'),
+(23, 1, 159, 160, 1, 'com_templates', 'com_templates', '{"core.admin":{"7":1},"core.manage":[],"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
+(24, 1, 161, 164, 1, 'com_users', 'com_users', '{"core.admin":{"7":1},"core.manage":[],"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
+(25, 1, 165, 168, 1, 'com_weblinks', 'com_weblinks', '{"core.admin":{"7":1},"core.manage":{"6":1},"core.create":{"3":1},"core.delete":[],"core.edit":{"4":1},"core.edit.state":{"5":1},"core.edit.own":[]}'),
+(26, 1, 169, 170, 1, 'com_wrapper', 'com_wrapper', '{}'),
 (27, 8, 18, 31, 2, 'com_content.category.2', 'Uncategorised', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
 (28, 3, 4, 5, 2, 'com_banners.category.3', 'Uncategorised', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
 (29, 7, 14, 15, 2, 'com_contact.category.4', 'Uncategorised', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
-(30, 19, 146, 147, 2, 'com_newsfeeds.category.5', 'Uncategorised', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
-(31, 25, 162, 163, 2, 'com_weblinks.category.6', 'Uncategorised', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
-(32, 24, 158, 159, 1, 'com_users.category.7', 'Uncategorised', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
-(33, 1, 167, 168, 1, 'com_finder', 'com_finder', '{"core.admin":{"7":1},"core.manage":{"6":1}}'),
-(34, 1, 169, 170, 1, 'com_joomlaupdate', 'com_joomlaupdate', '{"core.admin":[],"core.manage":[],"core.delete":[],"core.edit.state":[]}'),
-(35, 1, 171, 172, 1, 'com_tags', 'com_tags', '{"core.admin":[],"core.manage":[],"core.manage":[],"core.delete":[],"core.edit.state":[]}'),
-(36, 1, 173, 174, 1, 'com_contenthistory', 'com_contenthistory', '{}'),
-(37, 1, 175, 176, 1, 'com_ajax', 'com_ajax', '{}'),
-(38, 1, 177, 178, 1, 'com_postinstall', 'com_postinstall', '{}'),
+(30, 19, 150, 151, 2, 'com_newsfeeds.category.5', 'Uncategorised', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
+(31, 25, 166, 167, 2, 'com_weblinks.category.6', 'Uncategorised', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[],"core.edit.own":[]}'),
+(32, 24, 162, 163, 1, 'com_users.category.7', 'Uncategorised', '{"core.create":[],"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
+(33, 1, 171, 172, 1, 'com_finder', 'com_finder', '{"core.admin":{"7":1},"core.manage":{"6":1}}'),
+(34, 1, 173, 174, 1, 'com_joomlaupdate', 'com_joomlaupdate', '{"core.admin":[],"core.manage":[],"core.delete":[],"core.edit.state":[]}'),
+(35, 1, 175, 176, 1, 'com_tags', 'com_tags', '{"core.admin":[],"core.manage":[],"core.manage":[],"core.delete":[],"core.edit.state":[]}'),
+(36, 1, 177, 178, 1, 'com_contenthistory', 'com_contenthistory', '{}'),
+(37, 1, 179, 180, 1, 'com_ajax', 'com_ajax', '{}'),
+(38, 1, 181, 182, 1, 'com_postinstall', 'com_postinstall', '{}'),
 (39, 18, 94, 95, 2, 'com_modules.module.1', 'Menu top', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
 (40, 18, 96, 97, 2, 'com_modules.module.2', 'Login', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
 (41, 18, 98, 99, 2, 'com_modules.module.3', 'Popular Articles', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
@@ -110,7 +109,7 @@ INSERT INTO `d9jhp_assets` (`id`, `parent_id`, `lft`, `rgt`, `level`, `name`, `t
 (61, 18, 136, 137, 2, 'com_modules.module.93', 'IceMegaMenu Module', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
 (62, 27, 21, 22, 3, 'com_content.article.2', 'Sơ Đồ Tổ Chức', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
 (63, 27, 23, 24, 3, 'com_content.article.3', 'Phương Châm Hoạt Động', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(64, 1, 179, 180, 1, 'com_jce', 'jce', '{}'),
+(64, 1, 183, 184, 1, 'com_jce', 'jce', '{}'),
 (65, 27, 25, 26, 3, 'com_content.article.4', 'Bảo vệ tòa nhà văn phòng', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
 (66, 8, 32, 67, 2, 'com_content.category.8', 'Dịch Vụ Bảo Vệ', '{"core.create":{"6":1,"3":1},"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1},"core.edit.own":{"6":1,"3":1}}'),
 (67, 27, 27, 28, 3, 'com_content.article.5', 'Bảo vệ nhà máy', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
@@ -137,7 +136,9 @@ INSERT INTO `d9jhp_assets` (`id`, `parent_id`, `lft`, `rgt`, `level`, `name`, `t
 (88, 18, 142, 143, 2, 'com_modules.module.96', 'Dụng Cụ Hỗ Trợ', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
 (89, 8, 68, 73, 2, 'com_content.category.9', 'Tin Tức', '{"core.create":{"6":1,"3":1},"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1},"core.edit.own":{"6":1,"3":1}}'),
 (90, 89, 69, 70, 3, 'com_content.article.24', 'Lâm tặc cướp súng, bắt nhân viên bảo vệ rừng ', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
-(91, 89, 71, 72, 3, 'com_content.article.25', 'Bảo vệ Times City trả lại hơn 80 triệu đồng cho người bỏ quên ', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}');
+(91, 89, 71, 72, 3, 'com_content.article.25', 'Bảo vệ Times City trả lại hơn 80 triệu đồng cho người bỏ quên ', '{"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1}}'),
+(92, 18, 144, 145, 2, 'com_modules.module.97', 'Thông Tin Liên Hệ', '{"core.delete":[],"core.edit":[],"core.edit.state":[]}'),
+(93, 18, 146, 147, 2, 'com_modules.module.98', 'Liên Hệ (2)', '');
 
 -- --------------------------------------------------------
 
@@ -145,7 +146,6 @@ INSERT INTO `d9jhp_assets` (`id`, `parent_id`, `lft`, `rgt`, `level`, `name`, `t
 -- Table structure for table `d9jhp_associations`
 --
 
-DROP TABLE IF EXISTS `d9jhp_associations`;
 CREATE TABLE IF NOT EXISTS `d9jhp_associations` (
   `id` int(11) NOT NULL COMMENT 'A reference to the associated item.',
   `context` varchar(50) NOT NULL COMMENT 'The context of the associated item.',
@@ -160,7 +160,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_associations` (
 -- Table structure for table `d9jhp_banners`
 --
 
-DROP TABLE IF EXISTS `d9jhp_banners`;
 CREATE TABLE IF NOT EXISTS `d9jhp_banners` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `cid` int(11) NOT NULL DEFAULT '0',
@@ -210,7 +209,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_banners` (
 -- Table structure for table `d9jhp_banner_clients`
 --
 
-DROP TABLE IF EXISTS `d9jhp_banner_clients`;
 CREATE TABLE IF NOT EXISTS `d9jhp_banner_clients` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL DEFAULT '',
@@ -237,7 +235,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_banner_clients` (
 -- Table structure for table `d9jhp_banner_tracks`
 --
 
-DROP TABLE IF EXISTS `d9jhp_banner_tracks`;
 CREATE TABLE IF NOT EXISTS `d9jhp_banner_tracks` (
   `track_date` datetime NOT NULL,
   `track_type` int(10) unsigned NOT NULL,
@@ -255,7 +252,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_banner_tracks` (
 -- Table structure for table `d9jhp_categories`
 --
 
-DROP TABLE IF EXISTS `d9jhp_categories`;
 CREATE TABLE IF NOT EXISTS `d9jhp_categories` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `asset_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'FK to the #__assets table.',
@@ -315,7 +311,6 @@ INSERT INTO `d9jhp_categories` (`id`, `asset_id`, `parent_id`, `lft`, `rgt`, `le
 -- Table structure for table `d9jhp_contact_details`
 --
 
-DROP TABLE IF EXISTS `d9jhp_contact_details`;
 CREATE TABLE IF NOT EXISTS `d9jhp_contact_details` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL DEFAULT '',
@@ -377,7 +372,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_contact_details` (
 -- Table structure for table `d9jhp_content`
 --
 
-DROP TABLE IF EXISTS `d9jhp_content`;
 CREATE TABLE IF NOT EXISTS `d9jhp_content` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `asset_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'FK to the #__assets table.',
@@ -425,7 +419,7 @@ CREATE TABLE IF NOT EXISTS `d9jhp_content` (
 --
 
 INSERT INTO `d9jhp_content` (`id`, `asset_id`, `title`, `alias`, `introtext`, `fulltext`, `state`, `catid`, `created`, `created_by`, `created_by_alias`, `modified`, `modified_by`, `checked_out`, `checked_out_time`, `publish_up`, `publish_down`, `images`, `urls`, `attribs`, `version`, `ordering`, `metakey`, `metadesc`, `access`, `hits`, `metadata`, `featured`, `language`, `xreference`) VALUES
-(1, 57, 'Trang Chủ', 'trang-ch', '<p> <br /> <strong>THƯ NGỎ</strong></p>\r\n<p align="center"><strong>CÔNG TY TNHH DỊCH VỤ BẢO VỆ THẮNG VIỆT</strong><br /> "<strong>TRUNG THÀNH – KỶ LUẬT – TRÁCH NHIỆM"<br /></strong></p>\r\n<p> </p>\r\n<p><strong><span style="text-decoration: underline;">Kính Gửi</span></strong> : Quý khách hàng</p>\r\n<p> </p>\r\n<p> Hội nhập xu thế phát triển thời đại bằng con đường công nghiệp hóa, hiện đại hóa là chủ trương đúng đắn của nhà nước Cộng Hòa Xã Hội Chủ Nghĩa Việt Nam trong thời kỳ đổi mới hiện nay, nhất là sau khi Việt Nam chính thức gia nhập tổ chức thương mại thế giới (WTO), nhu cầu dịch vụ bảo vệ cũng trở nên hết sức cần thiết, đòi hỏi phải được xây dựng phát triển ngang tầm với quy mô ngày càng lớn mạnh, với tính chuyên nghiệp ngày càng cao, nhằm mục đích thực hiện tốt công tác bảo vệ an toàn cho các đơn vị, cơ quan, doanh nghiệp, xí nghiệp , nhà máy, đáp ứng sự mong muốn chung của các thành phần kinh tế trong và ngoài nước.<br /> <br /> Xuất phát từ nhận thức trên, vì sự nghiệp phát triển chung của ngành dịch vụ bảo vệ, góp phần tích cực vào việc bảo vệ an ninh trật tự chung xã hội, nguồn động lực chính thúc đẩy cho sự phát triển của nền kinh tế đất nước nói chung và các thành phần kinh tế nói riêng. CÔNG TY TNHH DỊCH VỤ BẢO VỆ THĂNG VIỆT  đuợc thành lập, biểu tượng cho đất nước VIỆT NAM có truyền thống lịch sử con rồng cháu tiên, đang trên đà phát triển thăng hoa, khát vọng thật sự trở thành con rồng kinh tế trong khu vực, với kỳ vọng đem đến Quý khách hàng một dịch vụ chất lượng cao hoàn hảo.</p>\r\n<p>Thưa Quý khách !</p>\r\n<p> </p>\r\n<p>CÔNG TY TNHH DỊCH VỤ BẢO VỆ THĂNG VIỆT được thành lập và hoạt động trên phạm vi toàn lãnh thổ Việt Nam, được Phòng QLHC về TTXH Công An TP. HCM cấp giấy chứng nhận đủ điều kiện về an ninh trật tự dịch vụ bảo vệ chuyên nghiệp, giấy chứng nhận đăng ký kinh doanh do Phòng ĐKKD – Sở Kế hoạch đầu tư TP.HCM cấp .</p>\r\n<p> </p>\r\n<p>Với đội ngũ cán bộ lãnh đạo tài năng trí tuệ có bề dày kinh nghiệm lâu năm trong lĩnh vực bảo vệ chuyên nghiệp, kết hợp cùng đội ngũ nhân viên trẻ năng động được huấn luyện về chính trị, pháp luật, nghiệp vụ, PCCC, võ thuật, và một số chuyên môn có liên quan đến nghề nghiệp, chắc chắn sẽ mang đến cho Quý khách cảm giác hài lòng và yên tâm đối với chất lượng dịch vụ của chúng tôi cung cấp.</p>\r\n<p> </p>\r\n<p>Đối với Quý khách hàng chúng tôi luôn ôm ấp hoài bão sẽ thực hiện , tư vấn , cũng như hỗ trợ các biện pháp nghiệp vụ an ninh tối ưu nhằm bảo vệ an toàn về tài sản và con người cho Quý khách hàng. Chắc chắn Quý khách sẽ hài lòng và yên tâm với chất lượng công việc mà chúng tôi đã và sẽ phục vụ cho Quý khách, vì đồng hành với chúng tôi có một đội ngũ cán bộ nhân viên đầy nhiệt huyết – trung thực – kiên quyết – khôn khéo – dũng cảm , luôn trong tư thế sẵn sàng giải quyết mọi tình huống trên tinh thần trách nhiệm cao nhất, đảm bảo đáp ứng nhu cầu thực hiện phương châm "VÌ BÌNH YÊN CUỘC SỐNG"<br /> <br /> Dịch vụ an ninh của CÔNG TY TNHH DỊCH VỤ BẢO VỆ THĂNG VIỆT đa dạng hóa và linh hoạt, đồng thời dựa trên cơ sở sẵn có mối quan hệ ngoại giao tốt với Chính quyền địa phương các cấp, để có cơ chế phối hợp kịp thời, chặt chẽ với các đơn vị, lực lượng chức năng chuyên môn, sẵn sàng đáp ứng kịp thời mọi nhu cầu thực tế của khách hàng, với mức giá dịch vụ phù hợp, hợp lý ( được bao trọn gói gồm : Đồng phục, Trang thiết bị bảo vệ, các khoản phúc lợi xã hội, bảo hiểm v.v…..)<br /> <br /> Chúng tôi cam kết với Quý khách hàng là sẽ luôn đảm bảo quyền lợi cơ bản và ngày càng được cải thiện về vật chất và tinh thần cho đội ngũ cán bộ nhân viên của Công ty chúng tôi, để họ luôn là những thành viên trung thành, có trách nhiệm cao, gắn bó lâu dài với Công ty và chính họ cũng sẽ là những hạt nhân tích cực trong phong trào giữ gìn, bảo vệ an ninh trật tự, an toàn xã hội. Đó là những lý do vì sao chúng tôi tin tưởng sẽ mang đến Quý khách một dịch vụ an ninh có chất lượng cao như mong muốn của Quý khách.</p>\r\n<p> </p>\r\n<div class="intro_contact">\r\n<p align="center"><strong>NẾU QUÝ KHÁCH CẦN CÓ MỘT GIẢI PHÁP AN NINH TIN CẬY – UY TÍN</strong><br /> <strong>Xin vui lòng liên hệ: <br /></strong></p>\r\n<br />\r\n<p>   <span style="text-align: center;">     Tên Công ty  : <strong>CÔNG TY TNHH DỊCH VỤ BẢO VỆ THẮNG VIỆT </strong></span><br /> <br />Địa chỉ  : 137B, Đường Nguyễn Chí Thanh , P. 09 ,  Q. 05 , TP.HCM , VN<br /> Điện thoại : 086 2646719 – 0650 3777518 <br /> Fax  : 0862646719 – 0650 3777519</p>\r\n<br />\r\n<p>Hotline:<br /> Mr. TRẦN HUY PHONG   -  ĐTDĐ :  0938.304.333<br /> Mr. Ngô Cơ –ĐTDĐ: 0906.097.864</p>\r\n<br />\r\n<p style="text-align: center;">             <strong>HÂN HẠNH ĐƯỢC PHỤC VỤ QUÝ KHÁCH </strong></p>\r\n</div>', '', 1, 2, '2014-06-25 09:45:13', 880, '', '2014-06-30 17:49:53', 880, 0, '0000-00-00 00:00:00', '2014-06-25 09:45:13', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_tags":"","show_intro":"","info_block_position":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 19, 5, '', '', 1, 573, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
+(1, 57, 'Trang Chủ', 'trang-ch', '<p> <br /> <strong>THƯ NGỎ</strong></p>\r\n<p align="center"><strong>CÔNG TY TNHH DỊCH VỤ BẢO VỆ THẮNG VIỆT</strong><br /> "<strong>TRUNG THÀNH – KỶ LUẬT – TRÁCH NHIỆM"<br /></strong></p>\r\n<p> </p>\r\n<p><strong><span style="text-decoration: underline;">Kính Gửi</span></strong> : Quý khách hàng</p>\r\n<p> </p>\r\n<p> Hội nhập xu thế phát triển thời đại bằng con đường công nghiệp hóa, hiện đại hóa là chủ trương đúng đắn của nhà nước Cộng Hòa Xã Hội Chủ Nghĩa Việt Nam trong thời kỳ đổi mới hiện nay, nhất là sau khi Việt Nam chính thức gia nhập tổ chức thương mại thế giới (WTO), nhu cầu dịch vụ bảo vệ cũng trở nên hết sức cần thiết, đòi hỏi phải được xây dựng phát triển ngang tầm với quy mô ngày càng lớn mạnh, với tính chuyên nghiệp ngày càng cao, nhằm mục đích thực hiện tốt công tác bảo vệ an toàn cho các đơn vị, cơ quan, doanh nghiệp, xí nghiệp , nhà máy, đáp ứng sự mong muốn chung của các thành phần kinh tế trong và ngoài nước.<br /> <br /> Xuất phát từ nhận thức trên, vì sự nghiệp phát triển chung của ngành dịch vụ bảo vệ, góp phần tích cực vào việc bảo vệ an ninh trật tự chung xã hội, nguồn động lực chính thúc đẩy cho sự phát triển của nền kinh tế đất nước nói chung và các thành phần kinh tế nói riêng. CÔNG TY TNHH DỊCH VỤ BẢO VỆ THĂNG VIỆT  đuợc thành lập, biểu tượng cho đất nước VIỆT NAM có truyền thống lịch sử con rồng cháu tiên, đang trên đà phát triển thăng hoa, khát vọng thật sự trở thành con rồng kinh tế trong khu vực, với kỳ vọng đem đến Quý khách hàng một dịch vụ chất lượng cao hoàn hảo.</p>\r\n<p>Thưa Quý khách !</p>\r\n<p> </p>\r\n<p>CÔNG TY TNHH DỊCH VỤ BẢO VỆ THĂNG VIỆT được thành lập và hoạt động trên phạm vi toàn lãnh thổ Việt Nam, được Phòng QLHC về TTXH Công An TP. HCM cấp giấy chứng nhận đủ điều kiện về an ninh trật tự dịch vụ bảo vệ chuyên nghiệp, giấy chứng nhận đăng ký kinh doanh do Phòng ĐKKD – Sở Kế hoạch đầu tư TP.HCM cấp .</p>\r\n<p> </p>\r\n<p>Với đội ngũ cán bộ lãnh đạo tài năng trí tuệ có bề dày kinh nghiệm lâu năm trong lĩnh vực bảo vệ chuyên nghiệp, kết hợp cùng đội ngũ nhân viên trẻ năng động được huấn luyện về chính trị, pháp luật, nghiệp vụ, PCCC, võ thuật, và một số chuyên môn có liên quan đến nghề nghiệp, chắc chắn sẽ mang đến cho Quý khách cảm giác hài lòng và yên tâm đối với chất lượng dịch vụ của chúng tôi cung cấp.</p>\r\n<p> </p>\r\n<p>Đối với Quý khách hàng chúng tôi luôn ôm ấp hoài bão sẽ thực hiện , tư vấn , cũng như hỗ trợ các biện pháp nghiệp vụ an ninh tối ưu nhằm bảo vệ an toàn về tài sản và con người cho Quý khách hàng. Chắc chắn Quý khách sẽ hài lòng và yên tâm với chất lượng công việc mà chúng tôi đã và sẽ phục vụ cho Quý khách, vì đồng hành với chúng tôi có một đội ngũ cán bộ nhân viên đầy nhiệt huyết – trung thực – kiên quyết – khôn khéo – dũng cảm , luôn trong tư thế sẵn sàng giải quyết mọi tình huống trên tinh thần trách nhiệm cao nhất, đảm bảo đáp ứng nhu cầu thực hiện phương châm "VÌ BÌNH YÊN CUỘC SỐNG"<br /> <br /> Dịch vụ an ninh của CÔNG TY TNHH DỊCH VỤ BẢO VỆ THĂNG VIỆT đa dạng hóa và linh hoạt, đồng thời dựa trên cơ sở sẵn có mối quan hệ ngoại giao tốt với Chính quyền địa phương các cấp, để có cơ chế phối hợp kịp thời, chặt chẽ với các đơn vị, lực lượng chức năng chuyên môn, sẵn sàng đáp ứng kịp thời mọi nhu cầu thực tế của khách hàng, với mức giá dịch vụ phù hợp, hợp lý ( được bao trọn gói gồm : Đồng phục, Trang thiết bị bảo vệ, các khoản phúc lợi xã hội, bảo hiểm v.v…..)<br /> <br /> Chúng tôi cam kết với Quý khách hàng là sẽ luôn đảm bảo quyền lợi cơ bản và ngày càng được cải thiện về vật chất và tinh thần cho đội ngũ cán bộ nhân viên của Công ty chúng tôi, để họ luôn là những thành viên trung thành, có trách nhiệm cao, gắn bó lâu dài với Công ty và chính họ cũng sẽ là những hạt nhân tích cực trong phong trào giữ gìn, bảo vệ an ninh trật tự, an toàn xã hội. Đó là những lý do vì sao chúng tôi tin tưởng sẽ mang đến Quý khách một dịch vụ an ninh có chất lượng cao như mong muốn của Quý khách.</p>\r\n<p> </p>\r\n<div class="intro_contact">\r\n<p align="center"><strong>NẾU QUÝ KHÁCH CẦN CÓ MỘT GIẢI PHÁP AN NINH TIN CẬY – UY TÍN</strong><br /> <strong>Xin vui lòng liên hệ: <br /></strong></p>\r\n<br />\r\n<p>   <span style="text-align: center;">     Tên Công ty  : <strong>CÔNG TY TNHH DỊCH VỤ BẢO VỆ THẮNG VIỆT </strong></span><br /> <br />Địa chỉ  : 137B, Đường Nguyễn Chí Thanh , P. 09 ,  Q. 05 , TP.HCM , VN<br /> Điện thoại : 086 2646719 – 0650 3777518 <br /> Fax  : 0862646719 – 0650 3777519</p>\r\n<br />\r\n<p>Hotline:<br /> Mr. TRẦN HUY PHONG   -  ĐTDĐ :  0938.304.333<br /> Mr. Ngô Cơ –ĐTDĐ: 0906.097.864</p>\r\n<br />\r\n<p style="text-align: center;">             <strong>HÂN HẠNH ĐƯỢC PHỤC VỤ QUÝ KHÁCH </strong></p>\r\n</div>', '', 1, 2, '2014-06-25 09:45:13', 880, '', '2014-06-30 17:49:53', 880, 0, '0000-00-00 00:00:00', '2014-06-25 09:45:13', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_tags":"","show_intro":"","info_block_position":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 19, 5, '', '', 1, 607, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
 (2, 62, 'Sơ Đồ Tổ Chức', 'so-d-t-ch-c', '<p>&nbsp;</p>\r\n<p><img style="display: block; margin-left: auto; margin-right: auto;" src="images/thangviet/so_do_to_chuc.jpg" alt="" width="775" height="815" /></p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>', '', 1, 2, '2014-06-25 09:45:13', 880, '', '2014-07-04 13:02:57', 880, 0, '0000-00-00 00:00:00', '2014-06-25 09:45:13', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_tags":"","show_intro":"","info_block_position":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 12, 4, '', '', 1, 51, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
 (3, 63, 'Phương Châm Hoạt Động', 'phuong-cham-hoat-dong', '<p style="text-align: justify;">&nbsp;<img style="margin-right: 10px; margin-bottom: 10px; float: left;" src="images/thangviet/phuongcham.jpg" alt="" width="255" height="270" />Công ty Bảo vệ&nbsp;<strong>Thăng Việt</strong>&nbsp;luôn quan tâm, đặt lợi ích khách hàng lên hàng đầu, mong muốn cung câp tới khách hàng dịch vụ bảo vệ chuyên nghiệp nhất, hiệu quả nhất</p>\r\n<ul>\r\n<li style="text-align: justify;">Công ty Bảo vệ&nbsp;<strong>Thăng Việt</strong>&nbsp;phấn đấu xây dựng trở thành công ty đi tiên phong trong lĩnh vực cung cấp dịch vụ bảo vệ.</li>\r\n<li style="text-align: justify;">\r\n<p>&nbsp;</p>\r\n</li>\r\n<li style="text-align: justify;">Công ty Bảo vệ&nbsp;<strong>Thăng Việt</strong>&nbsp;luôn phấn đấu mang lại thu nhập cao – ổn định cho tập thể cán bộ nhân viên toàn công ty, để người lao động yên tâm công tác, gắn trách nhiệm với công việc được giao</li>\r\n<li style="text-align: justify;">\r\n<p>&nbsp;</p>\r\n</li>\r\n<li style="text-align: justify;">Công ty Bảo vệ&nbsp;<strong>Thăng Việt</strong>&nbsp;luôn lắng nghe và thấu hiểu từng mong muốn, nhu cầu của khách hàng và đáp ứng tối đa nhu cầu đó của quý khách mà đây còn là địa chỉ tin cậy trong việc bảo vệ an ninh theo yêu cầu của&nbsp; quý khách suốt 24h/ngày. Hơn thế nữa,</li>\r\n<li style="text-align: justify;">Công ty Bảo vệ&nbsp;<strong>Thăng Việt</strong>&nbsp;mong muốn xây dựng đội ngũ nhân viên chuyên nghiệp, có ý thức đạo đức nghề nghiệp cao</li>\r\n<li>\r\n<p>&nbsp;</p>\r\n</li>\r\n<li style="text-align: justify;">Công ty Bảo vệ&nbsp;<strong>Thăng Việt</strong>&nbsp;phấn đấu ưu tiên lựa chọ tất cả nhân viên bảo vệ đều được tuyển dụng chặt chẽ. Chỉ có những người thực đạt tiêu chuẩn về thể chất cũng như sự yêu nghề và cái tâm trong sáng với nghề mới được tuyển chọn.</li>\r\n</ul>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>', '', 1, 2, '2014-06-25 09:45:13', 880, '', '2014-07-01 04:10:46', 880, 0, '0000-00-00 00:00:00', '2014-06-25 09:45:13', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_tags":"","show_intro":"","info_block_position":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 9, 3, '', '', 1, 11, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
 (4, 65, 'Bảo vệ tòa nhà văn phòng', 'bao-ve-toa-nha-van-phong', '<p><strong>Bảo vệ</strong> tòa nhà văn phòng, hay nói cách khác là <strong>Bảo vệ</strong> Cao ốc văn phòng. Đây là hình thức Cung cấp Dịch vụ <strong>Bảo vệ</strong> cốt lõi của Công ty chúng tôi&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>Cao ốc – văn phòng là những tòa nhà cao tầng, thường được xây dựng tại những khu phố sầm uất, khu đông dân cư, có vị trí đắc địa, những tòa nhà này thông thường được xây dựng vơi mục đích làm văn phòng làm việc của các Tập đoàn, Tổng công ty, các tổ chức khác…nên các nhu cầu <strong>Bảo vệ</strong> Cao ốc văn phòng của khách hàng rất đa dạng thường xuyên.</p>\r\n<p>&nbsp;</p>\r\n<p><em>Để đáp ứng nhu cầu của Quý khách hàng,<strong>CÔNG TY TNHH DỊCH VỤ BẢO VỆ THĂNG VIỆT </strong> rất hân hạnh được phục vụ, mọi chi tiết về Dịch vụ, giá cả quý khách hãy liên hệ với công ty chúng tôi để được tư vấn thêm. &nbsp;</em></p>\r\n<p>&nbsp;</p>\r\n<p><em><img style="display: block; margin-left: auto; margin-right: auto;" title="bao ve toa nha" src="images/thangviet/bao_ve_toa_nha_van_phong.jpg" alt="" width="550" height="367" /><br /> </em></p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>', '', 1, 2, '2014-06-25 09:45:13', 880, '', '2014-07-01 04:23:15', 880, 0, '0000-00-00 00:00:00', '2014-06-25 09:45:13', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_tags":"","show_intro":"","info_block_position":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 5, 2, '', '', 1, 12, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
@@ -458,7 +452,6 @@ INSERT INTO `d9jhp_content` (`id`, `asset_id`, `title`, `alias`, `introtext`, `f
 -- Table structure for table `d9jhp_contentitem_tag_map`
 --
 
-DROP TABLE IF EXISTS `d9jhp_contentitem_tag_map`;
 CREATE TABLE IF NOT EXISTS `d9jhp_contentitem_tag_map` (
   `type_alias` varchar(255) NOT NULL DEFAULT '',
   `core_content_id` int(10) unsigned NOT NULL COMMENT 'PK from the core content table',
@@ -480,7 +473,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_contentitem_tag_map` (
 -- Table structure for table `d9jhp_content_frontpage`
 --
 
-DROP TABLE IF EXISTS `d9jhp_content_frontpage`;
 CREATE TABLE IF NOT EXISTS `d9jhp_content_frontpage` (
   `content_id` int(11) NOT NULL DEFAULT '0',
   `ordering` int(11) NOT NULL DEFAULT '0',
@@ -493,7 +485,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_content_frontpage` (
 -- Table structure for table `d9jhp_content_rating`
 --
 
-DROP TABLE IF EXISTS `d9jhp_content_rating`;
 CREATE TABLE IF NOT EXISTS `d9jhp_content_rating` (
   `content_id` int(11) NOT NULL DEFAULT '0',
   `rating_sum` int(10) unsigned NOT NULL DEFAULT '0',
@@ -508,7 +499,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_content_rating` (
 -- Table structure for table `d9jhp_content_types`
 --
 
-DROP TABLE IF EXISTS `d9jhp_content_types`;
 CREATE TABLE IF NOT EXISTS `d9jhp_content_types` (
   `type_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `type_title` varchar(255) NOT NULL DEFAULT '',
@@ -549,7 +539,6 @@ INSERT INTO `d9jhp_content_types` (`type_id`, `type_title`, `type_alias`, `table
 -- Table structure for table `d9jhp_core_log_searches`
 --
 
-DROP TABLE IF EXISTS `d9jhp_core_log_searches`;
 CREATE TABLE IF NOT EXISTS `d9jhp_core_log_searches` (
   `search_term` varchar(128) NOT NULL DEFAULT '',
   `hits` int(10) unsigned NOT NULL DEFAULT '0'
@@ -561,7 +550,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_core_log_searches` (
 -- Table structure for table `d9jhp_extensions`
 --
 
-DROP TABLE IF EXISTS `d9jhp_extensions`;
 CREATE TABLE IF NOT EXISTS `d9jhp_extensions` (
   `extension_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
@@ -747,7 +735,6 @@ INSERT INTO `d9jhp_extensions` (`extension_id`, `name`, `type`, `element`, `fold
 -- Table structure for table `d9jhp_finder_filters`
 --
 
-DROP TABLE IF EXISTS `d9jhp_finder_filters`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_filters` (
   `filter_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
@@ -772,7 +759,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_finder_filters` (
 -- Table structure for table `d9jhp_finder_links`
 --
 
-DROP TABLE IF EXISTS `d9jhp_finder_links`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_links` (
   `link_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `url` varchar(255) NOT NULL,
@@ -808,7 +794,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_finder_links` (
 -- Table structure for table `d9jhp_finder_links_terms0`
 --
 
-DROP TABLE IF EXISTS `d9jhp_finder_links_terms0`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_terms0` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
@@ -824,7 +809,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_terms0` (
 -- Table structure for table `d9jhp_finder_links_terms1`
 --
 
-DROP TABLE IF EXISTS `d9jhp_finder_links_terms1`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_terms1` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
@@ -840,7 +824,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_terms1` (
 -- Table structure for table `d9jhp_finder_links_terms2`
 --
 
-DROP TABLE IF EXISTS `d9jhp_finder_links_terms2`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_terms2` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
@@ -856,7 +839,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_terms2` (
 -- Table structure for table `d9jhp_finder_links_terms3`
 --
 
-DROP TABLE IF EXISTS `d9jhp_finder_links_terms3`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_terms3` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
@@ -872,7 +854,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_terms3` (
 -- Table structure for table `d9jhp_finder_links_terms4`
 --
 
-DROP TABLE IF EXISTS `d9jhp_finder_links_terms4`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_terms4` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
@@ -888,7 +869,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_terms4` (
 -- Table structure for table `d9jhp_finder_links_terms5`
 --
 
-DROP TABLE IF EXISTS `d9jhp_finder_links_terms5`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_terms5` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
@@ -904,7 +884,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_terms5` (
 -- Table structure for table `d9jhp_finder_links_terms6`
 --
 
-DROP TABLE IF EXISTS `d9jhp_finder_links_terms6`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_terms6` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
@@ -920,7 +899,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_terms6` (
 -- Table structure for table `d9jhp_finder_links_terms7`
 --
 
-DROP TABLE IF EXISTS `d9jhp_finder_links_terms7`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_terms7` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
@@ -936,7 +914,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_terms7` (
 -- Table structure for table `d9jhp_finder_links_terms8`
 --
 
-DROP TABLE IF EXISTS `d9jhp_finder_links_terms8`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_terms8` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
@@ -952,7 +929,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_terms8` (
 -- Table structure for table `d9jhp_finder_links_terms9`
 --
 
-DROP TABLE IF EXISTS `d9jhp_finder_links_terms9`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_terms9` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
@@ -968,7 +944,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_terms9` (
 -- Table structure for table `d9jhp_finder_links_termsa`
 --
 
-DROP TABLE IF EXISTS `d9jhp_finder_links_termsa`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_termsa` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
@@ -984,7 +959,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_termsa` (
 -- Table structure for table `d9jhp_finder_links_termsb`
 --
 
-DROP TABLE IF EXISTS `d9jhp_finder_links_termsb`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_termsb` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
@@ -1000,7 +974,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_termsb` (
 -- Table structure for table `d9jhp_finder_links_termsc`
 --
 
-DROP TABLE IF EXISTS `d9jhp_finder_links_termsc`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_termsc` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
@@ -1016,7 +989,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_termsc` (
 -- Table structure for table `d9jhp_finder_links_termsd`
 --
 
-DROP TABLE IF EXISTS `d9jhp_finder_links_termsd`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_termsd` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
@@ -1032,7 +1004,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_termsd` (
 -- Table structure for table `d9jhp_finder_links_termse`
 --
 
-DROP TABLE IF EXISTS `d9jhp_finder_links_termse`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_termse` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
@@ -1048,7 +1019,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_termse` (
 -- Table structure for table `d9jhp_finder_links_termsf`
 --
 
-DROP TABLE IF EXISTS `d9jhp_finder_links_termsf`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_termsf` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
@@ -1064,7 +1034,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_termsf` (
 -- Table structure for table `d9jhp_finder_taxonomy`
 --
 
-DROP TABLE IF EXISTS `d9jhp_finder_taxonomy`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_taxonomy` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `parent_id` int(10) unsigned NOT NULL DEFAULT '0',
@@ -1093,7 +1062,6 @@ INSERT INTO `d9jhp_finder_taxonomy` (`id`, `parent_id`, `title`, `state`, `acces
 -- Table structure for table `d9jhp_finder_taxonomy_map`
 --
 
-DROP TABLE IF EXISTS `d9jhp_finder_taxonomy_map`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_taxonomy_map` (
   `link_id` int(10) unsigned NOT NULL,
   `node_id` int(10) unsigned NOT NULL,
@@ -1108,7 +1076,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_finder_taxonomy_map` (
 -- Table structure for table `d9jhp_finder_terms`
 --
 
-DROP TABLE IF EXISTS `d9jhp_finder_terms`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_terms` (
   `term_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `term` varchar(75) NOT NULL,
@@ -1132,7 +1099,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_finder_terms` (
 -- Table structure for table `d9jhp_finder_terms_common`
 --
 
-DROP TABLE IF EXISTS `d9jhp_finder_terms_common`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_terms_common` (
   `term` varchar(75) NOT NULL,
   `language` varchar(3) NOT NULL,
@@ -1267,7 +1233,6 @@ INSERT INTO `d9jhp_finder_terms_common` (`term`, `language`) VALUES
 -- Table structure for table `d9jhp_finder_tokens`
 --
 
-DROP TABLE IF EXISTS `d9jhp_finder_tokens`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_tokens` (
   `term` varchar(75) NOT NULL,
   `stem` varchar(75) NOT NULL,
@@ -1286,7 +1251,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_finder_tokens` (
 -- Table structure for table `d9jhp_finder_tokens_aggregate`
 --
 
-DROP TABLE IF EXISTS `d9jhp_finder_tokens_aggregate`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_tokens_aggregate` (
   `term_id` int(10) unsigned NOT NULL,
   `map_suffix` char(1) NOT NULL,
@@ -1309,7 +1273,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_finder_tokens_aggregate` (
 -- Table structure for table `d9jhp_finder_types`
 --
 
-DROP TABLE IF EXISTS `d9jhp_finder_types`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_types` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(100) NOT NULL,
@@ -1324,7 +1287,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_finder_types` (
 -- Table structure for table `d9jhp_languages`
 --
 
-DROP TABLE IF EXISTS `d9jhp_languages`;
 CREATE TABLE IF NOT EXISTS `d9jhp_languages` (
   `lang_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `lang_code` char(7) NOT NULL,
@@ -1360,7 +1322,6 @@ INSERT INTO `d9jhp_languages` (`lang_id`, `lang_code`, `title`, `title_native`, 
 -- Table structure for table `d9jhp_menu`
 --
 
-DROP TABLE IF EXISTS `d9jhp_menu`;
 CREATE TABLE IF NOT EXISTS `d9jhp_menu` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `menutype` varchar(24) NOT NULL COMMENT 'The type of menu this item belongs to. FK to #__menu_types.menutype',
@@ -1503,7 +1464,6 @@ INSERT INTO `d9jhp_menu` (`id`, `menutype`, `title`, `alias`, `note`, `path`, `l
 -- Table structure for table `d9jhp_menu_types`
 --
 
-DROP TABLE IF EXISTS `d9jhp_menu_types`;
 CREATE TABLE IF NOT EXISTS `d9jhp_menu_types` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `menutype` varchar(24) NOT NULL,
@@ -1528,7 +1488,6 @@ INSERT INTO `d9jhp_menu_types` (`id`, `menutype`, `title`, `description`) VALUES
 -- Table structure for table `d9jhp_messages`
 --
 
-DROP TABLE IF EXISTS `d9jhp_messages`;
 CREATE TABLE IF NOT EXISTS `d9jhp_messages` (
   `message_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `user_id_from` int(10) unsigned NOT NULL DEFAULT '0',
@@ -1549,7 +1508,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_messages` (
 -- Table structure for table `d9jhp_messages_cfg`
 --
 
-DROP TABLE IF EXISTS `d9jhp_messages_cfg`;
 CREATE TABLE IF NOT EXISTS `d9jhp_messages_cfg` (
   `user_id` int(10) unsigned NOT NULL DEFAULT '0',
   `cfg_name` varchar(100) NOT NULL DEFAULT '',
@@ -1563,7 +1521,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_messages_cfg` (
 -- Table structure for table `d9jhp_modules`
 --
 
-DROP TABLE IF EXISTS `d9jhp_modules`;
 CREATE TABLE IF NOT EXISTS `d9jhp_modules` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `asset_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'FK to the #__assets table.',
@@ -1587,7 +1544,7 @@ CREATE TABLE IF NOT EXISTS `d9jhp_modules` (
   KEY `published` (`published`,`access`),
   KEY `newsfeeds` (`module`,`published`),
   KEY `idx_language` (`language`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=97 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=99 ;
 
 --
 -- Dumping data for table `d9jhp_modules`
@@ -1610,15 +1567,17 @@ INSERT INTO `d9jhp_modules` (`id`, `asset_id`, `title`, `note`, `content`, `orde
 (79, 68, 'Multilanguage status', '', '', 1, 'status', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 'mod_multilangstatus', 3, 1, '{"layout":"_:default","moduleclass_sfx":"","cache":"0"}', 1, '*'),
 (86, 69, 'Joomla Version', '', '', 1, 'footer', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_version', 3, 1, '{"format":"short","product":"1","layout":"_:default","moduleclass_sfx":"","cache":"0"}', 1, '*'),
 (87, 54, 'Slide show', '', '', 1, 'slideshow', 880, '2014-07-01 17:07:04', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_vt_nivo_slider', 1, 0, '{"demo":"-1","theme":"default","slide_width":"auto","slide_height":"auto","item_dir":".\\/images\\/thangviet\\/slideshow\\/","item_path":"","item_title":"","item_description":"","item_url":"","item_target":"_blank","effect":"fold","slices":"15","boxCols":"8","boxRows":"4","animSpeed":"500","pauseTime":"3000","startSlide":"0","directionNav":"1","controlNav":"0","pauseOnHover":"1","manualAdvance":"1","prevText":"Prev","nextText":"Next","ribbon":"1","controlPosition":"bottomright","controlStyle":"01.png","arrowStyle":"01.png","titleColor":"#333333","titleFontSize":"18","titleFontStyle":"","descColor":"#333333","descFontSize":"12","descFontStyle":"","captionWidth":"auto","captionHeight":"auto","captionBackground":"#ffffcc","captionPosition":"topleft","captionMarginVertical":"","captionMarginHorizontal":"","captionRounded":"all","slide_bgcolor":"","slide_bdcolor":"","slide_bdwidth":"0","slide_bdrounded":"0","slide_bdshadow":"0","moduleclass_sfx":"","cache":"1","cache_time":"900","cachemode":"static","controlNavThumbs":"false","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*'),
-(88, 55, 'Dịch Vụ Bảo Vệ', '', '', 1, 'left', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_menu', 1, 1, '{"menutype":"menu-left","base":"","startLevel":"1","endLevel":"0","showAllChildren":"0","tag_id":"","class_sfx":" menuleft","window_open":"","layout":"_:default","moduleclass_sfx":"","cache":"1","cache_time":"900","cachemode":"itemid","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*'),
+(88, 55, 'Dịch Vụ Bảo Vệ', '', '', 4, 'left', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_menu', 1, 1, '{"menutype":"menu-left","base":"","startLevel":"1","endLevel":"0","showAllChildren":"0","tag_id":"","class_sfx":" menuleft","window_open":"","layout":"_:default","moduleclass_sfx":"","cache":"1","cache_time":"900","cachemode":"itemid","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*'),
 (89, 56, 'Danh Bạ Bảo Vệ', '', '', 1, 'right', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_menu', 1, 1, '{"menutype":"menu-right","base":"","startLevel":"1","endLevel":"0","showAllChildren":"0","tag_id":"","class_sfx":" menuright","window_open":"","layout":"_:default","moduleclass_sfx":"","cache":"1","cache_time":"900","cachemode":"itemid","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*'),
 (90, 58, 'Footer', '', '<p style="text-align: center;">CÔNG TY TNHH DỊCH VỤ BẢO VỆ THĂNG VIỆT</p>\r\n<p style="text-align: center;">Địa chỉ: 137B, Đường Nguyễn Chí Thanh , P. 09 ,Q. 05 , TP.HCM , VN</p>\r\n<p style="text-align: center;">Điện thoại : 086 2646719 – 0650 3777518</p>\r\n<p style="text-align: center;">Fax: 0862646719 – 0650 3777519</p>', 1, 'footer', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_custom', 1, 1, '{"prepare_content":"0","backgroundimage":"","layout":"_:default","moduleclass_sfx":" footer","cache":"1","cache_time":"900","cachemode":"static","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*'),
-(91, 59, 'Liên Hệ', '', '<p style="text-align: center;"><strong>CÔNG TY TNHH DỊCH VỤ BẢO VỆ THĂNG VIỆT </strong></p>\r\n<p>37B, Nguyễn Chí Thanh, P.9, Q.5, TP.HCM<br /> ĐT : 086 2646719 – 0650 3777518 <br />Fax : 0862646719 – 0650 3777519<br /><br /></p>\r\n<p style="text-align: center;"><strong>Mr. TRẦN HUY PHONG</strong><br />ĐT : 0938.304.333<a title="Hỗ trợ khách hàng" href="skype:buitranloc?chat"><img style="display: block; margin-left: auto; margin-right: auto;" src="images/thangviet/skype_logo.gif" alt="My status" /></a><a href="ymsgr:sendim?hunguit"><img src="http://opi.yahoo.com/online?u=hunguit&amp;t=2" alt="" /></a><br /><br /></p>\r\n<p style="text-align: center;"><strong>Mr. Ngô Cơ</strong><br />ĐT: 0906.097.864 <a title="Hỗ trợ khách hàng" href="skype:niemtinmoiia?chat"><img style="display: block; margin-left: auto; margin-right: auto;" src="images/thangviet/skype_logo.gif" alt="My status" /></a><a href="ymsgr:sendim?hunguit"><img src="http://opi.yahoo.com/online?u=hunguit&amp;t=2" alt="" /></a> <strong><br /></strong></p>', 1, 'left', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_custom', 1, 1, '{"prepare_content":"0","backgroundimage":"","layout":"_:default","moduleclass_sfx":" lienhe","cache":"1","cache_time":"900","cachemode":"static","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*'),
+(91, 59, 'Liên Hệ', '', '<p style="text-align: center;"><strong>CÔNG TY TNHH DỊCH VỤ BẢO VỆ THĂNG VIỆT </strong></p>\r\n<p>37B, Nguyễn Chí Thanh, P.9, Q.5, TP.HCM<br /> ĐT : 086 2646719 – 0650 3777518 <br />Fax : 0862646719 – 0650 3777519<br /><br /></p>\r\n<p style="text-align: center;"><strong>Mr. TRẦN HUY PHONG</strong><br />ĐT : 0938.304.333<a title="Hỗ trợ khách hàng" href="skype:buitranloc?chat"><img style="display: block; margin-left: auto; margin-right: auto;" src="images/thangviet/skype_logo.gif" alt="My status" /></a><a href="ymsgr:sendim?hunguit"><img src="http://opi.yahoo.com/online?u=hunguit&amp;t=2" alt="" /></a><br /><br /></p>\r\n<p style="text-align: center;"><strong>Mr. Ngô Cơ</strong><br />ĐT: 0906.097.864 <a title="Hỗ trợ khách hàng" href="skype:niemtinmoiia?chat"><img style="display: block; margin-left: auto; margin-right: auto;" src="images/thangviet/skype_logo.gif" alt="My status" /></a><a href="ymsgr:sendim?hunguit"><img src="http://opi.yahoo.com/online?u=hunguit&amp;t=2" alt="" /></a> <strong><br /></strong></p>', 4, 'left', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 'mod_custom', 1, 1, '{"prepare_content":"0","backgroundimage":"","layout":"_:default","moduleclass_sfx":" lienhe","cache":"1","cache_time":"900","cachemode":"static","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*'),
 (92, 60, 'Bootstrap Mega Menu', '', '', 1, 'menutop', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', -2, 'mod_bootstrapmegamenu', 1, 0, '{"menutype":"mainmenu","base":"","startLevel":"1","endLevel":"0","showAllChildren":"0","navbar_class":"navbar-default","logo":"","logo_img_class":"","enable_logo_link":0,"logo_link_class":"","mnu_type":"0","mnu_right_align":"0","wrappertag":"nav","enable_hoverdropdown":"0","use_module_css":1,"tag_id":"","class_sfx":"","window_open":"","layout":"_:default","moduleclass_sfx":"","cache":"1","cache_time":"900","cachemode":"itemid","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*'),
 (93, 61, 'IceMegaMenu Module', '', '', 1, 'menutop', 880, '2014-06-30 16:29:27', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_icemegamenu', 1, 0, '{"theme_style":"default","vertical_direction":"left","menutype":"mainmenu","startLevel":"1","endLevel":"0","showAllChildren":"1","resizable_menu":"1","class_sfx":"","window_open":"","tag_id":"","moduleclass_sfx":"","cache":"1","cache_time":"30","enable_bootrap":"0","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*'),
 (94, 86, 'Bản Đồ', '', '', 1, 'lienhe', 880, '2014-07-01 15:15:50', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_lienhe', 1, 0, '{"module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":" modlienhe","style":"0"}', 0, '*'),
-(95, 87, 'HÌNH ẢNH', '', '<p><img style="display: block; margin-left: auto; margin-right: auto;" src="images/thangviet/dong-phuc-bao-ve-2.jpg" alt="dong-phuc-bao-ve-2" /></p>\r\n<p>&nbsp;</p>', 1, 'left', 880, '2014-07-08 15:50:56', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_custom', 1, 1, '{"prepare_content":"0","backgroundimage":"","layout":"_:default","moduleclass_sfx":" lienhe","cache":"1","cache_time":"900","cachemode":"static","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*'),
-(96, 88, 'Dụng Cụ Hỗ Trợ', '', '', 1, 'right', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_tcvn_floomslider', 1, 1, '{"mwidth":"262","mheight":"300","show_title":"0","link_title":"0","item_target":"_blank","show_desc":"0","random":"0","numberRandom":"2","image_url":"","data":"images\\/thangviet\\/1.jpg\\r\\nimages\\/thangviet\\/2.jpg\\r\\nimages\\/thangviet\\/3.jpg","effect":"wave","strips":"20","delay":"5000","stripDelay":"50","titleOpacity":"0.7","titleSpeed":"1000","navigation":"0","jquery":"0","cache":"1","moduleclass_sfx":"","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*');
+(95, 87, 'HÌNH ẢNH', '', '<p><img style="display: block; margin-left: auto; margin-right: auto;" src="images/thangviet/dong-phuc-bao-ve-2.jpg" alt="dong-phuc-bao-ve-2" /></p>\r\n<p>&nbsp;</p>', 4, 'left', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_custom', 1, 1, '{"prepare_content":"0","backgroundimage":"","layout":"_:default","moduleclass_sfx":" lienhe","cache":"1","cache_time":"900","cachemode":"static","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*'),
+(96, 88, 'Dụng Cụ Hỗ Trợ', '', '', 1, 'right', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_tcvn_floomslider', 1, 1, '{"mwidth":"262","mheight":"300","show_title":"0","link_title":"0","item_target":"_blank","show_desc":"0","random":"0","numberRandom":"2","image_url":"","data":"images\\/thangviet\\/1.jpg\\r\\nimages\\/thangviet\\/2.jpg\\r\\nimages\\/thangviet\\/3.jpg","effect":"wave","strips":"20","delay":"5000","stripDelay":"50","titleOpacity":"0.7","titleSpeed":"1000","navigation":"0","jquery":"0","cache":"1","moduleclass_sfx":"","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*'),
+(97, 92, 'Thông Tin Liên Hệ', '', '<p style="text-align: center;"><img src="images/thangviet/hotline.jpg" alt="hotline" /></p>\r\n<p>&nbsp;</p>', 3, 'left', 880, '2014-07-09 15:49:14', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_custom', 1, 1, '{"prepare_content":"0","backgroundimage":"","layout":"_:default","moduleclass_sfx":" thongtinlienhe","cache":"1","cache_time":"900","cachemode":"static","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*'),
+(98, 93, 'Liên Hệ (2)', '', '<p style="text-align: center;"><strong>CÔNG TY TNHH DỊCH VỤ BẢO VỆ THĂNG VIỆT </strong></p>\r\n<p>37B, Nguyễn Chí Thanh, P.9, Q.5, TP.HCM<br /> ĐT : 086 2646719 – 0650 3777518 <br />Fax : 0862646719 – 0650 3777519<br /><br /></p>\r\n<p style="text-align: center;"><strong>Mr. TRẦN HUY PHONG</strong><br />ĐT : 0938.304.333<a title="Hỗ trợ khách hàng" href="skype:buitranloc?chat"><img style="display: block; margin-left: auto; margin-right: auto;" src="images/thangviet/skype_logo.gif" alt="My status" /></a><a href="ymsgr:sendim?hunguit"><img src="http://opi.yahoo.com/online?u=hunguit&amp;t=2" alt="" /></a><br /><br /></p>\r\n<p style="text-align: center;"><strong>Mr. Ngô Cơ</strong><br />ĐT: 0906.097.864 <a title="Hỗ trợ khách hàng" href="skype:niemtinmoiia?chat"><img style="display: block; margin-left: auto; margin-right: auto;" src="images/thangviet/skype_logo.gif" alt="My status" /></a><a href="ymsgr:sendim?hunguit"><img src="http://opi.yahoo.com/online?u=hunguit&amp;t=2" alt="" /></a> <strong><br /></strong></p>', 4, 'left', 880, '2014-07-09 16:09:04', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 'mod_custom', 1, 1, '{"prepare_content":"0","backgroundimage":"","layout":"_:default","moduleclass_sfx":" lienhe","cache":"1","cache_time":"900","cachemode":"static","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*');
 
 -- --------------------------------------------------------
 
@@ -1626,7 +1585,6 @@ INSERT INTO `d9jhp_modules` (`id`, `asset_id`, `title`, `note`, `content`, `orde
 -- Table structure for table `d9jhp_modules_menu`
 --
 
-DROP TABLE IF EXISTS `d9jhp_modules_menu`;
 CREATE TABLE IF NOT EXISTS `d9jhp_modules_menu` (
   `moduleid` int(11) NOT NULL DEFAULT '0',
   `menuid` int(11) NOT NULL DEFAULT '0',
@@ -1666,7 +1624,9 @@ INSERT INTO `d9jhp_modules_menu` (`moduleid`, `menuid`) VALUES
 (95, 101),
 (95, 169),
 (96, 101),
-(96, 169);
+(96, 169),
+(97, 0),
+(98, 0);
 
 -- --------------------------------------------------------
 
@@ -1674,7 +1634,6 @@ INSERT INTO `d9jhp_modules_menu` (`moduleid`, `menuid`) VALUES
 -- Table structure for table `d9jhp_newsfeeds`
 --
 
-DROP TABLE IF EXISTS `d9jhp_newsfeeds`;
 CREATE TABLE IF NOT EXISTS `d9jhp_newsfeeds` (
   `catid` int(11) NOT NULL DEFAULT '0',
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -1722,7 +1681,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_newsfeeds` (
 -- Table structure for table `d9jhp_overrider`
 --
 
-DROP TABLE IF EXISTS `d9jhp_overrider`;
 CREATE TABLE IF NOT EXISTS `d9jhp_overrider` (
   `id` int(10) NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',
   `constant` varchar(255) NOT NULL,
@@ -1737,7 +1695,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_overrider` (
 -- Table structure for table `d9jhp_postinstall_messages`
 --
 
-DROP TABLE IF EXISTS `d9jhp_postinstall_messages`;
 CREATE TABLE IF NOT EXISTS `d9jhp_postinstall_messages` (
   `postinstall_message_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `extension_id` bigint(20) NOT NULL DEFAULT '700' COMMENT 'FK to #__extensions',
@@ -1772,7 +1729,6 @@ INSERT INTO `d9jhp_postinstall_messages` (`postinstall_message_id`, `extension_i
 -- Table structure for table `d9jhp_redirect_links`
 --
 
-DROP TABLE IF EXISTS `d9jhp_redirect_links`;
 CREATE TABLE IF NOT EXISTS `d9jhp_redirect_links` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `old_url` varchar(255) NOT NULL,
@@ -1794,7 +1750,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_redirect_links` (
 -- Table structure for table `d9jhp_schemas`
 --
 
-DROP TABLE IF EXISTS `d9jhp_schemas`;
 CREATE TABLE IF NOT EXISTS `d9jhp_schemas` (
   `extension_id` int(11) NOT NULL,
   `version_id` varchar(20) NOT NULL,
@@ -1814,7 +1769,6 @@ INSERT INTO `d9jhp_schemas` (`extension_id`, `version_id`) VALUES
 -- Table structure for table `d9jhp_session`
 --
 
-DROP TABLE IF EXISTS `d9jhp_session`;
 CREATE TABLE IF NOT EXISTS `d9jhp_session` (
   `session_id` varchar(200) NOT NULL DEFAULT '',
   `client_id` tinyint(3) unsigned NOT NULL DEFAULT '0',
@@ -1833,8 +1787,7 @@ CREATE TABLE IF NOT EXISTS `d9jhp_session` (
 --
 
 INSERT INTO `d9jhp_session` (`session_id`, `client_id`, `guest`, `time`, `data`, `userid`, `username`) VALUES
-('4ma7dsp4ssjrhpib0av9am0964', 1, 0, '1404835879', '__default|a:8:{s:15:"session.counter";i:72;s:19:"session.timer.start";i:1404834579;s:18:"session.timer.last";i:1404835875;s:17:"session.timer.now";i:1404835877;s:22:"session.client.browser";s:65:"Mozilla/5.0 (Windows NT 6.0; rv:30.0) Gecko/20100101 Firefox/30.0";s:8:"registry";O:24:"Joomla\\Registry\\Registry":1:{s:7:"\\0\\0\\0data";O:8:"stdClass":6:{s:11:"application";O:8:"stdClass":1:{s:4:"lang";s:5:"en-GB";}s:13:"com_installer";O:8:"stdClass":2:{s:7:"message";s:0:"";s:17:"extension_message";s:0:"";}s:11:"com_modules";O:8:"stdClass":3:{s:7:"modules";O:8:"stdClass":1:{s:6:"filter";O:8:"stdClass":1:{s:18:"client_id_previous";i:0;}}s:4:"edit";O:8:"stdClass":1:{s:6:"module";O:8:"stdClass":2:{s:2:"id";a:1:{i:0;i:95;}s:4:"data";N;}}s:3:"add";O:8:"stdClass":1:{s:6:"module";O:8:"stdClass":2:{s:12:"extension_id";N;s:6:"params";N;}}}s:9:"com_menus";O:8:"stdClass":2:{s:5:"items";O:8:"stdClass":4:{s:8:"menutype";s:8:"mainmenu";s:10:"limitstart";s:2:"20";s:4:"list";a:2:{s:12:"fullordering";s:9:"a.lft ASC";s:5:"limit";s:2:"20";}s:6:"filter";a:5:{s:6:"search";s:0:"";s:9:"published";s:0:"";s:5:"level";s:0:"";s:6:"access";s:0:"";s:8:"language";s:0:"";}}s:4:"edit";O:8:"stdClass":1:{s:4:"item";O:8:"stdClass":4:{s:2:"id";a:1:{i:1;i:170;}s:4:"data";N;s:4:"type";N;s:4:"link";N;}}}s:14:"com_categories";O:8:"stdClass":2:{s:10:"categories";O:8:"stdClass":1:{s:6:"filter";O:8:"stdClass":1:{s:9:"extension";s:11:"com_content";}}s:4:"edit";O:8:"stdClass":1:{s:8:"category";O:8:"stdClass":1:{s:4:"data";N;}}}s:11:"com_content";O:8:"stdClass":1:{s:4:"edit";O:8:"stdClass":1:{s:7:"article";O:8:"stdClass":2:{s:4:"data";N;s:2:"id";a:2:{i:0;i:24;i:1;i:25;}}}}}}s:4:"user";O:5:"JUser":27:{s:9:"\\0\\0\\0isRoot";b:1;s:2:"id";s:3:"880";s:4:"name";s:10:"Super User";s:8:"username";s:5:"admin";s:5:"email";s:17:"hunguit@yahoo.com";s:8:"password";s:60:"$2y$10$N4T3siSb0oH3.eiESbGPeuynNF3dv1IElCw6vmI3XPbiUUU.qgIB2";s:14:"password_clear";s:0:"";s:5:"block";s:1:"0";s:9:"sendEmail";s:1:"1";s:12:"registerDate";s:19:"2014-06-24 15:06:59";s:13:"lastvisitDate";s:19:"2014-07-04 13:01:58";s:10:"activation";s:1:"0";s:6:"params";s:2:"{}";s:6:"groups";a:1:{i:8;s:1:"8";}s:5:"guest";i:0;s:13:"lastResetTime";s:19:"0000-00-00 00:00:00";s:10:"resetCount";s:1:"0";s:12:"requireReset";s:1:"0";s:10:"\\0\\0\\0_params";O:24:"Joomla\\Registry\\Registry":1:{s:7:"\\0\\0\\0data";O:8:"stdClass":0:{}}s:14:"\\0\\0\\0_authGroups";a:2:{i:0;i:1;i:1;i:8;}s:14:"\\0\\0\\0_authLevels";a:5:{i:0;i:1;i:1;i:1;i:2;i:2;i:3;i:3;i:4;i:6;}s:15:"\\0\\0\\0_authActions";N;s:12:"\\0\\0\\0_errorMsg";N;s:10:"\\0\\0\\0_errors";a:0:{}s:3:"aid";i:0;s:6:"otpKey";s:0:"";s:4:"otep";s:0:"";}s:13:"session.token";s:32:"19ef93f1b6c486ea36f3df1a7e42a830";}__wf|a:1:{s:13:"session.token";s:32:"0663375e4602ee2d453457a2de74a565";}', 880, 'admin'),
-('rh4ai4ds5vcn3ag73gq98qb8q1', 0, 1, '1404835958', '__default|a:7:{s:15:"session.counter";i:76;s:19:"session.timer.start";i:1404559643;s:18:"session.timer.last";i:1404835879;s:17:"session.timer.now";i:1404835958;s:22:"session.client.browser";s:65:"Mozilla/5.0 (Windows NT 6.0; rv:30.0) Gecko/20100101 Firefox/30.0";s:8:"registry";O:24:"Joomla\\Registry\\Registry":1:{s:7:"\\0\\0\\0data";O:8:"stdClass":0:{}}s:4:"user";O:5:"JUser":25:{s:9:"\\0\\0\\0isRoot";b:0;s:2:"id";i:0;s:4:"name";N;s:8:"username";N;s:5:"email";N;s:8:"password";N;s:14:"password_clear";s:0:"";s:5:"block";N;s:9:"sendEmail";i:0;s:12:"registerDate";N;s:13:"lastvisitDate";N;s:10:"activation";N;s:6:"params";N;s:6:"groups";a:1:{i:0;s:1:"9";}s:5:"guest";i:1;s:13:"lastResetTime";N;s:10:"resetCount";N;s:12:"requireReset";N;s:10:"\\0\\0\\0_params";O:24:"Joomla\\Registry\\Registry":1:{s:7:"\\0\\0\\0data";O:8:"stdClass":0:{}}s:14:"\\0\\0\\0_authGroups";a:2:{i:0;i:1;i:1;i:9;}s:14:"\\0\\0\\0_authLevels";a:3:{i:0;i:1;i:1;i:1;i:2;i:5;}s:15:"\\0\\0\\0_authActions";N;s:12:"\\0\\0\\0_errorMsg";N;s:10:"\\0\\0\\0_errors";a:0:{}s:3:"aid";i:0;}}', 0, '');
+('poufamsb65b0q1p1a0mhkfotf1', 1, 0, '1404951286', '__default|a:8:{s:15:"session.counter";i:4;s:19:"session.timer.start";i:1404951263;s:18:"session.timer.last";i:1404951282;s:17:"session.timer.now";i:1404951285;s:22:"session.client.browser";s:65:"Mozilla/5.0 (Windows NT 6.0; rv:30.0) Gecko/20100101 Firefox/30.0";s:8:"registry";O:24:"Joomla\\Registry\\Registry":1:{s:7:"\\0\\0\\0data";O:8:"stdClass":1:{s:11:"application";O:8:"stdClass":1:{s:4:"lang";s:5:"en-GB";}}}s:4:"user";O:5:"JUser":27:{s:9:"\\0\\0\\0isRoot";b:1;s:2:"id";s:3:"880";s:4:"name";s:10:"Super User";s:8:"username";s:5:"admin";s:5:"email";s:17:"hunguit@yahoo.com";s:8:"password";s:60:"$2y$10$N4T3siSb0oH3.eiESbGPeuynNF3dv1IElCw6vmI3XPbiUUU.qgIB2";s:14:"password_clear";s:0:"";s:5:"block";s:1:"0";s:9:"sendEmail";s:1:"1";s:12:"registerDate";s:19:"2014-06-24 15:06:59";s:13:"lastvisitDate";s:19:"2014-07-09 16:08:31";s:10:"activation";s:1:"0";s:6:"params";s:2:"{}";s:6:"groups";a:1:{i:8;s:1:"8";}s:5:"guest";i:0;s:13:"lastResetTime";s:19:"0000-00-00 00:00:00";s:10:"resetCount";s:1:"0";s:12:"requireReset";s:1:"0";s:10:"\\0\\0\\0_params";O:24:"Joomla\\Registry\\Registry":1:{s:7:"\\0\\0\\0data";O:8:"stdClass":0:{}}s:14:"\\0\\0\\0_authGroups";a:2:{i:0;i:1;i:1;i:8;}s:14:"\\0\\0\\0_authLevels";a:5:{i:0;i:1;i:1;i:1;i:2;i:2;i:3;i:3;i:4;i:6;}s:15:"\\0\\0\\0_authActions";N;s:12:"\\0\\0\\0_errorMsg";N;s:10:"\\0\\0\\0_errors";a:0:{}s:3:"aid";i:0;s:6:"otpKey";s:0:"";s:4:"otep";s:0:"";}s:13:"session.token";s:32:"d77b802636a18e14b0cd255a9d7ebf58";}__wf|a:1:{s:13:"session.token";s:32:"50e263f6760e7b1e40d55106c5c71288";}', 880, 'admin');
 
 -- --------------------------------------------------------
 
@@ -1842,7 +1795,6 @@ INSERT INTO `d9jhp_session` (`session_id`, `client_id`, `guest`, `time`, `data`,
 -- Table structure for table `d9jhp_tags`
 --
 
-DROP TABLE IF EXISTS `d9jhp_tags`;
 CREATE TABLE IF NOT EXISTS `d9jhp_tags` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `parent_id` int(10) unsigned NOT NULL DEFAULT '0',
@@ -1897,7 +1849,6 @@ INSERT INTO `d9jhp_tags` (`id`, `parent_id`, `lft`, `rgt`, `level`, `path`, `tit
 -- Table structure for table `d9jhp_template_styles`
 --
 
-DROP TABLE IF EXISTS `d9jhp_template_styles`;
 CREATE TABLE IF NOT EXISTS `d9jhp_template_styles` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `template` varchar(50) NOT NULL DEFAULT '',
@@ -1927,7 +1878,6 @@ INSERT INTO `d9jhp_template_styles` (`id`, `template`, `client_id`, `home`, `tit
 -- Table structure for table `d9jhp_ucm_base`
 --
 
-DROP TABLE IF EXISTS `d9jhp_ucm_base`;
 CREATE TABLE IF NOT EXISTS `d9jhp_ucm_base` (
   `ucm_id` int(10) unsigned NOT NULL,
   `ucm_item_id` int(10) NOT NULL,
@@ -1945,7 +1895,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_ucm_base` (
 -- Table structure for table `d9jhp_ucm_content`
 --
 
-DROP TABLE IF EXISTS `d9jhp_ucm_content`;
 CREATE TABLE IF NOT EXISTS `d9jhp_ucm_content` (
   `core_content_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `core_type_alias` varchar(255) NOT NULL DEFAULT '' COMMENT 'FK to the content types table',
@@ -2000,7 +1949,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_ucm_content` (
 -- Table structure for table `d9jhp_ucm_history`
 --
 
-DROP TABLE IF EXISTS `d9jhp_ucm_history`;
 CREATE TABLE IF NOT EXISTS `d9jhp_ucm_history` (
   `version_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `ucm_item_id` int(10) unsigned NOT NULL,
@@ -2165,7 +2113,6 @@ INSERT INTO `d9jhp_ucm_history` (`version_id`, `ucm_item_id`, `ucm_type_id`, `ve
 -- Table structure for table `d9jhp_updates`
 --
 
-DROP TABLE IF EXISTS `d9jhp_updates`;
 CREATE TABLE IF NOT EXISTS `d9jhp_updates` (
   `update_id` int(11) NOT NULL AUTO_INCREMENT,
   `update_site_id` int(11) DEFAULT '0',
@@ -2190,7 +2137,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_updates` (
 -- Table structure for table `d9jhp_update_sites`
 --
 
-DROP TABLE IF EXISTS `d9jhp_update_sites`;
 CREATE TABLE IF NOT EXISTS `d9jhp_update_sites` (
   `update_site_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) DEFAULT '',
@@ -2210,8 +2156,8 @@ INSERT INTO `d9jhp_update_sites` (`update_site_id`, `name`, `type`, `location`, 
 (1, 'Joomla Core', 'collection', 'http://update.joomla.org/core/list.xml', 0, 0, ''),
 (2, 'Joomla Extension Directory', 'collection', 'http://update.joomla.org/jed/list.xml', 0, 0, ''),
 (3, 'Accredited Joomla! Translations', 'collection', 'http://update.joomla.org/language/translationlist_3.xml', 0, 0, ''),
-(4, 'Vinaora Update Server', 'extension', 'http://update.vinaora.com/joomla3x/mod_vt_nivo_slider.xml', 1, 1404834612, ''),
-(5, 'JCE Editor Updates', 'extension', 'https://www.joomlacontenteditor.net/index.php?option=com_updates&view=update&format=xml&id=1&file=extension.xml', 1, 1404834612, '');
+(4, 'Vinaora Update Server', 'extension', 'http://update.vinaora.com/joomla3x/mod_vt_nivo_slider.xml', 1, 1404918400, ''),
+(5, 'JCE Editor Updates', 'extension', 'https://www.joomlacontenteditor.net/index.php?option=com_updates&view=update&format=xml&id=1&file=extension.xml', 1, 1404918399, '');
 
 -- --------------------------------------------------------
 
@@ -2219,7 +2165,6 @@ INSERT INTO `d9jhp_update_sites` (`update_site_id`, `name`, `type`, `location`, 
 -- Table structure for table `d9jhp_update_sites_extensions`
 --
 
-DROP TABLE IF EXISTS `d9jhp_update_sites_extensions`;
 CREATE TABLE IF NOT EXISTS `d9jhp_update_sites_extensions` (
   `update_site_id` int(11) NOT NULL DEFAULT '0',
   `extension_id` int(11) NOT NULL DEFAULT '0',
@@ -2243,7 +2188,6 @@ INSERT INTO `d9jhp_update_sites_extensions` (`update_site_id`, `extension_id`) V
 -- Table structure for table `d9jhp_usergroups`
 --
 
-DROP TABLE IF EXISTS `d9jhp_usergroups`;
 CREATE TABLE IF NOT EXISTS `d9jhp_usergroups` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',
   `parent_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Adjacency List Reference Id',
@@ -2278,7 +2222,6 @@ INSERT INTO `d9jhp_usergroups` (`id`, `parent_id`, `lft`, `rgt`, `title`) VALUES
 -- Table structure for table `d9jhp_users`
 --
 
-DROP TABLE IF EXISTS `d9jhp_users`;
 CREATE TABLE IF NOT EXISTS `d9jhp_users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL DEFAULT '',
@@ -2308,7 +2251,7 @@ CREATE TABLE IF NOT EXISTS `d9jhp_users` (
 --
 
 INSERT INTO `d9jhp_users` (`id`, `name`, `username`, `email`, `password`, `block`, `sendEmail`, `registerDate`, `lastvisitDate`, `activation`, `params`, `lastResetTime`, `resetCount`, `otpKey`, `otep`, `requireReset`) VALUES
-(880, 'Super User', 'admin', 'hunguit@yahoo.com', '$2y$10$N4T3siSb0oH3.eiESbGPeuynNF3dv1IElCw6vmI3XPbiUUU.qgIB2', 0, 1, '2014-06-24 15:06:59', '2014-07-08 15:50:00', '0', '{}', '0000-00-00 00:00:00', 0, '', '', 0);
+(880, 'Super User', 'admin', 'hunguit@yahoo.com', '$2y$10$N4T3siSb0oH3.eiESbGPeuynNF3dv1IElCw6vmI3XPbiUUU.qgIB2', 0, 1, '2014-06-24 15:06:59', '2014-07-10 00:14:40', '0', '{}', '0000-00-00 00:00:00', 0, '', '', 0);
 
 -- --------------------------------------------------------
 
@@ -2316,7 +2259,6 @@ INSERT INTO `d9jhp_users` (`id`, `name`, `username`, `email`, `password`, `block
 -- Table structure for table `d9jhp_user_keys`
 --
 
-DROP TABLE IF EXISTS `d9jhp_user_keys`;
 CREATE TABLE IF NOT EXISTS `d9jhp_user_keys` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `user_id` varchar(255) NOT NULL,
@@ -2338,7 +2280,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_user_keys` (
 -- Table structure for table `d9jhp_user_notes`
 --
 
-DROP TABLE IF EXISTS `d9jhp_user_notes`;
 CREATE TABLE IF NOT EXISTS `d9jhp_user_notes` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `user_id` int(10) unsigned NOT NULL DEFAULT '0',
@@ -2366,7 +2307,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_user_notes` (
 -- Table structure for table `d9jhp_user_profiles`
 --
 
-DROP TABLE IF EXISTS `d9jhp_user_profiles`;
 CREATE TABLE IF NOT EXISTS `d9jhp_user_profiles` (
   `user_id` int(11) NOT NULL,
   `profile_key` varchar(100) NOT NULL,
@@ -2381,7 +2321,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_user_profiles` (
 -- Table structure for table `d9jhp_user_usergroup_map`
 --
 
-DROP TABLE IF EXISTS `d9jhp_user_usergroup_map`;
 CREATE TABLE IF NOT EXISTS `d9jhp_user_usergroup_map` (
   `user_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Foreign Key to #__users.id',
   `group_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Foreign Key to #__usergroups.id',
@@ -2401,7 +2340,6 @@ INSERT INTO `d9jhp_user_usergroup_map` (`user_id`, `group_id`) VALUES
 -- Table structure for table `d9jhp_viewlevels`
 --
 
-DROP TABLE IF EXISTS `d9jhp_viewlevels`;
 CREATE TABLE IF NOT EXISTS `d9jhp_viewlevels` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',
   `title` varchar(100) NOT NULL DEFAULT '',
@@ -2428,7 +2366,6 @@ INSERT INTO `d9jhp_viewlevels` (`id`, `title`, `ordering`, `rules`) VALUES
 -- Table structure for table `d9jhp_weblinks`
 --
 
-DROP TABLE IF EXISTS `d9jhp_weblinks`;
 CREATE TABLE IF NOT EXISTS `d9jhp_weblinks` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `catid` int(11) NOT NULL DEFAULT '0',
@@ -2475,7 +2412,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_weblinks` (
 -- Table structure for table `d9jhp_wf_profiles`
 --
 
-DROP TABLE IF EXISTS `d9jhp_wf_profiles`;
 CREATE TABLE IF NOT EXISTS `d9jhp_wf_profiles` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
