@@ -125,7 +125,7 @@ table {
     border-spacing: 0;
 }
 .wrap_content {
-	background: none repeat scroll 0 0 #d9b66f;
+	background: none repeat scroll 0 0 #fff;
     color: #333333;
     margin-bottom: 0 !important;
 	margin-top: -14px;
@@ -233,7 +233,7 @@ background: #d9b66f;
 .center {
 	margin-left: 0 !important;
     margin-right: 0 !important;
-    width: 564px !important;
+   
     border: solid 1px #CCC;
     padding-left: 10px;
     padding-right: 10px;
@@ -311,10 +311,8 @@ li.item-121, li.item-144 {
 	color: #FFF;
 }
 .info_footer {
-	
 	margin-left: 0px !important;
 	margin-right: 0px !important;
-	width: 1140px;
 }
 .menutop {
     background: none repeat scroll 0 0 #033e8d;

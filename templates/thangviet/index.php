@@ -24,7 +24,18 @@ JHtml::_('bootstrap.framework');
 	
 </head>
 <body>
-	<div class="top">
+<?php if ($this->countModules('divAdLeft')) : ?>
+<div id="divAdLeft" style="position: absolute; top: 130px; left: 0px;">
+	<jdoc:include type="modules" name="divAdLeft" />
+</div>
+<?php endif; ?>
+
+<?php if ($this->countModules('divAdRight')) : ?>
+<div id="divAdRight" style="position: absolute; top: 130px;right: 0px;">
+	<jdoc:include type="modules" name="divAdRight" />
+</div>
+<?php endif; ?>	
+<div class="top">
 			<div class="container12">
 			<div class="column12">
                 <div class="banner">
@@ -58,19 +69,94 @@ JHtml::_('bootstrap.framework');
             <?php if ($this->countModules('right')) : ?>
 				<div class="column3 right"><jdoc:include type="modules" name="right" style="xhtml" /></div>
 			<?php endif; ?>
-			<div class="info_footer">
+			<div class="container12 info_footer">
 				<jdoc:include type="modules" name="footer" />
 				<p class="joomlavi">Design & Developer at <a target="_blank" href="http://www.joomlavi.net">www.joomlavi.net</a></p>
 			</div>
         </div>
 	</div>	
-<script>
 
-jQuery(function(){
-	//var w = jQuery(window).width();
-	//alert(w);
+<script>
+MainContentW = 980;
+LeftBannerW = 150;
+RightBannerW = 0;
+LeftAdjust = 0;
+RightAdjust = 0;
+TopAdjust = 130;
+ShowAdDiv();
+window.onresize=ShowAdDiv;
+function FloatTopDiv()
+{
+	startLX = ((jQuery(window).width() -MainContentW)/2)-LeftBannerW-LeftAdjust , startLY = TopAdjust+80;
+	startRX = ((jQuery(window).width() -MainContentW)/2)+MainContentW+RightAdjust , startRY = TopAdjust+80;
+
+	var d = document;
+	function ml(id)
+	{
+		var el=d.getElementById?d.getElementById(id):d.all?d.all[id]:d.layers[id];
+		el.sP=function(x,y){this.style.left=x + 'px';this.style.top=y + 'px';};
+		el.x = startRX;
+		el.y = startRY;
+		return el;
+	}
+	function m2(id)
+	{
+		var e2=d.getElementById?d.getElementById(id):d.all?d.all[id]:d.layers[id];
+		e2.sP=function(x,y){this.style.left=x + 'px';this.style.top=y + 'px';};
+		e2.x = startLX;
+		e2.y = startLY;
+		return e2;
+	}
+	window.stayTopLeft=function()
+	{
+		if (document.documentElement && document.documentElement.scrollTop)
+			var pY =  document.documentElement.scrollTop;
+		else if (document.body)
+			var pY =  document.body.scrollTop;
+		if (document.body.scrollTop > 30){startLY = 3;startRY = 3;} 
+		else {startLY = TopAdjust;startRY = TopAdjust;};
+		
+		ftlObj.y += (pY+startRY-ftlObj.y)/16;
+		
+		ftlObj.sP(ftlObj.x, ftlObj.y);
+		
+		ftlObj2.y += (pY+startLY-ftlObj2.y)/16;
+		
+		ftlObj2.sP(ftlObj2.x, ftlObj2.y);
+		
+		setTimeout("stayTopLeft()", 1);
+	}
 	
-});
+	
+	ftlObj = ml("divAdRight");
+	ftlObj2 = m2("divAdLeft");
+	stayTopLeft();
+
+}
+function ShowAdDiv()
+{
+	var objAdDivRight = document.getElementById("divAdRight");
+	var objAdDivLeft = document.getElementById("divAdLeft");        
+	
+	if (document.body.clientWidth < 980)
+	{
+		objAdDivRight.style.display = "none";
+		objAdDivLeft.style.display = "none";
+	}
+	else
+	{
+		
+		objAdDivRight.style.display = "block";
+		
+		objAdDivLeft.style.display = "block";
+		
+		FloatTopDiv();
+	}
+}
+  
+
+
+
 </script>	
 </body>
 </html>
