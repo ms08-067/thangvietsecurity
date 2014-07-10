@@ -1,6 +1,4 @@
 body {
-	
-	
 	color: #fff;
 	font-family: arial;
 	font-weight: normal;
@@ -127,7 +125,7 @@ table {
     border-spacing: 0;
 }
 .wrap_content {
-	background: none repeat scroll 0 0 #FFFFFF;
+	background: none repeat scroll 0 0 #d9b66f;
     color: #333333;
     margin-bottom: 0 !important;
 	margin-top: -14px;
@@ -145,7 +143,7 @@ ul.menuleft li a,ul.menuright li a {
 	border: solid 1px #ccc;
 	margin-top: 10px;
 	margin-bottom: 10px;
-	
+	background: #f9f9f8;
 	border-radius: 6px;
 }
 .moduletable .custom,.moduletable .nav {
@@ -187,7 +185,7 @@ background: #3498db;
   background-image: linear-gradient(to bottom, #3498db, #2980b9);
 }
 body {
-background: #f3de96;
+background: #d9b66f;
 }
 .top{
   /*
