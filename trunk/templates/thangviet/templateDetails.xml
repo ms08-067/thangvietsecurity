@@ -29,8 +29,8 @@
 		<position>slideshow</position>
 		<position>left</position>
 		<position>right</position>
-		<position>footer</position>
-		<position>position-4</position>
+		<position>divAdLeft</position>
+		<position>divAdRight</position>
 		<position>footer</position>
 	</positions>
 	<languages folder="language">
