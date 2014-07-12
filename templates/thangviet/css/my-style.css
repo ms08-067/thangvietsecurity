@@ -12,6 +12,9 @@ h1 {
     padding-bottom: 8px;
     padding-top: 8px;
 }
+.page-header h2 {
+	font-size: 17px;
+}
 /*###############################################*/
 /* Sub menu */
 ul.menu  {
@@ -619,6 +622,10 @@ div.pagination {
     font-size: 10px;
     padding: 10px 0;
     text-align: left;
+}
+p.readmore {
+	margin-top: 16px;
+    margin-bottom: 20px;
 }
 div.pagination a {
     color: orange;
