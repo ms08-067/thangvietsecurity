@@ -69,7 +69,7 @@ JHtml::_('bootstrap.framework');
             <?php if ($this->countModules('right')) : ?>
 				<div class="column3 right"><jdoc:include type="modules" name="right" style="xhtml" /></div>
 			<?php endif; ?>
-			<div class="container12 info_footer">
+			<div class="info_footer">
 				<jdoc:include type="modules" name="footer" />
 				<p class="joomlavi">Design & Developer at <a target="_blank" href="http://www.joomlavi.net">www.joomlavi.net</a></p>
 			</div>
