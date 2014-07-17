@@ -42,11 +42,16 @@
 	border-radius: 5px;}
 	
 	.icemegamenu > ul > li {
-		position: relative;
+		border-right: 2px solid #f6f0ba;
 		display: inline-block;
 		float: none;
+		height: 36px;
+		margin-top: 5px;
+		position: relative;
 	}
-
+	.icemegamenu > ul > li:last-child {
+		border-right: none;
+	}
 .icesubMenu li  a{
 font-weight: normal !important;
 line-height: 34px !important;
@@ -67,7 +72,7 @@ padding: 1px 10px 0 15px !important;
 }
 
 .icemegamenu > ul > li  a.iceMenuTitle {
-			margin: 12px 0;
+			margin: 6px 0;
 			position: relative;
 			z-index: 9999;
 			display: block;

@@ -25,13 +25,13 @@ JHtml::_('bootstrap.framework');
 </head>
 <body>
 <?php if ($this->countModules('divAdLeft')) : ?>
-<div id="divAdLeft" style="position: absolute; top: 130px; left: 0px;">
+<div id="divAdLeft" style="position: absolute; top: 200px; left: 0px;">
 	<jdoc:include type="modules" name="divAdLeft" />
 </div>
 <?php endif; ?>
 
 <?php if ($this->countModules('divAdRight')) : ?>
-<div id="divAdRight" style="position: absolute; top: 130px;right: 0px;">
+<div id="divAdRight" style="position: absolute; top: 200px;right: 0px;">
 	<jdoc:include type="modules" name="divAdRight" />
 </div>
 <?php endif; ?>	
@@ -138,7 +138,7 @@ function ShowAdDiv()
 	var objAdDivRight = document.getElementById("divAdRight");
 	var objAdDivLeft = document.getElementById("divAdLeft");        
 	
-	if (document.body.clientWidth < 980)
+	if (document.body.clientWidth <= 980)
 	{
 		objAdDivRight.style.display = "none";
 		objAdDivLeft.style.display = "none";
@@ -153,9 +153,6 @@ function ShowAdDiv()
 		FloatTopDiv();
 	}
 }
-  
-
-
 
 </script>	
 </body>
