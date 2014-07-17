@@ -226,6 +226,7 @@ and (max-width: 1160px)
 }
 
 @media only screen and (min-width: 480px) and (max-width: 767px) {
+
     .container12, .container16 {width:420px;}
     .container12 .column1, .container16 .column1,
     .container12 .column2, .container16 .column2,

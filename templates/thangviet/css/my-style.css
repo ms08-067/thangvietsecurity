@@ -99,15 +99,15 @@ p.joomlavi  a{
 	color: #FFF;
 }
 .logo {
-	margin-left: 12px;
-    margin-top: 25px;
-    width: 99px;
+	margin-left: 5px;
+    margin-top: 12px;
+    width: 250px;
 }
 .banner {
 	background: url("../images/banner.png") no-repeat scroll 0 0 / 100% auto rgba(0, 0, 0, 0);
     height: auto;
     width: 100%;
-    height: 165px;
+    height: 158px;
 }
 .item-page .moduletable {
 	
@@ -120,8 +120,15 @@ p.joomlavi  a{
 }
 p.joomlavi {
 	color: #FFF;
-	background: #033E8D;
+	/*background: #033E8D;*/
+	background: #2e2e2e;
 	text-align: center;
+	font-size: 11px;
+}
+.smartlatest {
+	
+	padding-left: 8px !important;
+	padding-right: 8px !important;
 }
 table {
     border-collapse: collapse;
@@ -141,6 +148,9 @@ table {
 ul.menuleft li a,ul.menuright li a {
 	color: #333;
 	text-decoration: none;
+}
+.hoatdong  marquee{
+	min-height: 300px;
 }
 .moduletable {
 	border: solid 1px #ccc;
@@ -188,32 +198,38 @@ background: #3498db;
   background-image: linear-gradient(to bottom, #3498db, #2980b9);
 }
 body {
-background: #d9b66f;
+background: #8d6f3f;
 }
 .top{
-  /*
-  background: #fae57e;
-  background-image: -webkit-linear-gradient(top, #fae57e, #e8e8e9);
-  background-image: -moz-linear-gradient(top, #fae57e, #e8e8e9);
-  background-image: -ms-linear-gradient(top, #fae57e, #e8e8e9);
-  background-image: -o-linear-gradient(top, #fae57e, #e8e8e9);
-  background-image: linear-gradient(to bottom, #fae57e, #e8e8e9);
-  */
+ 
 }
-.moduletable h3 {
+
+@font-face {
+    font-family: texgyreadventor_bold;
+    src: url(texgyreadventor-bold.woff);
+    
+}
+
+
+@font-face {
+    font-family: texgyreadventor_regular;
+    src: url(texgyreadventor-regular.woff);
+    
+}
+.moduletable h3,.icemegamenu > ul, ul.icesubMenu {
 	
-	background: #3498db;
-  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
-  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
-  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
-  background-image: -o-linear-gradient(top, #3498db, #2980b9);
-  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+	background: #ebe2a4;
+  background-image: -webkit-linear-gradient(top, #ebe2a4, #9c8a67);
+  background-image: -moz-linear-gradient(top, #ebe2a4, #9c8a67);
+  background-image: -ms-linear-gradient(top, #ebe2a4, #9c8a67);
+  background-image: -o-linear-gradient(top, #ebe2a4, #9c8a67);
+  background-image: linear-gradient(to bottom, #ebe2a4, #9c8a67);
   
 	line-height: 30px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     color: #FFFFFF;
-    font-family: Arial;
+    font-family: texgyreadventor_bold !important;
     font-size: 16px;
     margin-bottom: 0;
     margin-top: 0;
@@ -222,7 +238,21 @@ background: #d9b66f;
     text-align: center;
     text-decoration: none;
     text-transform: uppercase;
-  
+	font-weight: normal;
+}
+.moduletable h3 {
+	font-size: 15px;
+	font-weight: bold;
+	padding-top: 0px;
+	padding-bottom: 6px;
+}
+.thongtinlienhe h3,.hosophaply h3, .hoatdong h3{
+margin-bottom: 10px;
+}
+.thongtinlienhe .custom,.lienhe .custom, .hosophaply .custom {
+
+	padding-left: 2px !important;
+	padding-right: 2px !important;
 }
 .wrap_content strong {
 	color: #333;
@@ -301,8 +331,9 @@ li.item-121, li.item-144 {
 }
 
 .footer {
-    background: none repeat scroll 0 0 #033e8d;
-    clear: both;
+    /*background: none repeat scroll 0 0 #033e8d;*/
+    background: none repeat scroll 0 0 #2e2e2e;
+	clear: both;
     font-size: 14px;
     height: auto;
     min-height: 70px;
