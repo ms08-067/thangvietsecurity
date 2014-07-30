@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="http://baovengayvadem.com/imgs/favicon.ico" />
+<title>Profile</title>
+<script type="text/javascript" src="../scripts/jquery.js" tppabs="http://baovengayvadem.com/scripts/jquery.js"></script>
+<script type="text/javascript" src="../scripts/profile/turn.min.js" tppabs="http://baovengayvadem.com/scripts/profile/turn.min.js"></script>
+<script language="JavaScript">
+	function fullScreen() {
+	var el = document.documentElement
+		, rfs = // for newer Webkit and Firefox
+			   el.requestFullScreen
+			|| el.webkitRequestFullScreen
+			|| el.mozRequestFullScreen
+			|| el.msRequestFullScreen
+	;
+	if(typeof rfs!="undefined" && rfs){
+	  rfs.call(el);
+	} else if(typeof window.ActiveXObject!="undefined"){
+	  // for Internet Explorer
+	  var wscript = new ActiveXObject("WScript.Shell");
+	  if (wscript!=null) {
+		 wscript.SendKeys("{F11}");
+	  }
+	}	
+	}
+</script>
+<style type="text/css">
+	body{background:#ccc;}
+	.f11{position:fixed; top:30%; left:0;}
+	#magazine{
+		width:1106px;
+		height:752px;
+		margin:0 auto;
+		z-index:9999;
+	}
+	#magazine .turn-page{
+		background-color:#ccc;
+		background-size:100% 100%;
+	}
+	.img_hd{position:absolute; top:150px; left:150px;}
+</style>
+</head>
+
+<body>
+    <a href="javascript:void(0);" onclick="fullScreen('http://google.com/');">
+        <img class="f11" src="../scripts/profile/f11.png" tppabs="http://baovengayvadem.com/scripts/profile/f11.png" width="42" height="271" alt="">
+    </a>
+    <div id="magazine">
+            <div style="background-image:url(../uploads/quangcao/1.jpg)"></div>
+            <div style="background-image:url(../uploads/quangcao/2.jpg)"></div>
+            <div style="background-image:url(../uploads/quangcao/3-jpg-20140317113827pESSGwpvIk.jpg)"></div>
+            <div style="background-image:url(../uploads/quangcao/4-jpg-20140317114025VIkNyI0RDG.jpg)"></div>
+            <div style="background-image:url(../uploads/quangcao/5-jpg-20140317115421byfh2CeTip.jpg)"></div>
+            <div style="background-image:url(../uploads/quangcao/6-jpg-20140317115542NpOzdFPPgT.jpg)"></div>
+            <div style="background-image:url(../uploads/quangcao/7-jpg-201403171157424ZZJYNTwry.jpg)"></div>
+            <div style="background-image:url(../uploads/quangcao/8-jpg-20140317115800Wtahbw7K41.jpg)"></div>
+            <div style="background-image:url(../uploads/quangcao/9-jpg-20140317115817zzn67ZZ2qG.jpg)"></div>
+            <div style="background-image:url(../uploads/quangcao/10-jpg-201403171158357zWWw8tljW.jpg)"></div>
+            <div style="background-image:url(../uploads/quangcao/11-jpg-20140317115857VWJRGvwCUw.jpg)"></div>
+            <div style="background-image:url(../uploads/quangcao/12-jpg-201403171159144cr3G6ZFLi.jpg)"></div>
+            <div style="background-image:url(../uploads/quangcao/13-jpg-20140317115932oHoApY0aRW.jpg)"></div>
+            <div style="background-image:url(../uploads/quangcao/14-jpg-20140317115948DeSJR6WppL.jpg)"></div>
+            <div style="background-image:url(../uploads/quangcao/15-jpg-20140317120008Hm1cmBgBd6.jpg)"></div>
+            <div style="background-image:url(../uploads/quangcao/16.jpg)"></div>
+            <div style="background-image:url(../uploads/quangcao/17-jpg-201403171201249vvWw8cJpK.jpg)"></div>
+            <div style="background-image:url(../uploads/quangcao/18.jpg)"></div>
+            <div style="background-image:url(../uploads/quangcao/19.jpg)"></div>
+            <div style="background-image:url(../uploads/quangcao/20-jpg-20140317120221EdgdyRDR5e.jpg)"></div>
+            <div style="background-image:url(../uploads/quangcao/21-jpg-2014031712024276Polqmj1L.jpg)"></div>
+            <div style="background-image:url(../uploads/quangcao/22-jpg-201403171203002NEMmfMhTM.jpg)"></div>
+            <div style="background-image:url(../uploads/quangcao/23-jpg-20140317120317KW7QAK9VGR.jpg)"></div>
+            <div style="background-image:url(../uploads/quangcao/24-jpg-20140317120338zGaiaKEkwB.jpg)"></div>
+            <div style="background-image:url(../uploads/quangcao/25-jpg-20140317120400mrnsUUWILU.jpg)"></div>
+            <div style="background-image:url(../uploads/quangcao/26-jpg-20140317120418dVAc4z5ULK.jpg)"></div>
+            <div style="background-image:url(../uploads/quangcao/27-jpg-20140317120435fnJWdoyVUM.jpg)"></div>
+            <div style="background-image:url(../uploads/quangcao/28-jpg-20140317120501upA1EmaAA0.jpg)"></div>
+        
+    </div>
+<script type="text/javascript">
+	$(window).ready(function() {
+		$('#magazine').turn({
+			display: 'double',
+			acceleration: true,
+			gradients: !$.isTouch,
+			elevation:50,
+			when: {
+				turned: function(e, page) {
+					/*console.log('Current view: ', $(this).turn('view'));*/
+				}
+			}
+		});
+	});	
+	
+	$(window).bind('keydown', function(e){
+		if (e.keyCode==37)
+			$('#magazine').turn('previous');
+		else if (e.keyCode==39)
+			$('#magazine').turn('next');			
+	});
+</script>
+
+<img class="img_hd" src="../scripts/profile/img_hd.png" tppabs="http://baovengayvadem.com/scripts/profile/img_hd.png" width="347" height="330" alt="">
+
+</body>
+</html>
