@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 17, 2014 at 06:38 PM
+-- Generation Time: Jul 30, 2014 at 05:16 PM
 -- Server version: 5.5.27
 -- PHP Version: 5.4.7
 
@@ -26,7 +26,6 @@ SET time_zone = "+00:00";
 -- Table structure for table `d9jhp_assets`
 --
 
-DROP TABLE IF EXISTS `d9jhp_assets`;
 CREATE TABLE IF NOT EXISTS `d9jhp_assets` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',
   `parent_id` int(11) NOT NULL DEFAULT '0' COMMENT 'Nested set parent.',
@@ -156,7 +155,6 @@ INSERT INTO `d9jhp_assets` (`id`, `parent_id`, `lft`, `rgt`, `level`, `name`, `t
 -- Table structure for table `d9jhp_associations`
 --
 
-DROP TABLE IF EXISTS `d9jhp_associations`;
 CREATE TABLE IF NOT EXISTS `d9jhp_associations` (
   `id` int(11) NOT NULL COMMENT 'A reference to the associated item.',
   `context` varchar(50) NOT NULL COMMENT 'The context of the associated item.',
@@ -171,7 +169,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_associations` (
 -- Table structure for table `d9jhp_banners`
 --
 
-DROP TABLE IF EXISTS `d9jhp_banners`;
 CREATE TABLE IF NOT EXISTS `d9jhp_banners` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `cid` int(11) NOT NULL DEFAULT '0',
@@ -221,7 +218,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_banners` (
 -- Table structure for table `d9jhp_banner_clients`
 --
 
-DROP TABLE IF EXISTS `d9jhp_banner_clients`;
 CREATE TABLE IF NOT EXISTS `d9jhp_banner_clients` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL DEFAULT '',
@@ -248,7 +244,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_banner_clients` (
 -- Table structure for table `d9jhp_banner_tracks`
 --
 
-DROP TABLE IF EXISTS `d9jhp_banner_tracks`;
 CREATE TABLE IF NOT EXISTS `d9jhp_banner_tracks` (
   `track_date` datetime NOT NULL,
   `track_type` int(10) unsigned NOT NULL,
@@ -266,7 +261,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_banner_tracks` (
 -- Table structure for table `d9jhp_categories`
 --
 
-DROP TABLE IF EXISTS `d9jhp_categories`;
 CREATE TABLE IF NOT EXISTS `d9jhp_categories` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `asset_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'FK to the #__assets table.',
@@ -326,7 +320,6 @@ INSERT INTO `d9jhp_categories` (`id`, `asset_id`, `parent_id`, `lft`, `rgt`, `le
 -- Table structure for table `d9jhp_contact_details`
 --
 
-DROP TABLE IF EXISTS `d9jhp_contact_details`;
 CREATE TABLE IF NOT EXISTS `d9jhp_contact_details` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL DEFAULT '',
@@ -388,7 +381,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_contact_details` (
 -- Table structure for table `d9jhp_content`
 --
 
-DROP TABLE IF EXISTS `d9jhp_content`;
 CREATE TABLE IF NOT EXISTS `d9jhp_content` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `asset_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'FK to the #__assets table.',
@@ -436,7 +428,7 @@ CREATE TABLE IF NOT EXISTS `d9jhp_content` (
 --
 
 INSERT INTO `d9jhp_content` (`id`, `asset_id`, `title`, `alias`, `introtext`, `fulltext`, `state`, `catid`, `created`, `created_by`, `created_by_alias`, `modified`, `modified_by`, `checked_out`, `checked_out_time`, `publish_up`, `publish_down`, `images`, `urls`, `attribs`, `version`, `ordering`, `metakey`, `metadesc`, `access`, `hits`, `metadata`, `featured`, `language`, `xreference`) VALUES
-(1, 57, 'Trang Chủ', 'trang-ch', '<p>&nbsp;<br /> <strong>THƯ NGỎ</strong></p>\r\n<p align="center"><span style="color: #ff0000;"><strong>CÔNG TY TNHH DỊCH VỤ BẢO VỆ THĂNG VIỆT</strong></span></p>\r\n<p align="center"><span style="color: #ff0000;"></span><br /><span style="color: #ff0000;"> "</span><strong><span style="color: #ff0000;">TRUNG THÀNH – KỶ LUẬT – TRÁCH NHIỆM"</span><br /></strong></p>\r\n<p>&nbsp;</p>\r\n<p><span style="color: #0000ff; background-color: #ffffff;"><strong><span style="text-decoration: underline;">Kính Gửi</span></strong> : Quý khách hàng</span></p>\r\n<p><span style="background-color: #0000ff;">&nbsp;</span></p>\r\n<p>&nbsp; &nbsp; &nbsp;Hội nhập xu thế phát triển thời đại bằng con đường công nghiệp hóa, hiện đại hóa là chủ trương đúng đắn của nhà nước Cộng Hòa Xã Hội Chủ Nghĩa Việt Nam trong thời kỳ đổi mới hiện nay, nhất là sau khi Việt Nam chính thức gia nhập tổ chức thương mại thế giới (WTO), nhu cầu dịch vụ bảo vệ cũng trở nên hết sức cần thiết, đòi hỏi phải được xây dựng phát triển ngang tầm với quy mô ngày càng lớn mạnh, với tính chuyên nghiệp ngày càng cao, nhằm mục đích thực hiện tốt công tác bảo vệ an toàn cho các đơn vị, cơ quan, doanh nghiệp, xí nghiệp , nhà máy, đáp ứng sự mong muốn chung của các thành phần kinh tế trong và ngoài nước.<br /> <br /> Xuất phát từ nhận thức trên, vì sự nghiệp phát triển chung của ngành dịch vụ bảo vệ, góp phần tích cực vào việc bảo vệ an ninh trật tự chung xã hội, nguồn động lực chính thúc đẩy cho sự phát triển của nền kinh tế đất nước nói chung và các thành phần kinh tế nói riêng. CÔNG TY TNHH DỊCH VỤ BẢO VỆ THĂNG VIỆT &nbsp;đuợc thành lập, biểu tượng cho đất nước VIỆT NAM có truyền thống lịch sử con rồng cháu tiên, đang trên đà phát triển thăng hoa, khát vọng thật sự trở thành con rồng kinh tế trong khu vực, với kỳ vọng đem đến Quý khách hàng một dịch vụ chất lượng cao hoàn hảo.</p>\r\n<p>Thưa Quý khách !</p>\r\n<p>&nbsp;</p>\r\n<p>CÔNG TY TNHH DỊCH VỤ BẢO VỆ THĂNG VIỆT được thành lập và hoạt động trên phạm vi toàn lãnh thổ Việt Nam, được Phòng QLHC về TTXH Công An TP. HCM cấp giấy chứng nhận đủ điều kiện về an ninh trật tự dịch vụ bảo vệ chuyên nghiệp, giấy chứng nhận đăng ký kinh doanh do Phòng ĐKKD – Sở Kế hoạch đầu tư TP.HCM cấp .</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp; &nbsp; &nbsp; Với đội ngũ cán bộ lãnh đạo tài năng trí tuệ có bề dày kinh nghiệm lâu năm trong lĩnh vực bảo vệ chuyên nghiệp, kết hợp cùng đội ngũ nhân viên trẻ năng động được huấn luyện về chính trị, pháp luật, nghiệp vụ, PCCC, võ thuật, và một số chuyên môn có liên quan đến nghề nghiệp, chắc chắn sẽ mang đến cho Quý khách cảm giác hài lòng và yên tâm đối với chất lượng dịch vụ của chúng tôi cung cấp.</p>\r\n<p>&nbsp;</p>\r\n<p>Đối với Quý khách hàng chúng tôi luôn ôm ấp hoài bão sẽ thực hiện , tư vấn , cũng như hỗ trợ các biện pháp nghiệp vụ an ninh tối ưu nhằm bảo vệ an toàn về tài sản và con người cho Quý khách hàng. Chắc chắn Quý khách sẽ hài lòng và yên tâm với chất lượng công việc mà chúng tôi đã và sẽ phục vụ cho Quý khách, vì đồng hành với chúng tôi có một đội ngũ cán bộ nhân viên đầy nhiệt huyết – trung thực – kiên quyết – khôn khéo – dũng cảm , luôn trong tư thế sẵn sàng giải quyết mọi tình huống trên tinh thần trách nhiệm cao nhất, đảm bảo đáp ứng nhu cầu thực hiện phương châm "VÌ BÌNH YÊN CUỘC SỐNG"<br /> <br /> Dịch vụ an ninh của CÔNG TY TNHH DỊCH VỤ BẢO VỆ THĂNG VIỆT đa dạng hóa và linh hoạt, đồng thời dựa trên cơ sở sẵn có mối quan hệ ngoại giao tốt với Chính quyền địa phương các cấp, để có cơ chế phối hợp kịp thời, chặt chẽ với các đơn vị, lực lượng chức năng chuyên môn, sẵn sàng đáp ứng kịp thời mọi nhu cầu thực tế của khách hàng, với mức giá dịch vụ phù hợp, hợp lý ( được bao trọn gói gồm : Đồng phục, Trang thiết bị bảo vệ, các khoản phúc lợi xã hội, bảo hiểm v.v…..)<br /> <br /> Chúng tôi cam kết với Quý khách hàng là sẽ luôn đảm bảo quyền lợi cơ bản và ngày càng được cải thiện về vật chất và tinh thần cho đội ngũ cán bộ nhân viên của Công ty chúng tôi, để họ luôn là những thành viên trung thành, có trách nhiệm cao, gắn bó lâu dài với Công ty và chính họ cũng sẽ là những hạt nhân tích cực trong phong trào giữ gìn, bảo vệ an ninh trật tự, an toàn xã hội. Đó là những lý do vì sao chúng tôi tin tưởng sẽ mang đến Quý khách một dịch vụ an ninh có chất lượng cao như mong muốn của Quý khách.</p>\r\n<p>&nbsp;</p>\r\n<div class="intro_contact">\r\n<p align="center"><span style="color: #ff0000;"><strong>NẾU QUÝ KHÁCH CẦN CÓ MỘT GIẢI PHÁP AN NINH TIN CẬY – UY TÍN</strong></span><br /><span style="color: #ff0000;"> <strong>Xin vui lòng liên hệ: <br /></strong></span></p>\r\n<br />\r\n<p>&nbsp;&nbsp;&nbsp;<span style="text-align: center;">&nbsp;&nbsp;&nbsp;&nbsp; Tên Công ty &nbsp;: <strong>CÔNG TY TNHH DỊCH VỤ BẢO VỆ THĂNG &nbsp;VIỆT </strong></span><br /> <br />&nbsp; &nbsp; &nbsp; &nbsp;Địa chỉ &nbsp;: 137B, Đường Nguyễn Chí Thanh , P. 09 ,&nbsp; Q. 05 , TP.HCM , VN<br />&nbsp; &nbsp; &nbsp; &nbsp;Điện thoại : 086 2646719 – 0650 3777518 <br />&nbsp; &nbsp; &nbsp; &nbsp;Fax &nbsp;: 0862646719 – 0650 3777519</p>\r\n<br />\r\n<p>&nbsp; &nbsp; &nbsp; Hotline:<br />&nbsp; &nbsp; &nbsp; Mr. TRẦN HUY PHONG&nbsp; &nbsp;-&nbsp; ĐTDĐ :&nbsp; 0938.304.333<br />&nbsp; &nbsp; &nbsp; Mr. Ngô Cơ –ĐTDĐ: 0906.097.864</p>\r\n<br />\r\n<p style="text-align: center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>HÂN HẠNH ĐƯỢC PHỤC VỤ QUÝ KHÁCH </strong></p>\r\n</div>', '', 1, 2, '2014-06-25 09:45:13', 880, '', '2014-07-14 10:09:14', 880, 0, '0000-00-00 00:00:00', '2014-06-25 09:45:13', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_tags":"","show_intro":"","info_block_position":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 20, 5, '', '', 1, 817, '{"robots":"","author":"","rights":"","xreference":""}', 1, '*', ''),
+(1, 57, 'Trang Chủ', 'trang-ch', '<p>&nbsp;<br /> <strong>THƯ NGỎ</strong></p>\r\n<p align="center"><span style="color: #ff0000;"><strong>CÔNG TY TNHH DỊCH VỤ BẢO VỆ THĂNG VIỆT</strong></span></p>\r\n<p align="center"><span style="color: #ff0000;"></span><br /><span style="color: #ff0000;"> "</span><strong><span style="color: #ff0000;">TRUNG THÀNH – KỶ LUẬT – TRÁCH NHIỆM"</span><br /></strong></p>\r\n<p>&nbsp;</p>\r\n<p><span style="color: #0000ff; background-color: #ffffff;"><strong><span style="text-decoration: underline;">Kính Gửi</span></strong> : Quý khách hàng</span></p>\r\n<p><span style="background-color: #0000ff;">&nbsp;</span></p>\r\n<p>&nbsp; &nbsp; &nbsp;Hội nhập xu thế phát triển thời đại bằng con đường công nghiệp hóa, hiện đại hóa là chủ trương đúng đắn của nhà nước Cộng Hòa Xã Hội Chủ Nghĩa Việt Nam trong thời kỳ đổi mới hiện nay, nhất là sau khi Việt Nam chính thức gia nhập tổ chức thương mại thế giới (WTO), nhu cầu dịch vụ bảo vệ cũng trở nên hết sức cần thiết, đòi hỏi phải được xây dựng phát triển ngang tầm với quy mô ngày càng lớn mạnh, với tính chuyên nghiệp ngày càng cao, nhằm mục đích thực hiện tốt công tác bảo vệ an toàn cho các đơn vị, cơ quan, doanh nghiệp, xí nghiệp , nhà máy, đáp ứng sự mong muốn chung của các thành phần kinh tế trong và ngoài nước.<br /> <br /> Xuất phát từ nhận thức trên, vì sự nghiệp phát triển chung của ngành dịch vụ bảo vệ, góp phần tích cực vào việc bảo vệ an ninh trật tự chung xã hội, nguồn động lực chính thúc đẩy cho sự phát triển của nền kinh tế đất nước nói chung và các thành phần kinh tế nói riêng. CÔNG TY TNHH DỊCH VỤ BẢO VỆ THĂNG VIỆT &nbsp;đuợc thành lập, biểu tượng cho đất nước VIỆT NAM có truyền thống lịch sử con rồng cháu tiên, đang trên đà phát triển thăng hoa, khát vọng thật sự trở thành con rồng kinh tế trong khu vực, với kỳ vọng đem đến Quý khách hàng một dịch vụ chất lượng cao hoàn hảo.</p>\r\n<p>Thưa Quý khách !</p>\r\n<p>&nbsp;</p>\r\n<p>CÔNG TY TNHH DỊCH VỤ BẢO VỆ THĂNG VIỆT được thành lập và hoạt động trên phạm vi toàn lãnh thổ Việt Nam, được Phòng QLHC về TTXH Công An TP. HCM cấp giấy chứng nhận đủ điều kiện về an ninh trật tự dịch vụ bảo vệ chuyên nghiệp, giấy chứng nhận đăng ký kinh doanh do Phòng ĐKKD – Sở Kế hoạch đầu tư TP.HCM cấp .</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp; &nbsp; &nbsp; Với đội ngũ cán bộ lãnh đạo tài năng trí tuệ có bề dày kinh nghiệm lâu năm trong lĩnh vực bảo vệ chuyên nghiệp, kết hợp cùng đội ngũ nhân viên trẻ năng động được huấn luyện về chính trị, pháp luật, nghiệp vụ, PCCC, võ thuật, và một số chuyên môn có liên quan đến nghề nghiệp, chắc chắn sẽ mang đến cho Quý khách cảm giác hài lòng và yên tâm đối với chất lượng dịch vụ của chúng tôi cung cấp.</p>\r\n<p>&nbsp;</p>\r\n<p>Đối với Quý khách hàng chúng tôi luôn ôm ấp hoài bão sẽ thực hiện , tư vấn , cũng như hỗ trợ các biện pháp nghiệp vụ an ninh tối ưu nhằm bảo vệ an toàn về tài sản và con người cho Quý khách hàng. Chắc chắn Quý khách sẽ hài lòng và yên tâm với chất lượng công việc mà chúng tôi đã và sẽ phục vụ cho Quý khách, vì đồng hành với chúng tôi có một đội ngũ cán bộ nhân viên đầy nhiệt huyết – trung thực – kiên quyết – khôn khéo – dũng cảm , luôn trong tư thế sẵn sàng giải quyết mọi tình huống trên tinh thần trách nhiệm cao nhất, đảm bảo đáp ứng nhu cầu thực hiện phương châm "VÌ BÌNH YÊN CUỘC SỐNG"<br /> <br /> Dịch vụ an ninh của CÔNG TY TNHH DỊCH VỤ BẢO VỆ THĂNG VIỆT đa dạng hóa và linh hoạt, đồng thời dựa trên cơ sở sẵn có mối quan hệ ngoại giao tốt với Chính quyền địa phương các cấp, để có cơ chế phối hợp kịp thời, chặt chẽ với các đơn vị, lực lượng chức năng chuyên môn, sẵn sàng đáp ứng kịp thời mọi nhu cầu thực tế của khách hàng, với mức giá dịch vụ phù hợp, hợp lý ( được bao trọn gói gồm : Đồng phục, Trang thiết bị bảo vệ, các khoản phúc lợi xã hội, bảo hiểm v.v…..)<br /> <br /> Chúng tôi cam kết với Quý khách hàng là sẽ luôn đảm bảo quyền lợi cơ bản và ngày càng được cải thiện về vật chất và tinh thần cho đội ngũ cán bộ nhân viên của Công ty chúng tôi, để họ luôn là những thành viên trung thành, có trách nhiệm cao, gắn bó lâu dài với Công ty và chính họ cũng sẽ là những hạt nhân tích cực trong phong trào giữ gìn, bảo vệ an ninh trật tự, an toàn xã hội. Đó là những lý do vì sao chúng tôi tin tưởng sẽ mang đến Quý khách một dịch vụ an ninh có chất lượng cao như mong muốn của Quý khách.</p>\r\n<p>&nbsp;</p>\r\n<div class="intro_contact">\r\n<p align="center"><span style="color: #ff0000;"><strong>NẾU QUÝ KHÁCH CẦN CÓ MỘT GIẢI PHÁP AN NINH TIN CẬY – UY TÍN</strong></span><br /><span style="color: #ff0000;"> <strong>Xin vui lòng liên hệ: <br /></strong></span></p>\r\n<br />\r\n<p>&nbsp;&nbsp;&nbsp;<span style="text-align: center;">&nbsp;&nbsp;&nbsp;&nbsp; Tên Công ty &nbsp;: <strong>CÔNG TY TNHH DỊCH VỤ BẢO VỆ THĂNG &nbsp;VIỆT </strong></span><br /> <br />&nbsp; &nbsp; &nbsp; &nbsp;Địa chỉ &nbsp;: 137B, Đường Nguyễn Chí Thanh , P. 09 ,&nbsp; Q. 05 , TP.HCM , VN<br />&nbsp; &nbsp; &nbsp; &nbsp;Điện thoại : 086 2646719 – 0650 3777518 <br />&nbsp; &nbsp; &nbsp; &nbsp;Fax &nbsp;: 0862646719 – 0650 3777519</p>\r\n<br />\r\n<p>&nbsp; &nbsp; &nbsp; Hotline:<br />&nbsp; &nbsp; &nbsp; Mr. TRẦN HUY PHONG&nbsp; &nbsp;-&nbsp; ĐTDĐ :&nbsp; 0938.304.333<br />&nbsp; &nbsp; &nbsp; Mr. Ngô Cơ –ĐTDĐ: 0906.097.864</p>\r\n<br />\r\n<p style="text-align: center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>HÂN HẠNH ĐƯỢC PHỤC VỤ QUÝ KHÁCH </strong></p>\r\n</div>', '', 1, 2, '2014-06-25 09:45:13', 880, '', '2014-07-14 10:09:14', 880, 0, '0000-00-00 00:00:00', '2014-06-25 09:45:13', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_tags":"","show_intro":"","info_block_position":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 20, 5, '', '', 1, 824, '{"robots":"","author":"","rights":"","xreference":""}', 1, '*', ''),
 (2, 62, 'Sơ Đồ Tổ Chức', 'so-d-t-ch-c', '<p>&nbsp;</p>\r\n<p><img style="display: block; margin-left: auto; margin-right: auto;" src="images/thangviet/so_do_to_chuc.jpg" alt="" width="775" height="815" /></p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>', '', 1, 2, '2014-06-25 09:45:13', 880, '', '2014-07-04 13:02:57', 880, 0, '0000-00-00 00:00:00', '2014-06-25 09:45:13', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_tags":"","show_intro":"","info_block_position":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 12, 4, '', '', 1, 62, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
 (3, 63, 'Phương Châm Hoạt Động', 'phuong-cham-hoat-dong', '<p style="text-align: justify;">&nbsp;<img style="margin-right: 10px; margin-bottom: 10px; float: left;" src="images/thangviet/phuongcham.jpg" alt="" width="255" height="270" />Công ty Bảo vệ&nbsp;<strong>Thăng Việt</strong>&nbsp;luôn quan tâm, đặt lợi ích khách hàng lên hàng đầu, mong muốn cung câp tới khách hàng dịch vụ bảo vệ chuyên nghiệp nhất, hiệu quả nhất</p>\r\n<ul>\r\n<li style="text-align: justify;">Công ty Bảo vệ&nbsp;<strong>Thăng Việt</strong>&nbsp;phấn đấu xây dựng trở thành công ty đi tiên phong trong lĩnh vực cung cấp dịch vụ bảo vệ.</li>\r\n<li style="text-align: justify;">\r\n<p>&nbsp;</p>\r\n</li>\r\n<li style="text-align: justify;">Công ty Bảo vệ&nbsp;<strong>Thăng Việt</strong>&nbsp;luôn phấn đấu mang lại thu nhập cao – ổn định cho tập thể cán bộ nhân viên toàn công ty, để người lao động yên tâm công tác, gắn trách nhiệm với công việc được giao</li>\r\n<li style="text-align: justify;">\r\n<p>&nbsp;</p>\r\n</li>\r\n<li style="text-align: justify;">Công ty Bảo vệ&nbsp;<strong>Thăng Việt</strong>&nbsp;luôn lắng nghe và thấu hiểu từng mong muốn, nhu cầu của khách hàng và đáp ứng tối đa nhu cầu đó của quý khách mà đây còn là địa chỉ tin cậy trong việc bảo vệ an ninh theo yêu cầu của&nbsp; quý khách suốt 24h/ngày. Hơn thế nữa,</li>\r\n<li style="text-align: justify;">Công ty Bảo vệ&nbsp;<strong>Thăng Việt</strong>&nbsp;mong muốn xây dựng đội ngũ nhân viên chuyên nghiệp, có ý thức đạo đức nghề nghiệp cao</li>\r\n<li>\r\n<p>&nbsp;</p>\r\n</li>\r\n<li style="text-align: justify;">Công ty Bảo vệ&nbsp;<strong>Thăng Việt</strong>&nbsp;phấn đấu ưu tiên lựa chọ tất cả nhân viên bảo vệ đều được tuyển dụng chặt chẽ. Chỉ có những người thực đạt tiêu chuẩn về thể chất cũng như sự yêu nghề và cái tâm trong sáng với nghề mới được tuyển chọn.</li>\r\n</ul>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>', '', 1, 2, '2014-06-25 09:45:13', 880, '', '2014-07-01 04:10:46', 880, 0, '0000-00-00 00:00:00', '2014-06-25 09:45:13', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_tags":"","show_intro":"","info_block_position":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 9, 3, '', '', 1, 15, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
 (4, 65, 'Bảo vệ tòa nhà văn phòng', 'bao-ve-toa-nha-van-phong', '<p><strong>Bảo vệ</strong> tòa nhà văn phòng, hay nói cách khác là <strong>Bảo vệ</strong> Cao ốc văn phòng. Đây là hình thức Cung cấp Dịch vụ <strong>Bảo vệ</strong> cốt lõi của Công ty chúng tôi&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>Cao ốc – văn phòng là những tòa nhà cao tầng, thường được xây dựng tại những khu phố sầm uất, khu đông dân cư, có vị trí đắc địa, những tòa nhà này thông thường được xây dựng vơi mục đích làm văn phòng làm việc của các Tập đoàn, Tổng công ty, các tổ chức khác…nên các nhu cầu <strong>Bảo vệ</strong> Cao ốc văn phòng của khách hàng rất đa dạng thường xuyên.</p>\r\n<p>&nbsp;</p>\r\n<p><em>Để đáp ứng nhu cầu của Quý khách hàng,<strong>CÔNG TY TNHH DỊCH VỤ BẢO VỆ THĂNG VIỆT </strong> rất hân hạnh được phục vụ, mọi chi tiết về Dịch vụ, giá cả quý khách hãy liên hệ với công ty chúng tôi để được tư vấn thêm. &nbsp;</em></p>\r\n<p>&nbsp;</p>\r\n<p><em><img style="display: block; margin-left: auto; margin-right: auto;" title="bao ve toa nha" src="images/thangviet/bao_ve_toa_nha_van_phong.jpg" alt="" width="550" height="367" /><br /> </em></p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>', '', 1, 2, '2014-06-25 09:45:13', 880, '', '2014-07-01 04:23:15', 880, 0, '0000-00-00 00:00:00', '2014-06-25 09:45:13', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_tags":"","show_intro":"","info_block_position":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 5, 2, '', '', 1, 19, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
@@ -455,11 +447,11 @@ INSERT INTO `d9jhp_content` (`id`, `asset_id`, `title`, `alias`, `introtext`, `f
 INSERT INTO `d9jhp_content` (`id`, `asset_id`, `title`, `alias`, `introtext`, `fulltext`, `state`, `catid`, `created`, `created_by`, `created_by_alias`, `modified`, `modified_by`, `checked_out`, `checked_out_time`, `publish_up`, `publish_down`, `images`, `urls`, `attribs`, `version`, `ordering`, `metakey`, `metadesc`, `access`, `hits`, `metadata`, `featured`, `language`, `xreference`) VALUES
 (17, 79, 'Bảo vệ yếu nhân (vệ sĩ)', 'bao-ve-yeu-nhan-ve-si', '<p>Đây là hinh thức dịch vụ <strong>bảo vệ</strong> Đặc thù mà CÔNG TY TNHH DỊCH VỤ BẢO VỆ THĂNG VIỆT cung cấp, nó liên quan trực tiếp đến sự an toàn về tính mạng, và sức khỏe của người được<strong> bảo vệ</strong>. Dịch vụ <strong>bảo vệ </strong>yếu nhân thông thường là các hoạt động <strong>bảo vệ</strong> hộ tống được các Vệ sĩ có trình độ nghiệp vụ, trình độ võ thuật cao đảm trách.</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p><img style="display: block; margin-left: auto; margin-right: auto;" title="bao ve ho tong" src="images/thangviet/ve_sy.jpg" alt="bao ve ho tong" width="450" height="344" /></p>\r\n<p style="text-align: center;"><strong>Hình Minh họa Bảo vệ hộ tống yếu nhân</strong></p>\r\n<p style="text-align: center;">&nbsp;</p>\r\n<p style="text-align: center;">&nbsp;</p>\r\n<p style="text-align: center;">&nbsp;</p>\r\n<p style="text-align: center;">&nbsp;</p>\r\n<p style="text-align: center;">&nbsp;</p>\r\n<p style="text-align: center;">&nbsp;</p>\r\n<p style="text-align: center;">&nbsp;</p>\r\n<p style="text-align: center;">&nbsp;</p>\r\n<p style="text-align: center;">&nbsp;</p>\r\n<p style="text-align: center;">&nbsp;</p>\r\n<p style="text-align: center;">&nbsp;</p>\r\n<p style="text-align: center;">&nbsp;</p>\r\n<p style="text-align: center;">&nbsp;</p>', '', 1, 8, '2014-06-25 09:45:13', 880, '', '2014-07-01 07:38:52', 880, 0, '0000-00-00 00:00:00', '2014-06-25 09:45:13', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_tags":"","show_intro":"","info_block_position":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 5, 6, '', '', 1, 7, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
 (18, 80, 'Hình thức bảo vệ khác', 'hinh-thuc-bao-ve-khac', '<p>Ngoài các hình thức <strong>bảo vệ</strong> nêu trên, CÔNG TY TNHH DỊCH VỤ BẢO VỆ THĂNG VIỆT còn cung cấp các hình thức<strong> bảo vệ</strong> khác như:&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>- <strong>Bảo vệ </strong>nhà hàng, quán ăn</p>\r\n<p>&nbsp;</p>\r\n<p>- <strong>Bảo vệ</strong> quán cà phê,&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>- <strong>Bảo vệ</strong> chùa chiền, nhà thờ</p>\r\n<p>&nbsp;</p>\r\n<p>- <strong>Bảo vệ</strong> nhà riêng</p>\r\n<p>&nbsp;</p>\r\n<p>- <strong>Bảo vệ</strong> sân bóng..vv…&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p><img style="display: block; margin-left: auto; margin-right: auto;" title="bao ve tuoi tre" src="images/thangviet/bao_ve_KCN.png" alt="bao ve tuoi tre" width="550" height="611" /></p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>', '', 1, 8, '2014-06-25 09:45:13', 880, '', '2014-07-01 07:44:40', 880, 0, '0000-00-00 00:00:00', '2014-06-25 09:45:13', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_tags":"","show_intro":"","info_block_position":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 4, 5, '', '', 1, 5, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
-(19, 81, 'Khách Hàng Công Ty', 'khach-hang-cong-ty', '<div class="k_center_nd">\r\n<div class="k_khachhang_img"><a href="./" target="_blank"><img title="suzuki" src="images/thangviet/suzuki.jpg" alt="" width="150" height="100" border="0" /></a></div>\r\n<div class="k_khachhang_img"><a href="./" target="_blank"><img title="saokim" src="images/thangviet/sao kim.jpg" alt="" width="150" height="100" border="0" /></a></div>\r\n<div class="k_khachhang_img"><a href="./" target="_blank"><img title="techcombank" src="images/thangviet/logo techcombank.jpg" alt="" width="150" height="100" border="0" /></a></div>\r\n<div class="k_khachhang_img"><a href="./" target="_blank"><img title="hoa binh" src="images/thangviet/logo xay dung hoa binh.jpg" alt="" width="150" height="100" border="0" /></a></div>\r\n<div class="k_khachhang_img"><a href="./" target="_blank"><img title="fpt" src="images/thangviet/fpt.jpg" alt="" width="150" height="100" border="0" /></a></div>\r\n<div class="k_khachhang_img"><a href="./" target="_blank"><img title="viettel" src="images/thangviet/viettel.jpg" alt="" width="150" height="100" border="0" /></a></div>\r\n<div class="k_khachhang_img"><a href="./" target="_blank"><img title="opc" src="images/thangviet/opc.jpg" alt="" width="150" height="100" border="0" /></a></div>\r\n<div class="k_khachhang_img"><a href="./" target="_blank"><img title="hon da" src="images/thangviet/hon da.jpg" alt="" width="150" height="100" border="0" /></a></div>\r\n<div class="k_khachhang_img"><a href="./" target="_blank"><img title="dong a bank" src="images/thangviet/dong a.jpg" alt="" width="150" height="100" border="0" /></a></div>\r\n<div class="k_khachhang_img"><a href="./" target="_blank"><img title="blucop" src="images/thangviet/bluscopsteel.jpg" alt="" width="150" height="100" border="0" /></a></div>\r\n<div class="k_khachhang_img"><a href="./" target="_blank"><img title="shell" src="images/thangviet/logo shell.jpg" alt="" width="150" height="100" border="0" /></a></div>\r\n<div class="k_khachhang_img"><a href="./" target="_blank"><img title="cty vina conex" src="images/thangviet/logo vina conex.jpg" alt="" width="150" height="100" border="0" /></a></div>\r\n<div class="k_khachhang_img"><a href="./" target="_blank"><img title="blucop" src="images/thangviet/logo subaru.jpg" alt="" width="150" height="100" border="0" /></a></div>\r\n<div class="k_khachhang_img"><a href="./" target="_blank"><img title="shell" src="images/thangviet/logo pesi.jpg" alt="" width="150" height="100" border="0" /></a></div>\r\n<div class="k_khachhang_img"><a href="./" target="_blank"><img title="cty vina conex" src="images/thangviet/logo bao viet.jpg" alt="" width="150" height="100" border="0" /></a></div>\r\n</div>\r\n', '', 1, 8, '2014-06-25 09:45:13', 880, '', '2014-07-01 08:08:09', 880, 0, '0000-00-00 00:00:00', '2014-06-25 09:45:13', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_tags":"","show_intro":"","info_block_position":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 9, 4, '', '', 1, 29, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
+(19, 81, 'Khách Hàng Công Ty', 'khach-hang-cong-ty', '<div class="k_center_nd">\r\n<div class="k_khachhang_img"><a href="./" target="_blank"><img title="suzuki" src="images/thangviet/suzuki.jpg" alt="" width="150" height="100" border="0" /></a></div>\r\n<div class="k_khachhang_img"><a href="./" target="_blank"><img title="saokim" src="images/thangviet/sao kim.jpg" alt="" width="150" height="100" border="0" /></a></div>\r\n<div class="k_khachhang_img"><a href="./" target="_blank"><img title="techcombank" src="images/thangviet/logo techcombank.jpg" alt="" width="150" height="100" border="0" /></a></div>\r\n<div class="k_khachhang_img"><a href="./" target="_blank"><img title="hoa binh" src="images/thangviet/logo xay dung hoa binh.jpg" alt="" width="150" height="100" border="0" /></a></div>\r\n<div class="k_khachhang_img"><a href="./" target="_blank"><img title="fpt" src="images/thangviet/fpt.jpg" alt="" width="150" height="100" border="0" /></a></div>\r\n<div class="k_khachhang_img"><a href="./" target="_blank"><img title="viettel" src="images/thangviet/viettel.jpg" alt="" width="150" height="100" border="0" /></a></div>\r\n<div class="k_khachhang_img"><a href="./" target="_blank"><img title="opc" src="images/thangviet/opc.jpg" alt="" width="150" height="100" border="0" /></a></div>\r\n<div class="k_khachhang_img"><a href="./" target="_blank"><img title="hon da" src="images/thangviet/hon da.jpg" alt="" width="150" height="100" border="0" /></a></div>\r\n<div class="k_khachhang_img"><a href="./" target="_blank"><img title="dong a bank" src="images/thangviet/dong a.jpg" alt="" width="150" height="100" border="0" /></a></div>\r\n<div class="k_khachhang_img"><a href="./" target="_blank"><img title="blucop" src="images/thangviet/bluscopsteel.jpg" alt="" width="150" height="100" border="0" /></a></div>\r\n<div class="k_khachhang_img"><a href="./" target="_blank"><img title="shell" src="images/thangviet/logo shell.jpg" alt="" width="150" height="100" border="0" /></a></div>\r\n<div class="k_khachhang_img"><a href="./" target="_blank"><img title="cty vina conex" src="images/thangviet/logo vina conex.jpg" alt="" width="150" height="100" border="0" /></a></div>\r\n<div class="k_khachhang_img"><a href="./" target="_blank"><img title="blucop" src="images/thangviet/logo subaru.jpg" alt="" width="150" height="100" border="0" /></a></div>\r\n<div class="k_khachhang_img"><a href="./" target="_blank"><img title="shell" src="images/thangviet/logo pesi.jpg" alt="" width="150" height="100" border="0" /></a></div>\r\n<div class="k_khachhang_img"><a href="./" target="_blank"><img title="cty vina conex" src="images/thangviet/logo bao viet.jpg" alt="" width="150" height="100" border="0" /></a></div>\r\n</div>\r\n', '', 1, 8, '2014-06-25 09:45:13', 880, '', '2014-07-01 08:08:09', 880, 0, '0000-00-00 00:00:00', '2014-06-25 09:45:13', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_tags":"","show_intro":"","info_block_position":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 9, 4, '', '', 1, 34, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
 (20, 82, 'QUY TRÌNH TUYỂN DỤNG', 'quy-trinh-tuyen-dung', '<div>\r\n<p>&nbsp;</p>\r\n<p>Tất cả nhân viên Bảo vệ ứng tuyển vào CÔNG TY TNHH DỊCH VỤ BẢO VỆ THĂNG VIỆT, đêu được chọn lựa rất kỹ, và phải tuâ thủ quy trình tuyển dụng rất khắt khe:</p>\r\n<p>&nbsp;</p>\r\n<p><strong>Bước 1: Thành lập hội đồng xét tuyển nhân viên bảo vệ:</strong></p>\r\n<p>&nbsp;</p>\r\n<p>Hội đồng xét tuyển NVBV gồm :</p>\r\n<p>&nbsp;</p>\r\n<p>- Chủ tịch hội đồng : Giám đốc</p>\r\n<p>&nbsp;</p>\r\n<p>- Phó chủ tịch hội đồng : Trưởng phòng Hành chính</p>\r\n<p>&nbsp;</p>\r\n<p>– Nhân sự.- Ủy viên : Cán bộ phụ trách Nghiệp vụ bảo vệ, cán bộ ban hành đào tạo, tập huấn.</p>\r\n<p>&nbsp;</p>\r\n<p>- Ủy viên – thư ký : Cán bộ phòng nhân sự – phòng nghiệp vụ</p>\r\n<p>&nbsp;</p>\r\n<p><strong>Bước 2: Tổ chức tuyển dụng nhân viên bảo vệ:</strong></p>\r\n<p>&nbsp;</p>\r\n<p><strong>a. Hình thức tuyển dụng :</strong> Thông báo tuyển dụng, triển khai các kế hoạch tuyển dụng rộng rãi, hoặc trực tiếp tuyển dụng tại các quân khu khi có những đợt xuất ngũ, các trung tâm Võ thuật, huyện, xã và đồng thời tiến hành công tác điều tra lý lịch thật kỹ lưỡng (Các trung tâm huấn luyện phải chịu hoàn toàn trách nhiệm trước CÔNG TY TNHH DỊCH VỤ BẢO VỆ THĂNG VIỆT , về lý lịch không rõ ràng và thiếu chính xác kể từ khi hồ sơ được chuyển về Trung tâm).</p>\r\n<p>&nbsp;</p>\r\n<p><strong>b. Hồ sơ tuyển dụng :</strong> Theo Quy định của Pháp luật Việt Nam, phát hành gồm:</p>\r\n<p>&nbsp;</p>\r\n<p>1) Đơn xin việc.</p>\r\n<p>2) Sơ yếu lý lịch.</p>\r\n<p>3) Xác nhận nhân thân.</p>\r\n<p>4) Tờ khai cá nhân.</p>\r\n<p>5) Bằng tốt nghiệp PTTH, Học bạ PTTH.</p>\r\n<p>6) Bản sao giấy khai sinh.</p>\r\n<p>7) Bản sao hộ khẩu và giấy đăng ký tạm trú tạm vắng.</p>\r\n<p>8) &nbsp;04 ảnh 4×6 (chụp mới không quá 03 tháng so với thời điểm đăng ký dự tuyển).</p>\r\n<p>9) Quyết định xuất ngũ (nếu qua lực lượng công an bộ đội).</p>\r\n<p>10) Bản sao công chứng, chứng các chứng chỉ khác (nếu có).</p>\r\n<p><strong>c. Tiêu chuẩn dự tuyển Nhân viên Bảo vệ chuyên nghiệp</strong></p>\r\n<p>&nbsp;</p>\r\n<p>Là công dân Việt Nam, lý lịch rõ ràng, không có khuyết tật, không có tiền án tiền sự.</p>\r\n<p>&nbsp;</p>\r\n<table id="tbltuyendung" width="100%" border="1" cellspacing="0" cellpadding="2">\r\n<tbody>\r\n<tr align="center">\r\n<td><strong>Tiêu chuẩn</strong></td>\r\n<td><strong>Nam</strong></td>\r\n<td><strong>Nữ</strong></td>\r\n</tr>\r\n<tr align="center">\r\n<td>Chiều cao</td>\r\n<td>1,65 trở lên</td>\r\n<td>1,60 trở lên</td>\r\n</tr>\r\n<tr align="center">\r\n<td>Cân nặng</td>\r\n<td>57 kg trở lên</td>\r\n<td>48 kg trở lên</td>\r\n</tr>\r\n<tr align="center">\r\n<td>Văn hóa</td>\r\n<td>Tốt nghiệp PTCS</td>\r\n<td>Tốt nghiệp PTTCS</td>\r\n</tr>\r\n<tr align="center">\r\n<td>Ngoại ngữ</td>\r\n<td colspan="2">Ưu tiên người có trình độ ngoại ngữ</td>\r\n</tr>\r\n<tr align="center">\r\n<td>Năng khiếu</td>\r\n<td colspan="2">Phù hợp với nghiệp vụ bảo vệ ưu tiên người đã qua CA, BĐ, lái x</td>\r\n</tr>\r\n<tr align="center">\r\n<td>Tuổi</td>\r\n<td>Từ 22 – 35 tuổi</td>\r\n<td>Từ 22 – 28 tuổi</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<p>&nbsp;</p>\r\n<p><strong>d.Các vòng xét tuyển :</strong></p>\r\n<p>&nbsp;</p>\r\n<p>1) Xác minh lý lịch nhân thân.</p>\r\n<p>&nbsp;</p>\r\n<p>2) Giám định lý lịch dân sự và hình sự.</p>\r\n<p>&nbsp;</p>\r\n<p>3) Sát hạch thể lực và tinh thần.</p>\r\n<p>&nbsp;</p>\r\n<p>4) Xét nghiệm máu, chất gây nghiện.</p>\r\n<p>&nbsp;</p>\r\n<p>5) Kiểm tra tư cách, tác phong đạo đức.</p>\r\n<p>&nbsp;</p>\r\n<p>6) Phỏng vấn trực tiếp và kiểm tra trắc nghiệm.</p>\r\n<p>&nbsp;</p>\r\n<p>7) Thí sinh đủ tiêu chuẩn dự tuyển vào các lớp đào tạo NVBV, sau khi dựa trên kết quả xét tuyển, GĐ báo cáo để HĐTV phê duyệt.</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n</div>', '', 1, 8, '2014-06-25 09:45:13', 880, '', '2014-07-01 08:26:31', 880, 0, '0000-00-00 00:00:00', '2014-06-25 09:45:13', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_tags":"","show_intro":"","info_block_position":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 5, 3, '', '', 1, 26, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
 (21, 83, 'ĐÀO TẠO BẢO VỆ', 'dao-tao-bao-ve', '<div>\r\n<div>\r\n<p>&nbsp;</p>\r\n<p>Nhân viên Bảo vệ được tuyển dụng vào công ty chung tôi, dều trải quá trình huần luyện với nội dung sau:</p>\r\n<p>&nbsp;</p>\r\n<p><strong>PHẦN I: CHÍNH TRỊ – PHÁP LUẬT</strong></p>\r\n<p>&nbsp;</p>\r\n<p><em><strong>A. GIÁO DỤC NHẬN THỨC, TƯ TƯỞNG VỀ NHIỆM VỤ BẢO VỆ</strong></em></p>\r\n<p>&nbsp;</p>\r\n<p>Bài 1: Nhiệm vụ bảo vệ An ninh Tổ Quốc</p>\r\n<p>&nbsp;</p>\r\n<p>Bài 2: Bảo vệ các mục tiêu (văn phòng, nhà máy, xí nghiệp,…) góp phần xây dựng đất nước, bảo vệ an ninh Tổ quốc.</p>\r\n<p>&nbsp;</p>\r\n<p>Bài 3: Xây dựng tư tưởng, thái độ đúng đắn đối với hoạt động cung cấp bảo vệ - vệ sĩ. Bài 4: Xây dựng tư tưởng yêu nghề bảo vệ – vệ sĩ</p>\r\n<p>&nbsp;</p>\r\n<p><strong><em>B. GIÁO DỤC NHẬN THỨC VỀ PHÁP LUẬT</em></strong></p>\r\n<p>&nbsp;</p>\r\n<p>Bài 1: Nhận thức cơ bản về Nhà nước và Pháp luật.</p>\r\n<p>&nbsp;</p>\r\n<p>Bài 2: Tính chất, đặc điểm Pháp luật của Nhà nước CHXHCN ViệtNam.</p>\r\n<p>&nbsp;</p>\r\n<p>Bài 3: Một số Bộ Luật có liên quan đến công tác bảo vệ.</p>\r\n<p>&nbsp;</p>\r\n<p>Bài 4: Nhiệm vụ của nhân viên bảo vệ đối với việc học tập, thực hiện, áp dụng pháp luật.</p>\r\n<p>&nbsp;</p>\r\n<p>Bài 5: Phương hướng, nhiệm vụ, trách nhiệm đấu tranh phòng và chống vi phạm pháp luật.</p>\r\n<p>&nbsp;</p>\r\n<p><strong>PHẦN II: NGHIỆP VỤ BẢO VỆ – VỆ SĨ A. LÝ THUYẾT</strong></p>\r\n<p>&nbsp;</p>\r\n<p><strong>I. Kiến thức tổng quát về nghiệp vụ bảo vệ:</strong></p>\r\n<p>&nbsp;</p>\r\n<p>Bài 1: Hướng dẫn ghi chép các loại biểu mẫu giấy tờ, sổ sách trong hoạt động bảo vệ tại mục tiêu.</p>\r\n<p>&nbsp;</p>\r\n<p>Bài 2: Phương pháp làm báo cáo, biên bản, tường trình sự việc.</p>\r\n<p>&nbsp;</p>\r\n<p>Bài 3: Anh văn giao tiếp</p>\r\n<p>&nbsp;</p>\r\n<p>Bài 4: Giới thiệu và hướng dẫn sử dụng trang phục, phù hiệu, cấp hiệu của lực lượng bảo vệ.</p>\r\n<p>&nbsp;</p>\r\n<p><strong>II. Phương pháp bảo vệ các mục tiêu:</strong></p>\r\n<p>&nbsp;</p>\r\n<p>Bài 1: Phương pháp bảo vệ văn phòng, khu cao ốc</p>\r\n<p>&nbsp;</p>\r\n<p>Bài 2: Phương pháp bảo vệ nhà máy, xí nghiệp sản xuất.</p>\r\n<p>&nbsp;</p>\r\n<p>Bài 3: Phương pháp bảo vệ siêu thị, nhà sách.</p>\r\n<p>&nbsp;</p>\r\n<p>Bài 4: Phương pháp bảo vệ nhà hàng, khách sạn, khu vui chới, giải trí.</p>\r\n<p>&nbsp;</p>\r\n<p>Bài 5: Phương pháp bảo vệ triển lãm, hội chợ.</p>\r\n<p>&nbsp;</p>\r\n<p>Bài 6: Phương pháp bảo vệ sô ca nhạc.</p>\r\n<p>&nbsp;</p>\r\n<p>Bài 7: Phương pháp bảo vệ kho bãi, hải cảng.</p>\r\n<p>&nbsp;</p>\r\n<p>Bài 8: Phương pháp áp tải tiền, áp tải hàng hóa.</p>\r\n<p>&nbsp;</p>\r\n<p>Bài 9: Phương pháp điều tra, theo dõi một số đối tượng cụ thể.</p>\r\n<p>&nbsp;</p>\r\n<p><strong>III. Phương pháp phòng và chống khủng bố:</strong></p>\r\n<p>&nbsp;</p>\r\n<p>Bài 1: Phương pháp phòng và chống khủng bố bằng bom mìn, chất nổ.</p>\r\n<p>&nbsp;</p>\r\n<p>Bài 2: Phương pháp phòng và chống khủng bố bằng vũ khí sinh học.</p>\r\n<p>&nbsp;</p>\r\n<p><em><strong>B. THỰC HÀNH</strong></em></p>\r\n<p>&nbsp;</p>\r\n<p>Bài 1: Động tác đội ngũ</p>\r\n<p>&nbsp;</p>\r\n<p>Bài 2: Canh gác cơ động</p>\r\n<p>&nbsp;</p>\r\n<p>Bài 3: Xử lý tình huống</p>\r\n<p>&nbsp;</p>\r\n<p>Bài 4: Cách thức xử dụng phương tiện hỗ trợ công tác bảo vệ</p>\r\n<p>&nbsp;</p>\r\n<p>Bài 5: Võ thuật: cơ bản, tự vệ, tấn công,…</p>\r\n<p>&nbsp;</p>\r\n<p>Bài 6: Sơ cấp cứu</p>\r\n<p>&nbsp;</p>\r\n<p>Bài 7: Công tác phòng cháy chữa cháy.</p>\r\n<p>&nbsp;</p>\r\n<p><em>Thời gian đào tạo là hai tháng. Kết thúc lớp học tổ chức thi kiểm tra cấp giấy chứng nhận cho học viên đạt yêu cầu, hoàn thành chương trình học tập.</em></p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n</div>\r\n</div>', '', 1, 8, '2014-06-25 09:45:13', 880, '', '2014-07-01 08:36:19', 880, 0, '0000-00-00 00:00:00', '2014-06-25 09:45:13', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_tags":"","show_intro":"","info_block_position":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 2, 2, '', '', 1, 46, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
 (22, 84, 'THIẾT BỊ BẢO VỆ', 'thiet-bi-bao-ve', '<div class="k_center_nd">\r\n      <div class="k_sp_img"><img width="150" height="150" border="0" title="ao chong dan" src="./images/thangviet/ao chong dan_1.jpg"></div>\r\n        <div class="k_sp_img"><img width="150" height="150" border="0" title="bo dam" src="./images/thangviet/bo dam.jpg"></div>\r\n        <div class="k_sp_img"><img width="150" height="150" border="0" title="camera" src="./images/thangviet/camera.jpg"></div>\r\n        <div class="k_sp_img"><img width="150" height="150" border="0" title="cctv" src="./images/thangviet/cctv.jpg"></div>\r\n        <div class="k_sp_img"><img width="150" height="150" border="0" title="day Chua chay" src="./images/thangviet/day chua chay.jpg"></div>\r\n        <div class="k_sp_img"><img width="150" height="150" border="0" title="den chieu xa" src="./images/thangviet/den chieu xa.jpg"></div>\r\n        <div class="k_sp_img"><img width="150" height="150" border="0" title="binh bot" src="./images/thangviet/thiet bi PCCC 1.jpg"></div>\r\n        <div class="k_sp_img"><img width="150" height="150" border="0" title="roi dien" src="./images/thangviet/roi dien 1.jpg"></div>\r\n        <div class="k_sp_img"><img width="150" height="150" border="0" title="sung ban dan cao su" src="./images/thangviet/sung ban dan cao su.jpg"></div>\r\n     \r\n</div>', '', 1, 8, '2014-06-25 09:45:13', 880, '', '2014-07-01 09:00:19', 880, 0, '0000-00-00 00:00:00', '2014-06-25 09:45:13', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_tags":"","show_intro":"","info_block_position":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 2, 1, '', '', 1, 9, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
-(23, 85, 'Liên Hệ', 'lien-he', '<p style="text-align: center;"><strong style="text-align: center;">CÔNG TY TNHH DỊCH VỤ BẢO VỆ THĂNG VIỆT </strong></p>\r\n<p><br /> <br /> Địa chỉ &nbsp;: 137B, Đường Nguyễn Chí Thanh , P. 09 ,&nbsp; Q. 05 , TP.HCM , VN<br /> Điện thoại : 086 2646719 – 0650 3777518 <br /> Fax &nbsp;: 0862646719 – 0650 3777519</p>\r\n<p>&nbsp;</p>\r\n<p>Hotline:<br /> Mr. TRẦN HUY PHONG&nbsp; &nbsp;-&nbsp; ĐTDĐ :&nbsp; 0938.304.333<br /> Mr. Ngô Cơ –ĐTDĐ: 0906.097.864</p>\r\n<p>&nbsp;</p>\r\n<p>{loadposition lienhe}</p>', '', 1, 2, '2014-06-25 09:45:13', 880, '', '2014-07-04 12:39:42', 880, 880, '2014-07-04 12:39:42', '2014-06-25 09:45:13', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_tags":"","show_intro":"","info_block_position":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 6, 0, '', '', 1, 101, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
+(23, 85, 'Liên Hệ', 'lien-he', '<p style="text-align: center;"><strong style="text-align: center;">CÔNG TY TNHH DỊCH VỤ BẢO VỆ THĂNG VIỆT </strong></p>\r\n<p><br /> <br /> Địa chỉ &nbsp;: 137B, Đường Nguyễn Chí Thanh , P. 09 ,&nbsp; Q. 05 , TP.HCM , VN<br /> Điện thoại : 086 2646719 – 0650 3777518 <br /> Fax &nbsp;: 0862646719 – 0650 3777519</p>\r\n<p>&nbsp;</p>\r\n<p>Hotline:<br /> Mr. TRẦN HUY PHONG&nbsp; &nbsp;-&nbsp; ĐTDĐ :&nbsp; 0938.304.333<br /> Mr. Ngô Cơ –ĐTDĐ: 0906.097.864</p>\r\n<p>&nbsp;</p>\r\n<p>{loadposition lienhe}</p>', '', 1, 2, '2014-06-25 09:45:13', 880, '', '2014-07-04 12:39:42', 880, 880, '2014-07-04 12:39:42', '2014-06-25 09:45:13', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_tags":"","show_intro":"","info_block_position":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 6, 0, '', '', 1, 105, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
 (24, 90, 'Lâm tặc cướp súng, bắt nhân viên bảo vệ rừng ', 'lam-t-c-cu-p-sung-b-t-nhan-vien-b-o-v-r-ng', '<p>Ngày 18-2, Thượng tá Đinh Kim Lập, Trưởng Công an huyện Tuy Phong (tỉnh Bình Thuận), cho biết cơ quan điều tra đang truy xét nhóm lâm tặc cướp súng, bắn bị thương và bắt nhân viên bảo vệ rừng làm con tin.</p>\r\n', '\r\n<p>&nbsp;</p>\r\n<p>Chiều&nbsp; 28-1, tám nhân viên tuần tra bảo vệ rừng thuộc Trạm Bảo vệ rừng số 1 Phan Dũng (Ban quản lý rừng phòng hộ Tuy Phong) tuần tra tiểu khu 12 và 15 (giáp với huyện Đức Trọng, Lâm Đồng), phát hiện một nhóm lâm tặc triệt hạ gỗ trái phép bằng cưa máy. Các nhân viên<strong> bảo vệ</strong> rừng nổ súng chỉ thiên khiến nhóm lâm tặc bỏ chạy để lại bảy xe mô tô. Khi lực lượng bảo vệ rừng đang thu gom phương tiện để đưa ra khỏi rừng thì một nhóm hơn 20 thanh niên trang bị dao, mã tấu cùng gậy gộc tổ chức tấn công các nhân viên bảo vệ rừng làm bị thương ba nhân viên. Trong đó có một thanh niên dùng gậy đánh gãy tay một nhân viên <strong>bảo vệ</strong> rừng, cướp khẩu súng rulô, bắn bị thương nhân viên này. Sau khi tấn công các nhân viên bảo vệ rừng và cướp lại xe mô tô cùng cưa máy, nhóm lâm tặc này còn bắt giữ một bảo vệ làm con tin để có thời gian đưa tang vật, phương tiện sang tỉnh Lâm Đồng.</p>\r\n<p>Một nguồn tin cho biết hiện đã xác định nhóm lâm tặc trên đều ngụ tại tỉnh Lâm Đồng và tỉnh Bình Thuận đã chỉ đạo cơ quan chức năng khẩn trương phối hợp với cơ quan chức năng tỉnh Lâm Đồng điều tra vụ việc.</p>\r\n<p style="text-align: right;"><strong>PHƯƠNG NAM</strong>(plo.vn)</p>', 1, 9, '2014-07-08 16:06:05', 880, '', '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', '2014-07-08 16:06:05', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_tags":"","show_intro":"","info_block_position":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 1, 2, '', '', 1, 2, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
 (25, 91, 'Bảo vệ Times City trả lại hơn 80 triệu đồng cho người bỏ quên ', 'lam-t-c-cu-p-sung-b-t-nhan-vien-b-o-v-r-ng-2', '<p>Hồi 20h ngày 21/1/2014, nhân viên bảo vệ tại Trung tâm thương mại Vincom Mega Mall (VMM) Times City phát hiện 1 túi xách của khách hàng để quên trên ghế đá ở khu vực vườn hoa trước quảng trường Times City.</p>\r\n', '\r\n<p>&nbsp;</p>\r\n<div>\r\n<p align="center">&nbsp;<img src="http://dantri4.vcmedia.vn/I3KdHJtU0B3ELPKGaTLe/Image/2014/02/MGM-c8b39.JPG" alt="Bảo vệ Times City trả lại hơn 80 triệu đồng cho người bỏ quên" />&nbsp;</p>\r\n<p>Nhân viên <strong>bảo vệ</strong> này đã đưa túi xách về Phòng<strong> bảo vệ</strong> trung tâm để kiểm kê và chụp lại toàn bộ tài sản trong chiếc túi, trong đó có một số tư trang và đặc biệt số tiền lớn lên đến hơn 80 triệu đồng.</p>\r\n<p>Khoảng 30 phút sau, đội ngũ bảo vệ đã tìm được vị khách là chủ nhân của chiếc túi. Đó là chị Nguyễn Thị Mai Dung (Ba Đình, Hà Nội). Qua kiểm tra đối chiếu, xác nhận chị Dung chính là chủ sở hữu của chiếc túi trên. Đội <strong>bảo vệ</strong> Times City đã bàn giao chiếc túi với đầy đủ vật dụng và số tiền hơn 80 triệu đồng cho chị Dung.</p>\r\n<p>Hành động đẹp nhặt được tài sản giá trị lớn và trả lại khách hàng của đội bảo vệ VMM Times City đã được khách hàng cảm ơn và đánh giá cao. Được biết đây không phải lần đầu đội bảo vệ Times City nhặt được của rơi, trả người đánh mất, do nơi đây luôn tiếp đón một lượng khách rất đông đến mua sắm và tham quan mỗi ngày.</p>\r\n<p align="right"><strong>Hồng Dung dân trí</strong></p>\r\n</div>', 1, 9, '2014-07-08 16:06:05', 880, '', '2014-07-08 16:09:50', 880, 880, '2014-07-08 16:09:50', '2014-07-08 16:06:05', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_tags":"","show_intro":"","info_block_position":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 2, 1, '', '', 1, 5, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
 (26, 97, 'Bảo vệ Times City trả lại hơn 80 triệu đồng cho người bỏ quên', 'lam-t-c-cu-p-sung-b-t-nhan-vien-b-o-v-r-ng-3', '<p>&nbsp; Hồi 20h ngày 21/1/2014, nhân viên bảo vệ tại Trung tâm thương mại Vincom Mega Mall (VMM) Times City phát hiện 1 túi xách của khách hàng để quên trên ghế đá ở khu vực vườn hoa trước quảng trường Times City.</p>\r\n<p>Nhân viên <strong>bảo vệ</strong> này đã đưa túi xách về Phòng<strong> bảo vệ</strong> trung tâm để kiểm kê và chụp lại toàn bộ tài sản trong chiếc túi, trong đó có một số tư trang và đặc biệt số tiền lớn lên đến hơn 80 triệu đồng.</p>\r\n', '\r\n<p>&nbsp;</p>\r\n<p align="center">&nbsp;<img src="http://dantri4.vcmedia.vn/I3KdHJtU0B3ELPKGaTLe/Image/2014/02/MGM-c8b39.JPG" alt="Bảo vệ Times City trả lại hơn 80 triệu đồng cho người bỏ quên" /><br /> &nbsp;</p>\r\n<p>Khoảng 30 phút sau, đội ngũ bảo vệ đã tìm được vị khách là chủ nhân của chiếc túi. Đó là chị Nguyễn Thị Mai Dung (Ba Đình, Hà Nội). Qua kiểm tra đối chiếu, xác nhận chị Dung chính là chủ sở hữu của chiếc túi trên. Đội <strong>bảo vệ</strong> Times City đã bàn giao chiếc túi với đầy đủ vật dụng và số tiền hơn 80 triệu đồng cho chị Dung.</p>\r\n<p>&nbsp;</p>\r\n<p>Hành động đẹp nhặt được tài sản giá trị lớn và trả lại khách hàng của đội bảo vệ VMM Times City đã được khách hàng cảm ơn và đánh giá cao. Được biết đây không phải lần đầu đội bảo vệ Times City nhặt được của rơi, trả người đánh mất, do nơi đây luôn tiếp đón một lượng khách rất đông đến mua sắm và tham quan mỗi ngày.</p>\r\n<p>&nbsp;</p>\r\n<p align="right"><strong>Hồng Dung dân trí</strong></p>', 1, 9, '2014-07-08 16:06:05', 880, '', '2014-07-12 04:08:19', 880, 0, '0000-00-00 00:00:00', '2014-07-08 16:06:05', '0000-00-00 00:00:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{"urla":false,"urlatext":"","targeta":"","urlb":false,"urlbtext":"","targetb":"","urlc":false,"urlctext":"","targetc":""}', '{"show_title":"","link_titles":"","show_tags":"","show_intro":"","info_block_position":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_vote":"","show_hits":"","show_noauth":"","urls_position":"","alternative_readmore":"","article_layout":"","show_publishing_options":"","show_article_options":"","show_urls_images_backend":"","show_urls_images_frontend":""}', 4, 0, '', '', 1, 2, '{"robots":"","author":"","rights":"","xreference":""}', 0, '*', ''),
@@ -473,7 +465,6 @@ INSERT INTO `d9jhp_content` (`id`, `asset_id`, `title`, `alias`, `introtext`, `f
 -- Table structure for table `d9jhp_contentitem_tag_map`
 --
 
-DROP TABLE IF EXISTS `d9jhp_contentitem_tag_map`;
 CREATE TABLE IF NOT EXISTS `d9jhp_contentitem_tag_map` (
   `type_alias` varchar(255) NOT NULL DEFAULT '',
   `core_content_id` int(10) unsigned NOT NULL COMMENT 'PK from the core content table',
@@ -495,7 +486,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_contentitem_tag_map` (
 -- Table structure for table `d9jhp_content_frontpage`
 --
 
-DROP TABLE IF EXISTS `d9jhp_content_frontpage`;
 CREATE TABLE IF NOT EXISTS `d9jhp_content_frontpage` (
   `content_id` int(11) NOT NULL DEFAULT '0',
   `ordering` int(11) NOT NULL DEFAULT '0',
@@ -515,7 +505,6 @@ INSERT INTO `d9jhp_content_frontpage` (`content_id`, `ordering`) VALUES
 -- Table structure for table `d9jhp_content_rating`
 --
 
-DROP TABLE IF EXISTS `d9jhp_content_rating`;
 CREATE TABLE IF NOT EXISTS `d9jhp_content_rating` (
   `content_id` int(11) NOT NULL DEFAULT '0',
   `rating_sum` int(10) unsigned NOT NULL DEFAULT '0',
@@ -530,7 +519,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_content_rating` (
 -- Table structure for table `d9jhp_content_types`
 --
 
-DROP TABLE IF EXISTS `d9jhp_content_types`;
 CREATE TABLE IF NOT EXISTS `d9jhp_content_types` (
   `type_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `type_title` varchar(255) NOT NULL DEFAULT '',
@@ -571,7 +559,6 @@ INSERT INTO `d9jhp_content_types` (`type_id`, `type_title`, `type_alias`, `table
 -- Table structure for table `d9jhp_core_log_searches`
 --
 
-DROP TABLE IF EXISTS `d9jhp_core_log_searches`;
 CREATE TABLE IF NOT EXISTS `d9jhp_core_log_searches` (
   `search_term` varchar(128) NOT NULL DEFAULT '',
   `hits` int(10) unsigned NOT NULL DEFAULT '0'
@@ -583,7 +570,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_core_log_searches` (
 -- Table structure for table `d9jhp_extensions`
 --
 
-DROP TABLE IF EXISTS `d9jhp_extensions`;
 CREATE TABLE IF NOT EXISTS `d9jhp_extensions` (
   `extension_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
@@ -770,7 +756,6 @@ INSERT INTO `d9jhp_extensions` (`extension_id`, `name`, `type`, `element`, `fold
 -- Table structure for table `d9jhp_finder_filters`
 --
 
-DROP TABLE IF EXISTS `d9jhp_finder_filters`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_filters` (
   `filter_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
@@ -795,7 +780,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_finder_filters` (
 -- Table structure for table `d9jhp_finder_links`
 --
 
-DROP TABLE IF EXISTS `d9jhp_finder_links`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_links` (
   `link_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `url` varchar(255) NOT NULL,
@@ -831,7 +815,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_finder_links` (
 -- Table structure for table `d9jhp_finder_links_terms0`
 --
 
-DROP TABLE IF EXISTS `d9jhp_finder_links_terms0`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_terms0` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
@@ -847,7 +830,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_terms0` (
 -- Table structure for table `d9jhp_finder_links_terms1`
 --
 
-DROP TABLE IF EXISTS `d9jhp_finder_links_terms1`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_terms1` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
@@ -863,7 +845,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_terms1` (
 -- Table structure for table `d9jhp_finder_links_terms2`
 --
 
-DROP TABLE IF EXISTS `d9jhp_finder_links_terms2`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_terms2` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
@@ -879,7 +860,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_terms2` (
 -- Table structure for table `d9jhp_finder_links_terms3`
 --
 
-DROP TABLE IF EXISTS `d9jhp_finder_links_terms3`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_terms3` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
@@ -895,7 +875,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_terms3` (
 -- Table structure for table `d9jhp_finder_links_terms4`
 --
 
-DROP TABLE IF EXISTS `d9jhp_finder_links_terms4`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_terms4` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
@@ -911,7 +890,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_terms4` (
 -- Table structure for table `d9jhp_finder_links_terms5`
 --
 
-DROP TABLE IF EXISTS `d9jhp_finder_links_terms5`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_terms5` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
@@ -927,7 +905,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_terms5` (
 -- Table structure for table `d9jhp_finder_links_terms6`
 --
 
-DROP TABLE IF EXISTS `d9jhp_finder_links_terms6`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_terms6` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
@@ -943,7 +920,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_terms6` (
 -- Table structure for table `d9jhp_finder_links_terms7`
 --
 
-DROP TABLE IF EXISTS `d9jhp_finder_links_terms7`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_terms7` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
@@ -959,7 +935,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_terms7` (
 -- Table structure for table `d9jhp_finder_links_terms8`
 --
 
-DROP TABLE IF EXISTS `d9jhp_finder_links_terms8`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_terms8` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
@@ -975,7 +950,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_terms8` (
 -- Table structure for table `d9jhp_finder_links_terms9`
 --
 
-DROP TABLE IF EXISTS `d9jhp_finder_links_terms9`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_terms9` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
@@ -991,7 +965,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_terms9` (
 -- Table structure for table `d9jhp_finder_links_termsa`
 --
 
-DROP TABLE IF EXISTS `d9jhp_finder_links_termsa`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_termsa` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
@@ -1007,7 +980,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_termsa` (
 -- Table structure for table `d9jhp_finder_links_termsb`
 --
 
-DROP TABLE IF EXISTS `d9jhp_finder_links_termsb`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_termsb` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
@@ -1023,7 +995,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_termsb` (
 -- Table structure for table `d9jhp_finder_links_termsc`
 --
 
-DROP TABLE IF EXISTS `d9jhp_finder_links_termsc`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_termsc` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
@@ -1039,7 +1010,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_termsc` (
 -- Table structure for table `d9jhp_finder_links_termsd`
 --
 
-DROP TABLE IF EXISTS `d9jhp_finder_links_termsd`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_termsd` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
@@ -1055,7 +1025,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_termsd` (
 -- Table structure for table `d9jhp_finder_links_termse`
 --
 
-DROP TABLE IF EXISTS `d9jhp_finder_links_termse`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_termse` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
@@ -1071,7 +1040,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_termse` (
 -- Table structure for table `d9jhp_finder_links_termsf`
 --
 
-DROP TABLE IF EXISTS `d9jhp_finder_links_termsf`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_termsf` (
   `link_id` int(10) unsigned NOT NULL,
   `term_id` int(10) unsigned NOT NULL,
@@ -1087,7 +1055,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_finder_links_termsf` (
 -- Table structure for table `d9jhp_finder_taxonomy`
 --
 
-DROP TABLE IF EXISTS `d9jhp_finder_taxonomy`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_taxonomy` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `parent_id` int(10) unsigned NOT NULL DEFAULT '0',
@@ -1116,7 +1083,6 @@ INSERT INTO `d9jhp_finder_taxonomy` (`id`, `parent_id`, `title`, `state`, `acces
 -- Table structure for table `d9jhp_finder_taxonomy_map`
 --
 
-DROP TABLE IF EXISTS `d9jhp_finder_taxonomy_map`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_taxonomy_map` (
   `link_id` int(10) unsigned NOT NULL,
   `node_id` int(10) unsigned NOT NULL,
@@ -1131,7 +1097,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_finder_taxonomy_map` (
 -- Table structure for table `d9jhp_finder_terms`
 --
 
-DROP TABLE IF EXISTS `d9jhp_finder_terms`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_terms` (
   `term_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `term` varchar(75) NOT NULL,
@@ -1155,7 +1120,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_finder_terms` (
 -- Table structure for table `d9jhp_finder_terms_common`
 --
 
-DROP TABLE IF EXISTS `d9jhp_finder_terms_common`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_terms_common` (
   `term` varchar(75) NOT NULL,
   `language` varchar(3) NOT NULL,
@@ -1290,7 +1254,6 @@ INSERT INTO `d9jhp_finder_terms_common` (`term`, `language`) VALUES
 -- Table structure for table `d9jhp_finder_tokens`
 --
 
-DROP TABLE IF EXISTS `d9jhp_finder_tokens`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_tokens` (
   `term` varchar(75) NOT NULL,
   `stem` varchar(75) NOT NULL,
@@ -1309,7 +1272,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_finder_tokens` (
 -- Table structure for table `d9jhp_finder_tokens_aggregate`
 --
 
-DROP TABLE IF EXISTS `d9jhp_finder_tokens_aggregate`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_tokens_aggregate` (
   `term_id` int(10) unsigned NOT NULL,
   `map_suffix` char(1) NOT NULL,
@@ -1332,7 +1294,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_finder_tokens_aggregate` (
 -- Table structure for table `d9jhp_finder_types`
 --
 
-DROP TABLE IF EXISTS `d9jhp_finder_types`;
 CREATE TABLE IF NOT EXISTS `d9jhp_finder_types` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(100) NOT NULL,
@@ -1347,7 +1308,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_finder_types` (
 -- Table structure for table `d9jhp_languages`
 --
 
-DROP TABLE IF EXISTS `d9jhp_languages`;
 CREATE TABLE IF NOT EXISTS `d9jhp_languages` (
   `lang_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `lang_code` char(7) NOT NULL,
@@ -1383,7 +1343,6 @@ INSERT INTO `d9jhp_languages` (`lang_id`, `lang_code`, `title`, `title_native`, 
 -- Table structure for table `d9jhp_menu`
 --
 
-DROP TABLE IF EXISTS `d9jhp_menu`;
 CREATE TABLE IF NOT EXISTS `d9jhp_menu` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `menutype` varchar(24) NOT NULL COMMENT 'The type of menu this item belongs to. FK to #__menu_types.menutype',
@@ -1526,7 +1485,6 @@ INSERT INTO `d9jhp_menu` (`id`, `menutype`, `title`, `alias`, `note`, `path`, `l
 -- Table structure for table `d9jhp_menu_types`
 --
 
-DROP TABLE IF EXISTS `d9jhp_menu_types`;
 CREATE TABLE IF NOT EXISTS `d9jhp_menu_types` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `menutype` varchar(24) NOT NULL,
@@ -1551,7 +1509,6 @@ INSERT INTO `d9jhp_menu_types` (`id`, `menutype`, `title`, `description`) VALUES
 -- Table structure for table `d9jhp_messages`
 --
 
-DROP TABLE IF EXISTS `d9jhp_messages`;
 CREATE TABLE IF NOT EXISTS `d9jhp_messages` (
   `message_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `user_id_from` int(10) unsigned NOT NULL DEFAULT '0',
@@ -1572,7 +1529,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_messages` (
 -- Table structure for table `d9jhp_messages_cfg`
 --
 
-DROP TABLE IF EXISTS `d9jhp_messages_cfg`;
 CREATE TABLE IF NOT EXISTS `d9jhp_messages_cfg` (
   `user_id` int(10) unsigned NOT NULL DEFAULT '0',
   `cfg_name` varchar(100) NOT NULL DEFAULT '',
@@ -1586,7 +1542,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_messages_cfg` (
 -- Table structure for table `d9jhp_modules`
 --
 
-DROP TABLE IF EXISTS `d9jhp_modules`;
 CREATE TABLE IF NOT EXISTS `d9jhp_modules` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `asset_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'FK to the #__assets table.',
@@ -1641,7 +1596,7 @@ INSERT INTO `d9jhp_modules` (`id`, `asset_id`, `title`, `note`, `content`, `orde
 (93, 61, 'IceMegaMenu Module', '', '', 1, 'menutop', 880, '2014-06-30 16:29:27', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_icemegamenu', 1, 0, '{"theme_style":"default","vertical_direction":"left","menutype":"mainmenu","startLevel":"1","endLevel":"0","showAllChildren":"1","resizable_menu":"1","class_sfx":"","window_open":"","tag_id":"","moduleclass_sfx":"","cache":"1","cache_time":"30","enable_bootrap":"0","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*'),
 (94, 86, 'Bản Đồ', '', '', 1, 'lienhe', 880, '2014-07-01 15:15:50', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_lienhe', 1, 0, '{"module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":" modlienhe","style":"0"}', 0, '*'),
 (95, 87, 'HÌNH ẢNH', '', '<p><img style="display: block; margin-left: auto; margin-right: auto;" src="images/thangviet/dong-phuc-bao-ve-2.jpg" alt="dong-phuc-bao-ve-2" /></p>\r\n<p>&nbsp;</p>', 4, 'left', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 'mod_custom', 1, 1, '{"prepare_content":"0","backgroundimage":"","layout":"_:default","moduleclass_sfx":" lienhe","cache":"1","cache_time":"900","cachemode":"static","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*'),
-(96, 88, 'Dụng Cụ Hỗ Trợ', '', '', 5, 'left', 880, '2014-07-17 13:56:30', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_tcvn_floomslider', 1, 1, '{"mwidth":"262","mheight":"300","show_title":"0","link_title":"0","item_target":"_blank","show_desc":"0","random":"0","numberRandom":"2","image_url":"","data":"images\\/thangviet\\/1.jpg\\r\\nimages\\/thangviet\\/2.jpg\\r\\nimages\\/thangviet\\/3.jpg","effect":"wave","strips":"20","delay":"5000","stripDelay":"50","titleOpacity":"0.7","titleSpeed":"1000","navigation":"0","jquery":"0","cache":"1","moduleclass_sfx":"","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*'),
+(96, 88, 'Dụng Cụ Hỗ Trợ', '', '', 5, 'left', 880, '2014-07-30 13:58:17', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_tcvn_floomslider', 1, 1, '{"mwidth":"262","mheight":"300","show_title":"0","link_title":"0","item_target":"_blank","show_desc":"0","random":"0","numberRandom":"2","image_url":"","data":"images\\/thangviet\\/1.jpg\\r\\nimages\\/thangviet\\/2.jpg\\r\\nimages\\/thangviet\\/3.jpg","effect":"wave","strips":"20","delay":"5000","stripDelay":"50","titleOpacity":"0.7","titleSpeed":"1000","navigation":"0","jquery":"0","cache":"1","moduleclass_sfx":"","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*'),
 (97, 92, 'Thông Tin Liên Hệ', '', '<p style="text-align: center;"><img src="images/thangviet/hotline.jpg" alt="hotline" /></p>\r\n<p>&nbsp;</p>', 3, 'left', 880, '2014-07-09 15:49:14', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_custom', 1, 1, '{"prepare_content":"0","backgroundimage":"","layout":"_:default","moduleclass_sfx":" thongtinlienhe","cache":"1","cache_time":"900","cachemode":"static","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*'),
 (98, 93, 'Liên Hệ (2)', '', '<p style="text-align: center;"><strong>CÔNG TY TNHH DỊCH VỤ BẢO VỆ THĂNG VIỆT </strong></p>\r\n<p>37B, Nguyễn Chí Thanh, P.9, Q.5, TP.HCM<br /> ĐT : 086 2646719 – 0650 3777518 <br />Fax : 0862646719 – 0650 3777519<br /><br /></p>\r\n<p style="text-align: center;"><strong>Mr. TRẦN HUY PHONG</strong><br />ĐT : 0938.304.333<a title="Hỗ trợ khách hàng" href="skype:buitranloc?chat"><img style="display: block; margin-left: auto; margin-right: auto;" src="images/thangviet/skype_logo.gif" alt="My status" /></a><a href="ymsgr:sendim?hunguit"><img src="http://opi.yahoo.com/online?u=hunguit&amp;t=2" alt="" /></a><br /><br /></p>\r\n<p style="text-align: center;"><strong>Mr. Ngô Cơ</strong><br />ĐT: 0906.097.864 <a title="Hỗ trợ khách hàng" href="skype:niemtinmoiia?chat"><img style="display: block; margin-left: auto; margin-right: auto;" src="images/thangviet/skype_logo.gif" alt="My status" /></a><a href="ymsgr:sendim?hunguit"><img src="http://opi.yahoo.com/online?u=hunguit&amp;t=2" alt="" /></a> <strong><br /></strong></p>', 4, 'left', 880, '2014-07-09 16:09:04', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 'mod_custom', 1, 1, '{"prepare_content":"0","backgroundimage":"","layout":"_:default","moduleclass_sfx":" lienhe","cache":"1","cache_time":"900","cachemode":"static","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*'),
 (99, 94, 'Quảng Cáo Bên Trái', '', '<p><a href="#"><img src="images/thangviet/ad_left.jpg" alt="" width="150" /></a></p>', 1, 'divAdLeft', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_custom', 1, 0, '{"prepare_content":"0","backgroundimage":"","layout":"_:default","moduleclass_sfx":"","cache":"1","cache_time":"900","cachemode":"static","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*'),
@@ -1656,7 +1611,6 @@ INSERT INTO `d9jhp_modules` (`id`, `asset_id`, `title`, `note`, `content`, `orde
 -- Table structure for table `d9jhp_modules_menu`
 --
 
-DROP TABLE IF EXISTS `d9jhp_modules_menu`;
 CREATE TABLE IF NOT EXISTS `d9jhp_modules_menu` (
   `moduleid` int(11) NOT NULL DEFAULT '0',
   `menuid` int(11) NOT NULL DEFAULT '0',
@@ -1710,7 +1664,6 @@ INSERT INTO `d9jhp_modules_menu` (`moduleid`, `menuid`) VALUES
 -- Table structure for table `d9jhp_newsfeeds`
 --
 
-DROP TABLE IF EXISTS `d9jhp_newsfeeds`;
 CREATE TABLE IF NOT EXISTS `d9jhp_newsfeeds` (
   `catid` int(11) NOT NULL DEFAULT '0',
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -1758,7 +1711,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_newsfeeds` (
 -- Table structure for table `d9jhp_overrider`
 --
 
-DROP TABLE IF EXISTS `d9jhp_overrider`;
 CREATE TABLE IF NOT EXISTS `d9jhp_overrider` (
   `id` int(10) NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',
   `constant` varchar(255) NOT NULL,
@@ -4869,7 +4821,6 @@ INSERT INTO `d9jhp_overrider` (`id`, `constant`, `string`, `file`) VALUES
 -- Table structure for table `d9jhp_postinstall_messages`
 --
 
-DROP TABLE IF EXISTS `d9jhp_postinstall_messages`;
 CREATE TABLE IF NOT EXISTS `d9jhp_postinstall_messages` (
   `postinstall_message_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `extension_id` bigint(20) NOT NULL DEFAULT '700' COMMENT 'FK to #__extensions',
@@ -4904,7 +4855,6 @@ INSERT INTO `d9jhp_postinstall_messages` (`postinstall_message_id`, `extension_i
 -- Table structure for table `d9jhp_redirect_links`
 --
 
-DROP TABLE IF EXISTS `d9jhp_redirect_links`;
 CREATE TABLE IF NOT EXISTS `d9jhp_redirect_links` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `old_url` varchar(255) NOT NULL,
@@ -4926,7 +4876,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_redirect_links` (
 -- Table structure for table `d9jhp_schemas`
 --
 
-DROP TABLE IF EXISTS `d9jhp_schemas`;
 CREATE TABLE IF NOT EXISTS `d9jhp_schemas` (
   `extension_id` int(11) NOT NULL,
   `version_id` varchar(20) NOT NULL,
@@ -4946,7 +4895,6 @@ INSERT INTO `d9jhp_schemas` (`extension_id`, `version_id`) VALUES
 -- Table structure for table `d9jhp_session`
 --
 
-DROP TABLE IF EXISTS `d9jhp_session`;
 CREATE TABLE IF NOT EXISTS `d9jhp_session` (
   `session_id` varchar(200) NOT NULL DEFAULT '',
   `client_id` tinyint(3) unsigned NOT NULL DEFAULT '0',
@@ -4965,7 +4913,8 @@ CREATE TABLE IF NOT EXISTS `d9jhp_session` (
 --
 
 INSERT INTO `d9jhp_session` (`session_id`, `client_id`, `guest`, `time`, `data`, `userid`, `username`) VALUES
-('niseu12fhan4mf98vl4t60oq73', 0, 1, '1405614959', '__default|a:7:{s:15:"session.counter";i:16;s:19:"session.timer.start";i:1405612478;s:18:"session.timer.last";i:1405614440;s:17:"session.timer.now";i:1405614958;s:22:"session.client.browser";s:65:"Mozilla/5.0 (Windows NT 6.0; rv:30.0) Gecko/20100101 Firefox/30.0";s:8:"registry";O:24:"Joomla\\Registry\\Registry":1:{s:7:"\\0\\0\\0data";O:8:"stdClass":0:{}}s:4:"user";O:5:"JUser":25:{s:9:"\\0\\0\\0isRoot";b:0;s:2:"id";i:0;s:4:"name";N;s:8:"username";N;s:5:"email";N;s:8:"password";N;s:14:"password_clear";s:0:"";s:5:"block";N;s:9:"sendEmail";i:0;s:12:"registerDate";N;s:13:"lastvisitDate";N;s:10:"activation";N;s:6:"params";N;s:6:"groups";a:1:{i:0;s:1:"9";}s:5:"guest";i:1;s:13:"lastResetTime";N;s:10:"resetCount";N;s:12:"requireReset";N;s:10:"\\0\\0\\0_params";O:24:"Joomla\\Registry\\Registry":1:{s:7:"\\0\\0\\0data";O:8:"stdClass":0:{}}s:14:"\\0\\0\\0_authGroups";a:2:{i:0;i:1;i:1;i:9;}s:14:"\\0\\0\\0_authLevels";a:3:{i:0;i:1;i:1;i:1;i:2;i:5;}s:15:"\\0\\0\\0_authActions";N;s:12:"\\0\\0\\0_errorMsg";N;s:10:"\\0\\0\\0_errors";a:0:{}s:3:"aid";i:0;}}', 0, '');
+('61md0anr5dctn9sase8tjb9jb1', 0, 1, '1406733371', '__default|a:7:{s:15:"session.counter";i:4;s:19:"session.timer.start";i:1406733206;s:18:"session.timer.last";i:1406733323;s:17:"session.timer.now";i:1406733370;s:22:"session.client.browser";s:65:"Mozilla/5.0 (Windows NT 6.0; rv:31.0) Gecko/20100101 Firefox/31.0";s:8:"registry";O:24:"Joomla\\Registry\\Registry":1:{s:7:"\\0\\0\\0data";O:8:"stdClass":0:{}}s:4:"user";O:5:"JUser":25:{s:9:"\\0\\0\\0isRoot";b:0;s:2:"id";i:0;s:4:"name";N;s:8:"username";N;s:5:"email";N;s:8:"password";N;s:14:"password_clear";s:0:"";s:5:"block";N;s:9:"sendEmail";i:0;s:12:"registerDate";N;s:13:"lastvisitDate";N;s:10:"activation";N;s:6:"params";N;s:6:"groups";a:1:{i:0;s:1:"9";}s:5:"guest";i:1;s:13:"lastResetTime";N;s:10:"resetCount";N;s:12:"requireReset";N;s:10:"\\0\\0\\0_params";O:24:"Joomla\\Registry\\Registry":1:{s:7:"\\0\\0\\0data";O:8:"stdClass":0:{}}s:14:"\\0\\0\\0_authGroups";a:2:{i:0;i:1;i:1;i:9;}s:14:"\\0\\0\\0_authLevels";a:3:{i:0;i:1;i:1;i:1;i:2;i:5;}s:15:"\\0\\0\\0_authActions";N;s:12:"\\0\\0\\0_errorMsg";N;s:10:"\\0\\0\\0_errors";a:0:{}s:3:"aid";i:0;}}', 0, ''),
+('fbrd62b9gssc6vnav0c59unfr7', 0, 1, '1406733288', '__default|a:7:{s:15:"session.counter";i:1;s:19:"session.timer.start";i:1406733287;s:18:"session.timer.last";i:1406733287;s:17:"session.timer.now";i:1406733287;s:22:"session.client.browser";s:65:"Mozilla/5.0 (Windows NT 6.0; rv:31.0) Gecko/20100101 Firefox/31.0";s:8:"registry";O:24:"Joomla\\Registry\\Registry":1:{s:7:"\\0\\0\\0data";O:8:"stdClass":0:{}}s:4:"user";O:5:"JUser":25:{s:9:"\\0\\0\\0isRoot";b:0;s:2:"id";i:0;s:4:"name";N;s:8:"username";N;s:5:"email";N;s:8:"password";N;s:14:"password_clear";s:0:"";s:5:"block";N;s:9:"sendEmail";i:0;s:12:"registerDate";N;s:13:"lastvisitDate";N;s:10:"activation";N;s:6:"params";N;s:6:"groups";a:1:{i:0;s:1:"9";}s:5:"guest";i:1;s:13:"lastResetTime";N;s:10:"resetCount";N;s:12:"requireReset";N;s:10:"\\0\\0\\0_params";O:24:"Joomla\\Registry\\Registry":1:{s:7:"\\0\\0\\0data";O:8:"stdClass":0:{}}s:14:"\\0\\0\\0_authGroups";a:2:{i:0;i:1;i:1;i:9;}s:14:"\\0\\0\\0_authLevels";a:3:{i:0;i:1;i:1;i:1;i:2;i:5;}s:15:"\\0\\0\\0_authActions";N;s:12:"\\0\\0\\0_errorMsg";N;s:10:"\\0\\0\\0_errors";a:0:{}s:3:"aid";i:0;}}', 0, '');
 
 -- --------------------------------------------------------
 
@@ -4973,7 +4922,6 @@ INSERT INTO `d9jhp_session` (`session_id`, `client_id`, `guest`, `time`, `data`,
 -- Table structure for table `d9jhp_tags`
 --
 
-DROP TABLE IF EXISTS `d9jhp_tags`;
 CREATE TABLE IF NOT EXISTS `d9jhp_tags` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `parent_id` int(10) unsigned NOT NULL DEFAULT '0',
@@ -5028,7 +4976,6 @@ INSERT INTO `d9jhp_tags` (`id`, `parent_id`, `lft`, `rgt`, `level`, `path`, `tit
 -- Table structure for table `d9jhp_template_styles`
 --
 
-DROP TABLE IF EXISTS `d9jhp_template_styles`;
 CREATE TABLE IF NOT EXISTS `d9jhp_template_styles` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `template` varchar(50) NOT NULL DEFAULT '',
@@ -5058,7 +5005,6 @@ INSERT INTO `d9jhp_template_styles` (`id`, `template`, `client_id`, `home`, `tit
 -- Table structure for table `d9jhp_ucm_base`
 --
 
-DROP TABLE IF EXISTS `d9jhp_ucm_base`;
 CREATE TABLE IF NOT EXISTS `d9jhp_ucm_base` (
   `ucm_id` int(10) unsigned NOT NULL,
   `ucm_item_id` int(10) NOT NULL,
@@ -5076,7 +5022,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_ucm_base` (
 -- Table structure for table `d9jhp_ucm_content`
 --
 
-DROP TABLE IF EXISTS `d9jhp_ucm_content`;
 CREATE TABLE IF NOT EXISTS `d9jhp_ucm_content` (
   `core_content_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `core_type_alias` varchar(255) NOT NULL DEFAULT '' COMMENT 'FK to the content types table',
@@ -5131,7 +5076,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_ucm_content` (
 -- Table structure for table `d9jhp_ucm_history`
 --
 
-DROP TABLE IF EXISTS `d9jhp_ucm_history`;
 CREATE TABLE IF NOT EXISTS `d9jhp_ucm_history` (
   `version_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `ucm_item_id` int(10) unsigned NOT NULL,
@@ -5306,7 +5250,6 @@ INSERT INTO `d9jhp_ucm_history` (`version_id`, `ucm_item_id`, `ucm_type_id`, `ve
 -- Table structure for table `d9jhp_updates`
 --
 
-DROP TABLE IF EXISTS `d9jhp_updates`;
 CREATE TABLE IF NOT EXISTS `d9jhp_updates` (
   `update_id` int(11) NOT NULL AUTO_INCREMENT,
   `update_site_id` int(11) DEFAULT '0',
@@ -5331,7 +5274,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_updates` (
 -- Table structure for table `d9jhp_update_sites`
 --
 
-DROP TABLE IF EXISTS `d9jhp_update_sites`;
 CREATE TABLE IF NOT EXISTS `d9jhp_update_sites` (
   `update_site_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) DEFAULT '',
@@ -5351,7 +5293,7 @@ INSERT INTO `d9jhp_update_sites` (`update_site_id`, `name`, `type`, `location`, 
 (1, 'Joomla Core', 'collection', 'http://update.joomla.org/core/list.xml', 0, 0, ''),
 (2, 'Joomla Extension Directory', 'collection', 'http://update.joomla.org/jed/list.xml', 0, 0, ''),
 (3, 'Accredited Joomla! Translations', 'collection', 'http://update.joomla.org/language/translationlist_3.xml', 0, 0, ''),
-(4, 'Vinaora Update Server', 'extension', 'http://update.vinaora.com/joomla3x/mod_vt_nivo_slider.xml', 1, 1405600898, ''),
+(4, 'Vinaora Update Server', 'extension', 'http://update.vinaora.com/joomla3x/mod_vt_nivo_slider.xml', 1, 1406728674, ''),
 (5, 'JCE Editor Updates', 'extension', 'https://www.joomlacontenteditor.net/index.php?option=com_updates&view=update&format=xml&id=1&file=extension.xml', 0, 0, '');
 
 -- --------------------------------------------------------
@@ -5360,7 +5302,6 @@ INSERT INTO `d9jhp_update_sites` (`update_site_id`, `name`, `type`, `location`, 
 -- Table structure for table `d9jhp_update_sites_extensions`
 --
 
-DROP TABLE IF EXISTS `d9jhp_update_sites_extensions`;
 CREATE TABLE IF NOT EXISTS `d9jhp_update_sites_extensions` (
   `update_site_id` int(11) NOT NULL DEFAULT '0',
   `extension_id` int(11) NOT NULL DEFAULT '0',
@@ -5384,7 +5325,6 @@ INSERT INTO `d9jhp_update_sites_extensions` (`update_site_id`, `extension_id`) V
 -- Table structure for table `d9jhp_usergroups`
 --
 
-DROP TABLE IF EXISTS `d9jhp_usergroups`;
 CREATE TABLE IF NOT EXISTS `d9jhp_usergroups` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',
   `parent_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Adjacency List Reference Id',
@@ -5419,7 +5359,6 @@ INSERT INTO `d9jhp_usergroups` (`id`, `parent_id`, `lft`, `rgt`, `title`) VALUES
 -- Table structure for table `d9jhp_users`
 --
 
-DROP TABLE IF EXISTS `d9jhp_users`;
 CREATE TABLE IF NOT EXISTS `d9jhp_users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL DEFAULT '',
@@ -5449,7 +5388,7 @@ CREATE TABLE IF NOT EXISTS `d9jhp_users` (
 --
 
 INSERT INTO `d9jhp_users` (`id`, `name`, `username`, `email`, `password`, `block`, `sendEmail`, `registerDate`, `lastvisitDate`, `activation`, `params`, `lastResetTime`, `resetCount`, `otpKey`, `otep`, `requireReset`) VALUES
-(880, 'Super User', 'admin', 'hunguit@yahoo.com', '$2y$10$N4T3siSb0oH3.eiESbGPeuynNF3dv1IElCw6vmI3XPbiUUU.qgIB2', 0, 1, '2014-06-24 15:06:59', '2014-07-17 12:41:30', '0', '{}', '0000-00-00 00:00:00', 0, '', '', 0);
+(880, 'Super User', 'admin', 'hunguit@yahoo.com', '$2y$10$N4T3siSb0oH3.eiESbGPeuynNF3dv1IElCw6vmI3XPbiUUU.qgIB2', 0, 1, '2014-06-24 15:06:59', '2014-07-30 13:57:43', '0', '{}', '0000-00-00 00:00:00', 0, '', '', 0);
 
 -- --------------------------------------------------------
 
@@ -5457,7 +5396,6 @@ INSERT INTO `d9jhp_users` (`id`, `name`, `username`, `email`, `password`, `block
 -- Table structure for table `d9jhp_user_keys`
 --
 
-DROP TABLE IF EXISTS `d9jhp_user_keys`;
 CREATE TABLE IF NOT EXISTS `d9jhp_user_keys` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `user_id` varchar(255) NOT NULL,
@@ -5479,7 +5417,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_user_keys` (
 -- Table structure for table `d9jhp_user_notes`
 --
 
-DROP TABLE IF EXISTS `d9jhp_user_notes`;
 CREATE TABLE IF NOT EXISTS `d9jhp_user_notes` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `user_id` int(10) unsigned NOT NULL DEFAULT '0',
@@ -5507,7 +5444,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_user_notes` (
 -- Table structure for table `d9jhp_user_profiles`
 --
 
-DROP TABLE IF EXISTS `d9jhp_user_profiles`;
 CREATE TABLE IF NOT EXISTS `d9jhp_user_profiles` (
   `user_id` int(11) NOT NULL,
   `profile_key` varchar(100) NOT NULL,
@@ -5522,7 +5458,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_user_profiles` (
 -- Table structure for table `d9jhp_user_usergroup_map`
 --
 
-DROP TABLE IF EXISTS `d9jhp_user_usergroup_map`;
 CREATE TABLE IF NOT EXISTS `d9jhp_user_usergroup_map` (
   `user_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Foreign Key to #__users.id',
   `group_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Foreign Key to #__usergroups.id',
@@ -5542,7 +5477,6 @@ INSERT INTO `d9jhp_user_usergroup_map` (`user_id`, `group_id`) VALUES
 -- Table structure for table `d9jhp_viewlevels`
 --
 
-DROP TABLE IF EXISTS `d9jhp_viewlevels`;
 CREATE TABLE IF NOT EXISTS `d9jhp_viewlevels` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',
   `title` varchar(100) NOT NULL DEFAULT '',
@@ -5569,7 +5503,6 @@ INSERT INTO `d9jhp_viewlevels` (`id`, `title`, `ordering`, `rules`) VALUES
 -- Table structure for table `d9jhp_weblinks`
 --
 
-DROP TABLE IF EXISTS `d9jhp_weblinks`;
 CREATE TABLE IF NOT EXISTS `d9jhp_weblinks` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `catid` int(11) NOT NULL DEFAULT '0',
@@ -5616,7 +5549,6 @@ CREATE TABLE IF NOT EXISTS `d9jhp_weblinks` (
 -- Table structure for table `d9jhp_wf_profiles`
 --
 
-DROP TABLE IF EXISTS `d9jhp_wf_profiles`;
 CREATE TABLE IF NOT EXISTS `d9jhp_wf_profiles` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
