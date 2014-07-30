@@ -27,7 +27,7 @@ $doc->addScript(JURI::base()."modules/mod_tcvn_floomslider/assets/js/jqFancyTran
 
 $wimage = $params->get('mwidth', 999);
 $himage = $params->get('mheight', 430);
-$thumb  = JURI::base() . "/modules/mod_tcvn_floomslider/timthumb.php?w=" . $wimage . "&h=" . $himage . "&a=c&q=99&z=0";
+$thumb  = JURI::base() ."/modules/mod_tcvn_floomslider/timthumb.php?w=" . $wimage . "&h=" . $himage . "&a=c&q=99&z=0";
 ?>
 <style type="text/css">
 .ft-title {
