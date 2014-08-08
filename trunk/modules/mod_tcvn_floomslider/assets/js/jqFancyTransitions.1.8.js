@@ -61,7 +61,7 @@
 			'position': 'relative',
 			'background-position': 'top left'
 			});
-
+		
 		// create title bar
 		$('#'+el.id).append("<div class='ft-title' id='ft-title-"+el.id+"' style='position: absolute; bottom:0; left: 0; z-index: 1000; color: #fff; background-color: #000; '>"+titles[el.id][0]+"</div>");
 		if(titles[el.id][imgInc[el.id]])
